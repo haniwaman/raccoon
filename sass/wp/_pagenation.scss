@@ -7,29 +7,31 @@
 
 		&:hover {
 			color: #fff;
-			background: #666;
+			background: $cr-m;
+			border: 1px solid $cr-m;
 		}
 
 		&.next,
 		&.prev {
+			background: none;
+			border: none;
 
 			&:hover {
+				color: initial;
 				opacity: $opacity;
-				color: #666;
-				background: #fff;
 			}
 		}
 	}
 }
 
 .page-numbers {
-	border: 1px solid #666;
+	border: 1px solid #eee;
 	background: #fff;
 	text-align: center;
 	min-width: 30px;
 	height: 30px;
 	line-height: 30px;
-	color: #666;
+	color: #333;
 	text-decoration: none;
 	display: inline-block;
 	margin-right: 8px;
@@ -40,7 +42,8 @@
 
 	&.current {
 		color: #fff;
-		background: #666;
+		background: $cr-m;
+		border: 1px solid $cr-m;
 	}
 
 	&.dots,

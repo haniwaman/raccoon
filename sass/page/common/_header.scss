@@ -1,6 +1,8 @@
 #header {
 	position: fixed;
 	width: 100%;
+	top: 0;
+	left: 0;
 	background: #fff;
 	box-shadow: 0 1px 3px rgba(#000, 0.16);
 	z-index: map-get($layer, "header");
@@ -8,9 +10,8 @@
 	> .inner {
 		display: flex;
 		align-items: center;
-		padding-top: 0;
-		padding-bottom: 0;
-		height: $header-height;
+		padding-top: 24px;
+		padding-bottom: 24px;
 	}
 }
 

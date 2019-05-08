@@ -24,8 +24,12 @@ get_header(); ?>
 	<?php
 	if ( have_posts() ) :
 		?>
-	<h2 class="archive-title"><?php the_archive_title(); ?></h2><!-- /archive-title -->
-	<div class="archive-description"><?php the_archive_description(); ?></div><!-- /archive-description -->
+	<!-- archive-header -->
+	<div class="archive-header">
+		<h1 class="archive-title"><?php the_archive_title(); ?></h1><!-- /archive-title -->
+		<div class="archive-description"><?php the_archive_description(); ?></div><!-- /archive-description -->
+		<?php get_search_form(); ?>
+	</div><!-- /archive-header -->
 
 	<!-- entries -->
 	<div class="entries">
@@ -53,8 +57,8 @@ get_header(); ?>
 		<!-- entry-item-body -->
 		<div class="entry-item-body">
 			<div class="entry-item-meta">
-				<time class="entry-item-published" datetime="<?php the_time( 'c' ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time><!-- /entry-item-published -->
 				<div class="entry-item-tag"><?php my_the_post_category(); ?></div><!-- /entry-item-tag -->
+				<time class="entry-item-published" datetime="<?php the_time( 'c' ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time><!-- /entry-item-published -->
 			</div><!-- /entry-item-meta -->
 			<h2 class="entry-item-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2><!-- /entry-item-title -->
 			<div class="entry-item-excerpt"><?php the_excerpt(); ?></div><!-- /entry-item-excerpt -->

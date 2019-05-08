@@ -1,9 +1,9 @@
 .widget {
 	margin-bottom: 32px;
+	background: #fff;
 
 	ul {
-		padding: 0 8px;
-		font-size: 16px;
+		padding: 16px;
 	}
 
 	li {
@@ -22,16 +22,15 @@
 
 		ul {
 			font-size: 0.85em;
-			margin-top: 8px;
+			margin-top: 16px;
 		}
 	}
 }
 
 .widget-title {
-	background: #666;
+	background: $cr-m;
 	font-size: 18px;
 	font-weight: 700;
 	padding: 8px 16px;
-	margin-bottom: 12px;
 	color: #fff;
 }

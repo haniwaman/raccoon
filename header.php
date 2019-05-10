@@ -40,10 +40,6 @@ wp_nav_menu(
 );
 ?>
 
-</div><!-- /inner -->
-</header><!-- /header -->
-
-
 <!-- drawer -->
 <div class="drawer">
 <div class="drawer-open"><span></span></div>
@@ -65,4 +61,8 @@ wp_nav_menu(
 	?>
 </div><!-- /drawer-content -->
 </div><!-- /drawer -->
+
+
+</div><!-- /inner -->
+</header><!-- /header -->
 

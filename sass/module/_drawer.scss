@@ -1,14 +1,17 @@
 // ドロワーアイコン
 $drawer-width: 250px;
-$drawer-speed: 0.5s;
-$drawer-icon-width: 60px;
-$drawer-icon-height: 60px;
+$drawer-speed: 0.3s;
+$drawer-icon-width: 50px;
+$drawer-icon-height: 50px;
 $bar-width: 28px;
 $bar-height: 4px;
-$bar-radius: 3px;
+$bar-radius: 2px;
 $bar-space: 4px;
-$bar-bg: $cr-m;
-$bar-color: #fff;
+$bar-bg: transparent;
+$bar-color: #333;
+$bar-color_active: #fff;
+$drawer-content-bg: $cr-m;
+$drawer-content-font: #fff;
 
 .drawer {
 	position: fixed;
@@ -80,7 +83,7 @@ $bar-color: #fff;
 	&.m_checked {
 
 		span {
-			background: rgba($bar-color, 0);
+			background: rgba($bar-color_active, 0);
 
 			&::before,
 			&::after {
@@ -93,7 +96,7 @@ $bar-color: #fff;
 				width: $bar-width;
 				height: $bar-height;
 				margin: (-$bar-height/2) 0 0 (-$bar-width/2);
-				background: $bar-color;
+				background: $bar-color_active;
 			}
 
 			&::before {
@@ -134,11 +137,12 @@ $bar-color: #fff;
 	width: $drawer-width;
 	max-width: 90%;
 	height: 100%;
-	background: #fff;
+	background: $drawer-content-bg;
 	transition: $drawer-speed ease-in-out;
 	padding-top: $header-height-sp;
 	transform: translateX(105%);
 	text-align: left;
+	color: $drawer-content-font;
 
 	.drawer-title {
 		font-size: 1em;
@@ -159,20 +163,61 @@ $bar-color: #fff;
 
 		a {
 			text-decoration: none;
-			color: $cr-txt;
+			// color: $cr-txt;
 			display: block;
 			padding: 16px;
 			font-size: 16px;
-			border-left: 6px solid transparent;
 
 			span {
 				font-size: 14px;
 				color: $cr-m;
 				margin-left: 12px;
 			}
+		}
 
-			&:hover {
-				border-left: 6px solid $cr-a;
+		&.menu-item-has-children {
+			position: relative;
+
+			.sub-menu {
+				display: none;
+				padding-left: 24px;
+
+				a {
+					font-size: 14px;
+					padding-bottom: 12px;
+					padding-top: 12px;
+				}
+			}
+
+			a {
+				padding-right: 46px;
+			}
+
+			span {
+
+				&::after {
+					content: "\f078";
+					font-family: $ff-awesome;
+					font-size: 18px;
+					font-weight: 900;
+					position: absolute;
+					right: 16px;
+					top: 12px;
+				}
+			}
+
+			&.m_open {
+
+				.sub-menu {
+					display: block;
+				}
+
+				span {
+
+					&::after {
+						content: "\f106";
+					}
+				}
 			}
 		}
 	}

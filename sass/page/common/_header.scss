@@ -9,9 +9,15 @@
 
 	> .inner {
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
 		padding-top: 24px;
 		padding-bottom: 24px;
+
+		@include mq("sp") {
+			padding-top: 8px;
+			padding-bottom: 8px;
+		}
 	}
 }
 
@@ -43,16 +49,59 @@
 
 	li {
 		display: inline-block;
-		margin-right: 16px;
+		margin-right: 32px;
+		position: relative;
+		z-index: map-get($layer, "header") + 2;
+
+		.sub-menu {
+			font-size: 16px;
+			transition: all 0.3s ease 0s;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			opacity: 0;
+			z-index: map-get($layer, "header") + 1;
+			min-width: 230px;
+			visibility: hidden;
+
+			li {
+				margin-bottom: 2px;
+				margin-right: 0;
+				display: block;
+
+				a {
+					display: block;
+					background: $cr-m;
+					color: #fff;
+					padding: 8px 28px 8px 16px;
+					font-size: 14px;
+					font-weight: 400;
+					letter-spacing: 0.05em;
+				}
+			}
+		}
+
+		&:hover > .sub-menu {
+			visibility: visible;
+			opacity: 1;
+			top: 100%;
+		}
 
 		&:last-child {
 			margin-right: 0;
+
+			.sub-menu {
+				left: auto;
+				right: 0;
+			}
 		}
 
 		> a {
 			text-decoration: none;
 			color: $cr-txt;
 			display: block;
+			padding: 24px 4px;
 			font-size: 16px;
 			transition: all 0.3s ease 0s;
 

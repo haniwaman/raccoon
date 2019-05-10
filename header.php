@@ -27,13 +27,11 @@
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( get_template_directory_uri() . '/img/logo.png' ); ?>" alt=""></a>
 </div><!-- /header-logo -->
 
-<!-- header-nav -->
-<nav class="header-nav">
 <?php
 wp_nav_menu(
 	array(
 		'container'       => false,
-		'depth'           => 1,
+		'depth'           => 2,
 		'theme_location'  => 'global',
 		'container'       => 'nav',
 		'container_class' => 'header-nav',
@@ -41,7 +39,6 @@ wp_nav_menu(
 	)
 );
 ?>
-</nav><!-- /header-nav -->
 
 </div><!-- /inner -->
 </header><!-- /header -->
@@ -58,7 +55,7 @@ wp_nav_menu(
 	wp_nav_menu(
 		array(
 			'container'       => false,
-			'depth'           => 1,
+			'depth'           => 2,
 			'theme_location'  => 'drawer',
 			'container'       => 'nav',
 			'container_class' => 'drawer-nav',

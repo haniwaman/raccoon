@@ -12,9 +12,15 @@
 	li {
 		display: inline-block;
 		text-decoration: none;
-		padding: 0 4px;
+		margin: 0 16px 16px 0;
+
+		&:last-child {
+			margin-right: 0;
+			margin-bottom: 0;
+		}
 
 		a {
+			display: block;
 			text-decoration: none;
 			transition: all 0.3s ease 0s;
 

@@ -51,8 +51,8 @@ add_action( 'wp_enqueue_scripts', 'my_script_init' );
 function my_menu_init() {
 	register_nav_menus(
 		array(
-			'global'  => 'グローバルメニュー',
-			'utility' => 'ユーティリティメニュー',
+			'header'  => 'ヘッダーメニュー',
+			'footer' => 'フッターメニュー',
 			'drawer'  => 'ドロワーメニュー',
 		)
 	);
@@ -94,3 +94,26 @@ add_image_size( 'my_thumbnail', 840, 600, true );
  * テンプレートタグ
  */
 require_once get_template_directory() . '/inc/tags.php';
+
+
+
+/**
+ * アーカイブタイトル書き換え
+ *
+ * @param string $title 書き換え前のタイトル.
+ * @return string $title 書き換え後のタイトル.
+ */
+function my_archive_title( $title ) {
+
+  if ( is_category() ) { /* カテゴリーアーカイブの場合 */
+    $title = single_cat_title( '', false );
+  } elseif ( is_tag() ) { /* タグアーカイブの場合 */
+    $title = single_tag_title( '', false );
+  } elseif ( is_post_type_archive() ) {
+    $title = post_type_archive_title( '', false ); /* 投稿タイプのアーカイブの場合 */
+  } elseif ( is_tax() ) { /* タームアーカイブの場合 */
+		$title = single_term_title( '', false );
+	}
+  return $title;
+};
+add_filter( 'get_the_archive_title', 'my_archive_title' );

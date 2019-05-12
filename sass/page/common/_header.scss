@@ -1,23 +1,25 @@
 #header {
-	position: fixed;
 	width: 100%;
-	top: 0;
-	left: 0;
 	background: #fff;
-	box-shadow: 0 1px 3px rgba(#000, 0.16);
 	z-index: map-get($layer, "header");
+
+	&.m_anim {
+		animation: fadeInDown 0.3s ease 0s 1 normal none running;
+	}
+
+	&.m_fixed {
+		position: fixed;
+		top: 0;
+		left: 0;
+		box-shadow: 0 1px 3px rgba(#000, 0.16);
+	}
 
 	> .inner {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
-		padding-top: 24px;
-		padding-bottom: 24px;
-
-		@include mq("sp") {
-			padding-top: 8px;
-			padding-bottom: 8px;
-		}
+		padding-top: 0;
+		padding-bottom: 0;
 	}
 }
 
@@ -26,6 +28,7 @@
 
 	a {
 		transition: all 0.3s ease 0s;
+		display: block;
 
 		&:hover {
 			opacity: $opacity;
@@ -33,6 +36,8 @@
 	}
 
 	img {
+		vertical-align: middle;
+		max-height: 100%;
 		width: 200px;
 	}
 }
@@ -43,49 +48,21 @@
 		display: none;
 	}
 
-	ul {
-		font-size: 0;
+	.header-list {
+		display: flex;
 	}
 
 	li {
-		display: inline-block;
-		margin-right: 32px;
+		margin-right: 12px;
 		position: relative;
 		z-index: map-get($layer, "header") + 2;
 
-		.sub-menu {
-			font-size: 16px;
-			transition: all 0.3s ease 0s;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			opacity: 0;
-			z-index: map-get($layer, "header") + 1;
-			min-width: 230px;
-			visibility: hidden;
+		&:hover {
 
-			li {
-				margin-bottom: 2px;
-				margin-right: 0;
-				display: block;
-
-				a {
-					display: block;
-					background: $cr-m;
-					color: #fff;
-					padding: 8px 28px 8px 16px;
-					font-size: 14px;
-					font-weight: 400;
-					letter-spacing: 0.05em;
-				}
+			> .sub-menu {
+				visibility: visible;
+				opacity: 1;
 			}
-		}
-
-		&:hover > .sub-menu {
-			visibility: visible;
-			opacity: 1;
-			top: 100%;
 		}
 
 		&:last-child {
@@ -101,12 +78,45 @@
 			text-decoration: none;
 			color: $cr-txt;
 			display: block;
-			padding: 24px 4px;
-			font-size: 16px;
+			padding: 0 4px;
+			font-size: 14px;
 			transition: all 0.3s ease 0s;
+			height: $header-height;
+			line-height: $header-height;
 
 			&:hover {
 				opacity: $opacity;
+			}
+		}
+	}
+
+	.sub-menu {
+		font-size: 16px;
+		transition: all 0.3s ease 0s;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		opacity: 0;
+		z-index: map-get($layer, "header") + 1;
+		min-width: 200px;
+		visibility: hidden;
+
+		li {
+			margin-bottom: 2px;
+			margin-right: 0;
+			display: block;
+
+			a {
+				display: block;
+				height: auto;
+				line-height: 1.6;
+				background: $cr-m;
+				color: #fff;
+				padding: 8px 28px 8px 16px;
+				font-size: 14px;
+				font-weight: 400;
+				letter-spacing: 0.05em;
 			}
 		}
 	}

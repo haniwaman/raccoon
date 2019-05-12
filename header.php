@@ -19,7 +19,7 @@
 <body <?php body_class(); ?>>
 
 <!-- header -->
-<header id="header">
+<header id="header" class="m_fixed m_anim">
 <div class="inner">
 
 <!-- header-logo -->
@@ -32,7 +32,7 @@ wp_nav_menu(
 	array(
 		'container'       => false,
 		'depth'           => 2,
-		'theme_location'  => 'global',
+		'theme_location'  => 'header',
 		'container'       => 'nav',
 		'container_class' => 'header-nav',
 		'menu_class'      => 'header-list',

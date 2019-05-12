@@ -16,7 +16,7 @@
 		array(
 			'container'       => false,
 			'depth'           => 1,
-			'theme_location'  => 'utility',
+			'theme_location'  => 'footer',
 			'container'       => 'nav',
 			'container_class' => 'footer-nav',
 			'menu_class'      => 'footer-list',

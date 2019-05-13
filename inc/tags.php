@@ -32,7 +32,11 @@ function my_get_post_categories() {
 function my_the_post_category() {
 	$this_categories = my_get_post_categories();
 	if ( isset( $this_categories[0] ) ) {
-		echo '<a href="' . esc_url( $this_categories[0]['link'] ) . '">' . esc_html( $this_categories[0]['name'] ) . '</a>';
+		if ( function_exists( 'the_field' ) ) {
+			echo '<a style="background:' . esc_attr( get_field( 'color', 'category_' . $this_categories[0]['id'] ) ) . ';" href="' . esc_url( $this_categories[0]['link'] ) . '">' . esc_html( $this_categories[0]['name'] ) . '</a>';
+		} else {
+			echo '<a href="' . esc_url( $this_categories[0]['link'] ) . '">' . esc_html( $this_categories[0]['name'] ) . '</a>';
+		}
 	}
 }
 

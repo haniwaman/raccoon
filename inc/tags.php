@@ -68,6 +68,6 @@ function my_get_post_terms( $taxonomy ) {
 function my_the_post_term( $taxonomy ) {
 	$this_terms = my_get_post_terms( $taxonomy );
 	if ( isset( $this_terms[0] ) ) {
-		echo '<div class="shopnews-tag m_' . $this_terms[0]['slug'] . '">' . esc_html( $this_terms[0]['name'] ) . '</div>';
+		echo '<div class="shopnews-tag m_' . esc_attr( $this_terms[0]['slug'] ) . '">' . esc_html( $this_terms[0]['name'] ) . '</div>';
 	}
 }

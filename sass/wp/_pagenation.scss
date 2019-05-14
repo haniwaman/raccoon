@@ -13,12 +13,13 @@
 
 		&.next,
 		&.prev {
-			background: none;
-			border: none;
+			background: #eee;
+			border: 1px solid #eee;
 
 			&:hover {
-				color: initial;
-				opacity: $opacity;
+				color: #fff;
+				background: $cr-m;
+				border: 1px solid $cr-m;
 			}
 		}
 	}
@@ -26,11 +27,11 @@
 
 .page-numbers {
 	border: 1px solid #eee;
-	background: #fff;
+	background: #eee;
 	text-align: center;
-	min-width: 50px;
-	height: 50px;
-	line-height: 50px;
+	min-width: 42px;
+	height: 42px;
+	line-height: 42px;
 	color: #333;
 	text-decoration: none;
 	display: inline-block;

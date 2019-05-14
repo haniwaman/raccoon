@@ -62,6 +62,12 @@ get_header(); ?>
 			</div><!-- /entry-item-meta -->
 			<h2 class="entry-item-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2><!-- /entry-item-title -->
 			<div class="entry-item-excerpt"><?php the_excerpt(); ?></div><!-- /entry-item-excerpt -->
+			<div class="entry-item-auther">
+			<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
+				<?php echo get_avatar( get_the_author_meta( 'user_email' ), 30 ); ?>
+				<?php the_author_meta( 'display_name' ); ?>
+			</a>
+			</div><!-- /entry-item-auther -->
 		</div><!-- /entry-item-body -->
 
 	</div><!-- /entry-item -->

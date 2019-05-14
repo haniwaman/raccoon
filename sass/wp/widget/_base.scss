@@ -9,11 +9,18 @@
 
 	ul {
 		padding: 0 16px;
+
+		&.children {
+
+			li {
+				margin-top: 16px;
+			}
+		}
 	}
 
 	li {
 		font-size: inherit;
-		margin-bottom: 8px;
+		margin-bottom: 16px;
 
 		&:last-child {
 			margin-bottom: 0;

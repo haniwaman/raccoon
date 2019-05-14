@@ -37,8 +37,8 @@ if ( have_posts() ) :
 
 		<!-- entry-meta -->
 		<div class="entry-meta">
-			<time class="entry-published" datetime="<?php the_time( 'c' ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time>
 			<div class="entry-tag"><?php my_the_post_category(); ?></div><!-- /entry-item-tag -->
+			<time class="entry-published" datetime="<?php the_time( 'c' ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time>
 		</div><!-- /entry-meta -->
 
 		<!-- entry-img -->

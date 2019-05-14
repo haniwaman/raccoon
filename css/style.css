@@ -704,6 +704,30 @@ select:focus {
 	font-size: 14px;
 }
 
+.entry-item-auther {
+	margin-top: 16px;
+	text-align: right;
+}
+
+.entry-item-auther a {
+	color: #666;
+	font-size: 14px;
+	text-decoration: none;
+	transition: all 0.3s ease 0s;
+	vertical-align: middle;
+}
+
+.entry-item-auther a:hover {
+	opacity: 0.6;
+}
+
+.entry-item-auther img {
+	border-radius: 50%;
+	margin-right: 4px;
+	vertical-align: middle;
+	width: 30px;
+}
+
 .entry {
 	background: #fff;
 	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
@@ -716,7 +740,7 @@ select:focus {
 }
 
 .entry-title {
-	font-size: 24px;
+	font-size: 28px;
 	font-weight: 700;
 	margin-bottom: 16px;
 }
@@ -724,23 +748,34 @@ select:focus {
 .entry-meta {
 	align-items: center;
 	display: flex;
-	margin-bottom: 12px;
+	flex-wrap: wrap;
+	margin-bottom: 8px;
 }
 
 .entry-published {
 	color: #666;
-	font-size: 14px;
+	font-size: 12px;
+	margin-left: auto;
+	white-space: nowrap;
+}
+
+.entry-published::before {
+	content: "\f073";
+	font-family: "Font Awesome 5 Free", sans-serif;
+	font-weight: 400;
+	margin-right: 8px;
 }
 
 .entry-tag {
-	margin-left: auto;
+	white-space: nowrap;
 }
 
 .entry-tag a {
 	background: #333;
+	border-radius: 2px;
 	color: #fff;
 	display: block;
-	font-size: 14px;
+	font-size: 12px;
 	padding: 4px 8px;
 	text-decoration: none;
 	transition: all 0.3s ease 0s;
@@ -993,25 +1028,26 @@ select:focus {
 
 .pagenation a.next,
 .pagenation a.prev {
-	background: none;
-	border: none;
+	background: #eee;
+	border: 1px solid #eee;
 }
 
 .pagenation a.next:hover,
 .pagenation a.prev:hover {
-	color: initial;
-	opacity: 0.6;
+	background: #efa336;
+	border: 1px solid #efa336;
+	color: #fff;
 }
 
 .page-numbers {
-	background: #fff;
+	background: #eee;
 	border: 1px solid #eee;
 	color: #333;
 	display: inline-block;
-	height: 50px;
-	line-height: 50px;
+	height: 42px;
+	line-height: 42px;
 	margin-right: 8px;
-	min-width: 50px;
+	min-width: 42px;
 	text-align: center;
 	text-decoration: none;
 }
@@ -1051,6 +1087,7 @@ select:focus {
 
 .widget.widget_archive select {
 	background: transparent url(../img/arrow.svg) no-repeat center right 8px/12px 8px;
+	width: 100%;
 }
 
 .widget {
@@ -1067,9 +1104,13 @@ select:focus {
 	padding: 0 16px;
 }
 
+.widget ul.children li {
+	margin-top: 16px;
+}
+
 .widget li {
 	font-size: inherit;
-	margin-bottom: 8px;
+	margin-bottom: 16px;
 }
 
 .widget li:last-child {
@@ -1093,6 +1134,10 @@ select:focus {
 	font-weight: 700;
 	margin-bottom: 16px;
 	padding: 8px 16px;
+}
+
+.widget.widget_calendar {
+	padding-bottom: 0;
 }
 
 #wp-calendar caption {
@@ -1124,6 +1169,7 @@ select:focus {
 
 .widget.widget_categories select {
 	background: transparent url(../img/arrow.svg) no-repeat center right 8px/12px 8px;
+	width: 100%;
 }
 
 .gallery-item {
@@ -1154,6 +1200,17 @@ select:focus {
 
 .widget.widget_meta abbr {
 	text-decoration: none;
+}
+
+#recentcomments .recentcomments {
+	color: #666;
+	font-size: 14px;
+}
+
+#recentcomments .recentcomments a {
+	color: #333;
+	font-size: 16px;
+	text-decoration: underline;
 }
 
 .post-date {
@@ -1224,11 +1281,19 @@ select:focus {
 }
 
 .tagcloud {
-	padding: 4px;
+	padding: 0 16px;
 }
 
 .tag-cloud-link {
+	background: #eee;
+	border-radius: 2px;
+	display: inline-block;
+	font-size: 12px !important;
+	margin: 0 6px 6px 0;
+	padding: 2px 6px;
+	text-decoration: none;
 	transition: all 0.3s ease 0s;
+	white-space: nowrap;
 }
 
 .tag-cloud-link:hover {

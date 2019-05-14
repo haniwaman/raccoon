@@ -106,13 +106,19 @@ require_once get_template_directory() . '/inc/tags.php';
 function my_archive_title( $title ) {
 
 	if ( is_category() ) { /* カテゴリーアーカイブの場合 */
-		$title = single_cat_title( '', false );
+		$title = '' . single_cat_title( '', false ) . '';
 	} elseif ( is_tag() ) { /* タグアーカイブの場合 */
-		$title = single_tag_title( '', false );
-	} elseif ( is_post_type_archive() ) {
-		$title = post_type_archive_title( '', false ); /* 投稿タイプのアーカイブの場合 */
+		$title = '' . single_tag_title( '', false ) . '';
+	} elseif ( is_post_type_archive() ) { /* 投稿タイプのアーカイブの場合 */
+		$title = '' . post_type_archive_title( '', false ) . '';
 	} elseif ( is_tax() ) { /* タームアーカイブの場合 */
-		$title = single_term_title( '', false );
+		$title = '' . single_term_title( '', false );
+	} elseif ( is_search() ) { /* 検索結果アーカイブの場合 */
+		$title = '「' . esc_html( get_query_var( 's' ) ) . '」の検索結果';
+	} elseif ( is_author() ) { /* 作者アーカイブの場合 */
+		$title = '' . get_the_author() . '';
+	} elseif ( is_date() ) { /* 日付アーカイブの場合 */
+
 	}
 	return $title;
 };

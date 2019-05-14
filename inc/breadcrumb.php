@@ -21,6 +21,9 @@ function my_breadcrumb() {
 
 	if ( is_single() ) {
 		$breadcrumb_html .= $breadcrumb_beore . $breadcrumb_home_tag . $breadcrumb_bridge_tag;
+		if ( 'post' !== get_post_type() ) {
+			$breadcrumb_html .= '<li><a href="' . esc_url( get_post_type_archive_link( get_post_type() ) ) . '">' . esc_html( get_post_type_object( get_post_type() )->labels->name ) . '</a></li>' . $breadcrumb_bridge_tag;
+		}
 		$breadcrumb_html .= '<li><span class="breadcrumb_current">' . get_the_title() . '</span></li>';
 		$breadcrumb_html .= $breadcrumb_after;
 		echo wp_kses_post( $breadcrumb_html );
@@ -50,10 +53,17 @@ function my_breadcrumb() {
 		echo wp_kses_post( $breadcrumb_html );
 
 	} elseif ( is_post_type_archive() ) { /* 投稿タイプのアーカイブの場合 */
-		$title = '' . post_type_archive_title( '', false ) . '';
+		$breadcrumb_html .= $breadcrumb_beore . $breadcrumb_home_tag . $breadcrumb_bridge_tag;
+		$breadcrumb_html .= '<li><span class="breadcrumb_current">' . post_type_archive_title( '', false ) . '</span></li>';
+		$breadcrumb_html .= $breadcrumb_after;
+		echo wp_kses_post( $breadcrumb_html );
 
 	} elseif ( is_tax() ) { /* タームアーカイブの場合 */
-		$title = '' . single_term_title( '', false );
+		$breadcrumb_html .= $breadcrumb_beore . $breadcrumb_home_tag . $breadcrumb_bridge_tag;
+		$breadcrumb_html .= '<li><a href="' . esc_url( get_post_type_archive_link( get_post_type() ) ) . '">' . esc_html( get_post_type_object( get_post_type() )->labels->name ) . '</a></li>' . $breadcrumb_bridge_tag;
+		$breadcrumb_html .= '<li><span class="breadcrumb_current">' . single_term_title( '', false ) . '</span></li>';
+		$breadcrumb_html .= $breadcrumb_after;
+		echo wp_kses_post( $breadcrumb_html );
 
 	} elseif ( is_search() ) { /* 検索結果アーカイブの場合 */
 		$breadcrumb_html .= $breadcrumb_beore . $breadcrumb_home_tag . $breadcrumb_bridge_tag;
@@ -68,6 +78,21 @@ function my_breadcrumb() {
 		echo wp_kses_post( $breadcrumb_html );
 
 	} elseif ( is_date() ) { /* 日付アーカイブの場合 */
+		$breadcrumb_html .= $breadcrumb_beore . $breadcrumb_home_tag . $breadcrumb_bridge_tag;
+		$this_year        = get_query_var( 'year' );
+		$this_month       = get_query_var( 'monthnum' );
+		$this_day         = get_query_var( 'day' );
+		if ( $this_year ) {
+			$breadcrumb_html .= '<li><a href="' . get_year_link( $this_year ) . '">' . $this_year . '年</a></li>' . $breadcrumb_bridge_tag;
+		}
+		if ( $this_month ) {
+			$breadcrumb_html .= '<li><a href="' . get_month_link( $this_year, $this_month ) . '">' . $this_month . '月</a></li>' . $breadcrumb_bridge_tag;
+		}
+		if ( $this_day ) {
+			$breadcrumb_html .= '<li><a href="' . get_day_link( $this_year, $this_month, $this_day ) . '">' . $this_day . '日</a></li>' . $breadcrumb_bridge_tag;
+		}
+		$breadcrumb_html .= $breadcrumb_after;
+		echo wp_kses_post( $breadcrumb_html );
 
 	} elseif ( is_404() ) { /* 404ページの場合 */
 		$breadcrumb_html .= $breadcrumb_beore . $breadcrumb_home_tag . $breadcrumb_bridge_tag;

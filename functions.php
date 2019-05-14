@@ -126,7 +126,16 @@ function my_archive_title( $title ) {
 	} elseif ( is_author() ) { /* 作者アーカイブの場合 */
 		$title = '' . get_the_author() . '';
 	} elseif ( is_date() ) { /* 日付アーカイブの場合 */
-
+		$title = '';
+		if ( get_query_var( 'year' ) ) {
+			$title .= get_query_var( 'year' ) . '年';
+		}
+		if ( get_query_var( 'monthnum' ) ) {
+			$title .= get_query_var( 'monthnum' ) . '月';
+		}
+		if ( get_query_var( 'day' ) ) {
+			$title .= get_query_var( 'day' ) . '日';
+		}
 	}
 	return $title;
 };

@@ -8,6 +8,16 @@
 get_header(); ?>
 
 
+<!-- mv -->
+<div id="mv">
+<div class="inner">
+</div><!-- /inner -->
+</div><!-- /mv -->
+
+
+<?php my_breadcrumb(); ?>
+
+
 <!-- content -->
 <div id="content">
 <div class="inner">

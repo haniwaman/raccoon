@@ -97,6 +97,14 @@ require_once get_template_directory() . '/inc/tags.php';
 
 
 
+
+/**
+ * パンくずリスト
+ */
+require_once get_template_directory() . '/inc/breadcrumb.php';
+
+
+
 /**
  * アーカイブタイトル書き換え
  *

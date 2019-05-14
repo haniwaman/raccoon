@@ -421,6 +421,46 @@ select:focus {
 	width: 25.59322%;
 }
 
+.breadcrumb {
+	background: #efa336;
+}
+
+.breadcrumb > .inner {
+	padding-bottom: 0;
+	padding-top: 0;
+}
+
+.breadcrumb-list {
+	align-items: center;
+	display: flex;
+	overflow-x: hidden;
+}
+
+.breadcrumb-list li {
+	white-space: nowrap;
+}
+
+.breadcrumb-list a {
+	color: #fff;
+	display: block;
+	padding: 12px 24px;
+	text-decoration: none;
+	transition: all 0.3s ease 0s;
+}
+
+.breadcrumb-list a:hover {
+	opacity: 0.6;
+}
+
+.breadcrumb_bridge {
+	color: #fff;
+}
+
+.breadcrumb_current {
+	color: #fff;
+	padding: 12px 24px;
+}
+
 .drawer {
 	display: none;
 	z-index: 40;

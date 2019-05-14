@@ -15,6 +15,9 @@ get_header(); ?>
 </div><!-- /mv -->
 
 
+<?php my_breadcrumb(); ?>
+
+
 <!-- content -->
 <div id="content">
 <div class="inner">

@@ -1415,6 +1415,30 @@ select:focus {
 	opacity: 0.6;
 }
 
+.totop {
+	bottom: 8px;
+	display: none;
+	position: fixed;
+	right: 8px;
+}
+
+.totop a {
+	background: #666;
+	color: #fff;
+	display: block;
+	height: 42px;
+	line-height: 42px;
+	opacity: 0.6;
+	text-align: center;
+	text-decoration: none;
+	transition: all 0.3s ease 0s;
+	width: 42px;
+}
+
+.totop a:hover {
+	opacity: 1;
+}
+
 #header {
 	background: #fff;
 	width: 100%;
@@ -1591,6 +1615,12 @@ select:focus {
 	height: 38px;
 	line-height: 38px;
 	min-width: 38px;
+}
+
+.totop a {
+	height: 38px;
+	line-height: 38px;
+	width: 38px;
 }
 
 .header-nav {

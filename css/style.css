@@ -1034,6 +1034,63 @@ span.wpcf7-list-item {
 	opacity: 0.6;
 }
 
+.sns-buttons ul {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.sns-buttons li {
+	margin: 16px 12px 16px 0;
+	width: calc(25% - 12px * 3 / 4);
+}
+
+.sns-buttons li:last-child {
+	margin-right: 0;
+}
+
+.sns-buttons li i {
+	font-style: normal;
+	font-weight: 700;
+	margin-right: 4px;
+}
+
+.sns-buttons li a {
+	background: #666;
+	border-radius: 4px;
+	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
+	color: #fff;
+	display: block;
+	font-weight: 700;
+	padding: 8px 12px;
+	text-align: center;
+	text-decoration: none;
+	transition: all 0.3s ease 0s;
+}
+
+.sns-buttons li a:hover {
+	opacity: 0.6;
+}
+
+.sns-buttons li a.m_twitter {
+	background: #64b5f6;
+}
+
+.sns-buttons li a.m_facebook {
+	background: #5c6bc0;
+}
+
+.sns-buttons li a.m_hatena {
+	background: #00a4de;
+}
+
+.sns-buttons li a.m_line {
+	background: #5bcc49;
+}
+
+.sns-buttons li a.m_pocket {
+	background: #ef5350;
+}
+
 .gallery {
 	display: flex;
 	flex-wrap: wrap;
@@ -1653,6 +1710,21 @@ span.wpcf7-list-item {
 .entry-item-body {
 	padding: 12px 0;
 	width: 100%;
+}
+
+.sns-buttons {
+	margin-bottom: 6px;
+	margin-top: 6px;
+}
+
+.sns-buttons li {
+	margin-bottom: 6px;
+	margin-top: 6px;
+	width: calc(50% - 12px * 1 / 2);
+}
+
+.sns-buttons li:nth-child(2n) {
+	margin-right: 0;
 }
 
 .page-numbers {

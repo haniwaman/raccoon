@@ -1,0 +1,45 @@
+.contact-items {
+}
+
+.contact-item {
+	display: flex;
+
+	@include mq("sp") {
+		display: block;
+	}
+
+	dt,
+	dd {
+		padding: 16px 12px;
+
+		@include mq("sp") {
+			padding: 0;
+		}
+	}
+
+	dt {
+		width: 150px;
+
+		@include mq("sp") {
+			width: 100%;
+			margin-bottom: 6px;
+		}
+	}
+
+	dd {
+		width: calc(100% - 150px);
+
+		@include mq("sp") {
+			width: 100%;
+			margin-bottom: 20px;
+		}
+	}
+}
+
+.contact-submit {
+	text-align: center;
+}
+
+span.wpcf7-list-item {
+	margin: 0;
+}

@@ -274,7 +274,7 @@ input {
 			display: inline-block;
 			position: relative;
 			padding: 0 0 0 $size-radio-pd_left;
-			margin: 0 0.2em 0;
+			margin: 0 16px 0 0;
 			cursor: pointer;
 
 			&::before {
@@ -305,7 +305,7 @@ input {
 				top: 50%;
 				left: ($size-radio - $size-radio_active) / 2;
 				transform: translateY(-50%);
-				background: $cr-check;
+				background: $cr-form-bd_avtive;
 				border-radius: 50%;
 				width: $size-radio_active;
 				height: $size-radio_active;
@@ -322,7 +322,7 @@ input {
 			display: inline-block;
 			position: relative;
 			padding: 0 0 0 $size-checkbox-pd_left;
-			margin: 0 0.2em 0;
+			margin: 0 16px 0 0;
 			cursor: pointer;
 			transition: all 1s ease 0s;
 
@@ -354,12 +354,12 @@ input {
 				top: 50%;
 				left: 0;
 				transform: translateY(-50%) rotate(-45deg);
-				width: 1em;
-				height: 0.6em;
+				width: $size-checkbox;
+				height: ($size-checkbox * 0.6);
 				margin-top: -0.2em;
 				display: block;
-				border-left: 3px solid $cr-check;
-				border-bottom: 3px solid $cr-check;
+				border-left: 4px solid $cr-form-bd_avtive;
+				border-bottom: 4px solid $cr-form-bd_avtive;
 				opacity: 1;
 			}
 		}

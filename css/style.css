@@ -217,7 +217,7 @@ textarea:hover {
 }
 
 textarea:focus {
-	border-color: #eee;
+	border-color: #efa336;
 	box-shadow: none;
 	outline: none;
 }
@@ -228,7 +228,7 @@ textarea ::-moz-focus-inner {
 }
 
 input:focus {
-	border-color: #eee;
+	border-color: #efa336;
 	box-shadow: none;
 	outline: none;
 }
@@ -277,8 +277,8 @@ input[type="radio"] {
 input[type="radio"] + span {
 	cursor: pointer;
 	display: inline-block;
-	margin: 0 0.2em 0;
-	padding: 0 0 0 30px;
+	margin: 0 16px 0 0;
+	padding: 0 0 0 26px;
 	position: relative;
 }
 
@@ -289,12 +289,12 @@ input[type="radio"] + span::before {
 	border-radius: 50%;
 	content: "";
 	display: block;
-	height: 26px;
+	height: 20px;
 	left: 0;
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	width: 26px;
+	width: 20px;
 }
 
 input[type="radio"] + span::after {
@@ -304,12 +304,12 @@ input[type="radio"] + span::after {
 
 input[type="radio"]:checked + span::after {
 	-webkit-transform: translateY(-50%);
-	background: #eee;
+	background: #efa336;
 	border-radius: 50%;
 	content: "";
 	display: block;
 	height: 10px;
-	left: 8px;
+	left: 5px;
 	opacity: 1;
 	position: absolute;
 	top: 50%;
@@ -324,8 +324,8 @@ input[type="checkbox"] {
 input[type="checkbox"] + span {
 	cursor: pointer;
 	display: inline-block;
-	margin: 0 0.2em 0;
-	padding: 0 0 0 30px;
+	margin: 0 16px 0 0;
+	padding: 0 0 0 26px;
 	position: relative;
 	transition: all 1s ease 0s;
 }
@@ -337,12 +337,12 @@ input[type="checkbox"] + span::before {
 	border-radius: 2px;
 	content: "";
 	display: block;
-	height: 26px;
+	height: 20px;
 	left: 0;
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	width: 26px;
+	width: 20px;
 }
 
 input[type="checkbox"] + span::after {
@@ -352,18 +352,18 @@ input[type="checkbox"] + span::after {
 
 input[type="checkbox"]:checked + span::after {
 	-webkit-transform: translateY(-50%) rotate(-45deg);
-	border-bottom: 3px solid #eee;
-	border-left: 3px solid #eee;
+	border-bottom: 4px solid #efa336;
+	border-left: 4px solid #efa336;
 	content: "";
 	display: block;
-	height: 0.6em;
+	height: 12px;
 	left: 0;
 	margin-top: -0.2em;
 	opacity: 1;
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%) rotate(-45deg);
-	width: 1em;
+	width: 20px;
 }
 
 select {
@@ -386,7 +386,7 @@ select::-ms-expand {
 }
 
 select:focus {
-	border-color: #eee;
+	border-color: #efa336;
 	box-shadow: none;
 	outline: none;
 }
@@ -459,6 +459,31 @@ select:focus {
 .breadcrumb_current {
 	color: #fff;
 	padding: 12px 24px;
+}
+
+.contact-item {
+	display: flex;
+}
+
+.contact-item dt,
+.contact-item dd {
+	padding: 16px 12px;
+}
+
+.contact-item dt {
+	width: 150px;
+}
+
+.contact-item dd {
+	width: calc(100% - 150px);
+}
+
+.contact-submit {
+	text-align: center;
+}
+
+span.wpcf7-list-item {
+	margin: 0;
 }
 
 .drawer {
@@ -1446,8 +1471,8 @@ select:focus {
 }
 
 #header.m_anim {
-	-webkit-animation: fadeInDown 0.3s ease 0s 1 normal none running;
-	animation: fadeInDown 0.3s ease 0s 1 normal none running;
+	-webkit-animation: fadeInDown 0.5s ease 0s 1 normal none running;
+	animation: fadeInDown 0.5s ease 0s 1 normal none running;
 }
 
 #header.m_fixed {
@@ -1590,6 +1615,25 @@ select:focus {
 }
 
 #secondary {
+	width: 100%;
+}
+
+.contact-item {
+	display: block;
+}
+
+.contact-item dt,
+.contact-item dd {
+	padding: 0;
+}
+
+.contact-item dt {
+	margin-bottom: 6px;
+	width: 100%;
+}
+
+.contact-item dd {
+	margin-bottom: 20px;
 	width: 100%;
 }
 

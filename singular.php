@@ -76,10 +76,10 @@ if ( have_posts() ) :
 </article><!-- /entry -->
 
 <!-- entry-pager -->
-<div class="entry-pager">
-			<?php next_post_link( '<div class="entry-next"><div class="entry-pager-title">次の記事</div>%link</div>', '%title', false ); ?>
-			<?php previous_post_link( '<div class="entry-prev"><div class="entry-pager-title">前の記事</div>%link</div>', '%title', false ); ?>
-</div><!-- /entry-pager -->
+<nav class="entry-pager">
+	<div class="entry-next"><?php next_post_link( '<div class="entry-pager-head">次の記事</div><div class="entry-pager-title">%link</div>', '%title', false ); ?></div><!-- /entry-next -->
+	<div class="entry-prev"><?php previous_post_link( '<div class="entry-pager-head">前の記事</div><div class="entry-pager-title">%link</div>', '%title', false ); ?></div><!-- /entry-prev -->
+</nav><!-- /entry-pager -->
 
 		<?php
 endwhile;

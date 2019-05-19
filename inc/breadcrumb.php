@@ -19,7 +19,8 @@ function my_breadcrumb() {
 	$breadcrumb_bridge     = '<i class="fas fa-caret-right"></i>';
 	$breadcrumb_bridge_tag = '<li><span class="breadcrumb_bridge">' . $breadcrumb_bridge . '</span></li>';
 
-	if ( is_single() ) {
+	if ( is_front_page() ) {
+	} elseif ( is_single() ) {
 		$breadcrumb_html .= $breadcrumb_beore . $breadcrumb_home_tag . $breadcrumb_bridge_tag;
 		if ( 'post' !== get_post_type() ) {
 			$breadcrumb_html .= '<li><a href="' . esc_url( get_post_type_archive_link( get_post_type() ) ) . '">' . esc_html( get_post_type_object( get_post_type() )->labels->name ) . '</a></li>' . $breadcrumb_bridge_tag;

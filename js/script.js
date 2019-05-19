@@ -1,3 +1,24 @@
+/* Slider */
+var swiper = new Swiper( '.swiper-container', {
+	loop: true,
+	speed: 1000,
+	autoplay: {
+		delay: 5000,
+		disableOnInteraction: true
+	},
+	loopAdditionalSlides: 1,
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev'
+	},
+	pagination: {
+		el: '.swiper-pagination',
+		type: 'bullets',
+		clickable: true
+	},
+	autoHeight: false
+});
+
 /* Drawer */
 jQuery( '.drawer-open, .drawer-close' ).on( 'click', function() {
 	jQuery( '.drawer-open' ).toggleClass( 'm_checked' );
@@ -33,7 +54,7 @@ jQuery( 'a[href^="#"]' ).click( function() {
 	);
 });
 
-/* To Top */
+/* ToTop */
 jQuery( window ).on( 'scroll', function( $ ) {
 	if ( 100 < jQuery( this ).scrollTop() ) {
 		jQuery( '.totop' ).show();

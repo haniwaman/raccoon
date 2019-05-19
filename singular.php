@@ -8,12 +8,7 @@
 get_header(); ?>
 
 
-<!-- mv -->
-<div id="mv">
-<div class="inner">
-</div><!-- /inner -->
-</div><!-- /mv -->
-
+<?php get_template_part( 'mv' ); ?>
 
 <?php my_breadcrumb(); ?>
 

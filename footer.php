@@ -7,27 +7,6 @@
 
 ?>
 
-<!-- footer-menu -->
-<div id="footer-menu">
-<div class="inner">
-
-<?php
-	wp_nav_menu(
-		array(
-			'container'       => false,
-			'depth'           => 1,
-			'theme_location'  => 'footer',
-			'container'       => 'nav',
-			'container_class' => 'footer-nav',
-			'menu_class'      => 'footer-list',
-		)
-	);
-	?>
-
-</div><!-- /inner -->
-</div><!-- /footer-menu -->
-
-
 <!-- footer -->
 <footer id="footer">
 <div class="inner">

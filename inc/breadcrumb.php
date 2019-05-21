@@ -19,8 +19,16 @@ function my_breadcrumb() {
 	$breadcrumb_bridge     = '<i class="fas fa-caret-right"></i>';
 	$breadcrumb_bridge_tag = '<li><span class="breadcrumb_bridge">' . $breadcrumb_bridge . '</span></li>';
 
-	if ( is_front_page() ) {
-	} elseif ( is_single() ) {
+	if ( is_front_page() ) { /* フロントページの場合 */
+		echo '';
+
+	} elseif ( is_home() ) { /* 投稿一覧の場合 */
+		$breadcrumb_html .= $breadcrumb_beore . $breadcrumb_home_tag . $breadcrumb_bridge_tag;
+		$breadcrumb_html .= '<li><span class="breadcrumb_current">' . get_the_title() . '</span></li>';
+		$breadcrumb_html .= $breadcrumb_after;
+		echo wp_kses_post( $breadcrumb_html );
+
+	} elseif ( is_single() ) { /* 投稿ページの場合 */
 		$breadcrumb_html .= $breadcrumb_beore . $breadcrumb_home_tag . $breadcrumb_bridge_tag;
 		if ( 'post' !== get_post_type() ) {
 			$breadcrumb_html .= '<li><a href="' . esc_url( get_post_type_archive_link( get_post_type() ) ) . '">' . esc_html( get_post_type_object( get_post_type() )->labels->name ) . '</a></li>' . $breadcrumb_bridge_tag;
@@ -29,7 +37,7 @@ function my_breadcrumb() {
 		$breadcrumb_html .= $breadcrumb_after;
 		echo wp_kses_post( $breadcrumb_html );
 
-	} elseif ( is_page() ) {
+	} elseif ( is_page() ) { /* 固定ページの場合 */
 		$breadcrumb_html .= $breadcrumb_beore . $breadcrumb_home_tag . $breadcrumb_bridge_tag;
 		$breadcrumb_html .= '<li><span class="breadcrumb_current">' . get_the_title() . '</span></li>';
 		$breadcrumb_html .= $breadcrumb_after;
@@ -37,19 +45,13 @@ function my_breadcrumb() {
 
 	} elseif ( is_category() ) { /* カテゴリーアーカイブの場合 */
 		$breadcrumb_html .= $breadcrumb_beore . $breadcrumb_home_tag . $breadcrumb_bridge_tag;
-		$this_categories  = my_get_post_categories();
-		if ( isset( $this_categories[0] ) ) {
-			$breadcrumb_html .= '<li><span class="breadcrumb_current">' . $this_categories[0]['name'] . '</span></li>';
-		}
+		$breadcrumb_html .= '<li><span class="breadcrumb_current">' . single_cat_title( '', false ) . '</span></li>';
 		$breadcrumb_html .= $breadcrumb_after;
 		echo wp_kses_post( $breadcrumb_html );
 
 	} elseif ( is_tag() ) { /* タグアーカイブの場合 */
 		$breadcrumb_html .= $breadcrumb_beore . $breadcrumb_home_tag . $breadcrumb_bridge_tag;
-		$this_tags        = my_get_post_tags();
-		if ( isset( $this_tags[0] ) ) {
-			$breadcrumb_html .= '<li><span class="breadcrumb_current">' . $this_tags[0]['name'] . '</span></li>';
-		}
+		$breadcrumb_html .= '<li><span class="breadcrumb_current">' . single_tag_title( '', false ) . '</span></li>';
 		$breadcrumb_html .= $breadcrumb_after;
 		echo wp_kses_post( $breadcrumb_html );
 

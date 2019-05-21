@@ -1,6 +1,5 @@
 .widget {
 	margin-bottom: 32px;
-	padding-bottom: 16px;
 	background: #fff;
 
 	&:last-child {
@@ -16,6 +15,21 @@
 				margin-top: 16px;
 			}
 		}
+
+		&.sub-menu {
+
+			li {
+				margin-top: 16px;
+			}
+		}
+	}
+
+	> ul {
+		padding: 16px;
+	}
+
+	.menu {
+		padding: 16px;
 	}
 
 	li {
@@ -30,19 +44,23 @@
 			text-decoration: none;
 			display: inline-block;
 			font-size: inherit;
+		}
+	}
 
-			&:hover {
-				opacity: $opacity;
-			}
+	a {
+		transition: all 0.3s ease 0s;
+
+		&:hover {
+			color: $cr-m;
+			text-decoration: underline;
 		}
 	}
 }
 
 .widget-title {
 	background: $cr-m;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 700;
 	padding: 8px 16px;
 	color: #fff;
-	margin-bottom: 16px;
 }

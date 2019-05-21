@@ -1,14 +1,14 @@
 <?php
 /**
- * Main Visual
+ * Main Visual Slider
  *
  * @package WordPress
  */
 
-get_header(); ?>
+?>
 
-<!-- mv -->
-<div id="mv">
+<!-- mv-slide -->
+<div id="mv" class="mv-slide">
 
 <?php
 $mv_query = new WP_Query(
@@ -41,7 +41,4 @@ $mv_query = new WP_Query(
 <?php endif; ?>
 <?php wp_reset_postdata(); ?>
 
-<?php if ( ! $mv_is_slide ) : ?>
-<div href="" class="mv-img"><img src="<?php echo esc_url( get_template_directory_uri() . '/img/mv.png' ); ?>" alt=""></div><!-- /mv-img -->
-<?php endif; ?>
-</div><!-- /mv -->
+</div><!-- /mv-slide -->

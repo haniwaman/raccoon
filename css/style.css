@@ -165,7 +165,7 @@ form {
 
 form button {
 	-webkit-appearance: none;
-	background-color: #efa336;
+	background-color: #bd3c4f;
 	background-image: none;
 	border: none;
 	border-radius: 0;
@@ -217,7 +217,7 @@ textarea:hover {
 }
 
 textarea:focus {
-	border-color: #efa336;
+	border-color: #bd3c4f;
 	box-shadow: none;
 	outline: none;
 }
@@ -228,7 +228,7 @@ textarea ::-moz-focus-inner {
 }
 
 input:focus {
-	border-color: #efa336;
+	border-color: #bd3c4f;
 	box-shadow: none;
 	outline: none;
 }
@@ -236,7 +236,7 @@ input:focus {
 input[type="submit"],
 input[type="button"] {
 	-webkit-appearance: none;
-	background-color: #efa336;
+	background-color: #bd3c4f;
 	background-image: none;
 	border: none;
 	border-radius: 0;
@@ -304,7 +304,7 @@ input[type="radio"] + span::after {
 
 input[type="radio"]:checked + span::after {
 	-webkit-transform: translateY(-50%);
-	background: #efa336;
+	background: #bd3c4f;
 	border-radius: 50%;
 	content: "";
 	display: block;
@@ -352,8 +352,8 @@ input[type="checkbox"] + span::after {
 
 input[type="checkbox"]:checked + span::after {
 	-webkit-transform: translateY(-50%) rotate(-45deg);
-	border-bottom: 4px solid #efa336;
-	border-left: 4px solid #efa336;
+	border-bottom: 4px solid #bd3c4f;
+	border-left: 4px solid #bd3c4f;
 	content: "";
 	display: block;
 	height: 12px;
@@ -376,6 +376,7 @@ select {
 	border: 1px solid #eee;
 	border-radius: 0;
 	color: inherit;
+	cursor: pointer;
 	font-family: inherit;
 	font-size: 1em;
 	padding: 0.4em 2.4em 0.4em 0.8em;
@@ -386,7 +387,7 @@ select::-ms-expand {
 }
 
 select:focus {
-	border-color: #efa336;
+	border-color: #bd3c4f;
 	box-shadow: none;
 	outline: none;
 }
@@ -404,7 +405,7 @@ select:focus {
 .inner {
 	margin: 0 auto;
 	max-width: 100%;
-	padding: 80px 0;
+	padding: 32px 0;
 	width: 1180px;
 }
 
@@ -422,7 +423,7 @@ select:focus {
 }
 
 .breadcrumb {
-	background: #efa336;
+	background: #bd3c4f;
 }
 
 .breadcrumb > .inner {
@@ -433,7 +434,7 @@ select:focus {
 .breadcrumb-list {
 	align-items: center;
 	display: flex;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
 .breadcrumb-list li {
@@ -441,9 +442,7 @@ select:focus {
 }
 
 .breadcrumb-list a {
-	color: #fff;
 	display: block;
-	padding: 12px 24px;
 	text-decoration: none;
 	transition: all 0.3s ease 0s;
 }
@@ -452,13 +451,16 @@ select:focus {
 	opacity: 0.6;
 }
 
-.breadcrumb_bridge {
+.breadcrumb-list a,
+.breadcrumb-list .breadcrumb_current {
 	color: #fff;
+	font-size: 14px;
+	padding: 10px 20px;
 }
 
-.breadcrumb_current {
+.breadcrumb_bridge {
 	color: #fff;
-	padding: 12px 24px;
+	font-size: 14px;
 }
 
 .contact-item {
@@ -594,7 +596,7 @@ span.wpcf7-list-item {
 
 .drawer-content {
 	-webkit-transform: translateX(105%);
-	background: #efa336;
+	background: #bd3c4f;
 	color: #fff;
 	height: 100%;
 	max-width: 90%;
@@ -631,7 +633,7 @@ span.wpcf7-list-item {
 }
 
 .drawer-nav li a span {
-	color: #efa336;
+	color: #bd3c4f;
 	font-size: 14px;
 	margin-left: 12px;
 }
@@ -795,9 +797,9 @@ span.wpcf7-list-item {
 
 .entry {
 	background: #fff;
-	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
+	border: 1px solid #eee;
 	margin-bottom: 32px;
-	padding: 24px;
+	padding: 24px 24px 42px;
 }
 
 .entry-header {
@@ -1147,12 +1149,12 @@ span.wpcf7-list-item {
 
 .sns-buttons li a {
 	background: #666;
-	border-radius: 4px;
+	border-radius: 2px;
 	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
 	color: #fff;
 	display: block;
 	font-weight: 700;
-	padding: 8px 12px;
+	padding: 6px 12px;
 	text-align: center;
 	text-decoration: none;
 	transition: all 0.3s ease 0s;
@@ -1182,14 +1184,52 @@ span.wpcf7-list-item {
 	background: #ef5350;
 }
 
+.sns-buttons-org ul {
+	display: flex;
+}
+
+.sns-buttons-org li {
+	margin-bottom: 8px;
+	margin-right: 8px;
+}
+
+.sns-buttons-org li:last-child {
+	margin-right: 0;
+}
+
+/* SNSボタンウィジェット */
+
+.fb-share-button > span {
+	vertical-align: top !important;
+}
+
 .gallery {
 	display: flex;
 	flex-wrap: wrap;
 }
 
+.gallery-caption {
+	font-size: 14px;
+	padding: 4px;
+	text-align: left;
+}
+
+.gallery-icon {
+	text-align: center;
+}
+
 .gallery-item {
 	margin-bottom: 8px;
 	padding: 4px;
+	width: 100%;
+}
+
+.gallery-item a {
+	transition: all 0.3s ease 0s;
+}
+
+.gallery-item a:hover {
+	opacity: 0.6;
 }
 
 .gallery-columns-2 .gallery-item {
@@ -1234,8 +1274,8 @@ span.wpcf7-list-item {
 }
 
 .pagenation a:hover {
-	background: #efa336;
-	border: 1px solid #efa336;
+	background: #bd3c4f;
+	border: 1px solid #bd3c4f;
 	color: #fff;
 }
 
@@ -1247,8 +1287,8 @@ span.wpcf7-list-item {
 
 .pagenation a.next:hover,
 .pagenation a.prev:hover {
-	background: #efa336;
-	border: 1px solid #efa336;
+	background: #bd3c4f;
+	border: 1px solid #bd3c4f;
 	color: #fff;
 }
 
@@ -1270,8 +1310,8 @@ span.wpcf7-list-item {
 }
 
 .page-numbers.current {
-	background: #efa336;
-	border: 1px solid #efa336;
+	background: #bd3c4f;
+	border: 1px solid #bd3c4f;
 	color: #fff;
 }
 
@@ -1282,7 +1322,9 @@ span.wpcf7-list-item {
 }
 
 .wp-caption {
+	margin: 0 auto;
 	max-width: 100%;
+	text-align: center;
 }
 
 .wp-caption a {
@@ -1295,7 +1337,8 @@ span.wpcf7-list-item {
 
 .wp-caption-text {
 	font-size: 14px;
-	margin-top: 4px;
+	padding: 4px;
+	text-align: left;
 }
 
 .widget.widget_archive select {
@@ -1306,7 +1349,6 @@ span.wpcf7-list-item {
 .widget {
 	background: #fff;
 	margin-bottom: 32px;
-	padding-bottom: 16px;
 }
 
 .widget:last-child {
@@ -1319,6 +1361,18 @@ span.wpcf7-list-item {
 
 .widget ul.children li {
 	margin-top: 16px;
+}
+
+.widget ul.sub-menu li {
+	margin-top: 16px;
+}
+
+.widget > ul {
+	padding: 16px;
+}
+
+.widget .menu {
+	padding: 16px;
 }
 
 .widget li {
@@ -1336,16 +1390,20 @@ span.wpcf7-list-item {
 	text-decoration: none;
 }
 
-.widget li a:hover {
-	opacity: 0.6;
+.widget a {
+	transition: all 0.3s ease 0s;
+}
+
+.widget a:hover {
+	color: #bd3c4f;
+	text-decoration: underline;
 }
 
 .widget-title {
-	background: #efa336;
+	background: #bd3c4f;
 	color: #fff;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 700;
-	margin-bottom: 16px;
 	padding: 8px 16px;
 }
 
@@ -1354,7 +1412,7 @@ span.wpcf7-list-item {
 }
 
 #wp-calendar caption {
-	margin-bottom: 4px;
+	padding: 4px;
 }
 
 #wp-calendar th,
@@ -1371,7 +1429,7 @@ span.wpcf7-list-item {
 }
 
 #wp-calendar a {
-	color: #efa336;
+	color: #bd3c4f;
 	text-decoration: none;
 	transition: all 0.3s ease 0s;
 }
@@ -1383,32 +1441,6 @@ span.wpcf7-list-item {
 .widget.widget_categories select {
 	background: transparent url(../img/arrow.svg) no-repeat center right 8px/12px 8px;
 	width: 100%;
-}
-
-.gallery-item {
-	padding: 0 4px;
-	text-align: center;
-}
-
-.gallery-item a {
-	transition: all 0.3s ease 0s;
-}
-
-.gallery-item a:hover {
-	opacity: 0.6;
-}
-
-.gallery-caption {
-	font-size: 14px;
-	margin-top: 4px;
-}
-
-.gallery-columns-3 {
-	display: flex;
-}
-
-.gallery-columns-3 .gallery-item {
-	width: 33.33333333%;
 }
 
 .widget.widget_meta abbr {
@@ -1424,6 +1456,10 @@ span.wpcf7-list-item {
 	color: #333;
 	font-size: 16px;
 	text-decoration: underline;
+}
+
+#recentcomments .recentcomments a:hover {
+	color: #bd3c4f;
 }
 
 .post-date {
@@ -1494,7 +1530,7 @@ span.wpcf7-list-item {
 }
 
 .tagcloud {
-	padding: 0 16px;
+	padding: 16px;
 }
 
 .tag-cloud-link {
@@ -1509,8 +1545,8 @@ span.wpcf7-list-item {
 	white-space: nowrap;
 }
 
-.tag-cloud-link:hover {
-	opacity: 0.6;
+.textwidget {
+	padding: 16px;
 }
 
 .archive-header {
@@ -1596,12 +1632,12 @@ span.wpcf7-list-item {
 }
 
 .totop a {
-	background: #666;
+	background: #bd3c4f;
+	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
 	color: #fff;
 	display: block;
 	height: 42px;
 	line-height: 42px;
-	opacity: 0.6;
 	text-align: center;
 	text-decoration: none;
 	transition: all 0.3s ease 0s;
@@ -1609,7 +1645,7 @@ span.wpcf7-list-item {
 }
 
 .totop a:hover {
-	opacity: 1;
+	opacity: 0.6;
 }
 
 #header {
@@ -1716,7 +1752,7 @@ span.wpcf7-list-item {
 }
 
 .header-nav .sub-menu li a {
-	background: #efa336;
+	background: #bd3c4f;
 	color: #fff;
 	display: block;
 	font-size: 14px;
@@ -1731,12 +1767,15 @@ span.wpcf7-list-item {
 	overflow: hidden;
 }
 
-#mv > .inner {
-	padding-bottom: 0;
-	padding-top: 0;
+.mv-image {
+	height: 500px;
 }
 
-.mv-img img {
+.mv-image img {
+	-o-object-fit: cover;
+	-o-object-position: center center;
+	object-fit: cover;
+	object-position: center center;
 	width: 100%;
 }
 

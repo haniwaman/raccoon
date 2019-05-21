@@ -17,9 +17,11 @@
 </head>
 
 <body <?php body_class(); ?>>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.2"></script>
 
 <!-- header -->
-<header id="header" class="m_fixed m_anim">
+<header id="header">
 <div class="inner">
 
 <!-- header-logo -->

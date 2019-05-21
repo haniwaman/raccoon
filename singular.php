@@ -7,11 +7,7 @@
 
 get_header(); ?>
 
-
-<?php get_template_part( 'mv' ); ?>
-
 <?php my_breadcrumb(); ?>
-
 
 <!-- content -->
 <div id="content">
@@ -39,7 +35,7 @@ if ( have_posts() ) :
 			<time class="entry-published" datetime="<?php the_time( 'c' ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time>
 		</div><!-- /entry-meta -->
 
-		<?php get_template_part( 'parts/sns' ); ?>
+		<?php get_template_part( 'parts/sns-org' ); ?>
 
 		<!-- entry-img -->
 		<div class="entry-img">

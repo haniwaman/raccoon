@@ -1,5 +1,7 @@
 .wp-caption {
 	max-width: 100%;
+	text-align: center;
+	margin: 0 auto;
 
 	a {
 		transition: all 0.3s ease 0s;
@@ -11,6 +13,7 @@
 }
 
 .wp-caption-text {
-	margin-top: 4px;
+	padding: 4px;
 	font-size: 14px;
+	text-align: left;
 }

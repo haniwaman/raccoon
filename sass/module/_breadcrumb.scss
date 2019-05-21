@@ -10,7 +10,7 @@
 .breadcrumb-list {
 	display: flex;
 	align-items: center;
-	overflow-x: hidden;
+	overflow: hidden;
 
 	li {
 		white-space: nowrap;
@@ -18,22 +18,23 @@
 
 	a {
 		text-decoration: none;
-		color: #fff;
 		display: block;
-		padding: 12px 24px;
 		transition: all 0.3s ease 0s;
 
 		&:hover {
 			opacity: $opacity;
 		}
 	}
+
+	a,
+	.breadcrumb_current {
+		color: #fff;
+		padding: 10px 20px;
+		font-size: 14px;
+	}
 }
 
 .breadcrumb_bridge {
 	color: #fff;
-}
-
-.breadcrumb_current {
-	color: #fff;
-	padding: 12px 24px;
+	font-size: 14px;
 }

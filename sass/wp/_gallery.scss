@@ -3,9 +3,28 @@
 	flex-wrap: wrap;
 }
 
+.gallery-caption {
+	font-size: 14px;
+	padding: 4px;
+	text-align: left;
+}
+
+.gallery-icon {
+	text-align: center;
+}
+
 .gallery-item {
 	padding: 4px;
 	margin-bottom: 8px;
+	width: 100%;
+
+	a {
+		transition: all 0.3s ease 0s;
+
+		&:hover {
+			opacity: $opacity;
+		}
+	}
 }
 
 .gallery-columns-2 {

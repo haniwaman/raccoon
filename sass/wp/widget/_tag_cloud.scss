@@ -2,7 +2,7 @@
 }
 
 .tagcloud {
-	padding: 0 16px;
+	padding: 16px;
 }
 
 .tag-cloud-link {
@@ -15,10 +15,6 @@
 	text-decoration: none;
 	margin: 0 6px 6px 0;
 	padding: 2px 6px;
-
-	&:hover {
-		opacity: $opacity;
-	}
 }
 
 .tag-link-count {

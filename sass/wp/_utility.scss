@@ -17,3 +17,24 @@
 	font-size: 14px;
 	text-align: left;
 }
+
+.post_password {
+	position: relative;
+	margin-top: 1.2em;
+
+	.post_password-field {
+		height: 42px;
+		line-height: 42px;
+		width: 100%;
+	}
+
+	.post_password-submit {
+		position: absolute;
+		right: 1px;
+		top: 50%;
+		transform: translateY(-50%);
+		height: 40px;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}

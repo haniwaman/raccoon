@@ -156,3 +156,19 @@ function my_breadcrumb_title( $title ) {
 	return $title;
 }
 add_filter( 'raccoon_breadcrumb_title', 'my_breadcrumb_title' );
+
+/**
+ * パスワードで保護されたページのフォーム
+ *
+ * @return $my_password_form パスワード入力のHTMLフォーム.
+ */
+function my_password_form() {
+	$my_password_form  = '<p>このコンテンツはパスワードで保護されています。閲覧するには以下にパスワードを入力してください。</p>';
+	$my_password_form .= '<form class="post_password" action="' . home_url() . '/wp-login.php?action=postpass" class="post-password-form" method="post">';
+	$my_password_form .= '<input name="post_password" type="password" placeholder="パスワード入力" class="post_password-field">';
+	$my_password_form .= '<input type="submit" name="Submit" value="確定" class="post_password-submit">';
+	$my_password_form .= '</form>';
+
+	return $my_password_form;
+}
+add_filter( 'the_password_form', 'my_password_form' );

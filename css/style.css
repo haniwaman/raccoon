@@ -23,6 +23,7 @@ body {
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.6;
+	overflow-wrap: break-word;
 	overflow-x: hidden;
 }
 
@@ -1387,6 +1388,28 @@ span.wpcf7-list-item {
 	font-size: 14px;
 	padding: 4px;
 	text-align: left;
+}
+
+.post_password {
+	margin-top: 1.2em;
+	position: relative;
+}
+
+.post_password .post_password-field {
+	height: 42px;
+	line-height: 42px;
+	width: 100%;
+}
+
+.post_password .post_password-submit {
+	-webkit-transform: translateY(-50%);
+	height: 40px;
+	padding-bottom: 0;
+	padding-top: 0;
+	position: absolute;
+	right: 1px;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 .widget.widget_archive select {

@@ -20,6 +20,7 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	background: $cr-bg;
 	overflow-x: hidden;
+	overflow-wrap: break-word;
 }
 
 article,

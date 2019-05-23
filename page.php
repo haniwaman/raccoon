@@ -1,6 +1,6 @@
 <?php
 /**
- * Singular
+ * Page
  *
  * @package WordPress
  */

@@ -1008,32 +1008,80 @@ span.wpcf7-list-item {
 }
 
 .entry-prev {
-	padding: 4px;
-	text-align: right;
-	width: 50%;
-}
-
-.entry-prev a {
-	text-decoration: none;
-	transition: all 0.3s ease 0s;
-}
-
-.entry-prev a:hover {
-	opacity: 0.6;
+	margin-right: auto;
+	width: 40%;
 }
 
 .entry-next {
-	padding: 4px;
-	width: 50%;
+	margin-left: auto;
+	width: 40%;
 }
 
-.entry-next a {
+.entry-pager-head {
+	color: #666;
+	display: block;
+	margin-bottom: 4px;
 	text-decoration: none;
 	transition: all 0.3s ease 0s;
 }
 
-.entry-next a:hover {
+.entry-pager-head:hover {
 	opacity: 0.6;
+}
+
+.entry-pager-head::before {
+	content: "\f053";
+	font-family: "Font Awesome 5 Free", sans-serif;
+	font-weight: 900;
+	margin-right: 6px;
+}
+
+.entry-next .entry-pager-head {
+	text-align: right;
+}
+
+.entry-next .entry-pager-head::before {
+	display: none;
+}
+
+.entry-next .entry-pager-head::after {
+	content: "\f054";
+	font-family: "Font Awesome 5 Free", sans-serif;
+	font-weight: 900;
+	margin-left: 6px;
+}
+
+.entry-pager-item {
+	background: #fff;
+	border: 1px solid #eee;
+	display: flex;
+	text-decoration: none;
+	transition: all 0.3s ease 0s;
+}
+
+.entry-pager-item:hover {
+	opacity: 0.6;
+}
+
+.entry-next .entry-pager-item {
+	flex-direction: row-reverse;
+}
+
+.entry-pager-img {
+	width: 80px;
+}
+
+.entry-pager-img img {
+	width: 80px;
+}
+
+.entry-pager-body {
+	padding: 12px;
+	width: calc(100% - 80px);
+}
+
+.entry-pager-title {
+	font-size: 14px;
 }
 
 .swiper-container {

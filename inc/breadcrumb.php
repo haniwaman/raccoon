@@ -33,50 +33,50 @@ function my_breadcrumb() {
 		if ( 'post' !== get_post_type() ) {
 			$breadcrumb_html .= '<li><a href="' . esc_url( get_post_type_archive_link( get_post_type() ) ) . '">' . esc_html( get_post_type_object( get_post_type() )->labels->name ) . '</a></li>' . $breadcrumb_bridge_tag;
 		}
-		$breadcrumb_html .= '<li><span class="breadcrumb_current">' . get_the_title() . '</span></li>';
+		$breadcrumb_html .= '<li><span class="breadcrumb_current">' . apply_filters( 'raccoon_breadcrumb_title', get_the_title() ) . '</span></li>';
 		$breadcrumb_html .= $breadcrumb_after;
 		echo wp_kses_post( $breadcrumb_html );
 
 	} elseif ( is_page() ) { /* 固定ページの場合 */
 		$breadcrumb_html .= $breadcrumb_beore . $breadcrumb_home_tag . $breadcrumb_bridge_tag;
-		$breadcrumb_html .= '<li><span class="breadcrumb_current">' . get_the_title() . '</span></li>';
+		$breadcrumb_html .= '<li><span class="breadcrumb_current">' . apply_filters( 'raccoon_breadcrumb_title', get_the_title() ) . '</span></li>';
 		$breadcrumb_html .= $breadcrumb_after;
 		echo wp_kses_post( $breadcrumb_html );
 
 	} elseif ( is_category() ) { /* カテゴリーアーカイブの場合 */
 		$breadcrumb_html .= $breadcrumb_beore . $breadcrumb_home_tag . $breadcrumb_bridge_tag;
-		$breadcrumb_html .= '<li><span class="breadcrumb_current">' . single_cat_title( '', false ) . '</span></li>';
+		$breadcrumb_html .= '<li><span class="breadcrumb_current">' . apply_filters( 'raccoon_breadcrumb_title', single_cat_title( '', false ) ) . '</span></li>';
 		$breadcrumb_html .= $breadcrumb_after;
 		echo wp_kses_post( $breadcrumb_html );
 
 	} elseif ( is_tag() ) { /* タグアーカイブの場合 */
 		$breadcrumb_html .= $breadcrumb_beore . $breadcrumb_home_tag . $breadcrumb_bridge_tag;
-		$breadcrumb_html .= '<li><span class="breadcrumb_current">' . single_tag_title( '', false ) . '</span></li>';
+		$breadcrumb_html .= '<li><span class="breadcrumb_current">' . apply_filters( 'raccoon_breadcrumb_title', single_tag_title( '', false ) ) . '</span></li>';
 		$breadcrumb_html .= $breadcrumb_after;
 		echo wp_kses_post( $breadcrumb_html );
 
 	} elseif ( is_post_type_archive() ) { /* 投稿タイプのアーカイブの場合 */
 		$breadcrumb_html .= $breadcrumb_beore . $breadcrumb_home_tag . $breadcrumb_bridge_tag;
-		$breadcrumb_html .= '<li><span class="breadcrumb_current">' . post_type_archive_title( '', false ) . '</span></li>';
+		$breadcrumb_html .= '<li><span class="breadcrumb_current">' . apply_filters( 'raccoon_breadcrumb_title', post_type_archive_title( '', false ) ) . '</span></li>';
 		$breadcrumb_html .= $breadcrumb_after;
 		echo wp_kses_post( $breadcrumb_html );
 
 	} elseif ( is_tax() ) { /* タームアーカイブの場合 */
 		$breadcrumb_html .= $breadcrumb_beore . $breadcrumb_home_tag . $breadcrumb_bridge_tag;
 		$breadcrumb_html .= '<li><a href="' . esc_url( get_post_type_archive_link( get_post_type() ) ) . '">' . esc_html( get_post_type_object( get_post_type() )->labels->name ) . '</a></li>' . $breadcrumb_bridge_tag;
-		$breadcrumb_html .= '<li><span class="breadcrumb_current">' . single_term_title( '', false ) . '</span></li>';
+		$breadcrumb_html .= '<li><span class="breadcrumb_current">' . apply_filters( 'raccoon_breadcrumb_title', single_term_title( '', false ) ) . '</span></li>';
 		$breadcrumb_html .= $breadcrumb_after;
 		echo wp_kses_post( $breadcrumb_html );
 
 	} elseif ( is_search() ) { /* 検索結果アーカイブの場合 */
 		$breadcrumb_html .= $breadcrumb_beore . $breadcrumb_home_tag . $breadcrumb_bridge_tag;
-		$breadcrumb_html .= '<li><span class="breadcrumb_current">「' . get_query_var( 's' ) . '」の検索結果</span></li>';
+		$breadcrumb_html .= '<li><span class="breadcrumb_current">「' . apply_filters( 'raccoon_breadcrumb_title', get_query_var( 's' ) . '」の検索結果' ) . '</span></li>';
 		$breadcrumb_html .= $breadcrumb_after;
 		echo wp_kses_post( $breadcrumb_html );
 
 	} elseif ( is_author() ) { /* 作者アーカイブの場合 */
 		$breadcrumb_html .= $breadcrumb_beore . $breadcrumb_home_tag . $breadcrumb_bridge_tag;
-		$breadcrumb_html .= '<li><span class="breadcrumb_current">' . get_the_author() . '</span></li>';
+		$breadcrumb_html .= '<li><span class="breadcrumb_current">' . apply_filters( 'raccoon_breadcrumb_title', get_the_author() ) . '</span></li>';
 		$breadcrumb_html .= $breadcrumb_after;
 		echo wp_kses_post( $breadcrumb_html );
 

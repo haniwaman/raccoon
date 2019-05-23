@@ -15,7 +15,8 @@ function my_setup() {
 	add_theme_support( 'automatic-feed-links' ); /* RSSフィード */
 	add_theme_support( 'title-tag' ); /* タイトルタグ自動生成 */
 	add_theme_support(
-		'html5', array( /* HTML5のタグで出力 */
+		'html5',
+		array( /* HTML5のタグで出力 */
 			'search-form',
 			'comment-form',
 			'comment-list',
@@ -142,3 +143,16 @@ function my_archive_title( $title ) {
 	return $title;
 };
 add_filter( 'get_the_archive_title', 'my_archive_title' );
+
+
+/**
+ * パンくずのタイトルの書き換え
+ *
+ * @param string $title 変換前のタイトル.
+ * @return string $title 変換後のタイトル.
+ */
+function my_breadcrumb_title( $title ) {
+	$title = mb_strimwidth( $title, 0, 64, '…', 'UTF-8' );
+	return $title;
+}
+add_filter( 'raccoon_breadcrumb_title', 'my_breadcrumb_title' );

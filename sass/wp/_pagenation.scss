@@ -1,6 +1,7 @@
 .pagenation {
-	text-align: center;
 	margin-top: 32px;
+	display: flex;
+	justify-content: center;
 
 	a {
 		transition: all 0.3s ease 0s;
@@ -34,7 +35,6 @@
 	line-height: 42px;
 	color: #333;
 	text-decoration: none;
-	display: inline-block;
 	margin-right: 8px;
 
 	@include mq("sp") {

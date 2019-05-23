@@ -166,7 +166,7 @@ form {
 
 form button {
 	-webkit-appearance: none;
-	background-color: #bd3c4f;
+	background-color: #00796b;
 	background-image: none;
 	border: none;
 	border-radius: 0;
@@ -218,7 +218,7 @@ textarea:hover {
 }
 
 textarea:focus {
-	border-color: #bd3c4f;
+	border-color: #00796b;
 	box-shadow: none;
 	outline: none;
 }
@@ -229,7 +229,7 @@ textarea ::-moz-focus-inner {
 }
 
 input:focus {
-	border-color: #bd3c4f;
+	border-color: #00796b;
 	box-shadow: none;
 	outline: none;
 }
@@ -237,7 +237,7 @@ input:focus {
 input[type="submit"],
 input[type="button"] {
 	-webkit-appearance: none;
-	background-color: #bd3c4f;
+	background-color: #00796b;
 	background-image: none;
 	border: none;
 	border-radius: 0;
@@ -305,7 +305,7 @@ input[type="radio"] + span::after {
 
 input[type="radio"]:checked + span::after {
 	-webkit-transform: translateY(-50%);
-	background: #bd3c4f;
+	background: #00796b;
 	border-radius: 50%;
 	content: "";
 	display: block;
@@ -353,8 +353,8 @@ input[type="checkbox"] + span::after {
 
 input[type="checkbox"]:checked + span::after {
 	-webkit-transform: translateY(-50%) rotate(-45deg);
-	border-bottom: 4px solid #bd3c4f;
-	border-left: 4px solid #bd3c4f;
+	border-bottom: 4px solid #00796b;
+	border-left: 4px solid #00796b;
 	content: "";
 	display: block;
 	height: 12px;
@@ -388,7 +388,7 @@ select::-ms-expand {
 }
 
 select:focus {
-	border-color: #bd3c4f;
+	border-color: #00796b;
 	box-shadow: none;
 	outline: none;
 }
@@ -424,7 +424,7 @@ select:focus {
 }
 
 .breadcrumb {
-	background: #bd3c4f;
+	background: #00796b;
 }
 
 .breadcrumb > .inner {
@@ -597,7 +597,7 @@ span.wpcf7-list-item {
 
 .drawer-content {
 	-webkit-transform: translateX(105%);
-	background: #bd3c4f;
+	background: #00796b;
 	color: #fff;
 	height: 100%;
 	max-width: 90%;
@@ -634,7 +634,7 @@ span.wpcf7-list-item {
 }
 
 .drawer-nav li a span {
-	color: #bd3c4f;
+	color: #00796b;
 	font-size: 14px;
 	margin-left: 12px;
 }
@@ -943,10 +943,8 @@ span.wpcf7-list-item {
 	vertical-align: middle;
 }
 
-.entry-body strong {
-	font-weight: 700;
-}
-
+.entry-body strong,
+.entry-body em,
 .entry-body b {
 	font-weight: 700;
 }
@@ -964,25 +962,72 @@ span.wpcf7-list-item {
 	vertical-align: middle;
 }
 
+.entry-body dl {
+	margin-top: 1em;
+}
+
+.entry-body dt {
+	font-weight: 700;
+	margin-bottom: 4px;
+	margin-top: 0.8em;
+}
+
+.entry-body dd {
+	padding-left: 4px;
+}
+
+.entry-body var,
+.entry-body code,
+.entry-body kbd {
+	background: #fee;
+	color: #00796b;
+	display: inline-block;
+	font-style: normal;
+	padding-left: 0.2em;
+	padding-right: 0.2em;
+	vertical-align: middle;
+}
+
+.entry-body pre {
+	margin-top: 1.2em;
+	overflow: auto;
+	padding: 1em;
+	white-space: pre;
+}
+
+.entry-body pre code {
+	background: #2d2d2d;
+	color: #fff;
+	margin: -1em;
+	padding: 12px;
+	position: relative;
+}
+
 .entry-links {
+	display: flex;
+	justify-content: center;
 	margin-top: 32px;
-	text-align: center;
 }
 
 .entry-links .post-page-numbers {
-	background: #fff;
-	border: 1px solid #666;
+	background: #eee;
+	border: 1px solid #eee;
+	color: #333;
 	display: inline-block;
-	height: 30px;
-	line-height: 30px;
-	margin-left: 8px;
-	margin-right: 8px;
-	min-width: 30px;
+	height: 36px;
+	line-height: 36px;
+	margin-right: 12px;
+	min-width: 36px;
 	text-align: center;
 }
 
+.entry-links .post-page-numbers:last-child {
+	margin-right: 0;
+}
+
 .entry-links .post-page-numbers.current {
-	background: #666;
+	background: #00796b;
+	border: 1px solid #00796b;
 	color: #fff;
 }
 
@@ -1000,12 +1045,15 @@ span.wpcf7-list-item {
 }
 
 .entry-links a:hover {
-	background: #666;
+	background: #00796b;
+	border: 1px solid #00796b;
 	color: #fff;
+	opacity: 1;
 }
 
 .entry-pager {
 	display: flex;
+	flex-direction: row-reverse;
 }
 
 .entry-prev {
@@ -1314,8 +1362,9 @@ span.wpcf7-list-item {
 }
 
 .pagenation {
+	display: flex;
+	justify-content: center;
 	margin-top: 32px;
-	text-align: center;
 }
 
 .pagenation a {
@@ -1323,8 +1372,8 @@ span.wpcf7-list-item {
 }
 
 .pagenation a:hover {
-	background: #bd3c4f;
-	border: 1px solid #bd3c4f;
+	background: #00796b;
+	border: 1px solid #00796b;
 	color: #fff;
 }
 
@@ -1336,8 +1385,8 @@ span.wpcf7-list-item {
 
 .pagenation a.next:hover,
 .pagenation a.prev:hover {
-	background: #bd3c4f;
-	border: 1px solid #bd3c4f;
+	background: #00796b;
+	border: 1px solid #00796b;
 	color: #fff;
 }
 
@@ -1345,7 +1394,6 @@ span.wpcf7-list-item {
 	background: #eee;
 	border: 1px solid #eee;
 	color: #333;
-	display: inline-block;
 	height: 42px;
 	line-height: 42px;
 	margin-right: 8px;
@@ -1359,8 +1407,8 @@ span.wpcf7-list-item {
 }
 
 .page-numbers.current {
-	background: #bd3c4f;
-	border: 1px solid #bd3c4f;
+	background: #00796b;
+	border: 1px solid #00796b;
 	color: #fff;
 }
 
@@ -1371,7 +1419,7 @@ span.wpcf7-list-item {
 }
 
 .wp-caption {
-	margin: 0 auto;
+	margin: 1.2em auto 0;
 	max-width: 100%;
 	text-align: center;
 }
@@ -1385,7 +1433,7 @@ span.wpcf7-list-item {
 }
 
 .wp-caption-text {
-	font-size: 14px;
+	font-size: 13px;
 	padding: 4px;
 	text-align: left;
 }
@@ -1410,6 +1458,23 @@ span.wpcf7-list-item {
 	right: 1px;
 	top: 50%;
 	transform: translateY(-50%);
+}
+
+.alignleft {
+	float: left;
+	margin: 8px 8px 8px 0;
+	max-width: 48%;
+}
+
+.alignright {
+	float: right;
+	margin: 8px 0 8px 8px;
+	max-width: 48%;
+}
+
+.aligncenter {
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .widget.widget_archive select {
@@ -1466,12 +1531,12 @@ span.wpcf7-list-item {
 }
 
 .widget a:hover {
-	color: #bd3c4f;
+	color: #00796b;
 	text-decoration: underline;
 }
 
 .widget-title {
-	background: #bd3c4f;
+	background: #00796b;
 	color: #fff;
 	font-size: 16px;
 	font-weight: 700;
@@ -1500,7 +1565,7 @@ span.wpcf7-list-item {
 }
 
 #wp-calendar a {
-	color: #bd3c4f;
+	color: #00796b;
 	text-decoration: none;
 	transition: all 0.3s ease 0s;
 }
@@ -1530,7 +1595,7 @@ span.wpcf7-list-item {
 }
 
 #recentcomments .recentcomments a:hover {
-	color: #bd3c4f;
+	color: #00796b;
 }
 
 .post-date {
@@ -1703,7 +1768,7 @@ span.wpcf7-list-item {
 }
 
 .totop a {
-	background: #bd3c4f;
+	background: #00796b;
 	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
 	color: #fff;
 	display: block;
@@ -1823,7 +1888,7 @@ span.wpcf7-list-item {
 }
 
 .header-nav .sub-menu li a {
-	background: #bd3c4f;
+	background: #00796b;
 	color: #fff;
 	display: block;
 	font-size: 14px;
@@ -1914,6 +1979,23 @@ span.wpcf7-list-item {
 .entry-item-body {
 	padding: 12px 0;
 	width: 100%;
+}
+
+.entry-pager {
+	display: block;
+}
+
+.entry-prev {
+	width: 100%;
+}
+
+.entry-next {
+	margin-bottom: 12px;
+	width: 100%;
+}
+
+.entry-pager-head {
+	font-size: 14px;
 }
 
 .sns-buttons {

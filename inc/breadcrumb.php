@@ -24,7 +24,7 @@ function my_breadcrumb() {
 
 	} elseif ( is_home() ) { /* 投稿一覧の場合 */
 		$breadcrumb_html .= $breadcrumb_beore . $breadcrumb_home_tag . $breadcrumb_bridge_tag;
-		$breadcrumb_html .= '<li><span class="breadcrumb_current">' . get_the_title() . '</span></li>';
+		$breadcrumb_html .= '<li><span class="breadcrumb_current">' . apply_filters( 'raccoon_breadcrumb_title', get_the_title() ) . '</span></li>';
 		$breadcrumb_html .= $breadcrumb_after;
 		echo wp_kses_post( $breadcrumb_html );
 

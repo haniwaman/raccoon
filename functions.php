@@ -152,7 +152,11 @@ add_filter( 'get_the_archive_title', 'my_archive_title' );
  * @return string $title 変換後のタイトル.
  */
 function my_breadcrumb_title( $title ) {
-	$title = mb_strimwidth( $title, 0, 64, '…', 'UTF-8' );
+	if ( is_home() ) {
+		$title = 'ブログ';
+	} else {
+		$title = mb_strimwidth( $title, 0, 64, '…', 'UTF-8' );
+	}
 	return $title;
 }
 add_filter( 'raccoon_breadcrumb_title', 'my_breadcrumb_title' );

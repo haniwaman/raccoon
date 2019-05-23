@@ -74,6 +74,25 @@ if ( have_posts() ) :
 		?>
 <!-- entry-pager -->
 <nav class="entry-pager">
+<?php if ( $next_post ) : ?>
+	<div class="entry-next">
+		<a href="<?php the_permalink( $next_post->ID ); ?>" class="entry-pager-head">次の記事</a>
+		<a href="<?php the_permalink( $next_post->ID ); ?>" class="entry-pager-item">
+			<div class="entry-pager-img">
+			<?php
+			if ( has_post_thumbnail( $next_post->ID ) ) {
+				echo get_the_post_thumbnail( $next_post->ID, 'thumbnail' );
+			} else {
+				echo '<img src="' . esc_url( get_template_directory_uri() ) . '/img/no-thumbnail.png">';
+			}
+			?>
+			</div><!-- /entry-pager-img -->
+			<div class="entry-pager-body">
+				<div class="entry-pager-title"><?php echo esc_html( mb_strimwidth( get_the_title( $next_post->ID ), 0, 64, '…', 'UTF-8' ) ); ?></div>
+			</div><!-- /entry-pager-body -->
+		</a><!-- /entry-pager-item -->
+	</div><!-- /entry-next -->
+	<?php endif; ?>
 		<?php if ( $prev_post ) : ?>
 	<div class="entry-prev">
 		<a href="<?php the_permalink( $prev_post->ID ); ?>" class="entry-pager-head">前の記事</a>
@@ -93,25 +112,6 @@ if ( have_posts() ) :
 		</a><!-- /entry-pager-item -->
 	</div><!-- /entry-prev -->
 			<?php endif; ?>
-		<?php if ( $next_post ) : ?>
-	<div class="entry-next">
-		<a href="<?php the_permalink( $next_post->ID ); ?>" class="entry-pager-head">次の記事</a>
-		<a href="<?php the_permalink( $next_post->ID ); ?>" class="entry-pager-item">
-			<div class="entry-pager-img">
-			<?php
-			if ( has_post_thumbnail( $next_post->ID ) ) {
-				echo get_the_post_thumbnail( $next_post->ID, 'thumbnail' );
-			} else {
-				echo '<img src="' . esc_url( get_template_directory_uri() ) . '/img/no-thumbnail.png">';
-			}
-			?>
-			</div><!-- /entry-pager-img -->
-			<div class="entry-pager-body">
-				<div class="entry-pager-title"><?php echo esc_html( mb_strimwidth( get_the_title( $next_post->ID ), 0, 64, '…', 'UTF-8' ) ); ?></div>
-			</div><!-- /entry-pager-body -->
-		</a><!-- /entry-pager-item -->
-	</div><!-- /entry-next -->
-	<?php endif; ?>
 </nav><!-- /entry-pager -->
 
 		<?php

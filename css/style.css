@@ -1477,6 +1477,30 @@ span.wpcf7-list-item {
 	margin-right: auto;
 }
 
+.sticky {
+	position: relative;
+}
+
+.sticky::before {
+	background: #00796b;
+	color: #fff;
+	content: "PICK UP";
+	font-size: 12px;
+	left: 0;
+	padding: 4px 8px;
+	position: absolute;
+	top: 0;
+}
+
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+	height: auto;
+	max-width: 100%;
+}
+
 .widget.widget_archive select {
 	background: transparent url(../img/arrow.svg) no-repeat center right 8px/12px 8px;
 	width: 100%;

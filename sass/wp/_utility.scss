@@ -57,4 +57,29 @@
 }
 
 .sticky {
+	position: relative;
+
+	&::before {
+		content: "PICK UP";
+		position: absolute;
+		top: 0;
+		left: 0;
+		color: #fff;
+		background: $cr-m;
+		font-size: 12px;
+		padding: 4px 8px;
+	}
+}
+
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+	max-width: 100%;
+	height: auto;
+}
+
+.bypostauthor {
+
 }

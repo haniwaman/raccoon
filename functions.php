@@ -179,3 +179,18 @@ function my_password_form() {
 	return $my_password_form;
 }
 add_filter( 'the_password_form', 'my_password_form' );
+
+
+
+/**
+ * ウィジェットの投稿件数をaタグ内に
+ *
+ * @param string $output もともと出力するHTMLタグ.
+ * @return string $output 変換後に出力するHTMLタグ.
+ */
+function my_list_anchor( $output ) {
+	$output = preg_replace( '/<\/a>.*?\((\d+)\)/', ' <span>($1)</span></a>', $output );
+	return $output;
+}
+add_filter( 'wp_list_categories', 'my_list_anchor' );
+add_filter( 'get_archives_link', 'my_list_anchor' );

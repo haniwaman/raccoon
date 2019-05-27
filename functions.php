@@ -29,8 +29,8 @@ function my_setup() {
 	}
 }
 add_action( 'after_setup_theme', 'my_setup' );
-
-
+// add_filter( 'feed_links_show_comments_feed', '__return_false' );
+// add_filter( 'feed_links_show_posts_feed', '__return_false' );
 
 /**
  * CSSとJavaScriptの読み込み

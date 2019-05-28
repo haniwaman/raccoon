@@ -27,10 +27,9 @@ function my_setup() {
 	if ( ! isset( $content_width ) ) {
 		$content_width = 840;
 	}
+	load_theme_textdomain( 'raccoon', get_template_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'my_setup' );
-// add_filter( 'feed_links_show_comments_feed', '__return_false' );
-// add_filter( 'feed_links_show_posts_feed', '__return_false' );
 
 /**
  * CSSとJavaScriptの読み込み
@@ -44,6 +43,9 @@ function my_script_init() {
 	wp_enqueue_style( 'df', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 	wp_enqueue_script( 'swiper', get_template_directory_uri() . '/js/asset/swiper.min.js', array(), '4.5.0', true );
 	wp_enqueue_script( 'my', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '1.0.1', true );
+	if ( is_singular() ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'my_script_init' );
 
@@ -57,9 +59,9 @@ add_action( 'wp_enqueue_scripts', 'my_script_init' );
 function my_menu_init() {
 	register_nav_menus(
 		array(
-			'header' => 'ヘッダーメニュー',
-			'footer' => 'フッターメニュー',
-			'drawer' => 'ドロワーメニュー',
+			'header' => __( 'Header Menu', 'raccoon' ),
+			'footer' => __( 'Footer Menu', 'raccoon' ),
+			'drawer' => __( 'Drawer Menu', 'raccoon' ),
 		)
 	);
 }
@@ -75,7 +77,7 @@ add_action( 'init', 'my_menu_init' );
 function my_widget_init() {
 	register_sidebar(
 		array(
-			'name'          => 'サイドバー',
+			'name'          => __( 'Sidebar', 'raccoon' ),
 			'id'            => 'sidebar',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',

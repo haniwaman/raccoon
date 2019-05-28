@@ -44,10 +44,19 @@
 	display: flex;
 	align-items: center;
 	margin-bottom: 8px;
+
+	.bypostauthor & {
+		flex-direction: row-reverse;
+	}
 }
 
 .comment-author {
 	margin-right: auto;
+
+	.bypostauthor & {
+		margin-right: 0;
+		margin-left: auto;
+	}
 
 	img {
 		margin-right: 4px;

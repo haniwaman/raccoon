@@ -24,12 +24,24 @@
 			display: block;
 		}
 	}
+
+	&.m_one {
+
+		> .inner {
+			display: block;
+		}
+	}
 }
 
 #primary {
 	width: ($layout-width-main / $layout-width-inner) * 100%;
 
 	@include mq("sp") {
+		width: 100%;
+		margin-bottom: 32px;
+	}
+
+	.m_one & {
 		width: 100%;
 		margin-bottom: 32px;
 	}
@@ -40,6 +52,10 @@
 	margin-left: auto;
 
 	@include mq("sp") {
+		width: 100%;
+	}
+
+	.m_one & {
 		width: 100%;
 	}
 }

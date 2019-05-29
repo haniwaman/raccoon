@@ -78,7 +78,7 @@ if ( have_posts() ) :
 <nav class="entry-pager">
 		<?php if ( $next_post ) : ?>
 	<div class="entry-next">
-		<a href="<?php the_permalink( $next_post->ID ); ?>" class="entry-pager-head">次の記事</a>
+		<a href="<?php the_permalink( $next_post->ID ); ?>" class="entry-pager-head"><?php esc_html_e( '次の記事', 'raccoon' ); ?></a>
 		<a href="<?php the_permalink( $next_post->ID ); ?>" class="entry-pager-item">
 			<div class="entry-pager-img">
 			<?php
@@ -97,7 +97,7 @@ if ( have_posts() ) :
 			<?php endif; ?>
 		<?php if ( $prev_post ) : ?>
 	<div class="entry-prev">
-		<a href="<?php the_permalink( $prev_post->ID ); ?>" class="entry-pager-head">前の記事</a>
+		<a href="<?php the_permalink( $prev_post->ID ); ?>" class="entry-pager-head"><?php esc_html_e( '前の記事', 'raccoon' ); ?></a>
 		<a href="<?php the_permalink( $prev_post->ID ); ?>" class="entry-pager-item">
 			<div class="entry-pager-img">
 			<?php

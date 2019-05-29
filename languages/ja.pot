@@ -10,26 +10,92 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ja\n"
 "X-Generator: Poedit 2.2.3\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-SearchPathExcluded-0: ../node_modules\n"
-"X-Poedit-SearchPathExcluded-1: ../sass\n"
-"X-Poedit-SearchPathExcluded-2: ../.vscode\n"
-"X-Poedit-SearchPathExcluded-3: ../js\n"
-"X-Poedit-SearchPathExcluded-4: ../img\n"
-"X-Poedit-SearchPathExcluded-5: ../css\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_attr_e\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: node_modules\n"
+"X-Poedit-SearchPathExcluded-1: sass\n"
+"X-Poedit-SearchPathExcluded-2: .vscode\n"
+"X-Poedit-SearchPathExcluded-3: js\n"
+"X-Poedit-SearchPathExcluded-4: img\n"
+"X-Poedit-SearchPathExcluded-5: css\n"
 
-#: functions.php:68
-msgid "Header Menu"
-msgstr "ヘッダーメニュー"
+#: functions.php:62
+msgid "ヘッダーメニュー"
+msgstr ""
 
-#: functions.php:69
-msgid "Footer Menu"
-msgstr "フッターメニュー"
+#: functions.php:63
+msgid "フッターメニュー"
+msgstr ""
 
-#: functions.php:70
-msgid "Drawer Menu"
-msgstr "ドロワーメニュー"
+#: functions.php:64
+msgid "ドロワーメニュー"
+msgstr ""
 
-#: functions.php:86
-msgid "Sidebar"
-msgstr "サイドバー"
+#: functions.php:80
+msgid "サイドバー"
+msgstr ""
+
+#: functions.php:133 inc/breadcrumb.php:73
+msgid "の検索結果"
+msgstr ""
+
+#: functions.php:139 inc/breadcrumb.php:89
+msgid "年"
+msgstr ""
+
+#: functions.php:142 inc/breadcrumb.php:92
+msgid "月"
+msgstr ""
+
+#: functions.php:145 inc/breadcrumb.php:95
+msgid "日"
+msgstr ""
+
+#: functions.php:161
+msgid "ブログ"
+msgstr ""
+
+#: functions.php:175
+msgid "このコンテンツはパスワードで保護されています。閲覧するには以下にパスワードを入力してください。"
+msgstr ""
+
+#: functions.php:177
+msgid "パスワード入力"
+msgstr ""
+
+#: inc/breadcrumb.php:17
+msgid "ホーム"
+msgstr ""
+
+#: parts/sns.php:13
+msgid "ツイート"
+msgstr ""
+
+#: parts/sns.php:14
+msgid "シェア"
+msgstr ""
+
+#: parts/sns.php:15
+msgid "はてブ"
+msgstr ""
+
+#: parts/sns.php:17
+msgid "ポケット"
+msgstr ""
+
+#: searchform.php:12
+msgid "検索:"
+msgstr ""
+
+#: searchform.php:13
+msgid "サイト内検索 …"
+msgstr ""
+
+#: single.php:81
+msgid "次の記事"
+msgstr ""
+
+#: single.php:100
+msgid "前の記事"
+msgstr ""

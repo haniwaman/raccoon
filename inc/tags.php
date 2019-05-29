@@ -51,7 +51,7 @@ function my_the_post_category() {
 function my_get_post_tags() {
 	$this_tags = array();
 	$tags      = get_the_tags();
-	$tags_num    = count( $tags );
+	$tags_num  = count( $tags );
 	for ( $i = 0; $i < $tags_num; $i++ ) {
 		$this_tags[ $i ]['id']   = $tags[ $i ]->term_id;
 		$this_tags[ $i ]['name'] = $tags[ $i ]->name;
@@ -71,7 +71,6 @@ function my_get_post_tags() {
 function my_get_post_terms( $taxonomy ) {
 	$this_terms = array();
 	$terms      = get_the_terms( get_the_ID(), $taxonomy );
-	var_dump( $terms );
 	$term_num   = count( $terms );
 	for ( $i = 0; $i < $term_num; $i++ ) {
 		$this_terms[ $i ]['id']   = $terms[ $i ]->term_id;

@@ -59,9 +59,9 @@ add_action( 'wp_enqueue_scripts', 'my_script_init' );
 function my_menu_init() {
 	register_nav_menus(
 		array(
-			'header' => __( 'Header Menu', 'raccoon' ),
-			'footer' => __( 'Footer Menu', 'raccoon' ),
-			'drawer' => __( 'Drawer Menu', 'raccoon' ),
+			'header' => __( 'ヘッダーメニュー', 'raccoon' ),
+			'footer' => __( 'フッターメニュー', 'raccoon' ),
+			'drawer' => __( 'ドロワーメニュー', 'raccoon' ),
 		)
 	);
 }
@@ -77,7 +77,7 @@ add_action( 'init', 'my_menu_init' );
 function my_widget_init() {
 	register_sidebar(
 		array(
-			'name'          => __( 'Sidebar', 'raccoon' ),
+			'name'          => __( 'サイドバー', 'raccoon' ),
 			'id'            => 'sidebar',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
@@ -130,19 +130,19 @@ function my_archive_title( $title ) {
 	} elseif ( is_tax() ) { /* タームアーカイブの場合 */
 		$title = '' . single_term_title( '', false );
 	} elseif ( is_search() ) { /* 検索結果アーカイブの場合 */
-		$title = '「' . esc_html( get_query_var( 's' ) ) . '」の検索結果';
+		$title = '"' . esc_html( get_query_var( 's' ) ) . '"' . __( 'の検索結果', 'raccoon' );
 	} elseif ( is_author() ) { /* 作者アーカイブの場合 */
 		$title = '' . get_the_author() . '';
 	} elseif ( is_date() ) { /* 日付アーカイブの場合 */
 		$title = '';
 		if ( get_query_var( 'year' ) ) {
-			$title .= get_query_var( 'year' ) . '年';
+			$title .= get_query_var( 'year' ) . __( '年', 'raccoon' );
 		}
 		if ( get_query_var( 'monthnum' ) ) {
-			$title .= get_query_var( 'monthnum' ) . '月';
+			$title .= get_query_var( 'monthnum' ) . __( '月', 'raccoon' );
 		}
 		if ( get_query_var( 'day' ) ) {
-			$title .= get_query_var( 'day' ) . '日';
+			$title .= get_query_var( 'day' ) . __( '日', 'raccoon' );
 		}
 	}
 	return $title;
@@ -158,7 +158,7 @@ add_filter( 'get_the_archive_title', 'my_archive_title' );
  */
 function my_breadcrumb_title( $title ) {
 	if ( is_home() ) {
-		$title = 'ブログ';
+		$title = __( 'ブログ', 'raccoon' );
 	} else {
 		$title = mb_strimwidth( $title, 0, 64, '…', 'UTF-8' );
 	}
@@ -172,9 +172,9 @@ add_filter( 'raccoon_breadcrumb_title', 'my_breadcrumb_title' );
  * @return $my_password_form パスワード入力のHTMLフォーム.
  */
 function my_password_form() {
-	$my_password_form  = '<p>このコンテンツはパスワードで保護されています。閲覧するには以下にパスワードを入力してください。</p>';
+	$my_password_form  = '<p>' . __( 'このコンテンツはパスワードで保護されています。閲覧するには以下にパスワードを入力してください。', 'raccoon' ) . '</p>';
 	$my_password_form .= '<form class="post_password" action="' . home_url() . '/wp-login.php?action=postpass" class="post-password-form" method="post">';
-	$my_password_form .= '<input name="post_password" type="password" placeholder="パスワード入力" class="post_password-field">';
+	$my_password_form .= '<input name="post_password" type="password" placeholder="' . __( 'パスワード入力', 'raccoon' ) . '" class="post_password-field">';
 	$my_password_form .= '<input type="submit" name="Submit" value="確定" class="post_password-submit">';
 	$my_password_form .= '</form>';
 

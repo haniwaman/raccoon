@@ -14,7 +14,7 @@ function my_breadcrumb() {
 	$breadcrumb_html       = '';
 	$breadcrumb_beore      = '<nav class="breadcrumb"><div class="inner"><ul class="breadcrumb-list">';
 	$breadcrumb_after      = '</ul></div></nav>';
-	$breadcrumb_home       = 'ホーム';
+	$breadcrumb_home       = apply_filters( 'raccoon_breadcrumb_home', __( 'ホーム', 'raccoon' ) );
 	$breadcrumb_home_tag   = '<li><a href="' . esc_url( home_url( '/' ) ) . '">' . $breadcrumb_home . '</a></li>';
 	$breadcrumb_bridge     = '<i class="fas fa-caret-right"></i>';
 	$breadcrumb_bridge_tag = '<li><span class="breadcrumb_bridge">' . $breadcrumb_bridge . '</span></li>';
@@ -70,7 +70,7 @@ function my_breadcrumb() {
 
 	} elseif ( is_search() ) { /* 検索結果アーカイブの場合 */
 		$breadcrumb_html .= $breadcrumb_beore . $breadcrumb_home_tag . $breadcrumb_bridge_tag;
-		$breadcrumb_html .= '<li><span class="breadcrumb_current">「' . apply_filters( 'raccoon_breadcrumb_title', get_query_var( 's' ) . '」の検索結果' ) . '</span></li>';
+		$breadcrumb_html .= '<li><span class="breadcrumb_current">"' . apply_filters( 'raccoon_breadcrumb_title', get_query_var( 's' ) . '"' . __( 'の検索結果', 'raccoon' ) ) . '</span></li>';
 		$breadcrumb_html .= $breadcrumb_after;
 		echo wp_kses_post( $breadcrumb_html );
 
@@ -86,13 +86,13 @@ function my_breadcrumb() {
 		$this_month       = get_query_var( 'monthnum' );
 		$this_day         = get_query_var( 'day' );
 		if ( $this_year ) {
-			$breadcrumb_html .= '<li><a href="' . get_year_link( $this_year ) . '">' . $this_year . '年</a></li>' . $breadcrumb_bridge_tag;
+			$breadcrumb_html .= '<li><a href="' . get_year_link( $this_year ) . '">' . $this_year . __( '年', 'raccoon' ) . '</a></li>' . $breadcrumb_bridge_tag;
 		}
 		if ( $this_month ) {
-			$breadcrumb_html .= '<li><a href="' . get_month_link( $this_year, $this_month ) . '">' . $this_month . '月</a></li>' . $breadcrumb_bridge_tag;
+			$breadcrumb_html .= '<li><a href="' . get_month_link( $this_year, $this_month ) . '">' . $this_month . __( '月', 'raccoon' ) . '</a></li>' . $breadcrumb_bridge_tag;
 		}
 		if ( $this_day ) {
-			$breadcrumb_html .= '<li><a href="' . get_day_link( $this_year, $this_month, $this_day ) . '">' . $this_day . '日</a></li>' . $breadcrumb_bridge_tag;
+			$breadcrumb_html .= '<li><a href="' . get_day_link( $this_year, $this_month, $this_day ) . '">' . $this_day . __( '日', 'raccoon' ) . '</a></li>' . $breadcrumb_bridge_tag;
 		}
 		$breadcrumb_html .= $breadcrumb_after;
 		echo wp_kses_post( $breadcrumb_html );

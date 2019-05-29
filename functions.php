@@ -60,7 +60,7 @@ add_action( 'wp_enqueue_scripts', 'my_script_init' );
  * @return void
  */
 function my_editor_style() {
-	add_editor_style( 'css/admin/editor-style.css' );
+	add_editor_style( get_template_directory_uri() . '/css/admin/editor-style.css' );
 }
 add_action( 'admin_init', 'my_editor_style' );
 

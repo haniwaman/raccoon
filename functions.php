@@ -24,8 +24,12 @@ function my_setup() {
 			'caption',
 		)
 	);
+	add_theme_support( 'editor-styles' ); /* 編集画面用CSS追加 */
+	add_theme_support( 'custom-background' ); /* カスタマイザーで背景色 */
+	add_theme_support( 'custom-header' ); /* カスタマイザーでヘッダー画像 */
+	add_theme_support( 'custom-logo' ); /* カスタマイザーでロゴ画像 */
 	if ( ! isset( $content_width ) ) {
-		$content_width = 840;
+		$content_width = 840; /* コンテンツ幅 */
 	}
 	load_theme_textdomain( 'raccoon', get_template_directory() . '/languages' );
 }
@@ -49,6 +53,16 @@ function my_script_init() {
 }
 add_action( 'wp_enqueue_scripts', 'my_script_init' );
 
+
+/**
+ * 編集画面用のスタイルシート
+ *
+ * @return void
+ */
+function my_editor_style() {
+	add_editor_style( 'css/admin/editor-style.css' );
+}
+add_action( 'admin_init', 'my_editor_style' );
 
 
 /**

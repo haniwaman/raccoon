@@ -162,7 +162,7 @@ form {
 	button {
 		width: auto;
 		display: inline-block;
-		padding: 0.6em 2em;
+		padding: 8px 24px;
 		margin: 0;
 		background-image: none;
 		background-color: $cr-m;
@@ -173,7 +173,7 @@ form {
 		font-size: 16px;
 		cursor: pointer;
 		-webkit-appearance: none;
-		box-shadow: 0.0625em 0.0625em 0.1875em 0 rgba(0, 0, 0, 0.16);
+		box-shadow: 0 0 3px 0 rgba(#000, 0.16);
 		transition: all 0.3s ease 0s;
 
 		&:hover,
@@ -239,7 +239,7 @@ input {
 	&[type="button"] {
 		width: auto;
 		display: inline-block;
-		padding: 0.6em 2em;
+		padding: 8px 24px;
 		margin: 0;
 		background-image: none;
 		background-color: $cr-m;
@@ -250,7 +250,7 @@ input {
 		font-size: 16px;
 		cursor: pointer;
 		-webkit-appearance: none;
-		box-shadow: 0.0625em 0.0625em 0.1875em 0 rgba(0, 0, 0, 0.16);
+		box-shadow: 0 0 3px 0 rgba(#000, 0.16);
 		transition: all 0.3s ease 0s;
 
 		&:hover,

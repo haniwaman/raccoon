@@ -170,13 +170,13 @@ form button {
 	background-image: none;
 	border: none;
 	border-radius: 0;
-	box-shadow: 0.0625em 0.0625em 0.1875em 0 rgba(0, 0, 0, 0.16);
+	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
 	color: #fff;
 	cursor: pointer;
 	display: inline-block;
 	font-size: 16px;
 	margin: 0;
-	padding: 0.6em 2em;
+	padding: 8px 24px;
 	text-decoration: none;
 	transition: all 0.3s ease 0s;
 	width: auto;
@@ -241,13 +241,13 @@ input[type="button"] {
 	background-image: none;
 	border: none;
 	border-radius: 0;
-	box-shadow: 0.0625em 0.0625em 0.1875em 0 rgba(0, 0, 0, 0.16);
+	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
 	color: #fff;
 	cursor: pointer;
 	display: inline-block;
 	font-size: 16px;
 	margin: 0;
-	padding: 0.6em 2em;
+	padding: 8px 24px;
 	text-decoration: none;
 	transition: all 0.3s ease 0s;
 	width: auto;
@@ -475,6 +475,37 @@ select:focus {
 .breadcrumb_bridge {
 	color: #fff;
 	font-size: 14px;
+}
+
+.btn {
+	-webkit-appearance: none;
+	background-color: #00796b;
+	background-image: none;
+	border: none;
+	border-radius: 0;
+	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 16px;
+	margin: 0;
+	padding: 8px 24px;
+	text-decoration: none;
+	transition: all 0.3s ease 0s;
+}
+
+.btn:hover,
+.btn:focus {
+	outline: none;
+}
+
+.btn:hover {
+	opacity: 0.6;
+}
+
+.btn::-moz-foucus-inner {
+	border: none;
+	padding: 0;
 }
 
 .comments-title {

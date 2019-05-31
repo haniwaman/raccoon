@@ -85,7 +85,7 @@ if ( have_posts() ) :
 			if ( has_post_thumbnail( $next_post->ID ) ) {
 				echo get_the_post_thumbnail( $next_post->ID, 'thumbnail' );
 			} else {
-				echo '<img src="' . esc_url( get_template_directory_uri() ) . '/img/no-thumbnail.png">';
+				echo '<img src="' . esc_url( get_template_directory_uri() ) . '/img/no-thumbnail.png" alt="">';
 			}
 			?>
 			</div><!-- /entry-pager-img -->
@@ -104,7 +104,7 @@ if ( have_posts() ) :
 			if ( has_post_thumbnail( $prev_post->ID ) ) {
 				echo get_the_post_thumbnail( $prev_post->ID, 'thumbnail' );
 			} else {
-				echo '<img src="' . esc_url( get_template_directory_uri() ) . '/img/no-thumbnail.png">';
+				echo '<img src="' . esc_url( get_template_directory_uri() ) . '/img/no-thumbnail.png" alt="">';
 			}
 			?>
 			</div><!-- /entry-pager-img -->

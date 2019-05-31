@@ -19,7 +19,7 @@ if ( post_password_required() || ! comments_open() ) {
 		wp_list_comments(
 			array(
 				'avatar_size' => '54',
-				'type'        => 'comment',
+				'type'        => 'all', /* all / comment / trackback / pingback / pings */
 			)
 		);
 		?>

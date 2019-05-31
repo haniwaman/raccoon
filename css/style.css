@@ -1064,6 +1064,7 @@ span.wpcf7-list-item {
 	display: flex;
 	margin-bottom: 32px;
 	padding: 24px 12px;
+	text-decoration: none;
 }
 
 .entry-item:last-child {
@@ -1114,15 +1115,19 @@ span.wpcf7-list-item {
 	white-space: nowrap;
 }
 
-.entry-item-tag a {
+.entry-item-tag a,
+.entry-item-tag span {
 	background: #333;
 	border-radius: 2px;
 	color: #fff;
 	display: block;
 	font-size: 12px;
 	padding: 4px 8px;
-	text-decoration: none;
 	transition: all 0.3s ease 0s;
+}
+
+.entry-item-tag a {
+	text-decoration: none;
 }
 
 .entry-item-tag a:hover {
@@ -1130,13 +1135,13 @@ span.wpcf7-list-item {
 }
 
 .entry-item-title {
+	font-size: 20px;
+	font-weight: 700;
 	line-height: 1.2;
 	margin-bottom: 8px;
 }
 
 .entry-item-title a {
-	font-size: 20px;
-	font-weight: 700;
 	text-decoration: none;
 	transition: all 0.3s ease 0s;
 }
@@ -1155,12 +1160,16 @@ span.wpcf7-list-item {
 	text-align: right;
 }
 
-.entry-item-auther a {
+.entry-item-auther a,
+.entry-item-auther span {
 	color: #666;
 	font-size: 14px;
+	vertical-align: middle;
+}
+
+.entry-item-auther a {
 	text-decoration: none;
 	transition: all 0.3s ease 0s;
-	vertical-align: middle;
 }
 
 .entry-item-auther a:hover {
@@ -1215,15 +1224,19 @@ span.wpcf7-list-item {
 	white-space: nowrap;
 }
 
-.entry-tag a {
+.entry-tag a,
+.entry-tag span {
 	background: #333;
 	border-radius: 2px;
 	color: #fff;
 	display: block;
 	font-size: 12px;
 	padding: 4px 8px;
-	text-decoration: none;
 	transition: all 0.3s ease 0s;
+}
+
+.entry-tag a {
+	text-decoration: none;
 }
 
 .entry-tag a:hover {
@@ -1427,6 +1440,7 @@ span.wpcf7-list-item {
 .entry-pager {
 	display: flex;
 	flex-direction: row-reverse;
+	margin-top: 32px;
 }
 
 .entry-prev {
@@ -1656,6 +1670,7 @@ span.wpcf7-list-item {
 
 .sns-buttons-org ul {
 	display: flex;
+	flex-wrap: wrap;
 }
 
 .sns-buttons-org li {
@@ -1863,6 +1878,7 @@ span.wpcf7-list-item {
 	padding: 4px 8px;
 	position: absolute;
 	top: 0;
+	z-index: 2;
 }
 
 .size-auto,
@@ -2380,6 +2396,8 @@ span.wpcf7-list-item {
 
 .entry {
 	margin-bottom: 32px;
+	padding-left: 16px;
+	padding-right: 16px;
 }
 
 .entry-pager {

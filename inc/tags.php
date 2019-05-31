@@ -8,14 +8,22 @@
 /**
  * カテゴリー取得
  *
+ * @param integer $id 投稿id.
  * @return array $this_categories id name link の配列.
  * @codex https://wpdocs.osdn.jp/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%82%BF%E3%82%B0/get_the_category
  * @codex https://wpdocs.osdn.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/get_category_link
  */
-function my_get_post_categories() {
+function my_get_post_categories( $id ) {
+	global $post;
 	$this_categories = array();
-	$categories      = get_the_category();
-	$category_num    = count( $categories );
+	if ( 0 === $id ) {
+		$id = $post->ID;
+	}
+	$categories = get_the_category( $id );
+	if ( ! $categories ) {
+		return false;
+	}
+	$category_num = count( $categories );
 	for ( $i = 0; $i < $category_num; $i++ ) {
 		$this_categories[ $i ]['id']   = $categories[ $i ]->cat_ID;
 		$this_categories[ $i ]['name'] = $categories[ $i ]->name;
@@ -28,14 +36,22 @@ function my_get_post_categories() {
 
 /**
  * カテゴリーを1つだけ表示
+ *
+ * @param boolean $anchor aタグで出力するかどうか.
+ * @param integer $id 投稿id.
+ * @return void
  */
-function my_the_post_category() {
-	$this_categories = my_get_post_categories();
+function my_the_post_category( $anchor = true, $id = 0 ) {
+	$this_categories = my_get_post_categories( $id );
+	$this_color      = '';
+	if ( function_exists( 'the_field' ) ) {
+		$this_color = 'style="background:' . get_field( 'color', 'category_' . $this_categories[0]['id'] ) . '; ';
+	}
 	if ( isset( $this_categories[0] ) ) {
-		if ( function_exists( 'the_field' ) ) {
-			echo '<a style="background:' . esc_attr( get_field( 'color', 'category_' . $this_categories[0]['id'] ) ) . ';" href="' . esc_url( $this_categories[0]['link'] ) . '">' . esc_html( $this_categories[0]['name'] ) . '</a>';
+		if ( $anchor ) {
+			echo '<a ' . esc_attr( $this_color ) . 'href="' . esc_url( $this_categories[0]['link'] ) . '">' . esc_html( $this_categories[0]['name'] ) . '</a>';
 		} else {
-			echo '<a href="' . esc_url( $this_categories[0]['link'] ) . '">' . esc_html( $this_categories[0]['name'] ) . '</a>';
+			echo '<span ' . esc_attr( $this_color ) . '>' . esc_html( $this_categories[0]['name'] ) . '</span>';
 		}
 	}
 }
@@ -48,10 +64,17 @@ function my_the_post_category() {
  * @codex https://wpdocs.osdn.jp/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%82%BF%E3%82%B0/get_the_tags
  * @codex https://wpdocs.osdn.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/get_category_link
  */
-function my_get_post_tags() {
+function my_get_post_tags( $id = 0 ) {
+	global $post;
 	$this_tags = array();
-	$tags      = get_the_tags();
-	$tags_num  = count( $tags );
+	if ( 0 === $id ) {
+		$id = $post->ID;
+	}
+	$tags = get_the_tags( $id );
+	if ( ! $tags ) {
+		return false;
+	}
+	$tags_num = count( $tags );
 	for ( $i = 0; $i < $tags_num; $i++ ) {
 		$this_tags[ $i ]['id']   = $tags[ $i ]->term_id;
 		$this_tags[ $i ]['name'] = $tags[ $i ]->name;

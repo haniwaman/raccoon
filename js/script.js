@@ -36,13 +36,15 @@ jQuery( '.menu-item-has-children span' ).on( 'click', function() {
 /* SmoothScroll */
 jQuery( 'a[href^="#"]' ).click( function() {
 	var header = 0;
-	if ( 'fixed' === jQuery( '#header' ).css( 'position' ) ) {
-		header = jQuery( '#header' ).height();
-	}
 	var speed = 300;
 	var id = jQuery( this ).attr( 'href' );
 	var target = jQuery( '#' == id ? 'html' : id );
 	var position = jQuery( target ).offset().top - header;
+
+	if ( 'fixed' === jQuery( '#header' ).css( 'position' ) ) {
+		header = jQuery( '#header' ).height();
+		position = position - header;
+	}
 	if ( 0 > position ) {
 		position = 0;
 	}

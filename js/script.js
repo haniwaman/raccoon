@@ -67,3 +67,9 @@ jQuery( window ).on( 'scroll', function( $ ) {
 
 /* Polyfill */
 Stickyfill.add( document.querySelectorAll( '#sidebar-fixed' ) );
+
+/* Highlight */
+hljs.initHighlightingOnLoad();
+hljs.configure({
+	tabReplace: '  '
+});

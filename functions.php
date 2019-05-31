@@ -44,10 +44,12 @@ add_action( 'after_setup_theme', 'my_setup' );
  */
 function my_script_init() {
 	wp_enqueue_style( 'fontawesome', 'https://use.fontawesome.com/releases/v5.7.2/css/all.css', array(), '5.7.2', 'all' );
+	wp_enqueue_style( 'highlight', get_template_directory_uri() . '/css/asset/tomorrow-night-eighties.css', array(), '9.15.8', 'all' );
 	wp_enqueue_style( 'swiper', get_template_directory_uri() . '/css/asset/swiper.min.css', array(), '4.5.0', 'all' );
 	wp_enqueue_style( 'my', get_template_directory_uri() . '/css/style.css', array(), '1.0.1', 'all' );
 	wp_enqueue_style( 'df', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 	wp_enqueue_script( 'stickyfill', get_template_directory_uri() . '/js/asset/stickyfill.min.js', array(), '2.1.0', true );
+	wp_enqueue_script( 'highlight', get_template_directory_uri() . '/js/asset/highlight.pack.js', array(), '9.15.8', true );
 	wp_enqueue_script( 'swiper', get_template_directory_uri() . '/js/asset/swiper.min.js', array(), '4.5.0', true );
 	wp_enqueue_script( 'my', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '1.0.1', true );
 	if ( is_singular() ) {

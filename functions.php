@@ -35,6 +35,8 @@ function my_setup() {
 }
 add_action( 'after_setup_theme', 'my_setup' );
 
+
+
 /**
  * CSSとJavaScriptの読み込み
  *
@@ -54,6 +56,7 @@ function my_script_init() {
 add_action( 'wp_enqueue_scripts', 'my_script_init' );
 
 
+
 /**
  * 編集画面用のスタイルシート
  *
@@ -63,6 +66,7 @@ function my_editor_style() {
 	add_editor_style( get_template_directory_uri() . '/css/admin/editor-style.css' );
 }
 add_action( 'admin_init', 'my_editor_style' );
+
 
 
 /**
@@ -164,6 +168,7 @@ function my_archive_title( $title ) {
 add_filter( 'get_the_archive_title', 'my_archive_title' );
 
 
+
 /**
  * パンくずのタイトルの書き換え
  *
@@ -179,6 +184,8 @@ function my_breadcrumb_title( $title ) {
 	return $title;
 }
 add_filter( 'raccoon_breadcrumb_title', 'my_breadcrumb_title' );
+
+
 
 /**
  * パスワードで保護されたページのフォーム
@@ -210,3 +217,33 @@ function my_list_anchor( $output ) {
 }
 add_filter( 'wp_list_categories', 'my_list_anchor' );
 add_filter( 'get_archives_link', 'my_list_anchor' );
+
+
+
+/**
+ * 抜粋する文字数を変更
+ *
+ * @param int $length 抜粋する文字数.
+ * @return int 抜粋する文字数.
+ * @codex https://wpdocs.osdn.jp/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%82%BF%E3%82%B0/the_excerpt
+ */
+function my_excerpt_length( $length ) {
+	$length = 100;
+	return $length;
+}
+add_filter( 'excerpt_length', 'my_excerpt_length', 999 );
+
+
+
+/**
+ * 抜粋した文字の後ろにつける省略記号の変更
+ *
+ * @param string $more 省略記号の文字.
+ * @return string 省略記号の文字.
+ * @codex https://wpdocs.osdn.jp/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%82%BF%E3%82%B0/the_excerpt
+ */
+function my_excerpt_more( $more ) {
+	$more = '…';
+	return $more;
+}
+add_filter( 'excerpt_more', 'my_excerpt_more' );

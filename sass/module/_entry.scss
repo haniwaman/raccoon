@@ -41,7 +41,7 @@
 	}
 }
 
-.entry-tag {
+.entry-label {
 	white-space: nowrap;
 
 	a,
@@ -57,6 +57,33 @@
 
 	a {
 		text-decoration: none;
+
+		&:hover {
+			opacity: $opacity;
+		}
+	}
+}
+
+.entry-tags {
+	border-top: 1px solid #eee;
+	padding-top: 12px;
+	margin-top: 32px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.entry-tag {
+	font-size: 12px;
+	margin: 0 6px 6px 0;
+	padding: 2px 6px;
+	border-radius: 2px;
+	background: #eee;
+
+	a {
+		display: block;
+		text-decoration: none;
+		transition: all 0.3s ease 0s;
 
 		&:hover {
 			opacity: $opacity;
@@ -281,7 +308,7 @@
 }
 
 .entry-prev {
-	width: 40%;
+	width: 42%;
 	margin-right: auto;
 
 	@include mq("sp") {
@@ -290,7 +317,7 @@
 }
 
 .entry-next {
-	width: 40%;
+	width: 42%;
 	margin-left: auto;
 
 	@include mq("sp") {

@@ -1,5 +1,10 @@
 .entries {
 	margin-top: 32px;
+
+	&.entries-square {
+		display: flex;
+		flex-wrap: wrap;
+	}
 }
 
 .entry-item {
@@ -12,10 +17,36 @@
 
 	@include mq("sp") {
 		display: block;
+		padding-top: 12px;
+		padding-bottom: 12px;
 	}
 
 	&:last-child {
 		margin-bottom: 0;
+	}
+
+	.entries-square & {
+		display: block;
+		width: calc(50% - 32px / 2);
+		margin-right: 32px;
+		margin-bottom: 32px;
+		padding-left: 24px;
+		padding-right: 24px;
+
+		&:nth-child(2n) {
+			margin-right: 0;
+		}
+
+		@include mq("sp") {
+			padding-left: 12px;
+			padding-right: 12px;
+			width: 100%;
+			margin-right: 0;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
 	}
 }
 
@@ -36,6 +67,11 @@
 			opacity: $opacity;
 		}
 	}
+
+	.entries-square & {
+		width: 100%;
+		padding: 0;
+	}
 }
 
 .entry-item-body {
@@ -44,7 +80,12 @@
 
 	@include mq("sp") {
 		width: 100%;
-		padding: 12px 0;
+		padding: 12px 0 0;
+	}
+
+	.entries-square & {
+		width: 100%;
+		padding: 12px 0 0;
 	}
 }
 
@@ -69,7 +110,7 @@
 	}
 }
 
-.entry-item-tag {
+.entry-item-label {
 	white-space: nowrap;
 
 	a,

@@ -31,7 +31,7 @@ if ( have_posts() ) :
 
 		<!-- entry-meta -->
 		<div class="entry-meta">
-			<div class="entry-tag"><?php my_the_post_category(); ?></div><!-- /entry-item-tag -->
+			<div class="entry-label"><?php my_the_post_category(); ?></div><!-- /entry-item-label -->
 			<time class="entry-published" datetime="<?php the_time( 'c' ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time>
 		</div><!-- /entry-meta -->
 
@@ -65,6 +65,8 @@ if ( have_posts() ) :
 		);
 		?>
 	</div><!-- /entry-body -->
+
+		<?php my_the_post_tags(); ?>
 
 		<?php comments_template(); ?>
 

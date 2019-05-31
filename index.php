@@ -30,7 +30,7 @@ get_header(); ?>
 	</div><!-- /archive-header -->
 
 	<!-- entries -->
-	<div class="entries">
+	<div class="entries entries-square">
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -55,7 +55,7 @@ get_header(); ?>
 		<!-- entry-item-body -->
 		<div class="entry-item-body">
 			<div class="entry-item-meta">
-				<div class="entry-item-tag"><?php my_the_post_category(); ?></div><!-- /entry-item-tag -->
+				<div class="entry-item-label"><?php my_the_post_category(); ?></div><!-- /entry-item-label -->
 				<time class="entry-item-published" datetime="<?php the_time( 'c' ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time><!-- /entry-item-published -->
 			</div><!-- /entry-item-meta -->
 			<h2 class="entry-item-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2><!-- /entry-item-title -->
@@ -72,6 +72,7 @@ get_header(); ?>
 			<?php
 		endwhile;
 		?>
+		</div><!-- /entries -->
 		<?php if ( paginate_links() ) : ?>
 		<!-- pagenation -->
 		<div class="pagenation">
@@ -90,7 +91,6 @@ get_header(); ?>
 			?>
 		</div><!-- /pagenation -->
 		<?php endif; ?>
-	</div><!-- /entries -->
 		<?php
 		endif;
 	?>

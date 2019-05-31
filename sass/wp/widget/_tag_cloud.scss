@@ -3,12 +3,14 @@
 
 .tagcloud {
 	padding: 16px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
 }
 
 .tag-cloud-link {
 	transition: all 0.3s ease 0s;
-	display: inline-block;
-	white-space: nowrap;
+	display: block;
 	font-size: 12px !important;
 	border-radius: 2px;
 	background: #eee;

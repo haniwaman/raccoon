@@ -85,6 +85,28 @@ function my_get_post_tags( $id = 0 ) {
 }
 
 
+
+/**
+ * タグ一覧を表示
+ *
+ * @param integer $id 投稿id.
+ * @return void
+ */
+function my_the_post_tags( $id = 0 ) {
+	$this_tags = my_get_post_tags( $id );
+	if ( $this_tags ) {
+		$i             = 0;
+		$this_tags_num = count( $this_tags );
+		echo '<div class="entry-tags">';
+		for ( $i; $i < $this_tags_num; $i++ ) {
+			echo '<div class="entry-tag"><a href="' . esc_url( $this_tags[ $i ]['link'] ) . '">' . esc_html( $this_tags[ $i ]['name'] ) . '</a></div><!-- /entry-tag -->';
+		}
+		echo '</div><!-- /entry-tags -->';
+	}
+}
+
+
+
 /**
  * ターム取得
  *

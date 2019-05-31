@@ -2307,7 +2307,6 @@ body.checked {
 	align-items: center;
 	display: flex;
 	flex-wrap: wrap;
-	height: 60px;
 	padding-bottom: 0;
 	padding-top: 0;
 }
@@ -2415,6 +2414,12 @@ body.checked {
 	object-fit: cover;
 	object-position: center center;
 	width: 100%;
+}
+
+#sidebar-fixed {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 32px;
 }
 
 @media screen and (max-width: 1179px) {
@@ -2544,6 +2549,10 @@ body.checked {
 	height: 38px;
 	line-height: 38px;
 	width: 38px;
+}
+
+#header > .inner {
+	height: 60px;
 }
 
 .header-nav {

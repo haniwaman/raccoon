@@ -47,6 +47,7 @@ function my_script_init() {
 	wp_enqueue_style( 'swiper', get_template_directory_uri() . '/css/asset/swiper.min.css', array(), '4.5.0', 'all' );
 	wp_enqueue_style( 'my', get_template_directory_uri() . '/css/style.css', array(), '1.0.1', 'all' );
 	wp_enqueue_style( 'df', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_script( 'stickyfill', get_template_directory_uri() . '/js/asset/stickyfill.min.js', array(), '2.1.0', true );
 	wp_enqueue_script( 'swiper', get_template_directory_uri() . '/js/asset/swiper.min.js', array(), '4.5.0', true );
 	wp_enqueue_script( 'my', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '1.0.1', true );
 	if ( is_singular() ) {
@@ -97,6 +98,16 @@ function my_widget_init() {
 		array(
 			'name'          => __( 'サイドバー', 'raccoon' ),
 			'id'            => 'sidebar',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div><!-- /widget -->',
+			'before_title'  => '<div class="widget-title">',
+			'after_title'   => '</div><!-- /widget-title -->',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => __( '追従', 'raccoon' ),
+			'id'            => 'sidebar-fixed',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div><!-- /widget -->',
 			'before_title'  => '<div class="widget-title">',

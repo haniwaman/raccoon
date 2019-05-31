@@ -64,3 +64,6 @@ jQuery( window ).on( 'scroll', function( $ ) {
 		jQuery( '.totop' ).hide();
 	}
 });
+
+/* Polyfill */
+Stickyfill.add( document.querySelectorAll( '#sidebar-fixed' ) );

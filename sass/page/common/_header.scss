@@ -20,7 +20,10 @@
 		align-items: center;
 		padding-top: 0;
 		padding-bottom: 0;
-		height: $header-height-sp;
+
+		@include mq("sp") {
+			height: $header-height-sp;
+		}
 	}
 }
 

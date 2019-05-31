@@ -44,8 +44,12 @@ wp_nav_menu(
 
 <!-- drawer -->
 <div class="drawer">
-<div class="drawer-open"><span></span></div>
 <div class="drawer-close"></div>
+
+<div class="drawer-icon">
+	<div class="drawer-open"></div><!-- /drawer-open -->
+	<div class="drawer-text"><span class="m_open">MENU</span><span class="m_close">CLOSE</span></div><!-- /drawer-text -->
+</div><!-- /drawer-icon -->
 
 <!-- drawer-content -->
 <div class="drawer-content">

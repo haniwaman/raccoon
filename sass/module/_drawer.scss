@@ -1,107 +1,136 @@
-// ドロワーアイコン
-$drawer-width: 250px;
+/* アニメーション速度 */
 $drawer-speed: 0.3s;
+
+/* ドロワーアイコン（背景） */
 $drawer-icon-width: 50px;
 $drawer-icon-height: 50px;
-$bar-width: 28px;
+
+/* ドロワーアイコン */
+$bar-width-open: 28px;
+$bar-width-close: 26px;
 $bar-height: 4px;
 $bar-radius: 2px;
 $bar-space: 4px;
-$bar-bg: transparent;
+$bar-space-base: -$bar-height / 2;
+$bar-space-top: $bar-space-base - $bar-space - $bar-height;
+$bar-space-bottom: $bar-space-base + $bar-space + $bar-height;
 $bar-color: #333;
-$bar-color_active: #fff;
-$drawer-content-bg: $cr-m;
+
+/* ドロワーコンテンツ */
+$drawer-width: 250px;
+$drawer-content-bg: rgba($cr-m, 0.95);
 $drawer-content-font: #fff;
 
+body {
+
+	&.checked {
+		overflow: hidden;
+	}
+}
+
 .drawer {
-	// position: fixed;
-	// top: 0;
 	z-index: map-get($layer, "drawer");
 	display: none;
-	// right: 0;
 
 	@include mq("sp") {
 		display: block;
 	}
 }
 
-.drawer-open {
-	display: inline-block;
+.drawer-icon {
+	display: block;
 	width: $drawer-icon-width;
 	height: $drawer-icon-height;
-	vertical-align: middle;
-	position: relative;
-	transition: $drawer-speed ease-in-out;
+	position: fixed;
+	top: 0;
+	right: 0;
 	cursor: pointer;
-	background: $bar-bg;
 	z-index: map-get($layer, "drawer") + 1;
+	border-radius: 50%;
+	padding: 0;
+	text-align: center;
+}
 
-	span {
-		position: absolute;
+.drawer-open {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -($bar-width-open / 2);
+	display: block;
+	height: $bar-height;
+	width: $bar-width-open;
+	background: $bar-color;
+	border-radius: $bar-radius;
+	transition: all $drawer-speed ease-in-out 0s;
+
+	&::before,
+	&::after {
+		content: "";
 		display: block;
-		top: 50%;
-		left: 50%;
-		height: $bar-height;
-		width: $bar-width;
-		margin: (-$bar-height/2) 0 0 (-$bar-width/2);
+		position: absolute;
+		top: $bar-space-base;
+		right: 50%;
+		margin-right: -50%;
+		width: 100%;
+		height: 100%;
 		background: $bar-color;
 		border-radius: $bar-radius;
-		transition: $drawer-speed ease-in-out;
-
-		&::before,
-		&::after {
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			border-radius: $bar-radius;
-			background: $bar-color;
-			display: block;
-			content: "";
-			cursor: pointer;
-			margin: (-$bar-height/2) 0 0 -50%;
-			top: 50%;
-			left: 50%;
-			transform: rotate(0);
-			transition: $drawer-speed ease-in-out;
-		}
-
-		&::before {
-			margin-top: -$bar-height - $bar-height/2 - $bar-space;
-			transform: rotate(0);
-		}
-
-		&::after {
-			margin-top: $bar-height/2 + $bar-space;
-			transform: rotate(0);
-		}
+		transition: all $drawer-speed ease-in-out 0s;
 	}
 
-	&.m_checked {
+	&::before {
+		top: calc(50% + #{$bar-space-top});
+	}
 
-		span {
-			background: rgba($bar-color_active, 0);
+	&::after {
+		top: calc(50% + #{$bar-space-bottom});
+	}
 
-			&::before,
-			&::after {
-				display: block;
-				content: "";
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				border-radius: $bar-radius;
-				width: $bar-width;
-				height: $bar-height;
-				margin: (-$bar-height/2) 0 0 (-$bar-width/2);
-				background: $bar-color_active;
-			}
+	.m_checked & {
+		background: rgba($bar-color, 0);
+		width: $bar-width-close;
+		margin-left: -($bar-width-close / 2);
 
-			&::before {
-				transform: rotate(-45deg);
-			}
+		&::before {
+			top: $bar-space-base;
+			transform: rotate(-45deg);
+		}
 
-			&::after {
-				transform: rotate(45deg);
-			}
+		&::after {
+			top: $bar-space-base;
+			transform: rotate(45deg);
+			width: 100%;
+		}
+	}
+}
+
+.drawer-text {
+	position: absolute;
+	top: calc(50% + 12px);
+	left: 50%;
+	transform: translateX(-50%);
+	display: block;
+	color: $bar-color;
+	font-size: 10px;
+	text-align: center;
+	font-weight: 700;
+
+	.m_open {
+		display: block;
+	}
+
+	.m_close {
+		display: none;
+	}
+
+	.m_checked & {
+
+		.m_open {
+			display: none;
+		}
+
+		.m_close {
+			display: block;
 		}
 	}
 }
@@ -116,7 +145,7 @@ $drawer-content-font: #fff;
 	height: 100%;
 	background: #000;
 	opacity: 0;
-	transition: 0.3s ease-in-out;
+	transition: all $drawer-speed ease-in-out 0s;
 
 	&.m_checked {
 		display: block;
@@ -134,7 +163,7 @@ $drawer-content-font: #fff;
 	max-width: 90%;
 	height: 100%;
 	background: $drawer-content-bg;
-	transition: $drawer-speed ease-in-out;
+	transition: all $drawer-speed ease-in-out 0s;
 	padding-top: $header-height-sp;
 	transform: translateX(105%);
 	text-align: left;
@@ -159,7 +188,6 @@ $drawer-content-font: #fff;
 
 		a {
 			text-decoration: none;
-			// color: $cr-txt;
 			display: block;
 			padding: 16px;
 			font-size: 16px;

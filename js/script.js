@@ -21,7 +21,7 @@ var swiper = new Swiper( '.swiper-container', {
 
 /* Drawer */
 jQuery( '.drawer-open, .drawer-close' ).on( 'click', function() {
-	jQuery( '.drawer-open' ).toggleClass( 'm_checked' );
+	jQuery( '.drawer-icon' ).toggleClass( 'm_checked' );
 	jQuery( '.drawer-close' ).toggleClass( 'm_checked' );
 	jQuery( '.drawer-content' ).toggleClass( 'm_checked' );
 });

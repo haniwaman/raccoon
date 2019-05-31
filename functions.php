@@ -98,9 +98,9 @@ function my_widget_init() {
 			'name'          => __( 'サイドバー', 'raccoon' ),
 			'id'            => 'sidebar',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div>',
+			'after_widget'  => '</div><!-- /widget -->',
 			'before_title'  => '<div class="widget-title">',
-			'after_title'   => '</div>',
+			'after_title'   => '</div><!-- /widget-title -->',
 		)
 	);
 }

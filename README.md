@@ -2,9 +2,9 @@
 
 ### Font Awesome
 
-Icons License : CC BY 4.0
-Font License  : SIL OFL 1.1
-Code License  : MIT License
+Icons License : CC BY 4.0  
+Font License  : SIL OFL 1.1  
+Code License  : MIT License  
 Source        : https://fontawesome.com/license/free
 
 ### swiper

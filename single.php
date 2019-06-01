@@ -38,15 +38,13 @@ if ( have_posts() ) :
 		<?php get_template_part( 'parts/sns-org' ); ?>
 
 		<!-- entry-img -->
-		<div class="entry-img">
+		<figure class="entry-img">
 		<?php
 		if ( has_post_thumbnail() ) {
 			the_post_thumbnail( 'my_thumbnail' );
-		} else {
-			echo '<img src="' . esc_url( get_template_directory_uri() ) . '/img/noimg.png" alt="">';
 		}
 		?>
-		</div><!-- /entry-img -->
+		</figure><!-- /entry-img -->
 	</div><!-- /entry-header -->
 
 	<!-- entry-body -->
@@ -71,52 +69,6 @@ if ( have_posts() ) :
 		<?php comments_template(); ?>
 
 </article><!-- /entry -->
-
-		<?php
-		$prev_post = get_previous_post();
-		$next_post = get_next_post();
-		?>
-<!-- entry-pager -->
-<nav class="entry-pager">
-		<?php if ( $next_post ) : ?>
-	<div class="entry-next">
-		<a href="<?php the_permalink( $next_post->ID ); ?>" class="entry-pager-head"><?php esc_html_e( '次の記事', 'raccoon' ); ?></a>
-		<a href="<?php the_permalink( $next_post->ID ); ?>" class="entry-pager-item">
-			<div class="entry-pager-img">
-			<?php
-			if ( has_post_thumbnail( $next_post->ID ) ) {
-				echo get_the_post_thumbnail( $next_post->ID, 'thumbnail' );
-			} else {
-				echo '<img src="' . esc_url( get_template_directory_uri() ) . '/img/no-thumbnail.png" alt="">';
-			}
-			?>
-			</div><!-- /entry-pager-img -->
-			<div class="entry-pager-body">
-				<div class="entry-pager-title"><?php echo esc_html( mb_strimwidth( get_the_title( $next_post->ID ), 0, 64, '…', 'UTF-8' ) ); ?></div>
-			</div><!-- /entry-pager-body -->
-		</a><!-- /entry-pager-item -->
-	</div><!-- /entry-next -->
-			<?php endif; ?>
-		<?php if ( $prev_post ) : ?>
-	<div class="entry-prev">
-		<a href="<?php the_permalink( $prev_post->ID ); ?>" class="entry-pager-head"><?php esc_html_e( '前の記事', 'raccoon' ); ?></a>
-		<a href="<?php the_permalink( $prev_post->ID ); ?>" class="entry-pager-item">
-			<div class="entry-pager-img">
-			<?php
-			if ( has_post_thumbnail( $prev_post->ID ) ) {
-				echo get_the_post_thumbnail( $prev_post->ID, 'thumbnail' );
-			} else {
-				echo '<img src="' . esc_url( get_template_directory_uri() ) . '/img/no-thumbnail.png" alt="">';
-			}
-			?>
-			</div><!-- /entry-pager-img -->
-			<div class="entry-pager-body">
-				<div class="entry-pager-title"><?php echo esc_html( mb_strimwidth( get_the_title( $prev_post->ID ), 0, 64, '…', 'UTF-8' ) ); ?></div>
-			</div><!-- /entry-pager-body -->
-		</a><!-- /entry-pager-item -->
-	</div><!-- /entry-prev -->
-			<?php endif; ?>
-</nav><!-- /entry-pager -->
 
 		<?php
 endwhile;

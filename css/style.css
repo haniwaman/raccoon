@@ -163,6 +163,11 @@ img {
 	vertical-align: top;
 }
 
+video {
+	height: auto;
+	max-width: 100%;
+}
+
 code,
 kbd,
 pre,
@@ -461,6 +466,15 @@ select:focus {
 .breadcrumb_bridge {
 	color: #fff;
 	font-size: 14px;
+}
+
+.attachment-btn {
+	margin-top: 32px;
+	text-align: center;
+}
+
+.attachment-btn .btn {
+	text-decoration: none;
 }
 
 .comments-title {
@@ -1312,6 +1326,13 @@ body.checked {
 }
 
 .entry-img {
+	text-align: center;
+}
+
+.entry-img-caption {
+	color: #666;
+	font-size: 12px;
+	margin-top: 8px;
 	text-align: center;
 }
 

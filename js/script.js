@@ -57,7 +57,7 @@ jQuery( 'a[href^="#"]' ).click( function() {
 });
 
 /* ToTop */
-jQuery( window ).on( 'scroll', function( $ ) {
+jQuery( window ).on( 'scroll', function() {
 	if ( 100 < jQuery( this ).scrollTop() ) {
 		jQuery( '.totop' ).show();
 	} else {
@@ -72,4 +72,19 @@ Stickyfill.add( document.querySelectorAll( '#sidebar-fixed' ) );
 hljs.initHighlightingOnLoad();
 hljs.configure({
 	tabReplace: '  '
+});
+
+/* FadeIn */
+jQuery( window ).on( 'scroll', function() {
+	jQuery( '.fadein' ).each( function() {
+		var thisPos = jQuery( this ).offset().top;
+		var scrollPos = jQuery( window ).scrollTop();
+		var windowHeight = jQuery( window ).height();
+		var inPos = 0;
+		if ( scrollPos > thisPos - windowHeight + inPos ) {
+			jQuery( this ).addClass( 'm_anim' );
+		} else {
+			jQuery( this ).removeClass( 'm_anim' );
+		}
+	});
 });

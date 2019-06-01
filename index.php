@@ -37,7 +37,7 @@ get_header(); ?>
 			?>
 
 	<!-- entry-item -->
-	<div <?php post_class( array( 'entry-item' ) ); ?>>
+	<div <?php post_class( array( 'entry-item', 'fadein' ) ); ?>>
 
 		<!-- entry-item-img -->
 		<div class="entry-item-img">

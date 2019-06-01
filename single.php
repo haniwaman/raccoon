@@ -66,6 +66,8 @@ if ( have_posts() ) :
 
 		<?php my_the_post_tags(); ?>
 
+		<?php get_template_part( 'parts/likebox' ); ?>
+
 		<?php comments_template(); ?>
 
 </article><!-- /entry -->

@@ -1622,6 +1622,44 @@ body.checked {
 	font-size: 14px;
 }
 
+.likebox {
+	align-items: center;
+	background: #2d2d2d;
+	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
+	display: flex;
+	margin-top: 32px;
+}
+
+.likebox-img {
+	width: 40%;
+}
+
+.likebox-img img {
+	-o-object-fit: cover;
+	font-family: "object-fit: cover;";
+	height: 200px;
+	object-fit: cover;
+	width: 100%;
+}
+
+.likebox-body {
+	color: #fff;
+	padding: 24px 10px;
+	text-align: center;
+	width: 60%;
+}
+
+.likebox-lead {
+	font-weight: 700;
+	line-height: 1.4;
+	margin-bottom: 16px;
+}
+
+.likebox-content {
+	font-size: 14px;
+	margin-top: 16px;
+}
+
 .swiper-container {
 	overflow: visible;
 }
@@ -2542,6 +2580,20 @@ body.checked {
 
 .entry-pager-head {
 	font-size: 14px;
+}
+
+.likebox-img img {
+	height: 164px;
+}
+
+.likebox-lead {
+	font-size: 14px;
+	margin-bottom: 12px;
+}
+
+.likebox-content {
+	font-size: 12px;
+	margin-top: 12px;
 }
 
 .sns-buttons {

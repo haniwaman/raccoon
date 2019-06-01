@@ -35,7 +35,7 @@ get_header(); ?>
 
 		<figure class="entry-img">
 		<?php if ( wp_attachment_is_image( get_the_ID() ) ) : ?>
-			<img src="<?php echo esc_url( wp_get_attachment_image_src( get_the_ID(), 'my_thumbnail' )[0] ); ?>" alt="<?php echo esc_attr( get_post_meta( get_the_ID(), '_wp_attachment_image_alt', true ) ); ?>">
+			<?php echo wp_get_attachment_image( get_the_ID(), 'my_thumbnail' ); ?>
 		<?php elseif ( false !== strpos( get_post_mime_type( get_the_ID() ), 'video' ) ) : ?>
 			<video src="<?php echo esc_url( wp_get_attachment_url( get_the_ID() ) ); ?>" controls></video>
 		<?php elseif ( false !== strpos( get_post_mime_type( get_the_ID() ), 'audio' ) ) : ?>

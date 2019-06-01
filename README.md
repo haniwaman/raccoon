@@ -21,3 +21,8 @@ Source : https://github.com/wilddeer/stickyfill
 
 License : BSD3 License
 Source : https://github.com/highlightjs/highlight.js/blob/master/LICENSE
+
+### object-fit-images
+
+License : MIT License
+Source : https://github.com/bfred-it/object-fit-images

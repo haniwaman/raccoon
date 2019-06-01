@@ -17,6 +17,7 @@
 </footer><!-- /footer -->
 
 <div class="totop"><a href="#"><i class="fas fa-chevron-up"></i></a></div><!-- /totop -->
+<?php get_template_part( 'parts/modal' ); ?>
 
 <?php wp_footer(); ?>
 </body>

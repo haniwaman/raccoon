@@ -134,7 +134,7 @@ function my_widget_init() {
 	register_sidebar(
 		array(
 			'name'          => __( 'スマホ', 'raccoon' ),
-			'id'            => 'sidebar-sp',
+			'id'            => 'modal',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div><!-- /widget -->',
 			'before_title'  => '<div class="widget-title">',

@@ -76,3 +76,48 @@ hljs.configure({
 
 /* Object Fit */
 objectFitImages();
+
+
+/* ハンバーガーメニュー */
+jQuery( function($) {
+	// jQuery(window).resize(function() {
+	// 	if ( jQuery(window).width() < hWidth ) {
+	// 		jQuery("#modal-menu").removeClass("active");
+	// 	} else {
+	// 		jQuery("#modal-menu").addClass("active");
+	// 	}
+	// });
+
+	// if ( jQuery(window).width() >= hWidth ) {
+	// 	jQuery("#modal-menu").show();
+	// 	jQuery("#modal-menu").addClass("active");
+	// }
+	jQuery(window).on("scroll", function() {
+		if ( jQuery(window).width() < hWidth ) {
+			if (jQuery(this).scrollTop() > 100) {
+					jQuery("#modal-menu").show();
+			} else {
+					jQuery("#modal-menu").hide();
+					jQuery("#modal-menu").removeClass("active");
+			}
+		}
+	});
+
+	// jQuery(".totop").click(function () {
+	// 	if ( jQuery(window).width() < hWidth ) {
+	// 		jQuery("#modal-menu").hide();
+	// 		jQuery("#modal-menu").removeClass("active");
+	// 	}
+	// 	jQuery("body,html").animate({
+	// 			scrollTop: 0
+	// 	}, 500);
+	// });
+
+	$(".modal-icon").on("click", function() {
+			$(this).parent().toggleClass("active");
+	});
+	$('#modal-toc a').on('click', function() {
+			if ( $(window).width() < 768 ) {
+					$('#modal-menu').toggleClass('active');
+			}
+	});

@@ -41,33 +41,7 @@ wp_nav_menu(
 );
 ?>
 
-<!-- drawer -->
-<div class="drawer">
-<div class="drawer-close"></div>
-
-<div class="drawer-icon">
-	<div class="drawer-open"></div><!-- /drawer-open -->
-	<div class="drawer-text"><span class="m_open">MENU</span><span class="m_close">CLOSE</span></div><!-- /drawer-text -->
-</div><!-- /drawer-icon -->
-
-<!-- drawer-content -->
-<div class="drawer-content">
-<?php
-	wp_nav_menu(
-		array(
-			'container'       => false,
-			'depth'           => 2,
-			'theme_location'  => 'drawer',
-			'container'       => 'nav',
-			'container_class' => 'drawer-nav',
-			'menu_class'      => 'drawer-list',
-		)
-	);
-	?>
-</div><!-- /drawer-content -->
-</div><!-- /drawer -->
-
+<?php get_template_part( 'parts/modal' ); ?>
 
 </div><!-- /inner -->
 </header><!-- /header -->
-

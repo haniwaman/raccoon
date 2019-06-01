@@ -13,11 +13,11 @@
 
 <div class="modal-icon">
 	<div class="modal-open"></div><!-- /modal-open -->
-	<div class="modal-text"><span class="m_open">MENU</span><span class="m_close">CLOSE</span></div><!-- /modal-text -->
+	<div class="modal-text"><span class="m_open">MENU</span><span class="m_close">CLOSE</span></div><!-- /drawer-text -->
 </div><!-- /modal-icon -->
 
 <!-- modal-content -->
-<div class="modal-content">
+<div class="modal-content widget-sp">
 
 <?php if ( is_active_sidebar( 'modal' ) ) : ?>
 	<?php dynamic_sidebar( 'modal' ); ?>

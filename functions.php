@@ -44,14 +44,14 @@ add_action( 'after_setup_theme', 'my_setup' );
  */
 function my_script_init() {
 	/* CSS */
-	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/lib/fontawesome/all.min.css', array(), '5.8.2', 'all' );
+	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/lib/fontawesome/css/all.min.css', array(), '5.8.2', 'all' );
 	wp_enqueue_style( 'highlight', get_template_directory_uri() . '/lib/highlight-js/tomorrow-night-eighties.css', array(), '9.15.8', 'all' );
 	wp_enqueue_style( 'swiper', get_template_directory_uri() . '/lib/swiper/swiper.min.css', array(), '4.5.0', 'all' );
 	wp_enqueue_style( 'my', get_template_directory_uri() . '/css/style.css', array(), '1.0.1', 'all' );
 	wp_enqueue_style( 'df', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ), 'all' );
 
 	/* JavaScript */
-	wp_enqueue_script( 'stickyfill', get_template_directory_uri() . '/js/stickyfill/stickyfill.min.js', array(), '2.1.0', true );
+	wp_enqueue_script( 'stickyfill', get_template_directory_uri() . '/lib/stickyfill/stickyfill.min.js', array(), '2.1.0', true );
 	wp_enqueue_script( 'highlight', get_template_directory_uri() . '/lib/highlight-js/highlight.pack.js', array(), '9.15.8', true );
 	wp_enqueue_script( 'swiper', get_template_directory_uri() . '/lib/swiper/swiper.min.js', array(), '4.5.0', true );
 	wp_enqueue_script( 'object-fit', get_template_directory_uri() . '/lib/object-fit/ofi.min.js', array(), '3.2.4', true );

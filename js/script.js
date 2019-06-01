@@ -26,13 +26,6 @@ jQuery( '.drawer-open, .drawer-close' ).on( 'click', function() {
 	jQuery( '.drawer-content' ).toggleClass( 'm_checked' );
 });
 
-jQuery( '.drawer-list > .menu-item-has-children' ).append( '<span>' );
-jQuery( '.menu-item-has-children span' ).on( 'click', function() {
-	jQuery( this )
-		.parent( '.menu-item-has-children' )
-		.toggleClass( 'm_open' );
-});
-
 /* SmoothScroll */
 jQuery( 'a[href^="#"]' ).click( function() {
 	var header = 0;
@@ -58,7 +51,7 @@ jQuery( 'a[href^="#"]' ).click( function() {
 
 /* ToTop */
 jQuery( window ).on( 'scroll', function() {
-	if ( 100 < jQuery( this ).scrollTop() ) {
+	if ( 500 < jQuery( this ).scrollTop() ) {
 		jQuery( '.totop' ).show();
 	} else {
 		jQuery( '.totop' ).hide();
@@ -77,47 +70,25 @@ hljs.configure({
 /* Object Fit */
 objectFitImages();
 
+/* Modal */
+jQuery( '.modal-open, .modal-close' ).on( 'click', function() {
+	jQuery( '.modal-icon' ).toggleClass( 'm_checked' );
+	jQuery( '.modal-close' ).toggleClass( 'm_checked' );
+	jQuery( '.modal-content' ).toggleClass( 'm_checked' );
+});
 
-/* ハンバーガーメニュー */
-jQuery( function($) {
-	// jQuery(window).resize(function() {
-	// 	if ( jQuery(window).width() < hWidth ) {
-	// 		jQuery("#modal-menu").removeClass("active");
-	// 	} else {
-	// 		jQuery("#modal-menu").addClass("active");
-	// 	}
-	// });
+/* widget_nav_menu */
+jQuery( '.widget_nav_menu .menu > .menu-item-has-children' ).append( '<span>' );
+jQuery( '.menu-item-has-children span' ).on( 'click', function() {
+	jQuery( this )
+		.parent( '.menu-item-has-children' )
+		.toggleClass( 'm_open' );
+});
 
-	// if ( jQuery(window).width() >= hWidth ) {
-	// 	jQuery("#modal-menu").show();
-	// 	jQuery("#modal-menu").addClass("active");
-	// }
-	jQuery(window).on("scroll", function() {
-		if ( jQuery(window).width() < hWidth ) {
-			if (jQuery(this).scrollTop() > 100) {
-					jQuery("#modal-menu").show();
-			} else {
-					jQuery("#modal-menu").hide();
-					jQuery("#modal-menu").removeClass("active");
-			}
-		}
-	});
-
-	// jQuery(".totop").click(function () {
-	// 	if ( jQuery(window).width() < hWidth ) {
-	// 		jQuery("#modal-menu").hide();
-	// 		jQuery("#modal-menu").removeClass("active");
-	// 	}
-	// 	jQuery("body,html").animate({
-	// 			scrollTop: 0
-	// 	}, 500);
-	// });
-
-	$(".modal-icon").on("click", function() {
-			$(this).parent().toggleClass("active");
-	});
-	$('#modal-toc a').on('click', function() {
-			if ( $(window).width() < 768 ) {
-					$('#modal-menu').toggleClass('active');
-			}
-	});
+/* widget_nav_menuと統一する */
+jQuery( '.drawer-list > .menu-item-has-children' ).append( '<span>' );
+jQuery( '.menu-item-has-children span' ).on( 'click', function() {
+	jQuery( this )
+		.parent( '.menu-item-has-children' )
+		.toggleClass( 'm_open' );
+});

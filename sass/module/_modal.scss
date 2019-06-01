@@ -1,0 +1,248 @@
+/* アニメーション速度 */
+$modal-speed: 0.3s;
+
+/* モーダルアイコン（背景） */
+$modal-icon-width: 50px;
+$modal-icon-height: 50px;
+$modal-icon-bg: transparent;
+$modal-icon-top: 0;
+$modal-icon-right: 0;
+$modal-icon-bottom: auto;
+$modal-icon-left: auto;
+$modal-icon-radius: 0;
+
+/* モーダルアイコン */
+$bar-width-open: 28px;
+$bar-width-close: 26px;
+$bar-height: 4px;
+$bar-radius: 2px;
+$bar-space: 4px;
+$bar-space-base: -$bar-height / 2;
+$bar-space-top: $bar-space-base - $bar-space - $bar-height;
+$bar-space-bottom: $bar-space-base + $bar-space + $bar-height;
+$bar-color: #333;
+
+/* モーダルコンテンツ */
+$modal-width: 250px;
+$modal-content-bg: rgba($cr-m, 0.95);
+$modal-content-font: $cr-txt;
+
+.modal {
+	z-index: map-get($layer, "modal");
+	display: none;
+
+	@include mq("sp") {
+		display: block;
+	}
+}
+
+.modal-icon {
+	display: block;
+	width: $modal-icon-width;
+	height: $modal-icon-height;
+	position: fixed;
+	top: $modal-icon-top;
+	right: $modal-icon-right;
+	bottom: $modal-icon-bottom;
+	left: $modal-icon-left;
+	cursor: pointer;
+	z-index: map-get($layer, "modal") + 1;
+	border-radius: $modal-icon-radius;
+	padding: 0;
+	text-align: center;
+	background: $modal-icon-bg;
+}
+
+.modal-open {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -($bar-width-open / 2);
+	margin-top: -($bar-height / 2);
+	display: block;
+	height: $bar-height;
+	width: $bar-width-open;
+	background: $bar-color;
+	border-radius: $bar-radius;
+	transition: all $modal-speed ease-in-out 0s;
+
+	&::before,
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: $bar-space-base;
+		right: 50%;
+		margin-right: -50%;
+		width: 100%;
+		height: 100%;
+		background: $bar-color;
+		border-radius: $bar-radius;
+		transition: all $modal-speed ease-in-out 0s;
+	}
+
+	&::before {
+		top: calc(50% + #{$bar-space-top});
+	}
+
+	&::after {
+		top: calc(50% + #{$bar-space-bottom});
+	}
+
+	.m_checked & {
+		background: rgba($bar-color, 0);
+		width: $bar-width-close;
+		margin-left: -($bar-width-close / 2);
+
+		&::before {
+			top: $bar-space-base;
+			transform: rotate(-45deg);
+		}
+
+		&::after {
+			top: $bar-space-base;
+			transform: rotate(45deg);
+			width: 100%;
+		}
+	}
+}
+
+.modal-text {
+	position: absolute;
+	top: calc(50% + 12px);
+	left: 50%;
+	transform: translateX(-50%);
+	display: block;
+	color: $bar-color;
+	font-size: 10px;
+	text-align: center;
+	font-weight: 700;
+
+	.m_open {
+		display: block;
+	}
+
+	.m_close {
+		display: none;
+	}
+
+	.m_checked & {
+
+		.m_open {
+			display: none;
+		}
+
+		.m_close {
+			display: block;
+		}
+	}
+}
+
+.modal-close {
+	display: none;
+	position: fixed;
+	z-index: map-get($layer, "modal") - 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: 0;
+	transition: all $modal-speed ease-in-out 0s;
+
+	&.m_checked {
+		display: block;
+		opacity: 0.4;
+	}
+}
+
+.modal-content {
+	overflow: auto;
+	position: fixed;
+	top: $modal-icon-top;
+	right: $modal-icon-right;
+	bottom: $modal-icon-bottom;
+	left: $modal-icon-left;
+	z-index: map-get($layer, "modal");
+	width: 100%;
+	height: 100%;
+	border-radius: $modal-icon-radius;
+	background: $modal-content-bg;
+	transition: all $modal-speed ease-in-out 0s;
+	text-align: left;
+	color: $modal-content-font;
+	padding: 24px 16px;
+	visibility: hidden;
+	box-shadow: 0 0 25px rgba(#000, 0.16);
+	opacity: 0;
+
+	&.m_checked {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+// .modal-nav {
+
+// 	li {
+
+// 		a {
+// 			text-decoration: none;
+// 			display: block;
+// 			padding: 16px;
+// 			font-size: 16px;
+
+// 			span {
+// 				font-size: 14px;
+// 				color: $cr-m;
+// 				margin-left: 12px;
+// 			}
+// 		}
+
+// 		&.menu-item-has-children {
+// 			position: relative;
+
+// 			.sub-menu {
+// 				display: none;
+// 				padding-left: 24px;
+
+// 				a {
+// 					font-size: 14px;
+// 					padding-bottom: 12px;
+// 					padding-top: 12px;
+// 				}
+// 			}
+
+// 			a {
+// 				padding-right: 46px;
+// 			}
+
+// 			span {
+
+// 				&::after {
+// 					content: "\f078";
+// 					font-family: $ff-awesome;
+// 					font-size: 18px;
+// 					font-weight: 900;
+// 					position: absolute;
+// 					right: 16px;
+// 					top: 12px;
+// 				}
+// 			}
+
+// 			&.m_open {
+
+// 				.sub-menu {
+// 					display: block;
+// 				}
+
+// 				span {
+
+// 					&::after {
+// 						content: "\f106";
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }

@@ -4,6 +4,11 @@ $drawer-speed: 0.3s;
 /* ドロワーアイコン（背景） */
 $drawer-icon-width: 50px;
 $drawer-icon-height: 50px;
+$drawer-icon-bg: transparent;
+$drawer-icon-top: 0;
+$drawer-icon-right: 0;
+$drawer-icon-bottom: auto;
+$drawer-icon-left: auto;
 
 /* ドロワーアイコン */
 $bar-width-open: 28px;
@@ -21,13 +26,6 @@ $drawer-width: 250px;
 $drawer-content-bg: rgba($cr-m, 0.95);
 $drawer-content-font: #fff;
 
-body {
-
-	&.checked {
-		overflow: hidden;
-	}
-}
-
 .drawer {
 	z-index: map-get($layer, "drawer");
 	display: none;
@@ -42,13 +40,16 @@ body {
 	width: $drawer-icon-width;
 	height: $drawer-icon-height;
 	position: fixed;
-	top: 0;
-	right: 0;
+	top: $drawer-icon-top;
+	right: $drawer-icon-top;
+	bottom: $drawer-icon-bottom;
+	left: $drawer-icon-left;
 	cursor: pointer;
 	z-index: map-get($layer, "drawer") + 1;
 	border-radius: 50%;
 	padding: 0;
 	text-align: center;
+	background: $drawer-icon-bg;
 }
 
 .drawer-open {
@@ -56,6 +57,7 @@ body {
 	top: 50%;
 	left: 50%;
 	margin-left: -($bar-width-open / 2);
+	margin-top: -($bar-height / 2);
 	display: block;
 	height: $bar-height;
 	width: $bar-width-open;
@@ -156,8 +158,11 @@ body {
 .drawer-content {
 	overflow: auto;
 	position: fixed;
-	top: 0;
-	right: 0;
+	top: $drawer-icon-top;
+	right: $drawer-icon-right;
+	bottom: $drawer-icon-bottom;
+	left: $drawer-icon-left;
+	transform: translateX(105%);
 	z-index: map-get($layer, "drawer");
 	width: $drawer-width;
 	max-width: 90%;
@@ -165,20 +170,18 @@ body {
 	background: $drawer-content-bg;
 	transition: all $drawer-speed ease-in-out 0s;
 	padding-top: $header-height-sp;
-	transform: translateX(105%);
 	text-align: left;
 	color: $drawer-content-font;
 
-	.drawer-title {
-		font-size: 1em;
-		font-weight: 700;
-		text-align: center;
-		padding: 0 34px;
+	&.m_left {
+		transform: translateX(-105%);
+		left: 0;
+		right: auto;
 	}
 
 	&.m_checked {
 		transform: translateX(0);
-		box-shadow: 6px 0 25px rgba(0, 0, 0, 0.16);
+		box-shadow: 6px 0 25px rgba(#000, 0.16);
 	}
 }
 

@@ -888,20 +888,19 @@ span.wpcf7-list-item {
 
 /* ドロワーコンテンツ */
 
-body.checked {
-	overflow: hidden;
-}
-
 .drawer {
 	display: none;
 	z-index: 40;
 }
 
 .drawer-icon {
+	background: transparent;
 	border-radius: 50%;
+	bottom: auto;
 	cursor: pointer;
 	display: block;
 	height: 50px;
+	left: auto;
 	padding: 0;
 	position: fixed;
 	right: 0;
@@ -918,6 +917,7 @@ body.checked {
 	height: 4px;
 	left: 50%;
 	margin-left: -14px;
+	margin-top: -2px;
 	position: absolute;
 	top: 50%;
 	transition: all 0.3s ease-in-out 0s;
@@ -1016,8 +1016,10 @@ body.checked {
 .drawer-content {
 	-webkit-transform: translateX(105%);
 	background: rgba(0, 121, 107, 0.95);
+	bottom: auto;
 	color: #fff;
 	height: 100%;
+	left: auto;
 	max-width: 90%;
 	overflow: auto;
 	padding-top: 60px;
@@ -1031,11 +1033,11 @@ body.checked {
 	z-index: 40;
 }
 
-.drawer-content .drawer-title {
-	font-size: 1em;
-	font-weight: 700;
-	padding: 0 34px;
-	text-align: center;
+.drawer-content.m_left {
+	-webkit-transform: translateX(-105%);
+	left: 0;
+	right: auto;
+	transform: translateX(-105%);
 }
 
 .drawer-content.m_checked {
@@ -1660,6 +1662,165 @@ body.checked {
 	margin-top: 16px;
 }
 
+/* アニメーション速度 */
+
+/* モーダルアイコン（背景） */
+
+/* モーダルアイコン */
+
+/* モーダルコンテンツ */
+
+.modal {
+	display: none;
+	z-index: 100;
+}
+
+.modal-icon {
+	background: transparent;
+	border-radius: 0;
+	bottom: auto;
+	cursor: pointer;
+	display: block;
+	height: 50px;
+	left: auto;
+	padding: 0;
+	position: fixed;
+	right: 0;
+	text-align: center;
+	top: 0;
+	width: 50px;
+	z-index: 101;
+}
+
+.modal-open {
+	background: #333;
+	border-radius: 2px;
+	display: block;
+	height: 4px;
+	left: 50%;
+	margin-left: -14px;
+	margin-top: -2px;
+	position: absolute;
+	top: 50%;
+	transition: all 0.3s ease-in-out 0s;
+	width: 28px;
+}
+
+.modal-open::before,
+.modal-open::after {
+	background: #333;
+	border-radius: 2px;
+	content: "";
+	display: block;
+	height: 100%;
+	margin-right: -50%;
+	position: absolute;
+	right: 50%;
+	top: -2px;
+	transition: all 0.3s ease-in-out 0s;
+	width: 100%;
+}
+
+.modal-open::before {
+	top: calc(50% + -10px);
+}
+
+.modal-open::after {
+	top: calc(50% + 6px);
+}
+
+.m_checked .modal-open {
+	background: rgba(51, 51, 51, 0);
+	margin-left: -13px;
+	width: 26px;
+}
+
+.m_checked .modal-open::before {
+	-webkit-transform: rotate(-45deg);
+	top: -2px;
+	transform: rotate(-45deg);
+}
+
+.m_checked .modal-open::after {
+	-webkit-transform: rotate(45deg);
+	top: -2px;
+	transform: rotate(45deg);
+	width: 100%;
+}
+
+.modal-text {
+	-webkit-transform: translateX(-50%);
+	color: #333;
+	display: block;
+	font-size: 10px;
+	font-weight: 700;
+	left: 50%;
+	position: absolute;
+	text-align: center;
+	top: calc(50% + 12px);
+	transform: translateX(-50%);
+}
+
+.modal-text .m_open {
+	display: block;
+}
+
+.modal-text .m_close {
+	display: none;
+}
+
+.m_checked .modal-text .m_open {
+	display: none;
+}
+
+.m_checked .modal-text .m_close {
+	display: block;
+}
+
+.modal-close {
+	background: #000;
+	display: none;
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	position: fixed;
+	top: 0;
+	transition: all 0.3s ease-in-out 0s;
+	width: 100%;
+	z-index: 99;
+}
+
+.modal-close.m_checked {
+	display: block;
+	opacity: 0.4;
+}
+
+.modal-content {
+	background: rgba(0, 121, 107, 0.95);
+	border-radius: 0;
+	bottom: auto;
+	box-shadow: 0 0 25px rgba(0, 0, 0, 0.16);
+	color: #333;
+	height: 100%;
+	left: auto;
+	opacity: 0;
+	overflow: auto;
+	padding: 24px 16px;
+	position: fixed;
+	right: 0;
+	text-align: left;
+	top: 0;
+	transition: all 0.3s ease-in-out 0s;
+	visibility: hidden;
+	width: 100%;
+	z-index: 100;
+}
+
+.modal-content.m_checked {
+	opacity: 1;
+	visibility: visible;
+}
+
 .swiper-container {
 	overflow: visible;
 }
@@ -1887,6 +2048,11 @@ body.checked {
 
 .gallery-columns-9 .gallery-item {
 	width: 11.11111%;
+}
+
+.menu-item-has-children .sub-menu {
+	display: none;
+	padding-left: 24px;
 }
 
 .pagenation {
@@ -2463,7 +2629,7 @@ body.checked {
 }
 
 .mv-image {
-	height: 500px;
+	height: auto;
 }
 
 .mv-image img {
@@ -2594,6 +2760,10 @@ body.checked {
 .likebox-content {
 	font-size: 12px;
 	margin-top: 12px;
+}
+
+.modal {
+	display: block;
 }
 
 .sns-buttons {

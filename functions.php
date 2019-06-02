@@ -52,9 +52,10 @@ function my_script_init() {
 
 	/* JavaScript */
 	wp_enqueue_script( 'stickyfill', get_template_directory_uri() . '/lib/stickyfill/stickyfill.min.js', array(), '2.1.0', true );
+	wp_enqueue_script( 'object-fit', get_template_directory_uri() . '/lib/object-fit/ofi.min.js', array(), '3.2.4', true );
 	wp_enqueue_script( 'highlight', get_template_directory_uri() . '/lib/highlight-js/highlight.pack.js', array(), '9.15.8', true );
 	wp_enqueue_script( 'swiper', get_template_directory_uri() . '/lib/swiper/swiper.min.js', array(), '4.5.0', true );
-	wp_enqueue_script( 'object-fit', get_template_directory_uri() . '/lib/object-fit/ofi.min.js', array(), '3.2.4', true );
+	wp_enqueue_script( 'clipboard', get_template_directory_uri() . '/lib/clipboard/clipboard.min.js', array(), '2.0.4', true );
 	wp_enqueue_script( 'my', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '1.0.1', true );
 	if ( is_singular() ) {
 		wp_enqueue_script( 'comment-reply' );

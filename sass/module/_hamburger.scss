@@ -1,0 +1,143 @@
+/* アニメーション速度 */
+$hamburger-speed: 0.3s;
+
+/* モーダルアイコン（背景） */
+$hamburger-icon-width: 50px;
+$hamburger-icon-height: 50px;
+$hamburger-icon-bg: transparent;
+$hamburger-icon-top: 0;
+$hamburger-icon-right: 0;
+$hamburger-icon-bottom: auto;
+$hamburger-icon-left: auto;
+$hamburger-icon-radius: 0;
+
+/* モーダルアイコン */
+$bar-width-open: 28px;
+$bar-width-close: 26px;
+$bar-height: 4px;
+$bar-radius: 2px;
+$bar-space: 4px;
+$bar-space-base: -$bar-height / 2;
+$bar-space-top: $bar-space-base - $bar-space - $bar-height;
+$bar-space-bottom: $bar-space-base + $bar-space + $bar-height;
+$bar-color: #333;
+
+.hamburger-icon {
+	display: block;
+	width: $hamburger-icon-width;
+	height: $hamburger-icon-height;
+	position: fixed;
+	top: $hamburger-icon-top;
+	right: $hamburger-icon-right;
+	bottom: $hamburger-icon-bottom;
+	left: $hamburger-icon-left;
+	cursor: pointer;
+	z-index: map-get($layer, "modal") + 1;
+	border-radius: $hamburger-icon-radius;
+	padding: 0;
+	text-align: center;
+	background: $hamburger-icon-bg;
+}
+
+.hamburger-open {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -($bar-width-open / 2);
+	margin-top: -($bar-height / 2);
+	display: block;
+	height: $bar-height;
+	width: $bar-width-open;
+	background: $bar-color;
+	border-radius: $bar-radius;
+	transition: all $hamburger-speed ease-in-out 0s;
+
+	&::before,
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: $bar-space-base;
+		right: 50%;
+		margin-right: -50%;
+		width: 100%;
+		height: 100%;
+		background: $bar-color;
+		border-radius: $bar-radius;
+		transition: all $hamburger-speed ease-in-out 0s;
+	}
+
+	&::before {
+		top: calc(50% + #{$bar-space-top});
+	}
+
+	&::after {
+		top: calc(50% + #{$bar-space-bottom});
+	}
+
+	.m_checked & {
+		background: rgba($bar-color, 0);
+		width: $bar-width-close;
+		margin-left: -($bar-width-close / 2);
+
+		&::before {
+			top: $bar-space-base;
+			transform: rotate(-45deg);
+		}
+
+		&::after {
+			top: $bar-space-base;
+			transform: rotate(45deg);
+			width: 100%;
+		}
+	}
+}
+
+.hamburger-close {
+	display: none;
+	position: fixed;
+	z-index: map-get($layer, "modal") - 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: 0;
+	transition: all $hamburger-speed ease-in-out 0s;
+
+	&.m_checked {
+		display: block;
+		opacity: 0.4;
+	}
+}
+
+.hamburger-text {
+	position: absolute;
+	top: calc(50% + 12px);
+	left: 50%;
+	transform: translateX(-50%);
+	display: block;
+	color: $bar-color;
+	font-size: 10px;
+	text-align: center;
+	font-weight: 700;
+
+	.m_open {
+		display: block;
+	}
+
+	.m_close {
+		display: none;
+	}
+
+	.m_checked & {
+
+		.m_open {
+			display: none;
+		}
+
+		.m_close {
+			display: block;
+		}
+	}
+}

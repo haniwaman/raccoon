@@ -9,12 +9,12 @@
 
 <!-- drawer -->
 <div class="drawer">
-<div class="drawer-close"></div>
+<div class="hamburger-close"></div>
 
-<div class="drawer-icon">
-	<div class="drawer-open"></div><!-- /drawer-open -->
-	<div class="drawer-text"><span class="m_open">MENU</span><span class="m_close">CLOSE</span></div><!-- /drawer-text -->
-</div><!-- /drawer-icon -->
+<div class="hamburger-icon m_drawer">
+	<div class="hamburger-open"></div><!-- /hamburger-open -->
+	<div class="hamburger-text"><span class="m_open">MENU</span><span class="m_close">CLOSE</span></div><!-- /hamburger-text -->
+</div><!-- /hamburger-icon -->
 
 <!-- drawer-content m_left -->
 <div class="drawer-content widget-sp">

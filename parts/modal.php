@@ -9,12 +9,12 @@
 
 <!-- modal -->
 <div class="modal">
-<div class="modal-close"></div>
+<div class="hamburger-close"></div>
 
-<div class="modal-icon">
-	<div class="modal-open"></div><!-- /modal-open -->
-	<div class="modal-text"><span class="m_open">MENU</span><span class="m_close">CLOSE</span></div><!-- /drawer-text -->
-</div><!-- /modal-icon -->
+<div class="hamburger-icon m_modal">
+	<div class="hamburger-open"></div><!-- /hamburger-open -->
+	<div class="hamburger-text"><span class="m_open">MENU</span><span class="m_close">CLOSE</span></div><!-- /hamburger-text -->
+</div><!-- /hamburger-icon -->
 
 <!-- modal-content -->
 <div class="modal-content widget-sp">

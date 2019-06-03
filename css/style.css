@@ -2569,6 +2569,29 @@ span.wpcf7-list-item {
 	padding: 8px 28px 8px 16px;
 }
 
+.infomation {
+	background: #00796b;
+}
+
+.infomation > .inner {
+	padding-bottom: 0;
+	padding-top: 0;
+}
+
+.infomation-link a {
+	color: #fff;
+	display: block;
+	font-weight: 700;
+	padding: 10px 0;
+	text-align: center;
+	text-decoration: none;
+	transition: all 0.3s ease 0s;
+}
+
+.infomation-link a:hover {
+	opacity: 0.6;
+}
+
 #mv {
 	overflow: hidden;
 }

@@ -19,6 +19,8 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
+
+
 <!-- header -->
 <header id="header">
 <div class="inner">
@@ -57,3 +59,10 @@ wp_nav_menu(
 
 </div><!-- /inner -->
 </header><!-- /header -->
+
+
+
+<!-- infomation -->
+<aside class="infomation">
+<div class="infomation-link"><a href="">お問い合わせはこちら！</a></div><!-- /infomation-link -->
+</aside><!-- /infomation -->

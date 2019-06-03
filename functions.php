@@ -85,11 +85,62 @@ add_action( 'wp_enqueue_scripts', 'my_script_init' );
  * @codex https://wpdocs.osdn.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/wp_head
  */
 function my_wp_head() {
+	echo '<style>';
+
+	/* header_text_color */
 	if ( get_header_textcolor() ) {
-		echo '<style>';
-		echo '.header-nav li > a {color:#' . esc_attr( get_header_textcolor() ) . ';}';
-		echo '</style>';
+		echo '.header-nav li > a {color:#' . esc_attr( get_header_textcolor() ) . ';}</style>';
 	}
+
+	/* header_background_color */
+	if ( true ) {
+		$color = 'fff';
+		echo '<style>#header {background:#' . esc_attr( $color ) . ';}</style>';
+	}
+
+	/* header_logo_color */
+	if ( true ) {
+		$color = '333';
+		echo '<style>.header-logo {color:#' . esc_attr( $color ) . ';}</style>';
+	}
+
+	/* header_infomation_background_color */
+	if ( true ) {
+		$color = '00796b';
+		echo '<style>.infomation {background:#' . esc_attr( $color ) . ';}</style>';
+	}
+
+	/* header_infomation_text_color */
+	if ( true ) {
+		$color = 'fff';
+		echo '<style>.infomation-link a {color:#' . esc_attr( $color ) . ';}</style>';
+	}
+
+	/* widget_title_text_color */
+	if ( true ) {
+		$color = 'fff';
+		echo '<style>.widget-title {color:#' . esc_attr( $color ) . ';}</style>';
+	}
+
+	/* widget_title_background_color */
+	if ( true ) {
+		$color = '00796b';
+		echo '<style>#widget-title {background:#' . esc_attr( $color ) . ';}</style>';
+	}
+
+	/* btn_textcolor */
+	if ( true ) {
+		$color = 'fff';
+		echo '<style>.btn {color:#' . esc_attr( $color ) . ';}</style>';
+	}
+
+	/* btn_background_color */
+	if ( true ) {
+		$color = '00796b';
+		echo '<style>.btn {background:#' . esc_attr( $color ) . ';}</style>';
+	}
+
+	echo '</style>';
 }
 add_action( 'wp_head', 'my_wp_head' );
 

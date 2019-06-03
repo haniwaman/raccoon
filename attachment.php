@@ -7,7 +7,11 @@
 
 get_header(); ?>
 
-<?php my_breadcrumb(); ?>
+
+
+<?php get_template_part( 'mv/mv', 'image' ); ?>
+
+
 
 <!-- content -->
 <div id="content">
@@ -25,6 +29,7 @@ get_header(); ?>
 
 	<!-- entry-header -->
 	<div class="entry-header">
+		<?php my_breadcrumb(); ?>
 		<h1 class="entry-title"><?php the_title(); ?></h1><!-- /entry-title -->
 
 		<!-- entry-meta -->
@@ -66,5 +71,7 @@ get_header(); ?>
 
 </div><!-- /inner -->
 </div><!-- /content -->
+
+
 
 <?php get_footer(); ?>

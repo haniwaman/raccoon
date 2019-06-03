@@ -8,9 +8,10 @@
 get_header(); ?>
 
 
-<?php get_template_part( 'mv/mv-image' ); ?>
 
-<?php my_breadcrumb(); ?>
+<?php get_template_part( 'mv/mv', 'image' ); ?>
+
+
 
 <!-- content -->
 <div id="content">
@@ -24,6 +25,7 @@ get_header(); ?>
 		?>
 	<!-- archive-header -->
 	<div class="archive-header">
+		<?php my_breadcrumb(); ?>
 		<h1 class="archive-title"><?php the_archive_title(); ?></h1><!-- /archive-title -->
 		<div class="archive-description"><?php the_archive_description(); ?></div><!-- /archive-description -->
 		<?php get_search_form(); ?>

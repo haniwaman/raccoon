@@ -7,5 +7,9 @@
 
 ?>
 
-<!-- mv-image -->
-<div id="mv" class="mv-image"><img src="<?php echo esc_url( get_template_directory_uri() . '/img/mv.png' ); ?>" alt=""></div><!-- /mv-image -->
+<?php if ( get_header_image() ) : ?>
+<!-- mv -->
+<div id="mv" class="mv-image">
+	<img src="<?php echo esc_url( get_header_image() ); ?>" alt="">
+</div><!-- /mv -->
+<?php endif ?>

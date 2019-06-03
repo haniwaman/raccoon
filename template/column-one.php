@@ -8,7 +8,11 @@
 
 get_header(); ?>
 
-<?php my_breadcrumb(); ?>
+
+
+<?php get_template_part( 'mv/mv', 'image' ); ?>
+
+
 
 <!-- content -->
 <div id="content" class="m_one">
@@ -28,6 +32,7 @@ if ( have_posts() ) :
 
 	<!-- entry-header -->
 	<div class="entry-header">
+		<?php my_breadcrumb(); ?>
 		<h1 class="entry-title"><?php the_title(); ?></h1><!-- /entry-title -->
 
 		<!-- entry-meta -->
@@ -80,6 +85,7 @@ endif;
 
 </div><!-- /inner -->
 </div><!-- /content -->
+
 
 
 <?php get_footer(); ?>

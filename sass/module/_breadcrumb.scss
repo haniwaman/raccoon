@@ -1,5 +1,5 @@
 .breadcrumb {
-	background: $cr-m;
+	// background: $cr-m;
 
 	> .inner {
 		padding-top: 0;
@@ -14,6 +14,7 @@
 
 	li {
 		white-space: nowrap;
+		padding: 8px 0;
 	}
 
 	a {
@@ -28,13 +29,13 @@
 
 	a,
 	.breadcrumb_current {
-		color: #fff;
-		padding: 10px 20px;
-		font-size: 14px;
+		color: #666;
+		font-size: 13px;
 	}
 }
 
 .breadcrumb_bridge {
-	color: #fff;
-	font-size: 14px;
+	color: #666;
+	font-size: 13px;
+	padding: 0 16px;
 }

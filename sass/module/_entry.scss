@@ -37,7 +37,21 @@
 		content: "\f073";
 		font-family: $ff-awesome;
 		font-weight: 400;
-		margin-right: 8px;
+		margin-right: 6px;
+	}
+}
+
+.entry-update {
+	font-size: 12px;
+	color: #666;
+	white-space: nowrap;
+	margin-left: 16px;
+
+	&::before {
+		content: "\f2f1";
+		font-family: $ff-awesome;
+		font-weight: 900;
+		margin-right: 6px;
 	}
 }
 

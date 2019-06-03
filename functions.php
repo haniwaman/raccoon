@@ -26,7 +26,15 @@ function my_setup() {
 	);
 	add_theme_support( 'editor-styles' ); /* 編集画面用CSS追加 */
 	add_theme_support( 'custom-background' ); /* カスタマイザーで背景色 */
-	add_theme_support( 'custom-header' ); /* カスタマイザーでヘッダー画像 */
+	add_theme_support(
+		'custom-header', /* カスタマイザーでヘッダー画像 */
+		array(
+			'width'       => 1440,
+			'height'      => 700,
+			'flex-width'  => true,
+			'flex-height' => true,
+		)
+	);
 	add_theme_support(
 		'custom-logo', /* カスタマイザーでロゴ画像 */
 		array(
@@ -70,6 +78,20 @@ function my_script_init() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'my_script_init' );
+
+/**
+ * </head>タグ直前の追記
+ *
+ * @codex https://wpdocs.osdn.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/wp_head
+ */
+function my_wp_head() {
+	if ( get_header_textcolor() ) {
+		echo '<style>';
+		echo '.header-nav li > a {color:#' . esc_attr( get_header_textcolor() ) . ';}';
+		echo '</style>';
+	}
+}
+add_action( 'wp_head', 'my_wp_head' );
 
 /**
  * <body>タグ直後の追記
@@ -176,6 +198,23 @@ require_once get_template_directory() . '/inc/tags.php';
  */
 require_once get_template_directory() . '/inc/breadcrumb.php';
 
+/**
+ * パンくずのタイトルの書き換え
+ *
+ * @param string $title 変換前のタイトル.
+ * @return string $title 変換後のタイトル.
+ */
+function my_breadcrumb_title( $title ) {
+	if ( is_home() ) {
+		$title = __( 'ブログ', 'raccoon' );
+	} else {
+		$title = mb_strimwidth( $title, 0, 64, '…', 'UTF-8' );
+	}
+	$title = '';
+	return $title;
+}
+add_filter( 'raccoon_breadcrumb_title', 'my_breadcrumb_title' );
+
 
 
 /**
@@ -213,24 +252,6 @@ function my_archive_title( $title ) {
 	return $title;
 };
 add_filter( 'get_the_archive_title', 'my_archive_title' );
-
-
-
-/**
- * パンくずのタイトルの書き換え
- *
- * @param string $title 変換前のタイトル.
- * @return string $title 変換後のタイトル.
- */
-function my_breadcrumb_title( $title ) {
-	if ( is_home() ) {
-		$title = __( 'ブログ', 'raccoon' );
-	} else {
-		$title = mb_strimwidth( $title, 0, 64, '…', 'UTF-8' );
-	}
-	return $title;
-}
-add_filter( 'raccoon_breadcrumb_title', 'my_breadcrumb_title' );
 
 
 

@@ -397,16 +397,6 @@ select:focus {
 	outline: none;
 }
 
-.archive-title {
-	font-size: 24px;
-	font-weight: 700;
-}
-
-.archive-description {
-	color: #666;
-	font-size: 14px;
-}
-
 .inner {
 	margin: 0 auto;
 	max-width: 100%;
@@ -440,10 +430,6 @@ select:focus {
 	width: 100%;
 }
 
-.breadcrumb {
-	background: #00796b;
-}
-
 .breadcrumb > .inner {
 	padding-bottom: 0;
 	padding-top: 0;
@@ -456,6 +442,7 @@ select:focus {
 }
 
 .breadcrumb-list li {
+	padding: 8px 0;
 	white-space: nowrap;
 }
 
@@ -471,14 +458,14 @@ select:focus {
 
 .breadcrumb-list a,
 .breadcrumb-list .breadcrumb_current {
-	color: #fff;
-	font-size: 14px;
-	padding: 10px 20px;
+	color: #666;
+	font-size: 13px;
 }
 
 .breadcrumb_bridge {
-	color: #fff;
-	font-size: 14px;
+	color: #666;
+	font-size: 13px;
+	padding: 0 16px;
 }
 
 .attachment-btn {
@@ -1054,7 +1041,7 @@ span.wpcf7-list-item {
 	content: "\f073";
 	font-family: "Font Awesome 5 Free", sans-serif;
 	font-weight: 400;
-	margin-right: 8px;
+	margin-right: 6px;
 }
 
 .entry-item-label {
@@ -1163,7 +1150,21 @@ span.wpcf7-list-item {
 	content: "\f073";
 	font-family: "Font Awesome 5 Free", sans-serif;
 	font-weight: 400;
-	margin-right: 8px;
+	margin-right: 6px;
+}
+
+.entry-update {
+	color: #666;
+	font-size: 12px;
+	margin-left: 16px;
+	white-space: nowrap;
+}
+
+.entry-update::before {
+	content: "\f2f1";
+	font-family: "Font Awesome 5 Free", sans-serif;
+	font-weight: 900;
+	margin-right: 6px;
 }
 
 .entry-label {
@@ -2292,20 +2293,23 @@ span.wpcf7-list-item {
 	border: 1px solid #eee;
 	margin-bottom: 48px;
 	padding: 24px 16px;
+	text-align: center;
 }
 
 .archive-header .search-form {
 	margin-top: 32px;
+	text-align: left;
 }
 
 .archive-title {
 	font-size: 32px;
+	font-weight: 700;
 	margin-bottom: 8px;
-	text-align: center;
 }
 
 .archive-description {
-	text-align: center;
+	color: #666;
+	font-size: 14px;
 }
 
 #footer-menu > .inner {
@@ -2518,14 +2522,11 @@ span.wpcf7-list-item {
 }
 
 .mv-image {
-	height: auto;
+	text-align: center;
+	width: 100%;
 }
 
 .mv-image img {
-	-o-object-fit: cover;
-	-o-object-position: center center;
-	object-fit: cover;
-	object-position: center center;
 	width: 100%;
 }
 

@@ -38,6 +38,9 @@ function my_breadcrumb() {
 		$breadcrumb_html .= $breadcrumb_beore . $breadcrumb_home_tag . $breadcrumb_bridge_tag;
 		if ( 'post' !== get_post_type() ) {
 			$breadcrumb_html .= '<li><a href="' . esc_url( get_post_type_archive_link( get_post_type() ) ) . '">' . esc_html( get_post_type_object( get_post_type() )->labels->name ) . '</a></li>' . $breadcrumb_bridge_tag;
+		} else {
+			$this_categories  = my_get_post_categories( get_the_ID() );
+			$breadcrumb_html .= '<li><a href="' . $this_categories[0]['link'] . '">' . $this_categories[0]['name'] . '</a></li>' . $breadcrumb_bridge_tag;
 		}
 		$breadcrumb_html .= '<li><span class="breadcrumb_current">' . apply_filters( 'raccoon_breadcrumb_title', get_the_title() ) . '</span></li>';
 		$breadcrumb_html .= $breadcrumb_after;

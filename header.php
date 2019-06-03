@@ -23,14 +23,20 @@
 <header id="header">
 <div class="inner">
 
+<?php
+$logo_tag = 'div';
+if ( is_front_page() ) {
+	$logo_tag = 'h1';
+}
+?>
 <!-- header-logo -->
-<div class="header-logo">
+<<?php echo esc_attr( $logo_tag ); ?> class="header-logo">
 <?php if ( has_custom_logo() ) : ?>
 	<?php the_custom_logo(); ?>
 <?php else : ?>
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 <?php endif; ?>
-</div><!-- /header-logo -->
+</<?php echo esc_attr( $logo_tag ); ?>><!-- /header-logo -->
 
 <?php
 wp_nav_menu(

@@ -15,8 +15,8 @@ function my_setup() {
 	add_theme_support( 'automatic-feed-links' ); /* RSSフィード */
 	add_theme_support( 'title-tag' ); /* タイトルタグ自動生成 */
 	add_theme_support(
-		'html5',
-		array( /* HTML5のタグで出力 */
+		'html5', /* HTML5のタグで出力 */
+		array(
 			'search-form',
 			'comment-form',
 			'comment-list',
@@ -27,7 +27,15 @@ function my_setup() {
 	add_theme_support( 'editor-styles' ); /* 編集画面用CSS追加 */
 	add_theme_support( 'custom-background' ); /* カスタマイザーで背景色 */
 	add_theme_support( 'custom-header' ); /* カスタマイザーでヘッダー画像 */
-	add_theme_support( 'custom-logo' ); /* カスタマイザーでロゴ画像 */
+	add_theme_support(
+		'custom-logo', /* カスタマイザーでロゴ画像 */
+		array(
+			'width'       => 200,
+			'height'      => 80,
+			'flex-width'  => true,
+			'flex-height' => true,
+		)
+	);
 	if ( ! isset( $content_width ) ) {
 		$content_width = 840; /* コンテンツ幅 */
 	}

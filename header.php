@@ -25,7 +25,11 @@
 
 <!-- header-logo -->
 <div class="header-logo">
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( get_template_directory_uri() . '/img/logo.png' ); ?>" alt=""></a>
+<?php if ( has_custom_logo() ) : ?>
+	<?php the_custom_logo(); ?>
+<?php else : ?>
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+<?php endif; ?>
 </div><!-- /header-logo -->
 
 <?php

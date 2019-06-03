@@ -2418,6 +2418,9 @@ span.wpcf7-list-item {
 
 .header-logo a {
 	display: block;
+	font-family: 700px;
+	font-size: 28px;
+	text-decoration: none;
 	transition: all 0.3s ease 0s;
 }
 
@@ -2426,9 +2429,9 @@ span.wpcf7-list-item {
 }
 
 .header-logo img {
-	max-height: 100%;
+	max-height: 80px;
 	vertical-align: middle;
-	width: 200px;
+	width: auto;
 }
 
 .header-nav .header-list {
@@ -2437,6 +2440,7 @@ span.wpcf7-list-item {
 
 .header-nav li {
 	margin-right: 12px;
+	padding: 16px 0;
 	position: relative;
 	z-index: 22;
 }
@@ -2459,9 +2463,7 @@ span.wpcf7-list-item {
 	color: #333;
 	display: block;
 	font-size: 14px;
-	height: 80px;
-	line-height: 80px;
-	padding: 0 4px;
+	padding: 6px 8px;
 	text-decoration: none;
 	transition: all 0.3s ease 0s;
 }
@@ -2470,11 +2472,19 @@ span.wpcf7-list-item {
 	opacity: 0.6;
 }
 
+.header-nav li.m_pickup a {
+	background: #00796b;
+	color: #fff;
+	font-weight: 700;
+}
+
 .header-nav .sub-menu {
+	display: block;
 	font-size: 16px;
 	left: 0;
 	min-width: 200px;
 	opacity: 0;
+	padding: 0;
 	position: absolute;
 	top: 100%;
 	transition: all 0.3s ease 0s;
@@ -2485,8 +2495,10 @@ span.wpcf7-list-item {
 
 .header-nav .sub-menu li {
 	display: block;
+	height: auto;
 	margin-bottom: 2px;
 	margin-right: 0;
+	padding: 0;
 }
 
 .header-nav .sub-menu li a {
@@ -2672,6 +2684,10 @@ span.wpcf7-list-item {
 
 #header > .inner {
 	height: 60px;
+}
+
+.header-logo img {
+	max-height: 60px;
 }
 
 .header-nav {

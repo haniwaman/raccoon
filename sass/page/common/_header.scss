@@ -33,6 +33,9 @@
 	a {
 		transition: all 0.3s ease 0s;
 		display: block;
+		text-decoration: none;
+		font-size: 28px;
+		font-family: 700px;
 
 		&:hover {
 			opacity: $opacity;
@@ -41,8 +44,14 @@
 
 	img {
 		vertical-align: middle;
-		max-height: 100%;
-		width: 200px;
+		// max-height: 100%;
+		// width: 200px;
+		width: auto;
+		max-height: $header-height;
+
+		@include mq("sp") {
+			max-height: $header-height-sp;
+		}
 	}
 }
 
@@ -60,6 +69,7 @@
 		margin-right: 12px;
 		position: relative;
 		z-index: map-get($layer, "header") + 2;
+		padding: 16px 0;
 
 		&:hover {
 
@@ -82,14 +92,21 @@
 			text-decoration: none;
 			color: $cr-txt;
 			display: block;
-			padding: 0 4px;
+			padding: 6px 8px;
 			font-size: 14px;
 			transition: all 0.3s ease 0s;
-			height: $header-height;
-			line-height: $header-height;
 
 			&:hover {
 				opacity: $opacity;
+			}
+		}
+
+		&.m_pickup {
+
+			a {
+				background: $cr-m;
+				color: #fff;
+				font-weight: 700;
 			}
 		}
 	}
@@ -105,11 +122,15 @@
 		z-index: map-get($layer, "header") + 1;
 		min-width: 200px;
 		visibility: hidden;
+		display: block;
+		padding: 0;
 
 		li {
 			margin-bottom: 2px;
 			margin-right: 0;
+			height: auto;
 			display: block;
+			padding: 0;
 
 			a {
 				display: block;

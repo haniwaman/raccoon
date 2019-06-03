@@ -60,6 +60,7 @@ function my_the_post_category( $anchor = true, $id = 0 ) {
 /**
  * タグ取得
  *
+ * @param integer $id 投稿id.
  * @return array $this_tags id name link の配列.
  * @codex https://wpdocs.osdn.jp/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%82%BF%E3%82%B0/get_the_tags
  * @codex https://wpdocs.osdn.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/get_category_link

@@ -56,7 +56,7 @@ if ( have_posts() ) :
 	</div><!-- /entry-header -->
 
 	<!-- entry-body -->
-	<div class="entry-body">
+	<div class="entry-body rc_heading1">
 		<?php the_content(); ?>
 		<?php
 		wp_link_pages(
@@ -80,13 +80,13 @@ if ( have_posts() ) :
 
 </article><!-- /entry -->
 
-<?php
+		<?php
 		$prev_post = get_previous_post();
 		$next_post = get_next_post();
 		?>
 <!-- entry-pager -->
 <nav class="entry-pager">
-<?php if ( $next_post ) : ?>
+		<?php if ( $next_post ) : ?>
 	<div class="entry-next">
 		<a href="<?php the_permalink( $next_post->ID ); ?>" class="entry-pager-head">次の記事</a>
 		<a href="<?php the_permalink( $next_post->ID ); ?>" class="entry-pager-item">
@@ -104,7 +104,7 @@ if ( have_posts() ) :
 			</div><!-- /entry-pager-body -->
 		</a><!-- /entry-pager-item -->
 	</div><!-- /entry-next -->
-	<?php endif; ?>
+			<?php endif; ?>
 		<?php if ( $prev_post ) : ?>
 	<div class="entry-prev">
 		<a href="<?php the_permalink( $prev_post->ID ); ?>" class="entry-pager-head">前の記事</a>

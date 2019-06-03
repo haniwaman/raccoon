@@ -53,7 +53,7 @@ if ( have_posts() ) :
 	</div><!-- /entry-header -->
 
 	<!-- entry-body -->
-	<div class="entry-body">
+	<div class="entry-body rc_heading1">
 		<?php the_content(); ?>
 		<?php
 		wp_link_pages(

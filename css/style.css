@@ -1365,6 +1365,7 @@ span.wpcf7-list-item {
 .entry-body pre code {
 	background: #2d2d2d;
 	color: #fff;
+	display: block;
 	margin: -1em;
 	padding: 12px;
 	position: relative;
@@ -2422,8 +2423,8 @@ span.wpcf7-list-item {
 
 .header-logo a {
 	display: block;
-	font-family: 700px;
 	font-size: 28px;
+	font-weight: 700;
 	text-decoration: none;
 	transition: all 0.3s ease 0s;
 }

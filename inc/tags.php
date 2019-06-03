@@ -45,13 +45,13 @@ function my_the_post_category( $anchor = true, $id = 0 ) {
 	$this_categories = my_get_post_categories( $id );
 	$this_color      = '';
 	if ( function_exists( 'the_field' ) ) {
-		$this_color = 'style="background:' . get_field( 'color', 'category_' . $this_categories[0]['id'] ) . '; ';
+		$this_color = get_field( 'color', 'category_' . $this_categories[0]['id'] );
 	}
 	if ( isset( $this_categories[0] ) ) {
 		if ( $anchor ) {
-			echo '<a ' . esc_attr( $this_color ) . 'href="' . esc_url( $this_categories[0]['link'] ) . '">' . esc_html( $this_categories[0]['name'] ) . '</a>';
+			echo '<a style="' . esc_attr( 'background:' . $this_color ) . ';" href="' . esc_url( $this_categories[0]['link'] ) . '">' . esc_html( $this_categories[0]['name'] ) . '</a>';
 		} else {
-			echo '<span ' . esc_attr( $this_color ) . '>' . esc_html( $this_categories[0]['name'] ) . '</span>';
+			echo '<span style="' . esc_attr( 'background:' . $this_color ) . ';">' . esc_html( $this_categories[0]['name'] ) . '</span>';
 		}
 	}
 }

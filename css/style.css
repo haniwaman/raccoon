@@ -1352,7 +1352,7 @@ span.wpcf7-list-item {
 .entry-body code,
 .entry-body kbd {
 	background: #fee;
-	color: #00796b;
+	color: #444;
 	display: inline-block;
 	font-style: normal;
 	font-weight: 700;

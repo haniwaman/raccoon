@@ -43,7 +43,7 @@ if ( have_posts() ) :
 			<?php endif; ?>
 		</div><!-- /entry-meta -->
 
-		<?php get_template_part( 'parts/sns-org' ); ?>
+		<?php get_template_part( 'parts/sns' ); ?>
 
 		<!-- entry-img -->
 		<figure class="entry-img">
@@ -75,6 +75,7 @@ if ( have_posts() ) :
 		<?php my_the_post_tags(); ?>
 
 		<?php get_template_part( 'parts/likebox' ); ?>
+		<?php get_template_part( 'parts/relation' ); ?>
 
 		<?php comments_template(); ?>
 

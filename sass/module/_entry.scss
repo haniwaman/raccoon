@@ -211,8 +211,7 @@
 	}
 
 	th {
-		color: #fff;
-		background: $cr-m;
+		background: $cr-table-th;
 	}
 
 	strong,
@@ -253,11 +252,12 @@
 		background: #fee;
 		color: #444;
 		display: inline-block;
-		padding-left: 0.2em;
-		padding-right: 0.2em;
+		padding: 0 0.4em;
+		margin: 0 0.2em;
 		vertical-align: baseline;
 		font-style: normal;
 		font-weight: 700;
+		font-family: $ff-code;
 	}
 
 	pre {
@@ -274,6 +274,7 @@
 			position: relative;
 			margin: -1em;
 			display: block;
+			font-family: $ff-code;
 		}
 	}
 }

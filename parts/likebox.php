@@ -24,7 +24,7 @@ $post_thumbnail_id = get_post_thumbnail_id();
 	<div class="likebox-body">
 		<p class="likebox-lead">このページが役に立ったら<br>いいね！お願いします</p>
 		<div class="likebox-btn">
-			<div class="fb-like" data-href="<?php echo esc_url( $facebook_url ); ?>" data-width="" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+			<div class="fb-like" data-href="<?php echo esc_url( $facebook_url ); ?>" data-width="" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
 		</div><!-- /likebox-btn -->
 		<p class="likebox-content">運営の励みになります...。</p>
 	</div><!-- /likebox-body -->

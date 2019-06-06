@@ -20,7 +20,7 @@ input[type="submit"],
 input[type="button"],
 .btn {
 	-webkit-appearance: none;
-	background-color: #00796b;
+	background-color: #e65100;
 	background-image: none;
 	border: none;
 	border-radius: 0;
@@ -185,7 +185,7 @@ code,
 kbd,
 pre,
 samp {
-	font-family: monospace, sans-serif;
+	font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 	font-size: inherit;
 }
 
@@ -195,7 +195,7 @@ ol {
 }
 
 table {
-	border: 1px solid #eee;
+	border: 1px solid #ddd;
 	border-collapse: collapse;
 	border-spacing: 0;
 	table-layout: fixed;
@@ -204,7 +204,7 @@ table {
 
 th,
 td {
-	border: 1px solid #eee;
+	border: 1px solid #ddd;
 	padding: 8px 12px;
 	text-align: left;
 	vertical-align: top;
@@ -254,7 +254,7 @@ textarea:hover {
 }
 
 textarea:focus {
-	border-color: #00796b;
+	border-color: #efa336;
 	box-shadow: none;
 	outline: none;
 }
@@ -265,7 +265,7 @@ textarea ::-moz-focus-inner {
 }
 
 input:focus {
-	border-color: #00796b;
+	border-color: #efa336;
 	box-shadow: none;
 	outline: none;
 }
@@ -309,7 +309,7 @@ input[type="radio"] + span::after {
 
 input[type="radio"]:checked + span::after {
 	-webkit-transform: translateY(-50%);
-	background: #00796b;
+	background: #efa336;
 	border-radius: 50%;
 	content: "";
 	display: block;
@@ -357,8 +357,8 @@ input[type="checkbox"] + span::after {
 
 input[type="checkbox"]:checked + span::after {
 	-webkit-transform: translateY(-50%) rotate(-45deg);
-	border-bottom: 4px solid #00796b;
-	border-left: 4px solid #00796b;
+	border-bottom: 4px solid #efa336;
+	border-left: 4px solid #efa336;
 	content: "";
 	display: block;
 	height: 12px;
@@ -392,7 +392,7 @@ select::-ms-expand {
 }
 
 select:focus {
-	border-color: #00796b;
+	border-color: #efa336;
 	box-shadow: none;
 	outline: none;
 }
@@ -732,7 +732,7 @@ select:focus {
 .comment-content code,
 .comment-content kbd {
 	background: #fee;
-	color: #00796b;
+	color: #efa336;
 	display: inline-block;
 	font-style: normal;
 	padding-left: 0.2em;
@@ -828,8 +828,8 @@ select:focus {
 
 #wp-comment-cookies-consent:checked + label::after {
 	-webkit-transform: translateY(-50%) rotate(-45deg);
-	border-bottom: 4px solid #00796b;
-	border-left: 4px solid #00796b;
+	border-bottom: 4px solid #efa336;
+	border-left: 4px solid #efa336;
 	content: "";
 	display: block;
 	height: 12px;
@@ -878,7 +878,7 @@ span.wpcf7-list-item {
 
 .drawer-content {
 	-webkit-transform: translateX(105%);
-	background: rgba(0, 121, 107, 0.95);
+	background: rgba(239, 163, 54, 0.95);
 	bottom: auto;
 	color: #fff;
 	height: 100%;
@@ -917,7 +917,7 @@ span.wpcf7-list-item {
 }
 
 .drawer-nav li a span {
-	color: #00796b;
+	color: #efa336;
 	font-size: 14px;
 	margin-left: 12px;
 }
@@ -1315,8 +1315,7 @@ span.wpcf7-list-item {
 }
 
 .entry-body th {
-	background: #00796b;
-	color: #fff;
+	background: #ffecb3;
 }
 
 .entry-body strong,
@@ -1354,10 +1353,11 @@ span.wpcf7-list-item {
 	background: #fee;
 	color: #444;
 	display: inline-block;
+	font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 	font-style: normal;
 	font-weight: 700;
-	padding-left: 0.2em;
-	padding-right: 0.2em;
+	margin: 0 0.2em;
+	padding: 0 0.4em;
 	vertical-align: baseline;
 }
 
@@ -1373,6 +1373,7 @@ span.wpcf7-list-item {
 	background: #2d2d2d;
 	color: #fff;
 	display: block;
+	font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 	margin: -1em;
 	padding: 12px;
 	position: relative;
@@ -1401,8 +1402,8 @@ span.wpcf7-list-item {
 }
 
 .entry-links .post-page-numbers.current {
-	background: #00796b;
-	border: 1px solid #00796b;
+	background: #efa336;
+	border: 1px solid #efa336;
 	color: #fff;
 }
 
@@ -1420,8 +1421,8 @@ span.wpcf7-list-item {
 }
 
 .entry-links a:hover {
-	background: #00796b;
-	border: 1px solid #00796b;
+	background: #efa336;
+	border: 1px solid #efa336;
 	color: #fff;
 	opacity: 1;
 }
@@ -1636,7 +1637,7 @@ span.wpcf7-list-item {
 }
 
 .rc_heading1 h2 {
-	background: #00796b;
+	background: #efa336;
 	border: none;
 	border-radius: 2px;
 	box-shadow: 0 1px 0 0 #ccc;
@@ -1659,24 +1660,24 @@ span.wpcf7-list-item {
 }
 
 .rc_heading1 h3 {
-	border-left: solid #00796b 6px;
+	border-left: solid #efa336 6px;
 	margin: 3.6em 0 0.8em;
 	padding: 0.4em 0.8em;
 }
 
 .rc_heading1 h4 {
-	border-bottom: solid 2px #00796b;
-	border-top: solid 2px #00796b;
+	border-bottom: solid 2px #efa336;
+	border-top: solid 2px #efa336;
 	display: inline-block;
 	padding: 0.4em 0.8em;
 }
 
 .rc_heading1 h5 {
-	color: #00796b;
+	color: #efa336;
 }
 
 .rc_heading1 h6 {
-	color: #00796b;
+	color: #efa336;
 }
 
 .likebox {
@@ -1727,7 +1728,7 @@ span.wpcf7-list-item {
 }
 
 .modal-content {
-	background: rgba(0, 121, 107, 0.95);
+	background: rgba(239, 163, 54, 0.95);
 	bottom: auto;
 	box-shadow: 0 0 25px rgba(0, 0, 0, 0.16);
 	color: #333;
@@ -1749,6 +1750,92 @@ span.wpcf7-list-item {
 .modal-content.m_checked {
 	opacity: 1;
 	visibility: visible;
+}
+
+.relation {
+	margin-top: 32px;
+}
+
+.relation-head {
+	color: #efa336;
+	font-weight: 700;
+	margin-bottom: 16px;
+	text-align: center;
+}
+
+.relation-head::before {
+	-webkit-transform: rotate(-30deg);
+	content: "|";
+	display: inline-block;
+	margin-right: 12px;
+	transform: rotate(-30deg);
+}
+
+.relation-head::after {
+	-webkit-transform: rotate(30deg);
+	content: "|";
+	display: inline-block;
+	margin-left: 12px;
+	transform: rotate(30deg);
+}
+
+.relation-head span {
+	font-size: 18px;
+}
+
+.relation-head span::before {
+	content: "\f02b";
+	font-family: "Font Awesome 5 Free", sans-serif;
+	font-size: 14px;
+	font-weight: 900;
+	margin-right: 4px;
+}
+
+.relation-items {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.relation-item {
+	margin-bottom: 12px;
+	margin-right: 12px;
+	width: calc(25% - 12px * 3 / 4);
+}
+
+.relation-item:nth-child(4n) {
+	margin-right: 0;
+}
+
+.relation-iitem-img a {
+	text-decoration: none;
+	transition: all 0.3s ease 0s;
+}
+
+.relation-iitem-img a:hover {
+	opacity: 0.6;
+}
+
+.relation-item-body {
+	padding: 4px;
+}
+
+.relation-item-title {
+	line-height: 1.4;
+}
+
+.relation-item-title a {
+	font-size: 14px;
+	text-decoration: none;
+	transition: all 0.3s ease 0s;
+}
+
+.relation-item-title a:hover {
+	opacity: 0.6;
+}
+
+.relation-btn {
+	margin-top: 24px;
+	text-align: center;
 }
 
 .swiper-container {
@@ -1996,8 +2083,8 @@ span.wpcf7-list-item {
 }
 
 .pagenation a:hover {
-	background: #00796b;
-	border: 1px solid #00796b;
+	background: #efa336;
+	border: 1px solid #efa336;
 	color: #fff;
 }
 
@@ -2009,8 +2096,8 @@ span.wpcf7-list-item {
 
 .pagenation a.next:hover,
 .pagenation a.prev:hover {
-	background: #00796b;
-	border: 1px solid #00796b;
+	background: #efa336;
+	border: 1px solid #efa336;
 	color: #fff;
 }
 
@@ -2031,8 +2118,8 @@ span.wpcf7-list-item {
 }
 
 .page-numbers.current {
-	background: #00796b;
-	border: 1px solid #00796b;
+	background: #efa336;
+	border: 1px solid #efa336;
 	color: #fff;
 }
 
@@ -2106,7 +2193,7 @@ span.wpcf7-list-item {
 }
 
 .sticky::before {
-	background: #00796b;
+	background: #e65100;
 	color: #fff;
 	content: "PICK UP";
 	font-size: 12px;
@@ -2184,7 +2271,7 @@ span.wpcf7-list-item {
 }
 
 .widget-title {
-	background: #00796b;
+	background: #efa336;
 	color: #fff;
 	font-size: 16px;
 	font-weight: 700;
@@ -2213,7 +2300,7 @@ span.wpcf7-list-item {
 }
 
 #wp-calendar a {
-	color: #00796b;
+	color: #efa336;
 	text-decoration: none;
 	transition: all 0.3s ease 0s;
 }
@@ -2426,7 +2513,7 @@ span.wpcf7-list-item {
 }
 
 .totop a {
-	background: #00796b;
+	background: #efa336;
 	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
 	color: #fff;
 	display: block;
@@ -2529,7 +2616,8 @@ span.wpcf7-list-item {
 }
 
 .header-nav li.m_pickup a {
-	background: #00796b;
+	background: #e65100;
+	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
 	color: #fff;
 	font-weight: 700;
 }
@@ -2558,7 +2646,7 @@ span.wpcf7-list-item {
 }
 
 .header-nav .sub-menu li a {
-	background: #00796b;
+	background: #efa336;
 	color: #fff;
 	display: block;
 	font-size: 14px;
@@ -2570,7 +2658,7 @@ span.wpcf7-list-item {
 }
 
 .infomation {
-	background: #00796b;
+	background: #efa336;
 }
 
 .infomation > .inner {
@@ -2581,8 +2669,9 @@ span.wpcf7-list-item {
 .infomation-link a {
 	color: #fff;
 	display: block;
+	font-size: 14px;
 	font-weight: 700;
-	padding: 10px 0;
+	padding: 8px 0;
 	text-align: center;
 	text-decoration: none;
 	transition: all 0.3s ease 0s;
@@ -2729,6 +2818,14 @@ span.wpcf7-list-item {
 
 .modal {
 	display: block;
+}
+
+.relation-item {
+	width: calc(50% - 12px * 1 / 2);
+}
+
+.relation-item:nth-child(2n) {
+	margin-right: 0;
 }
 
 .sns-buttons {

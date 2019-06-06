@@ -25,21 +25,11 @@ function my_setup() {
 		)
 	);
 	add_theme_support( 'editor-styles' ); /* 編集画面用CSS追加 */
-	add_theme_support( 'custom-background' ); /* カスタマイザーで背景色 */
-	add_theme_support(
-		'custom-header', /* カスタマイザーでヘッダー画像 */
-		array(
-			'width'       => 1440,
-			'height'      => 700,
-			'flex-width'  => true,
-			'flex-height' => true,
-		)
-	);
 	add_theme_support(
 		'custom-logo', /* カスタマイザーでロゴ画像 */
 		array(
-			'width'       => 200,
-			'height'      => 80,
+			'width'       => 400,
+			'height'      => 160,
 			'flex-width'  => true,
 			'flex-height' => true,
 		)
@@ -79,75 +69,6 @@ function my_script_init() {
 }
 add_action( 'wp_enqueue_scripts', 'my_script_init' );
 
-/**
- * </head>タグ直前の追記
- *
- * @codex https://wpdocs.osdn.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/wp_head
- */
-function my_wp_head() {
-	echo '<style>';
-
-	/* base_color */
-	if ( get_theme_mod( 'my_base_color' ) ) {
-		echo '.infomation {background:' . esc_attr( get_theme_mod( 'my_base_color' ) ) . ';}';
-		echo '.widget-title {background:' . esc_attr( get_theme_mod( 'my_base_color' ) ) . ';}';
-		echo '.btn {background:' . esc_attr( get_theme_mod( 'my_base_color' ) ) . ';}';
-		echo '.totop a {background:' . esc_attr( get_theme_mod( 'my_base_color' ) ) . ';}';
-		echo '#wp-calendar a {color:' . esc_attr( get_theme_mod( 'my_base_color' ) ) . ';}';
-		echo '.header-nav li.m_pickup a {background:' . esc_attr( get_theme_mod( 'my_base_color' ) ) . ';}';
-		echo '.sticky::before {background:' . esc_attr( get_theme_mod( 'my_base_color' ) ) . ';}';
-		echo 'form button, input[type="submit"], input[type="button"], .btn {background-color:' . esc_attr( get_theme_mod( 'my_base_color' ) ) . ';}';
-		echo '.modal-content {background:' . esc_attr( get_theme_mod( 'my_base_color' ) ) . ';}';
-	}
-
-	/* header_text_color */
-	if ( get_header_textcolor() ) {
-		echo '.header-nav li > a {color:#' . esc_attr( get_header_textcolor() ) . ';}';
-	}
-
-	/* header_background_color */
-	if ( get_theme_mod( 'my_header_background_color' ) ) {
-		echo '#header {background:' . esc_attr( get_theme_mod( 'my_header_background_color' ) ) . ';}';
-	}
-
-	/* header_logo_color */
-	if ( get_theme_mod( '	header_logo_color' ) ) {
-		echo '.header-logo {color:' . esc_attr( get_theme_mod( 'my_header_logo_color' ) ) . ';}';
-	}
-
-	/* header_infomation_background_color */
-	if ( get_theme_mod( 'my_header_infomation_background_color' ) ) {
-		echo '.infomation {background:' . esc_attr( get_theme_mod( 'my_header_infomation_background_color' ) ) . ';}';
-	}
-
-	/* header_infomation_text_color */
-	if ( get_theme_mod( 'my_header_infomation_text_color' ) ) {
-		echo '.infomation-link a {color:' . esc_attr( get_theme_mod( 'my_header_infomation_text_color' ) ) . ';}';
-	}
-
-	/* widget_title_text_color */
-	if ( get_theme_mod( 'my_widget_title_text_color' ) ) {
-		echo '.widget-title {color:' . esc_attr( get_theme_mod( 'my_widget_title_text_color' ) ) . ';}';
-	}
-
-	/* widget_title_background_color */
-	if ( get_theme_mod( 'my_widget_title_background_color' ) ) {
-		echo '.widget-title {background:' . esc_attr( get_theme_mod( 'my_widget_title_background_color' ) ) . ';}';
-	}
-
-	/* btn_textcolor */
-	if ( get_theme_mod( 'my_btn_textcolor' ) ) {
-		echo '.btn {color:' . esc_attr( get_theme_mod( 'my_btn_textcolor' ) ) . ';}';
-	}
-
-	/* btn_background_color */
-	if ( get_theme_mod( 'my_btn_background_color' ) ) {
-		echo '.btn {background:' . esc_attr( get_theme_mod( 'my_btn_background_color' ) ) . ';}';
-	}
-
-	echo '</style>';
-}
-add_action( 'wp_head', 'my_wp_head' );
 
 /**
  * <body>タグ直後の追記

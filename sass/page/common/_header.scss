@@ -104,9 +104,10 @@
 		&.m_pickup {
 
 			a {
-				background: $cr-m;
+				background: $cr-a;
 				color: #fff;
 				font-weight: 700;
+				box-shadow: 0 0 3px 0 rgba(#000, 0.16);
 			}
 		}
 	}

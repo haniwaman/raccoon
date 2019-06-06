@@ -7,14 +7,7 @@
 
 ?>
 
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="format-detection" content="telephone=no">
-<?php wp_head(); ?>
-</head>
+<?php get_header( 'meta' ); ?>
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
@@ -62,7 +55,4 @@ wp_nav_menu(
 
 
 
-<!-- infomation -->
-<aside class="infomation">
-<div class="infomation-link"><a href="">お問い合わせはこちら！</a></div><!-- /infomation-link -->
-</aside><!-- /infomation -->
+<?php get_template_part( 'parts/infomation' ); ?>

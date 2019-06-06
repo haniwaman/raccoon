@@ -40,7 +40,7 @@ if ( have_posts() ) :
 			<time class="entry-published" datetime="<?php the_time( 'c' ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time>
 		</div><!-- /entry-meta -->
 
-		<?php get_template_part( 'parts/sns-org' ); ?>
+		<?php get_template_part( 'parts/sns' ); ?>
 
 		<!-- entry-img -->
 		<figure class="entry-img">

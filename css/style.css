@@ -1374,6 +1374,7 @@ span.wpcf7-list-item {
 	color: #fff;
 	display: block;
 	font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-weight: 400;
 	margin: -1em;
 	padding: 12px;
 	position: relative;
@@ -1642,7 +1643,7 @@ span.wpcf7-list-item {
 	border-radius: 2px;
 	box-shadow: 0 1px 0 0 #ccc;
 	color: #fff;
-	letter-spacing: 0.1em;
+	letter-spacing: 0.03em;
 	padding: 0.6em 0.8em;
 	position: relative;
 }

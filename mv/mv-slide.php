@@ -22,6 +22,7 @@ $mv_query = new WP_Query(
 	<?php while ( $mv_query->have_posts() ) : ?>
 		<?php $mv_query->the_post(); ?>
 		<?php $mv_is_slide = false; ?>
+
 <!-- swiper-container -->
 <div class="swiper-container">
 	<div class="swiper-wrapper">

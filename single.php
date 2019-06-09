@@ -75,6 +75,7 @@ if ( have_posts() ) :
 		<?php my_the_post_tags(); ?>
 
 		<?php get_template_part( 'parts/likebox' ); ?>
+		<?php get_template_part( 'parts/sns' ); ?>
 		<?php get_template_part( 'parts/relation' ); ?>
 
 		<?php comments_template(); ?>

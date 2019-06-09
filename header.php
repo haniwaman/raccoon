@@ -29,7 +29,7 @@ if ( is_front_page() ) {
 <?php if ( has_custom_logo() ) : ?>
 	<?php the_custom_logo(); ?>
 <?php else : ?>
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo wp_kses_post( apply_filters( 'raccoon_logo', get_bloginfo( 'name' ) ) ); ?></a>
 <?php endif; ?>
 </<?php echo esc_attr( $logo_tag ); ?>><!-- /header-logo -->
 

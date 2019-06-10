@@ -1,24 +1,18 @@
 .likebox {
 	display: flex;
-	align-items: center;
 	box-shadow: 0 0 3px 0 rgba(#000, 0.16);
 	margin-top: 32px;
 	background: #2d2d2d;
+
+	@include mq("sp") {
+		margin-right: -$pd-entry-sp;
+		margin-left: -$pd-entry-sp;
+	}
 }
 
 .likebox-img {
 	width: 40%;
-
-	img {
-		width: 100%;
-		height: 200px;
-		object-fit: cover;
-		font-family: "object-fit: cover;";
-
-		@include mq("sp") {
-			height: 164px;
-		}
-	}
+	background: transparent no-repeat center center / cover;
 }
 
 .likebox-body {
@@ -26,16 +20,20 @@
 	padding: 24px 10px;
 	color: #fff;
 	text-align: center;
+
+	@include mq("sp") {
+		padding: 10px 4px;
+	}
 }
 
 .likebox-lead {
 	font-weight: 700;
 	margin-bottom: 16px;
-	line-height: 1.4;
+	line-height: 1.6;
 
 	@include mq("sp") {
-		font-size: 14px;
-		margin-bottom: 12px;
+		font-size: 12px;
+		margin-bottom: 8px;
 	}
 }
 

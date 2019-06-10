@@ -1,12 +1,12 @@
 .entry {
 	background: #fff;
-	padding: 24px 24px 42px;
+	padding: 24px $pd-entry-pc 42px;
 	border: 1px solid #eee;
 
 	@include mq("sp") {
 		margin-bottom: 32px;
-		padding-left: 16px;
-		padding-right: 16px;
+		padding-left: $pd-entry-sp;
+		padding-right: $pd-entry-sp;
 	}
 }
 

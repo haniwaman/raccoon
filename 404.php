@@ -30,6 +30,7 @@ get_header(); ?>
 
 <!-- entry -->
 <article <?php post_class( array( 'entry' ) ); ?>>
+
 </article><!-- /entry -->
 
 </main><!-- /primary -->

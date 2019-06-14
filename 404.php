@@ -30,9 +30,6 @@ get_header(); ?>
 
 <!-- entry -->
 <article <?php post_class( array( 'entry' ) ); ?>>
-
-<p>何か代替となるコンテンツを配置する</p>
-
 </article><!-- /entry -->
 
 </main><!-- /primary -->

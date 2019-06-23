@@ -48,7 +48,7 @@ $bar-color: #333;
 	display: block;
 	height: $bar-height;
 	width: $bar-width-open;
-	background: $bar-color;
+	background: $bar-color; /* bar-color */
 	border-radius: $bar-radius;
 	transition: all $hamburger-speed ease-in-out 0s;
 

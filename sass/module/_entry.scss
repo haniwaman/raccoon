@@ -18,6 +18,7 @@
 	font-size: 28px;
 	font-weight: 700;
 	margin-bottom: 16px;
+	line-height: 1.4;
 }
 
 .entry-meta {
@@ -73,7 +74,7 @@
 		text-decoration: none;
 
 		&:hover {
-			opacity: $opacity;
+			opacity: $opacity; /* opacity */
 		}
 	}
 }
@@ -100,7 +101,7 @@
 		transition: all 0.3s ease 0s;
 
 		&:hover {
-			opacity: $opacity;
+			opacity: $opacity; /* opacity */
 		}
 	}
 }
@@ -211,7 +212,7 @@
 	}
 
 	th {
-		background: $cr-table-th;
+		background: map-get($table-color, "background-th"); /* table border */
 	}
 
 	strong,
@@ -225,7 +226,7 @@
 		transition: all 0.3s ease 0s;
 
 		&:hover {
-			opacity: $opacity;
+			opacity: $opacity; /* opacity */
 		}
 	}
 
@@ -291,9 +292,9 @@
 		height: 36px;
 		line-height: 36px;
 		text-align: center;
-		background: #eee;
-		border: 1px solid #eee;
-		color: #333;
+		background: map-get($pagenation, "background"); /* pagenation background */
+		border: 1px solid map-get($pagenation, "border-color"); /* pagenation border */
+		color: map-get($pagenation, "color"); /* pagenation color */
 		margin-right: 12px;
 
 		&:last-child {
@@ -301,9 +302,9 @@
 		}
 
 		&.current {
-			color: #fff;
-			background: $cr-m;
-			border: 1px solid $cr-m;
+			color: map-get($pagenation, "color-active"); /* pagenation color-active */
+			background: map-get($pagenation, "background-active"); /* pagenation background-active */
+			border: 1px solid map-get($pagenation, "borde-color-active"); /* pagenation borde-color-active */
 		}
 
 		&:first-child {
@@ -320,9 +321,9 @@
 		transition: all 0.3s ease 0s;
 
 		&:hover {
-			color: #fff;
-			background: $cr-m;
-			border: 1px solid $cr-m;
+			color: map-get($pagenation, "color-active"); /* pagenation color-active */
+			background: map-get($pagenation, "background-active"); /* pagenation background-active */
+			border: 1px solid map-get($pagenation, "border-color-active"); /* pagenation border-color-active */
 			opacity: 1;
 		}
 	}
@@ -369,7 +370,7 @@
 	}
 
 	&:hover {
-		opacity: $opacity;
+		opacity: $opacity; /* opacity */
 	}
 
 	&::before {
@@ -403,7 +404,7 @@
 	text-decoration: none;
 
 	&:hover {
-		opacity: $opacity;
+		opacity: $opacity; /* opacity */
 	}
 
 	.entry-next & {

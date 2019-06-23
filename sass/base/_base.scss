@@ -14,11 +14,11 @@ body {
 	font-family: $ff-base;
 	font-size: $fz-base;
 	font-weight: $fw-base;
-	color: $cr-txt;
+	color: $cr-txt; /* cr-txt */
 	line-height: $lh-base;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background: $cr-bg;
+	background: $cr-bg; /* cr-bg */
 	overflow-x: hidden;
 	overflow-wrap: break-word;
 }
@@ -136,7 +136,8 @@ table {
 	border-spacing: 0;
 	width: 100%;
 	table-layout: fixed;
-	border: 1px solid $cr-table;
+	border: 1px solid map-get($table-color, "border"); /* table border */
+	background: map-get($table-color, "background"); /* table background */
 }
 
 th,
@@ -144,7 +145,7 @@ td {
 	padding: 8px 12px;
 	text-align: left;
 	vertical-align: top;
-	border: 1px solid $cr-table;
+	border: 1px solid map-get($table-color, "border"); /* table border */
 }
 
 blockquote,
@@ -175,7 +176,7 @@ input,
 textarea {
 	width: 100%;
 	padding: 8px;
-	border: 1px solid $cr-form-bd;
+	border: 1px solid map-get($form, "border"); /* form border */
 	border-radius: 0;
 	background-image: none;
 	font-family: inherit;
@@ -191,12 +192,12 @@ textarea {
 	}
 
 	&:hover {
-		opacity: $opacity;
+		opacity: $opacity; /* opacity */
 	}
 
 	&:focus {
 		outline: none;
-		border-color: $cr-form-bd_avtive;
+		border-color: map-get($from, "border-active"); /* form border-active */
 		box-shadow: none;
 	}
 
@@ -210,7 +211,7 @@ input {
 
 	&:focus {
 		outline: none;
-		border-color: $cr-form-bd_avtive;
+		border-color: map-get($from, "border-active"); /* form border-active */
 		box-shadow: none;
 	}
 
@@ -238,7 +239,7 @@ input {
 				left: 0;
 				transform: translateY(-50%);
 				background: #fff;
-				border: 1px solid $cr-form-bd;
+				border: 1px solid map-get($from, "border"); /* form border */
 				border-radius: 50%;
 				width: $size-radio;
 				height: $size-radio;
@@ -259,7 +260,7 @@ input {
 				top: 50%;
 				left: ($size-radio - $size-radio_active) / 2;
 				transform: translateY(-50%);
-				background: $cr-form-bd_avtive;
+				background: map-get($from, "radio"); /* form radio */
 				border-radius: 50%;
 				width: $size-radio_active;
 				height: $size-radio_active;
@@ -287,7 +288,7 @@ input {
 				left: 0;
 				transform: translateY(-50%);
 				background: #fff;
-				border: 1px solid $cr-form-bd;
+				border: 1px solid map-get($layer, "border"); /* form border */
 				border-radius: 2px;
 				width: $size-checkbox;
 				height: $size-checkbox;
@@ -312,8 +313,8 @@ input {
 				height: ($size-checkbox * 0.6);
 				margin-top: -0.2em;
 				display: block;
-				border-left: 4px solid $cr-form-bd_avtive;
-				border-bottom: 4px solid $cr-form-bd_avtive;
+				border-left: 4px solid map-get($layer, "checkbox"); /* form checkbox */
+				border-bottom: 4px solid map-get($layer, "checkbox"); /* form checkbox */
 				opacity: 1;
 			}
 		}
@@ -333,7 +334,7 @@ select {
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	cursor: pointer;
-	border: 1px solid $cr-form-bd;
+	border: map-get($form, "border") 1px solid; /* form border */
 
 	&::-ms-expand {
 		display: none;
@@ -342,6 +343,6 @@ select {
 	&:focus {
 		outline: none;
 		box-shadow: none;
-		border-color: $cr-form-bd_avtive;
+		border-color: map-get($layer, "border-active"); /* form border-active */
 	}
 }

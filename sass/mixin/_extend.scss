@@ -3,8 +3,8 @@
 	padding: 8px 24px;
 	margin: 0;
 	background-image: none;
-	background-color: $cr-btn;
-	color: #fff;
+	background-color: map-get($btn, "background"); /* btn background */
+	color: map-get($btn, "color"); /* btn color */
 	text-decoration: none;
 	border: none;
 	border-radius: 0;
@@ -20,7 +20,7 @@
 	}
 
 	&:hover {
-		opacity: $opacity;
+		opacity: $opacity; /* opacity */
 	}
 
 	&::-moz-foucus-inner {

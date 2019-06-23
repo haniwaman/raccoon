@@ -28,7 +28,7 @@
 		transition: all 0.3s ease 0s;
 
 		&:hover {
-			opacity: $opacity;
+			opacity: $opacity; /* opacity */
 		}
 
 		&::before {
@@ -72,7 +72,7 @@
 			transition: all 0.3s ease 0s;
 
 			&:hover {
-				opacity: $opacity;
+				opacity: $opacity; /* opacity */
 			}
 		}
 	}
@@ -109,7 +109,7 @@
 			color: #666;
 
 			&:hover {
-				opacity: $opacity;
+				opacity: $opacity; /* opacity */
 			}
 		}
 
@@ -257,7 +257,7 @@
 		transition: all 0.3s ease 0s;
 
 		&:hover {
-			opacity: $opacity;
+			opacity: $opacity; /* opacity */
 		}
 	}
 
@@ -281,8 +281,8 @@
 	var,
 	code,
 	kbd {
-		background: #fee;
-		color: $cr-m;
+		color: $code-txt; /* code-txt */
+		background: $code-bg; /* code-bg */
 		display: inline-block;
 		padding-left: 0.2em;
 		padding-right: 0.2em;
@@ -297,7 +297,7 @@
 		padding: 1em;
 
 		code {
-			background: #2d2d2d;
+			background: $pre-code-bg; /* pre-code-bg */
 			color: #fff;
 			padding: 12px;
 			position: relative;
@@ -310,7 +310,7 @@
 	margin-top: 60px;
 
 	.required {
-		color: #e57373;
+		color: $cr-required; /* cr-required */
 		vertical-align: middle;
 	}
 
@@ -333,7 +333,7 @@
 		transition: all 0.3s ease 0s;
 
 		&:hover {
-			opacity: $opacity;
+			opacity: $opacity; /* opacity */
 		}
 	}
 }
@@ -371,7 +371,7 @@
 			left: 0;
 			transform: translateY(-50%);
 			background: #fff;
-			border: 1px solid $cr-form-bd;
+			border: 1px solid map-get($layer, "border"); /* form border */
 			border-radius: 2px;
 			width: $size-checkbox;
 			height: $size-checkbox;
@@ -396,8 +396,8 @@
 			height: ($size-checkbox * 0.6);
 			margin-top: -0.2em;
 			display: block;
-			border-left: 4px solid $cr-form-bd_avtive;
-			border-bottom: 4px solid $cr-form-bd_avtive;
+			border-left: 4px solid map-get($layer, "checkbox"); /* form checkbox */
+			border-bottom: 4px solid map-get($layer, "checkbox"); /* form checkbox */
 			opacity: 1;
 		}
 	}

@@ -3,7 +3,7 @@
 }
 
 .relation-head {
-	color: $cr-m;
+	color: $cr-m; /* $cr-m */
 	text-align: center;
 	font-weight: 700;
 	margin-bottom: 16px;
@@ -65,7 +65,7 @@
 		transition: all 0.3s ease 0s;
 
 		&:hover {
-			opacity: $opacity;
+			opacity: $opacity; /* opacity */
 		}
 	}
 }
@@ -83,7 +83,7 @@
 		transition: all 0.3s ease 0s;
 
 		&:hover {
-			opacity: $opacity;
+			opacity: $opacity; /* opacity */
 		}
 	}
 }

@@ -7,33 +7,33 @@
 		transition: all 0.3s ease 0s;
 
 		&:hover {
-			color: #fff;
-			background: $cr-m;
-			border: 1px solid $cr-m;
+			color: map-get($pagenation, "color-active");
+			background: map-get($pagenation, "background-active");
+			border: 1px solid map-get($pagenation, "border-active");
 		}
 
 		&.next,
 		&.prev {
-			background: #eee;
-			border: 1px solid #eee;
+			background: map-get($pagenation, "background");
+			border: 1px solid map-get($pagenation, "border");
 
 			&:hover {
-				color: #fff;
-				background: $cr-m;
-				border: 1px solid $cr-m;
+				color: map-get($pagenation, "color-active");
+				background: map-get($pagenation, "background-active");
+				border: 1px solid map-get($pagenation, "border-active");
 			}
 		}
 	}
 }
 
 .page-numbers {
-	border: 1px solid #eee;
-	background: #eee;
+	border: 1px solid map-get($pagenation, "border");
+	background: map-get($pagenation, "background");
 	text-align: center;
 	min-width: 42px;
 	height: 42px;
 	line-height: 42px;
-	color: #333;
+	color: map-get($pagenation, "color");
 	text-decoration: none;
 	margin-right: 8px;
 
@@ -48,9 +48,9 @@
 	}
 
 	&.current {
-		color: #fff;
-		background: $cr-m;
-		border: 1px solid $cr-m;
+		color: map-get($pagenation, "color-active");
+		background: map-get($pagenation, "background-active");
+		border: 1px solid map-get($pagenation, "border-active");
 	}
 
 	&.dots,

@@ -48,27 +48,27 @@
 			font-weight: 700;
 
 			&:hover {
-				opacity: $opacity;
+				opacity: $opacity; /* opacity */
 			}
 
 			&.m_twitter {
-				background: #64b5f6;
+				background: map-get($sns-color, "twitter"); /* sns twitter */
 			}
 
 			&.m_facebook {
-				background: #5c6bc0;
+				background: map-get($sns-color, "facebook"); /* sns facebook */
 			}
 
 			&.m_hatena {
-				background: #00a4de;
+				background: map-get($sns-color, "hatena"); /* sns hatena */
 			}
 
 			&.m_line {
-				background: #5bcc49;
+				background: map-get($sns-color, "line"); /* sns line */
 			}
 
 			&.m_pocket {
-				background: #ef5350;
+				background: map-get($sns-color, "pocket"); /* sns pocket */
 			}
 		}
 	}

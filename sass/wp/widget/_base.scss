@@ -51,15 +51,15 @@
 		transition: all 0.3s ease 0s;
 
 		&:hover {
-			opacity: $opacity;
+			opacity: $opacity; /* opacity */
 		}
 	}
 }
 
 .widget-title {
-	background: $cr-m;
+	background: map-get($widget, "background"); /* widget background */
 	font-size: 16px;
 	font-weight: 700;
 	padding: 8px 16px;
-	color: #fff;
+	color: map-get($widget, "color"); /* widget color */
 }

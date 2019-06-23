@@ -1,5 +1,5 @@
 .infomation {
-	background: $cr-m;
+	background: map-get($infomation, "background"); /* infomation background */
 
 	> .inner {
 		padding-top: 0;
@@ -15,12 +15,12 @@
 		font-weight: 700;
 		padding: 8px 0;
 		text-decoration: none;
-		color: #fff;
+		color: map-get($infomation, "color"); /* infomation color */
 		transition: all 0.3s ease 0s;
 		font-size: 14px;
 
 		&:hover {
-			opacity: $opacity;
+			opacity: $opacity; /* opacity */
 		}
 	}
 }

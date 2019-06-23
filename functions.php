@@ -74,8 +74,8 @@ add_action( 'wp_enqueue_scripts', 'my_script_init' );
  */
 function my_body_open() {
 	/* Facebookプラグイン */
-	echo '<div id="fb-root"></div>';
-	echo '<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.3"></script>';
+	// echo '<div id="fb-root"></div>';
+	// echo '<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.3"></script>';
 }
 add_action( 'wp_body_open', 'my_body_open' );
 
@@ -295,3 +295,5 @@ add_filter( 'excerpt_more', 'my_excerpt_more' );
  * カスタマイザー追加
  */
 require_once get_template_directory() . '/inc/customizer.php';
+
+

@@ -1,6 +1,5 @@
 // ベース色
-$cr-m: #efa336; // #efa336;
-$cr-a: #e65100;
+$cr-m: #efa336;
 
 // 背景
 $cr-bg: #f9f8f5;
@@ -12,5 +11,91 @@ $cr-txt: #333;
 $opacity: 0.6;
 
 // テーブル
-$cr-table: #ddd;
-$cr-table-th: #ffecb3;
+$table-color: (
+	"background": #fff,
+	"background-th": #ffecb3,
+	"border": #ddd
+);
+
+// フォーム
+$form: (
+	"border": #eee,
+	"border-active": #eee,
+	"radio": $cr-m,
+	"checkbox": $cr-m
+);
+
+// コード
+$code-bg: #ef5350;
+$code-txt: #fff;
+$pre-code-bg: #2d2d2d;
+
+// ボタン
+$btn: (
+	"background": #e65100,
+	"color": #fff
+);
+
+// 必須
+$cr-required: #e57373;
+
+// SNS
+$sns-color: (
+	"twitter": #64b5f6,
+	"facebook": #5c6bc0,
+	"hatena": #00a4de,
+	"line": #5bcc49,
+	"pocket": #ef5350
+);
+
+// ヘッダー
+$header: (
+	"pickup": #e65100,
+	"background-sub": #efa336
+);
+
+// フッター
+$footer: (
+	"background": #666,
+	"color": #fff
+);
+
+// ウィジェット
+$widget: (
+	"background": #efa336,
+	"color": #fff
+);
+
+// タグクラウド
+$tagcloud: (
+	"background": #eee,
+	"color": #333
+);
+
+// ページネーション
+$pagenation: (
+	"background": #eee,
+	"color": #333,
+	"border-color": #eee,
+	"background-active": #fff,
+	"color-active": #efa336,
+	"border-color-active": #efa336
+);
+
+// sticky
+$sticky: (
+	"background": #e65100,
+	"color": #fff
+);
+
+// totop
+$totop: (
+	"background": #e65100,
+	"color": #fff
+);
+
+// インフォメーション
+$infomation: (
+	"background": #efa336,
+	"color": #fff
+);

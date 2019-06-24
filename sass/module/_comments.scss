@@ -371,7 +371,7 @@
 			left: 0;
 			transform: translateY(-50%);
 			background: #fff;
-			border: 1px solid map-get($layer, "border"); /* form border */
+			border: 1px solid map-get($my-form, "border"); /* form border */
 			border-radius: 2px;
 			width: $size-checkbox;
 			height: $size-checkbox;
@@ -396,8 +396,8 @@
 			height: ($size-checkbox * 0.6);
 			margin-top: -0.2em;
 			display: block;
-			border-left: 4px solid map-get($layer, "checkbox"); /* form checkbox */
-			border-bottom: 4px solid map-get($layer, "checkbox"); /* form checkbox */
+			border-left: 4px solid map-get($my-form, "checkbox"); /* form checkbox */
+			border-bottom: 4px solid map-get($my-form, "checkbox"); /* form checkbox */
 			opacity: 1;
 		}
 	}

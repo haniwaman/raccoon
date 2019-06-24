@@ -176,7 +176,7 @@ input,
 textarea {
 	width: 100%;
 	padding: 8px;
-	border: 1px solid map-get($form, "border"); /* form border */
+	border: 1px solid map-get($my-form, "border"); /* form border */
 	border-radius: 0;
 	background-image: none;
 	font-family: inherit;
@@ -197,7 +197,7 @@ textarea {
 
 	&:focus {
 		outline: none;
-		border-color: map-get($from, "border-active"); /* form border-active */
+		border-color: map-get($my-form, "border-active"); /* form border-active */
 		box-shadow: none;
 	}
 
@@ -211,7 +211,7 @@ input {
 
 	&:focus {
 		outline: none;
-		border-color: map-get($from, "border-active"); /* form border-active */
+		border-color: map-get($my-form, "border-active"); /* form border-active */
 		box-shadow: none;
 	}
 
@@ -239,7 +239,7 @@ input {
 				left: 0;
 				transform: translateY(-50%);
 				background: #fff;
-				border: 1px solid map-get($from, "border"); /* form border */
+				border: 1px solid map-get($my-form, "border"); /* form border */
 				border-radius: 50%;
 				width: $size-radio;
 				height: $size-radio;
@@ -260,7 +260,7 @@ input {
 				top: 50%;
 				left: ($size-radio - $size-radio_active) / 2;
 				transform: translateY(-50%);
-				background: map-get($from, "radio"); /* form radio */
+				background: map-get($my-form, "radio"); /* form radio */
 				border-radius: 50%;
 				width: $size-radio_active;
 				height: $size-radio_active;
@@ -288,7 +288,7 @@ input {
 				left: 0;
 				transform: translateY(-50%);
 				background: #fff;
-				border: 1px solid map-get($layer, "border"); /* form border */
+				border: 1px solid map-get($my-form, "border"); /* form border */
 				border-radius: 2px;
 				width: $size-checkbox;
 				height: $size-checkbox;
@@ -313,8 +313,8 @@ input {
 				height: ($size-checkbox * 0.6);
 				margin-top: -0.2em;
 				display: block;
-				border-left: 4px solid map-get($layer, "checkbox"); /* form checkbox */
-				border-bottom: 4px solid map-get($layer, "checkbox"); /* form checkbox */
+				border-left: 4px solid map-get($my-form, "checkbox"); /* form checkbox */
+				border-bottom: 4px solid map-get($my-form, "checkbox"); /* form checkbox */
 				opacity: 1;
 			}
 		}
@@ -334,7 +334,7 @@ select {
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	cursor: pointer;
-	border: map-get($form, "border") 1px solid; /* form border */
+	border: map-get($my-form, "border") 1px solid; /* form border */
 
 	&::-ms-expand {
 		display: none;
@@ -343,6 +343,6 @@ select {
 	&:focus {
 		outline: none;
 		box-shadow: none;
-		border-color: map-get($layer, "border-active"); /* form border-active */
+		border-color: map-get($my-form, "border-active"); /* form border-active */
 	}
 }

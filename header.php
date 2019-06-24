@@ -46,13 +46,7 @@ wp_nav_menu(
 );
 ?>
 
-<?php // get_template_part( 'parts/drawer' ); ?>
-<?php get_template_part( 'parts/modal' ); ?>
-<?php // get_template_part( 'parts/accordion' ); ?>
+<?php get_template_part( 'parts/drawer' ); ?>
 
 </div><!-- /inner -->
 </header><!-- /header -->
-
-
-
-<?php get_template_part( 'parts/infomation' ); ?>

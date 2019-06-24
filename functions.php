@@ -67,6 +67,7 @@ function my_script_init() {
 add_action( 'wp_enqueue_scripts', 'my_script_init' );
 
 
+
 /**
  * <body>タグ直後の追記
  *
@@ -80,15 +81,28 @@ function my_body_open() {
 add_action( 'wp_body_open', 'my_body_open' );
 
 
+
+/**
+ * <head>タグ直前の追記
+ *
+ * @return 追加する
+ */
+function my_head() {
+	return "";
+}
+add_action( 'wp_head', 'my_head' );
+
+
+
 /**
  * 編集画面用のスタイルシート
  *
  * @return void
  */
 function my_editor_style() {
-	add_editor_style( get_template_directory_uri() . '/css/admin/editor-style.css' );
+	// add_editor_style( get_template_directory_uri() . '/css/admin/editor-style.css' );
 }
-add_action( 'admin_init', 'my_editor_style' );
+// add_action( 'admin_init', 'my_editor_style' );
 
 
 

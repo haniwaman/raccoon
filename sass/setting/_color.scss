@@ -32,7 +32,7 @@ $pre-code-bg: #2d2d2d;
 
 // ボタン
 $btn: (
-	"background": #e65100,
+	"background": #01579b,
 	"color": #fff
 );
 
@@ -41,11 +41,11 @@ $cr-required: #e57373;
 
 // SNS
 $sns-color: (
-	"twitter": #64b5f6,
-	"facebook": #5c6bc0,
-	"hatena": #00a4de,
-	"line": #5bcc49,
-	"pocket": #ef5350
+	"twitter": #1da1f2,
+	"facebook": #3b5998,
+	"hatena": #018fde,
+	"line": #00b902,
+	"pocket": #ef4156
 );
 
 // ヘッダー
@@ -62,7 +62,7 @@ $footer: (
 
 // ウィジェット
 $widget: (
-	"background": #efa336,
+	"background": #01579b,
 	"color": #fff
 );
 
@@ -98,4 +98,9 @@ $totop: (
 $infomation: (
 	"background": #efa336,
 	"color": #fff
+);
+
+// リンク
+$link: (
+	"color": #e65100
 );

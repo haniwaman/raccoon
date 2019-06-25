@@ -11,6 +11,7 @@
 	th,
 	td {
 		text-align: center;
+		font-size: 12px;
 	}
 
 	#prev {
@@ -23,7 +24,7 @@
 
 	a {
 		text-decoration: none;
-		color: $cr-m;
+		color: map-get($link, "color");
 		transition: all 0.3s ease 0s;
 
 		&:hover {

@@ -16,7 +16,7 @@ input[type="submit"],
 input[type="button"],
 .btn {
 	-webkit-appearance: none;
-	background-color: #e65100;
+	background-color: #01579b;
 	background-image: none;
 	border: none;
 	border-radius: 0;
@@ -74,7 +74,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	background: #f9f8f5;
 	color: #333;
-	font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", meiryo, メイリオ, osaka, "MS PGothic", arial, helvetica, sans-serif;
+	font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", meiryo, "メイリオ", osaka, "MS PGothic", arial, helvetica, sans-serif;
 	font-size: 16px;
 	font-weight: 400; /* cr-txt */
 	line-height: 1.6;
@@ -1829,23 +1829,23 @@ span.wpcf7-list-item {
 }
 
 .sns-buttons li a.m_twitter {
-	background: #64b5f6; /* sns twitter */
+	background: #1da1f2; /* sns twitter */
 }
 
 .sns-buttons li a.m_facebook {
-	background: #5c6bc0; /* sns facebook */
+	background: #3b5998; /* sns facebook */
 }
 
 .sns-buttons li a.m_hatena {
-	background: #00a4de; /* sns hatena */
+	background: #018fde; /* sns hatena */
 }
 
 .sns-buttons li a.m_line {
-	background: #5bcc49; /* sns line */
+	background: #00b902; /* sns line */
 }
 
 .sns-buttons li a.m_pocket {
-	background: #ef5350; /* sns pocket */
+	background: #ef4156; /* sns pocket */
 }
 
 .sns-buttons-org ul {
@@ -2133,7 +2133,7 @@ span.wpcf7-list-item {
 }
 
 .widget-title {
-	background: #efa336;
+	background: #01579b;
 	color: #fff; /* widget background */
 	font-size: 16px;
 	font-weight: 700;
@@ -2150,6 +2150,7 @@ span.wpcf7-list-item {
 
 #wp-calendar th,
 #wp-calendar td {
+	font-size: 12px;
 	text-align: center;
 }
 
@@ -2162,7 +2163,7 @@ span.wpcf7-list-item {
 }
 
 #wp-calendar a {
-	color: #efa336;
+	color: #e65100;
 	text-decoration: none;
 	transition: all 0.3s ease 0s;
 }
@@ -2258,13 +2259,16 @@ span.wpcf7-list-item {
 
 .search-submit {
 	-webkit-transform: translateY(-50%);
+	font-size: 14px;
+	font-weight: 700;
 	height: 40px;
-	padding: 0;
+	line-height: 40px;
+	min-width: 40px;
+	padding: 0 10px;
 	position: absolute;
 	right: 1px;
 	top: 50%;
 	transform: translateY(-50%);
-	width: 40px;
 }
 
 .tagcloud {

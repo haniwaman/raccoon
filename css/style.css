@@ -16,7 +16,7 @@ input[type="submit"],
 input[type="button"],
 .btn {
 	-webkit-appearance: none;
-	background-color: #01579b;
+	background-color: #e65100;
 	background-image: none;
 	border: none;
 	border-radius: 0;
@@ -2156,7 +2156,7 @@ span.wpcf7-list-item {
 }
 
 .widget-title {
-	background: #01579b;
+	background: #efa336;
 	color: #fff; /* widget background */
 	font-size: 16px;
 	font-weight: 700;

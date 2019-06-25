@@ -43,6 +43,7 @@ function my_setup() {
 			'flex-height' => true,
 		)
 	);
+	add_theme_support( 'custom-background' ); /* カスタマイザーで背景色 */
 	if ( ! isset( $content_width ) ) {
 		$content_width = 840; /* コンテンツ幅 */
 	}
@@ -93,14 +94,117 @@ add_action( 'wp_body_open', 'my_body_open' );
 
 
 /**
- * <head>タグ直前の追記
+ * </head>タグ直前の追記
  *
- * @return 追加する
+ * @codex https://wpdocs.osdn.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/wp_head
  */
-function my_head() {
-	return '';
+function my_wp_head() {
+	echo '<style>';
+
+	echo '@keyframes fadeInDown{from{opacity:0;transform:translateY(-50px)}to{opacity:1;transform:translateY(0)}}.fadein{opacity:0.1;transform:translate(0, 30px);transition:all 0.5s ease 0s}.fadein.m_anim{opacity:1;transform:translate(0, 0)}#header{width:100%;background:#fff;z-index:20}#header.m_anim{animation:fadeInDown 0.5s ease 0s 1 normal none}#header.m_fixed{position:fixed;top:0;left:0;box-shadow:0 1px 3px rgba(0,0,0,0.16)}#header>.inner{display:flex;flex-wrap:wrap;align-items:center;padding-top:0;padding-bottom:0}@media screen and (max-width: 767px){#header>.inner{height:60px}}.header-logo{margin-right:auto}.header-logo a{transition:all 0.3s ease 0s;display:block;text-decoration:none;font-size:28px;font-weight:700}.header-logo a:hover{opacity:.6}.header-logo img{vertical-align:middle;width:auto;max-height:80px}@media screen and (max-width: 767px){.header-logo img{max-height:60px}}@media screen and (max-width: 767px){.header-nav{display:none}}.header-nav .header-list{display:flex}.header-nav li{margin-right:12px;position:relative;z-index:22;padding:16px 0}.header-nav li:hover>.sub-menu{visibility:visible;opacity:1}.header-nav li:last-child{margin-right:0}.header-nav li:last-child .sub-menu{left:auto;right:0}.header-nav li>a{text-decoration:none;display:block;padding:6px 8px;font-size:14px;transition:all 0.3s ease 0s}.header-nav li>a:hover{opacity:.6}.header-nav li.m_pickup a{background:#e65100;color:#fff;font-weight:700;box-shadow:0 0 3px 0 rgba(0,0,0,0.16)}.header-nav .sub-menu{font-size:16px;transition:all 0.3s ease 0s;position:absolute;top:100%;left:0;width:100%;opacity:0;z-index:21;min-width:200px;visibility:hidden;display:block;padding:0}.header-nav .sub-menu li{margin-bottom:2px;margin-right:0;height:auto;display:block;padding:0}.header-nav .sub-menu li a{display:block;height:auto;line-height:1.6;background:#efa336;color:#fff;padding:8px 28px 8px 16px;font-size:14px;font-weight:400;letter-spacing:0.05em}';
+
+	/* header_text_color */
+	if ( get_header_textcolor() ) {
+		echo '.header-nav li > a{color:#' . esc_attr( get_header_textcolor() ) . ';}';
+	}
+
+	/* my_widget_background */
+	if ( get_theme_mod( 'my_widget_background' ) ) {
+		echo '.widget-title{background:' . esc_attr( get_theme_mod( 'my_widget_background' ) ) . ';}';
+	}
+	/* my_widget_color */
+	if ( get_theme_mod( 'my_widget_color' ) ) {
+		echo '.widget-title{color:' . esc_attr( get_theme_mod( 'my_widget_color' ) ) . ';}';
+	}
+
+	/* my_btn_background */
+	if ( get_theme_mod( 'my_btn_background' ) ) {
+		echo 'form button,input[type="submit"],input[type="button"],.btn{background:' . esc_attr( get_theme_mod( 'my_btn_background' ) ) . ';}';
+	}
+	/* my_btn_color */
+	if ( get_theme_mod( 'my_btn_color' ) ) {
+		echo 'form button,input[type="submit"],input[type="button"],.btn{color:' . esc_attr( get_theme_mod( 'my_btn_color' ) ) . ';}';
+	}
+
+	/* my_floating_background */
+	if ( get_theme_mod( 'my_floating_background' ) ) {
+		echo '.totop a{background:' . esc_attr( get_theme_mod( 'my_floating_background' ) ) . ';}';
+	}
+	/* my_floating_color */
+	if ( get_theme_mod( 'my_floating_color' ) ) {
+		echo '.totop a{color:' . esc_attr( get_theme_mod( 'my_floating_color' ) ) . ';}';
+	}
+
+	/* my_pickup_background */
+	if ( get_theme_mod( 'my_pickup_background' ) ) {
+		echo '.header-nav li.m_pickup a{background:' . esc_attr( get_theme_mod( 'my_pickup_background' ) ) . ';}';
+		echo '.sticky::before{background:' . esc_attr( get_theme_mod( 'my_pickup_background' ) ) . ';}';
+	}
+	/* my_pickup_color */
+	if ( get_theme_mod( 'my_pickup_color' ) ) {
+		echo '.header-nav li.m_pickup a{color:' . esc_attr( get_theme_mod( 'my_pickup_color' ) ) . ';}';
+		echo '.sticky::before{color:' . esc_attr( get_theme_mod( 'my_pickup_color' ) ) . ';}';
+	}
+
+	/* my_pagenation_background */
+	if ( get_theme_mod( 'my_pagenation_background' ) ) {
+		echo '.page-numbers.current{background:' . esc_attr( get_theme_mod( 'my_pagenation_background' ) ) . ';border-color:' . esc_attr( get_theme_mod( 'my_pagenation_background' ) ) . ';}';
+		echo '.pagenation a:hover{background:' . esc_attr( get_theme_mod( 'my_pagenation_background' ) ) . ';border-color:' . esc_attr( get_theme_mod( 'my_pagenation_background' ) ) . ';}';
+		echo '.pagenation a.next:hover, .pagenation a.prev:hover{background:' . esc_attr( get_theme_mod( 'my_pagenation_background' ) ) . ';border-color:' . esc_attr( get_theme_mod( 'my_pagenation_background' ) ) . ';}';
+		echo '.entry-links .post-page-numbers.current{background:' . esc_attr( get_theme_mod( 'my_pagenation_background' ) ) . ';border-color:' . esc_attr( get_theme_mod( 'my_pagenation_background' ) ) . ';}';
+		echo '.entry-links a:hover{background:' . esc_attr( get_theme_mod( 'my_pagenation_background' ) ) . ';border-color:' . esc_attr( get_theme_mod( 'my_pagenation_background' ) ) . ';}';
+	}
+	/* my_pagenation_color */
+	if ( get_theme_mod( 'my_pagenation_color' ) ) {
+		echo '.page-numbers.current{color:' . esc_attr( get_theme_mod( 'my_pagenation_color' ) ) . ';}';
+		echo '.pagenation a:hover{color:' . esc_attr( get_theme_mod( 'my_pagenation_color' ) ) . ';}';
+		echo '.pagenation a.next:hover, .pagenation a.prev:hover{color:' . esc_attr( get_theme_mod( 'my_pagenation_color' ) ) . ';}';
+		echo '.entry-links .post-page-numbers.current{color:' . esc_attr( get_theme_mod( 'my_pagenation_color' ) ) . ';}';
+		echo '.entry-links a:hover{color:' . esc_attr( get_theme_mod( 'my_pagenation_color' ) ) . ';}';
+	}
+
+	/* my_infomation_background */
+	if ( get_theme_mod( 'my_infomation_background' ) ) {
+		echo '.infomation a{background:' . esc_attr( get_theme_mod( 'my_infomation_background' ) ) . ';}';
+	}
+	/* my_infomation_color */
+	if ( get_theme_mod( 'my_infomation_color' ) ) {
+		echo '.infomation a{color:' . esc_attr( get_theme_mod( 'my_infomation_color' ) ) . ';}';
+	}
+
+	/* my_footer_background */
+	if ( get_theme_mod( 'my_footer_background' ) ) {
+		echo '#footer{background:' . esc_attr( get_theme_mod( 'my_footer_background' ) ) . ';}';
+	}
+
+	/* my_twitter_background */
+	if ( get_theme_mod( 'my_twitter_background' ) ) {
+		echo '.sns-buttons li a.m_twitter{background:' . esc_attr( get_theme_mod( 'my_twitter_background' ) ) . ';}';
+	}
+
+	/* my_facebook_background */
+	if ( get_theme_mod( 'my_facebook_background' ) ) {
+		echo '.sns-buttons li a.m_facebook{background:' . esc_attr( get_theme_mod( 'my_facebook_background' ) ) . ';}';
+	}
+
+	/* my_hatena_background */
+	if ( get_theme_mod( 'my_hatena_background' ) ) {
+		echo '.sns-buttons li a.m_hatena{background:' . esc_attr( get_theme_mod( 'my_hatena_background' ) ) . ';}';
+	}
+
+	/* my_line_background */
+	if ( get_theme_mod( 'my_line_background' ) ) {
+		echo '.sns-buttons li a.m_line{background:' . esc_attr( get_theme_mod( 'my_line_background' ) ) . ';}';
+	}
+
+	/* my_pocket_background */
+	if ( get_theme_mod( 'my_pocket_background' ) ) {
+		echo '.sns-buttons li a.m_pocket{background:' . esc_attr( get_theme_mod( 'my_pocket_background' ) ) . ';}';
+	}
+
+	echo '</style>';
 }
-add_action( 'wp_head', 'my_head' );
+add_action( 'wp_head', 'my_wp_head' );
 
 
 

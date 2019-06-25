@@ -18,17 +18,21 @@
 
 <!-- drawer-content m_left -->
 <div class="drawer-content widget-sp">
-<?php
+<?php if ( is_active_sidebar( 'spmenu' ) ) : ?>
+	<?php dynamic_sidebar( 'spmenu' ); ?>
+<?php else : ?>
+	<?php
 	wp_nav_menu(
 		array(
 			'container'       => false,
 			'depth'           => 2,
-			'theme_location'  => 'drawer',
+			'theme_location'  => 'header',
 			'container'       => 'nav',
 			'container_class' => 'drawer-nav',
 			'menu_class'      => 'drawer-list',
 		)
 	);
 	?>
+<?php endif; ?>
 </div><!-- /drawer-content -->
 </div><!-- /drawer -->

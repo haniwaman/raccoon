@@ -34,6 +34,15 @@ function my_setup() {
 			'flex-height' => true,
 		)
 	);
+	add_theme_support(
+		'custom-header',  /* カスタマイザーでヘッダー画像 */
+		array(
+			'width'       => 1920,
+			'height'      => 700,
+			'flex-width'  => true,
+			'flex-height' => true,
+		)
+	);
 	if ( ! isset( $content_width ) ) {
 		$content_width = 840; /* コンテンツ幅 */
 	}
@@ -74,7 +83,8 @@ add_action( 'wp_enqueue_scripts', 'my_script_init' );
  * @codex https://developer.wordpress.org/reference/functions/wp_body_open/
  */
 function my_body_open() {
-	/* Facebookプラグイン */
+	/*
+	 Facebookプラグイン */
 	// echo '<div id="fb-root"></div>';
 	// echo '<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.3"></script>';
 }
@@ -88,7 +98,7 @@ add_action( 'wp_body_open', 'my_body_open' );
  * @return 追加する
  */
 function my_head() {
-	return "";
+	return '';
 }
 add_action( 'wp_head', 'my_head' );
 
@@ -116,7 +126,6 @@ function my_menu_init() {
 		array(
 			'header' => __( 'ヘッダーメニュー', 'raccoon' ),
 			'footer' => __( 'フッターメニュー', 'raccoon' ),
-			'drawer' => __( 'ドロワーメニュー', 'raccoon' ),
 		)
 	);
 }
@@ -152,8 +161,8 @@ function my_widget_init() {
 	);
 	register_sidebar(
 		array(
-			'name'          => __( 'スマホ', 'raccoon' ),
-			'id'            => 'modal',
+			'name'          => __( 'スマホメニュー', 'raccoon' ),
+			'id'            => 'spmenu',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div><!-- /widget -->',
 			'before_title'  => '<div class="widget-title">',

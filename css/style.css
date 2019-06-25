@@ -908,6 +908,10 @@ span.wpcf7-list-item {
 	transform: translateX(0);
 }
 
+.drawer-content .widget {
+	background: transparent;
+}
+
 .drawer-nav li a {
 	display: block;
 	font-size: 16px;
@@ -1397,9 +1401,9 @@ span.wpcf7-list-item {
 }
 
 .entry-links .post-page-numbers.current { /* pagenation color-active */
-	background: #fff; /* pagenation background-active */
+	background: #efa336; /* pagenation background-active */
 	border: 1px solid;
-	color: #efa336; /* pagenation borde-color-active */
+	color: #fff; /* pagenation borde-color-active */
 }
 
 .entry-links .post-page-numbers:first-child {
@@ -1416,9 +1420,9 @@ span.wpcf7-list-item {
 }
 
 .entry-links a:hover { /* pagenation color-active */
-	background: #fff; /* pagenation background-active */
+	background: #efa336; /* pagenation background-active */
 	border: 1px solid #efa336;
-	color: #efa336; /* pagenation border-color-active */
+	color: #fff; /* pagenation border-color-active */
 	opacity: 1;
 }
 
@@ -1673,6 +1677,25 @@ span.wpcf7-list-item {
 
 .rc_heading1 h6 {
 	color: #efa336; /* $cr-m */
+}
+
+.infomation {
+	background: #efa336; /* infomation background */
+}
+
+.infomation a {
+	color: #fff;
+	display: block;
+	font-size: 14px;
+	font-weight: 700;
+	padding: 8px 0;
+	text-align: center;
+	text-decoration: none;
+	transition: all 0.3s ease 0s;
+}
+
+.infomation a:hover {
+	opacity: 0.6;
 }
 
 .likebox {
@@ -1944,34 +1967,34 @@ span.wpcf7-list-item {
 	transition: all 0.3s ease 0s;
 }
 
-.pagenation a:hover {
-	background: #fff;
-	border: 1px solid;
-	color: #efa336;
+.pagenation a:hover { /* pagenation color-active */
+	background: #efa336; /* pagenation background-active */
+	border: 1px solid #efa336;
+	color: #fff; /* pagenation border-active */
 }
 
 .pagenation a.next,
 .pagenation a.prev {
-	background: #eee;
-	border: 1px solid;
+	background: #eee; /* pagenation background */
+	border: 1px solid #eee; /* pagenation border */
 }
 
 .pagenation a.next:hover,
-.pagenation a.prev:hover {
-	background: #fff;
-	border: 1px solid;
-	color: #efa336;
+.pagenation a.prev:hover { /* pagenation color-active */
+	background: #efa336; /* pagenation background-active */
+	border: 1px solid #efa336;
+	color: #fff; /* pagenation border-active */
 }
 
-.page-numbers {
+.page-numbers { /* pagenation border */
 	background: #eee;
-	border: 1px solid;
+	border: 1px solid #eee;
 	color: #333;
 	height: 42px;
 	line-height: 42px;
 	margin-right: 8px;
-	min-width: 42px;
-	text-align: center;
+	min-width: 42px; /* pagenation background */
+	text-align: center; /* pagenation color */
 	text-decoration: none;
 }
 
@@ -1979,10 +2002,10 @@ span.wpcf7-list-item {
 	margin-right: 0;
 }
 
-.page-numbers.current {
-	background: #fff;
-	border: 1px solid;
-	color: #efa336;
+.page-numbers.current { /* pagenation color-active */
+	background: #efa336; /* pagenation background-active */
+	border: 1px solid #efa336;
+	color: #fff; /* pagenation border-active */
 }
 
 .page-numbers.dots,

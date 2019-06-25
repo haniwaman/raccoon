@@ -43,6 +43,10 @@ $drawer-content-font: #fff;
 		transform: translateX(0);
 		box-shadow: 6px 0 25px rgba(#000, 0.16);
 	}
+
+	.widget {
+		background: transparent;
+	}
 }
 
 .drawer-nav {

@@ -51,7 +51,8 @@ $sns-color: (
 // ヘッダー
 $header: (
 	"pickup": #e65100,
-	"background-sub": #efa336
+	"background-sub": #efa336,
+	"color-sub": #fff
 );
 
 // フッター
@@ -76,10 +77,10 @@ $tagcloud: (
 $pagenation: (
 	"background": #eee,
 	"color": #333,
-	"border-color": #eee,
-	"background-active": #fff,
-	"color-active": #efa336,
-	"border-color-active": #efa336
+	"border": #eee,
+	"background-active": #efa336,
+	"color-active": #fff,
+	"border-active": #efa336
 );
 
 // sticky

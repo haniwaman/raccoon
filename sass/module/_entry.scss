@@ -293,7 +293,7 @@
 		line-height: 36px;
 		text-align: center;
 		background: map-get($pagenation, "background"); /* pagenation background */
-		border: 1px solid map-get($pagenation, "border-color"); /* pagenation border */
+		border: 1px solid map-get($pagenation, "border"); /* pagenation border */
 		color: map-get($pagenation, "color"); /* pagenation color */
 		margin-right: 12px;
 
@@ -304,7 +304,7 @@
 		&.current {
 			color: map-get($pagenation, "color-active"); /* pagenation color-active */
 			background: map-get($pagenation, "background-active"); /* pagenation background-active */
-			border: 1px solid map-get($pagenation, "borde-color-active"); /* pagenation borde-color-active */
+			border: 1px solid map-get($pagenation, "borde-active"); /* pagenation borde-color-active */
 		}
 
 		&:first-child {
@@ -323,7 +323,7 @@
 		&:hover {
 			color: map-get($pagenation, "color-active"); /* pagenation color-active */
 			background: map-get($pagenation, "background-active"); /* pagenation background-active */
-			border: 1px solid map-get($pagenation, "border-color-active"); /* pagenation border-color-active */
+			border: 1px solid map-get($pagenation, "border-active"); /* pagenation border-color-active */
 			opacity: 1;
 		}
 	}

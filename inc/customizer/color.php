@@ -1,6 +1,6 @@
 <?php
 /**
- * My Customizer
+ * My Customizer Color
  *
  * @package WordPress
  */
@@ -11,7 +11,7 @@
  * @param object $wp_customize カスタマイザーを管理するオブジェクト.
  * @return void
  */
-function my_customize_register( $wp_customize ) {
+function my_customize_color( $wp_customize ) {
 
 	$wp_customize->remove_section( 'colors' );
 
@@ -339,4 +339,4 @@ function my_customize_register( $wp_customize ) {
 		)
 	);
 }
-add_action( 'customize_register', 'my_customize_register' );
+add_action( 'customize_register', 'my_customize_color' );

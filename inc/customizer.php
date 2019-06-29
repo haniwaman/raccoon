@@ -13,266 +13,328 @@
  */
 function my_customize_register( $wp_customize ) {
 
-	/* my_widget_background */
-	$wp_customize->add_setting( 'my_widget_background' );
+	$wp_customize->remove_section( 'colors' );
+
+	// 色.
+	$wp_customize->add_panel(
+		'my_colors',
+		array(
+			'priority' => 35,
+			'title'    => __( '色', 'raccoon' ),
+		)
+	);
+
+	// サイト全体.
+	$wp_customize->add_section(
+		'my_colors_site',
+		array(
+			'title'    => __( 'サイト全体', 'raccoon' ),
+			'panel'    => 'my_colors',
+			'priority' => 1,
+		)
+	);
+
+	// サイトのメイン色.
+	$wp_customize->add_setting( 'my_colors_site_main' );
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'my_widget_background',
+			'my_colors_site_main',
 			array(
-				'label'    => __( 'ウィジェット 見出し背景色', 'raccoon' ),
-				'section'  => 'colors',
-				'settings' => 'my_widget_background',
+				'label'    => __( 'メインカラー', 'raccoon' ),
+				'section'  => 'my_colors_site',
+				'settings' => 'my_colors_site_main',
 				'priority' => 1,
 			)
 		)
 	);
-	/* my_widget_color */
-	$wp_customize->add_setting( 'my_widget_color' );
+
+	// サイトのアクセント色.
+	$wp_customize->add_setting( 'my_colors_site_accent' );
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'my_widget_color',
+			'my_colors_site_accent',
 			array(
-				'label'    => __( 'ウィジェット 見出しテキスト色', 'raccoon' ),
-				'section'  => 'colors',
-				'settings' => 'my_widget_color',
+				'label'    => __( 'アクセントカラー', 'raccoon' ),
+				'section'  => 'my_colors_site',
+				'settings' => 'my_colors_site_accent',
 				'priority' => 2,
 			)
 		)
 	);
 
-	/* my_btn_background */
-	$wp_customize->add_setting( 'my_btn_background' );
+	// サイトの背景色.
+	$wp_customize->add_setting( 'my_colors_site_background' );
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'my_btn_background',
+			'my_colors_site_background',
 			array(
-				'label'    => __( 'ボタン 背景色', 'raccoon' ),
-				'section'  => 'colors',
-				'settings' => 'my_btn_background',
+				'label'    => __( '背景色', 'raccoon' ),
+				'section'  => 'my_colors_site',
+				'settings' => 'my_colors_site_background',
 				'priority' => 3,
 			)
 		)
 	);
-	/* my_btn_color */
-	$wp_customize->add_setting( 'my_btn_color' );
+
+	// サイトの文字色.
+	$wp_customize->add_setting( 'my_colors_site_text' );
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'my_btn_color',
+			'my_colors_site_text',
 			array(
-				'label'    => __( 'ボタン テキスト色', 'raccoon' ),
-				'section'  => 'colors',
-				'settings' => 'my_btn_color',
+				'label'    => __( 'テキスト色', 'raccoon' ),
+				'section'  => 'my_colors_site',
+				'settings' => 'my_colors_site_text',
 				'priority' => 4,
 			)
 		)
 	);
 
-	/* my_floating_background */
-	$wp_customize->add_setting( 'my_floating_background' );
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'my_floating_background',
-			array(
-				'label'    => __( 'フローティング 背景色', 'raccoon' ),
-				'section'  => 'colors',
-				'settings' => 'my_floating_background',
-				'priority' => 5,
-			)
+	// ヘッダー.
+	$wp_customize->add_section(
+		'my_colors_header',
+		array(
+			'title'    => __( 'ヘッダー', 'raccoon' ),
+			'panel'    => 'my_colors',
+			'priority' => 2,
 		)
 	);
-	/* my_floating_color */
-	$wp_customize->add_setting( 'my_floating_color' );
+
+	// ヘッダー背景色.
+	$wp_customize->add_setting( 'my_colors_header_background' );
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'my_floating_color',
+			'my_colors_header_background',
 			array(
-				'label'    => __( 'フローティング テキスト色', 'raccoon' ),
-				'section'  => 'colors',
-				'settings' => 'my_floating_color',
-				'priority' => 6,
+				'label'    => __( '背景色', 'raccoon' ),
+				'section'  => 'my_colors_header',
+				'settings' => 'my_colors_header_background',
+				'priority' => 1,
 			)
 		)
 	);
 
-	/* my_pickup_background */
-	$wp_customize->add_setting( 'my_pickup_background' );
+	// ヘッダーテキスト色.
+	$wp_customize->add_setting( 'my_colors_header_text' );
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'my_pickup_background',
+			'my_colors_header_text',
 			array(
-				'label'    => __( 'ピックアップ 背景色', 'raccoon' ),
-				'section'  => 'colors',
-				'settings' => 'my_pickup_background',
-				'priority' => 7,
-			)
-		)
-	);
-	/* my_pickup_color */
-	$wp_customize->add_setting( 'my_pickup_color' );
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'my_pickup_color',
-			array(
-				'label'    => __( 'ピックアップ テキスト色', 'raccoon' ),
-				'section'  => 'colors',
-				'settings' => 'my_pickup_color',
-				'priority' => 8,
+				'label'    => __( 'テキスト色', 'raccoon' ),
+				'section'  => 'my_colors_header',
+				'settings' => 'my_colors_header_text',
+				'priority' => 2,
 			)
 		)
 	);
 
-	/* my_pagenation_background */
-	$wp_customize->add_setting( 'my_pagenation_background' );
+	// ヘッダーロゴ色.
+	$wp_customize->add_setting( 'my_colors_header_logo' );
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'my_pagenation_background',
+			'my_colors_header_logo',
 			array(
-				'label'    => __( 'ページネーション 背景色', 'raccoon' ),
-				'section'  => 'colors',
-				'settings' => 'my_pagenation_background',
-				'priority' => 9,
-			)
-		)
-	);
-	/* my_pagenation_color */
-	$wp_customize->add_setting( 'my_pagenation_color' );
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'my_pagenation_color',
-			array(
-				'label'    => __( 'ページネーション テキスト色', 'raccoon' ),
-				'section'  => 'colors',
-				'settings' => 'my_pagenation_color',
-				'priority' => 10,
+				'label'    => __( 'ロゴ色', 'raccoon' ),
+				'section'  => 'my_colors_header',
+				'settings' => 'my_colors_header_logo',
+				'priority' => 2,
 			)
 		)
 	);
 
-	/* my_infomation_background */
-	$wp_customize->add_setting( 'my_infomation_background' );
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'my_infomation_background',
-			array(
-				'label'    => __( 'インフォメーション 背景色', 'raccoon' ),
-				'section'  => 'colors',
-				'settings' => 'my_infomation_background',
-				'priority' => 11,
-			)
+	// フッター.
+	$wp_customize->add_section(
+		'my_colors_footer',
+		array(
+			'title'    => __( 'フッター', 'raccoon' ),
+			'panel'    => 'my_colors',
+			'priority' => 2,
 		)
 	);
-	/* my_infomation_color */
-	$wp_customize->add_setting( 'my_infomation_color' );
+
+	// フッター背景色.
+	$wp_customize->add_setting( 'my_colors_footer_background' );
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'my_infomation_color',
+			'my_colors_footer_background',
 			array(
-				'label'    => __( 'インフォメーション テキスト色', 'raccoon' ),
-				'section'  => 'colors',
-				'settings' => 'my_infomation_color',
-				'priority' => 12,
+				'label'    => __( '背景色', 'raccoon' ),
+				'section'  => 'my_colors_footer',
+				'settings' => 'my_colors_footer_background',
+				'priority' => 1,
 			)
 		)
 	);
 
-	/* my_footer_background */
-	$wp_customize->add_setting( 'my_footer_background' );
+	// フッターテキスト色.
+	$wp_customize->add_setting( 'my_colors_footer_text' );
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'my_footer_background',
+			'my_colors_footer_text',
 			array(
-				'label'    => __( 'フッター 背景色', 'raccoon' ),
-				'section'  => 'colors',
-				'settings' => 'my_footer_background',
-				'priority' => 13,
+				'label'    => __( 'テキスト色', 'raccoon' ),
+				'section'  => 'my_colors_footer',
+				'settings' => 'my_colors_footer_text',
+				'priority' => 2,
 			)
 		)
 	);
 
-	/* my_twitter_background */
-	$wp_customize->add_setting( 'my_twitter_background' );
+	// ウィジェット見出し.
+	$wp_customize->add_section(
+		'my_colors_widget',
+		array(
+			'title'    => __( 'ウィジェット見出し', 'raccoon' ),
+			'panel'    => 'my_colors',
+			'priority' => 2,
+		)
+	);
+
+	// ウィジェット見出し背景色.
+	$wp_customize->add_setting( 'my_colors_widget_background' );
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'my_twitter_background',
+			'my_colors_widget_background',
 			array(
-				'label'    => __( 'Twitter色', 'raccoon' ),
-				'section'  => 'colors',
-				'settings' => 'my_twitter_background',
-				'priority' => 11,
+				'label'    => __( '背景色', 'raccoon' ),
+				'section'  => 'my_colors_widget',
+				'settings' => 'my_colors_widget_background',
+				'priority' => 1,
 			)
 		)
 	);
 
-	/* my_facebook_background */
-	$wp_customize->add_setting( 'my_facebook_background' );
+	// ウィジェット見出しテキスト色.
+	$wp_customize->add_setting( 'my_colors_widget_text' );
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'my_facebook_background',
+			'my_colors_widget_text',
 			array(
-				'label'    => __( 'Facebook色', 'raccoon' ),
-				'section'  => 'colors',
-				'settings' => 'my_facebook_background',
-				'priority' => 11,
+				'label'    => __( 'テキスト色', 'raccoon' ),
+				'section'  => 'my_colors_widget',
+				'settings' => 'my_colors_widget_text',
+				'priority' => 2,
 			)
 		)
 	);
 
-	/* my_hatena_background */
-	$wp_customize->add_setting( 'my_hatena_background' );
+	// SNS.
+	$wp_customize->add_section(
+		'my_colors_sns',
+		array(
+			'title'    => __( 'SNS', 'raccoon' ),
+			'panel'    => 'my_colors',
+			'priority' => 2,
+		)
+	);
+
+	// Twitter色.
+	$wp_customize->add_setting( 'my_colors_sns_twitter' );
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'my_hatena_background',
+			'my_colors_sns_twitter',
 			array(
-				'label'    => __( 'はてな色', 'raccoon' ),
-				'section'  => 'colors',
-				'settings' => 'my_hatena_background',
-				'priority' => 11,
+				'label'    => __( 'Twitter', 'raccoon' ),
+				'section'  => 'my_colors_sns',
+				'settings' => 'my_colors_sns_twitter',
+				'priority' => 1,
 			)
 		)
 	);
 
-	/* my_line_background */
-	$wp_customize->add_setting( 'my_line_background' );
+	// Facebook色.
+	$wp_customize->add_setting( 'my_colors_sns_facebook' );
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'my_line_background',
+			'my_colors_sns_facebook',
 			array(
-				'label'    => __( 'LINE色', 'raccoon' ),
-				'section'  => 'colors',
-				'settings' => 'my_line_background',
-				'priority' => 11,
+				'label'    => __( 'Facebook', 'raccoon' ),
+				'section'  => 'my_colors_sns',
+				'settings' => 'my_colors_sns_facebook',
+				'priority' => 1,
 			)
 		)
 	);
 
-	/* my_pocket_background */
-	$wp_customize->add_setting( 'my_pocket_background' );
+	// はてなブックマーク色.
+	$wp_customize->add_setting( 'my_colors_sns_hatena' );
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'my_pocket_background',
+			'my_colors_sns_hatena',
 			array(
-				'label'    => __( 'Pocket色', 'raccoon' ),
-				'section'  => 'colors',
-				'settings' => 'my_pocket_background',
-				'priority' => 11,
+				'label'    => __( 'はてなブックマーク', 'raccoon' ),
+				'section'  => 'my_colors_sns',
+				'settings' => 'my_colors_sns_hatena',
+				'priority' => 1,
+			)
+		)
+	);
+
+	// LINE色.
+	$wp_customize->add_setting( 'my_colors_sns_line' );
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'my_colors_sns_line',
+			array(
+				'label'    => __( 'LINE', 'raccoon' ),
+				'section'  => 'my_colors_sns',
+				'settings' => 'my_colors_sns_line',
+				'priority' => 1,
+			)
+		)
+	);
+
+	// Pocket色.
+	$wp_customize->add_setting( 'my_colors_sns_pocket' );
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'my_colors_sns_pocket',
+			array(
+				'label'    => __( 'Pocket', 'raccoon' ),
+				'section'  => 'my_colors_sns',
+				'settings' => 'my_colors_sns_pocket',
+				'priority' => 1,
+			)
+		)
+	);
+
+	// コンテンツ.
+	$wp_customize->add_section(
+		'my_colors_content',
+		array(
+			'title'    => __( 'コンテンツ', 'raccoon' ),
+			'panel'    => 'my_colors',
+			'priority' => 2,
+		)
+	);
+
+	// リンク色.
+	$wp_customize->add_setting( 'my_colors_content_link' );
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'my_colors_content_link',
+			array(
+				'label'    => __( 'リンク', 'raccoon' ),
+				'section'  => 'my_colors_content',
+				'settings' => 'my_colors_content_link',
+				'priority' => 1,
 			)
 		)
 	);

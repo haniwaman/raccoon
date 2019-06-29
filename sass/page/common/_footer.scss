@@ -1,5 +1,6 @@
 #footer {
 	background: map-get($footer, "background"); /* footer background */
+	color: map-get($footer, "color"); /* footer background */
 
 	> .inner {
 		padding-top: 0;
@@ -8,7 +9,6 @@
 }
 
 .copy {
-	color: map-get($footer, "color"); /* footer background */
 	font-size: 13px;
 	padding: 8px;
 

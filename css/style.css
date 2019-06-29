@@ -2349,6 +2349,7 @@ span.wpcf7-list-item {
 
 #footer {
 	background: #666; /* footer background */
+	color: #fff; /* footer background */
 }
 
 #footer > .inner {
@@ -2357,7 +2358,6 @@ span.wpcf7-list-item {
 }
 
 .copy {
-	color: #fff; /* footer background */
 	font-size: 13px;
 	padding: 8px;
 }

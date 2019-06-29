@@ -103,103 +103,102 @@ function my_wp_head() {
 
 	echo '@keyframes fadeInDown{from{opacity:0;transform:translateY(-50px)}to{opacity:1;transform:translateY(0)}}.fadein{opacity:0.1;transform:translate(0, 30px);transition:all 0.5s ease 0s}.fadein.m_anim{opacity:1;transform:translate(0, 0)}#header{width:100%;background:#fff;z-index:20}#header.m_anim{animation:fadeInDown 0.5s ease 0s 1 normal none}#header.m_fixed{position:fixed;top:0;left:0;box-shadow:0 1px 3px rgba(0,0,0,0.16)}#header>.inner{display:flex;flex-wrap:wrap;align-items:center;padding-top:0;padding-bottom:0}@media screen and (max-width: 767px){#header>.inner{height:60px}}.header-logo{margin-right:auto}.header-logo a{transition:all 0.3s ease 0s;display:block;text-decoration:none;font-size:28px;font-weight:700}.header-logo a:hover{opacity:.6}.header-logo img{vertical-align:middle;width:auto;max-height:80px}@media screen and (max-width: 767px){.header-logo img{max-height:60px}}@media screen and (max-width: 767px){.header-nav{display:none}}.header-nav .header-list{display:flex}.header-nav li{margin-right:12px;position:relative;z-index:22;padding:16px 0}.header-nav li:hover>.sub-menu{visibility:visible;opacity:1}.header-nav li:last-child{margin-right:0}.header-nav li:last-child .sub-menu{left:auto;right:0}.header-nav li>a{text-decoration:none;display:block;padding:6px 8px;font-size:14px;transition:all 0.3s ease 0s}.header-nav li>a:hover{opacity:.6}.header-nav li.m_pickup a{background:#e65100;color:#fff;font-weight:700;box-shadow:0 0 3px 0 rgba(0,0,0,0.16)}.header-nav .sub-menu{font-size:16px;transition:all 0.3s ease 0s;position:absolute;top:100%;left:0;width:100%;opacity:0;z-index:21;min-width:200px;visibility:hidden;display:block;padding:0}.header-nav .sub-menu li{margin-bottom:2px;margin-right:0;height:auto;display:block;padding:0}.header-nav .sub-menu li a{display:block;height:auto;line-height:1.6;background:#efa336;color:#fff;padding:8px 28px 8px 16px;font-size:14px;font-weight:400;letter-spacing:0.05em}';
 
-	/* header_text_color */
-	if ( get_header_textcolor() ) {
-		echo '.header-nav li > a{color:#' . esc_attr( get_header_textcolor() ) . ';}';
+	/* サイトのメイン色 */
+	if ( get_theme_mod( 'my_colors_site_main' ) ) {
+		/* ページネーション */
+		echo '.page-numbers.current{background:' . esc_attr( get_theme_mod( 'my_colors_site_main' ) ) . ';border-color:' . esc_attr( get_theme_mod( 'my_colors_site_main' ) ) . ';}';
+		echo '.pagenation a:hover{background:' . esc_attr( get_theme_mod( 'my_colors_site_main' ) ) . ';border-color:' . esc_attr( get_theme_mod( 'my_colors_site_main' ) ) . ';}';
+		echo '.pagenation a.next:hover, .pagenation a.prev:hover{background:' . esc_attr( get_theme_mod( 'my_colors_site_main' ) ) . ';border-color:' . esc_attr( get_theme_mod( 'my_colors_site_main' ) ) . ';}';
+		echo '.entry-links .post-page-numbers.current{background:' . esc_attr( get_theme_mod( 'my_colors_site_main' ) ) . ';border-color:' . esc_attr( get_theme_mod( 'my_colors_site_main' ) ) . ';}';
+		echo '.entry-links a:hover{background:' . esc_attr( get_theme_mod( 'my_colors_site_main' ) ) . ';border-color:' . esc_attr( get_theme_mod( 'my_colors_site_main' ) ) . ';}';
+		/* インフォメーション */
+		echo '.infomation a{background:' . esc_attr( get_theme_mod( 'my_colors_site_main' ) ) . ';}';
 	}
 
-	/* my_widget_background */
-	if ( get_theme_mod( 'my_widget_background' ) ) {
-		echo '.widget-title{background:' . esc_attr( get_theme_mod( 'my_widget_background' ) ) . ';}';
-	}
-	/* my_widget_color */
-	if ( get_theme_mod( 'my_widget_color' ) ) {
-		echo '.widget-title{color:' . esc_attr( get_theme_mod( 'my_widget_color' ) ) . ';}';
+	/* サイトのアクセント色 */
+	if ( get_theme_mod( 'my_colors_site_accent' ) ) {
+		/* ピックアップ */
+		echo '.header-nav li.m_pickup a{background:' . esc_attr( get_theme_mod( 'my_colors_site_accent' ) ) . ';}';
+		echo '.sticky::before{background:' . esc_attr( get_theme_mod( 'my_colors_site_accent' ) ) . ';}';
+		/* フローティング */
+		echo '.totop a{background:' . esc_attr( get_theme_mod( 'my_colors_site_accent' ) ) . ';}';
+		/* ボタン */
+		echo 'form button,input[type="submit"],input[type="button"],.btn{background:' . esc_attr( get_theme_mod( 'my_colors_site_accent' ) ) . ';}';
+
 	}
 
-	/* my_btn_background */
-	if ( get_theme_mod( 'my_btn_background' ) ) {
-		echo 'form button,input[type="submit"],input[type="button"],.btn{background:' . esc_attr( get_theme_mod( 'my_btn_background' ) ) . ';}';
-	}
-	/* my_btn_color */
-	if ( get_theme_mod( 'my_btn_color' ) ) {
-		echo 'form button,input[type="submit"],input[type="button"],.btn{color:' . esc_attr( get_theme_mod( 'my_btn_color' ) ) . ';}';
+	/* サイトの背景色 */
+	if ( get_theme_mod( 'my_colors_site_background' ) ) {
+		echo 'body{background-color:' . esc_attr( get_theme_mod( 'my_colors_site_background' ) ) . ';}';
 	}
 
-	/* my_floating_background */
-	if ( get_theme_mod( 'my_floating_background' ) ) {
-		echo '.totop a{background:' . esc_attr( get_theme_mod( 'my_floating_background' ) ) . ';}';
-	}
-	/* my_floating_color */
-	if ( get_theme_mod( 'my_floating_color' ) ) {
-		echo '.totop a{color:' . esc_attr( get_theme_mod( 'my_floating_color' ) ) . ';}';
+	/* サイトの文字色 */
+	if ( get_theme_mod( 'my_colors_site_text' ) ) {
+		echo 'body{color:' . esc_attr( gget_theme_mod( 'my_colors_site_text' ) ) . ';}';
 	}
 
-	/* my_pickup_background */
-	if ( get_theme_mod( 'my_pickup_background' ) ) {
-		echo '.header-nav li.m_pickup a{background:' . esc_attr( get_theme_mod( 'my_pickup_background' ) ) . ';}';
-		echo '.sticky::before{background:' . esc_attr( get_theme_mod( 'my_pickup_background' ) ) . ';}';
-	}
-	/* my_pickup_color */
-	if ( get_theme_mod( 'my_pickup_color' ) ) {
-		echo '.header-nav li.m_pickup a{color:' . esc_attr( get_theme_mod( 'my_pickup_color' ) ) . ';}';
-		echo '.sticky::before{color:' . esc_attr( get_theme_mod( 'my_pickup_color' ) ) . ';}';
+	/* ヘッダー背景色 */
+	if ( get_theme_mod( 'my_colors_header_background' ) ) {
+		echo '#header{background:' . esc_attr( get_theme_mod( 'my_colors_header_background' ) ) . ';}';
 	}
 
-	/* my_pagenation_background */
-	if ( get_theme_mod( 'my_pagenation_background' ) ) {
-		echo '.page-numbers.current{background:' . esc_attr( get_theme_mod( 'my_pagenation_background' ) ) . ';border-color:' . esc_attr( get_theme_mod( 'my_pagenation_background' ) ) . ';}';
-		echo '.pagenation a:hover{background:' . esc_attr( get_theme_mod( 'my_pagenation_background' ) ) . ';border-color:' . esc_attr( get_theme_mod( 'my_pagenation_background' ) ) . ';}';
-		echo '.pagenation a.next:hover, .pagenation a.prev:hover{background:' . esc_attr( get_theme_mod( 'my_pagenation_background' ) ) . ';border-color:' . esc_attr( get_theme_mod( 'my_pagenation_background' ) ) . ';}';
-		echo '.entry-links .post-page-numbers.current{background:' . esc_attr( get_theme_mod( 'my_pagenation_background' ) ) . ';border-color:' . esc_attr( get_theme_mod( 'my_pagenation_background' ) ) . ';}';
-		echo '.entry-links a:hover{background:' . esc_attr( get_theme_mod( 'my_pagenation_background' ) ) . ';border-color:' . esc_attr( get_theme_mod( 'my_pagenation_background' ) ) . ';}';
-	}
-	/* my_pagenation_color */
-	if ( get_theme_mod( 'my_pagenation_color' ) ) {
-		echo '.page-numbers.current{color:' . esc_attr( get_theme_mod( 'my_pagenation_color' ) ) . ';}';
-		echo '.pagenation a:hover{color:' . esc_attr( get_theme_mod( 'my_pagenation_color' ) ) . ';}';
-		echo '.pagenation a.next:hover, .pagenation a.prev:hover{color:' . esc_attr( get_theme_mod( 'my_pagenation_color' ) ) . ';}';
-		echo '.entry-links .post-page-numbers.current{color:' . esc_attr( get_theme_mod( 'my_pagenation_color' ) ) . ';}';
-		echo '.entry-links a:hover{color:' . esc_attr( get_theme_mod( 'my_pagenation_color' ) ) . ';}';
+	/* ヘッダーテキスト色 */
+	if ( get_theme_mod( 'my_colors_header_text' ) ) {
+		echo '.header-nav li > a{color:' . esc_attr( get_theme_mod( 'my_colors_header_text' ) ) . ';}';
 	}
 
-	/* my_infomation_background */
-	if ( get_theme_mod( 'my_infomation_background' ) ) {
-		echo '.infomation a{background:' . esc_attr( get_theme_mod( 'my_infomation_background' ) ) . ';}';
-	}
-	/* my_infomation_color */
-	if ( get_theme_mod( 'my_infomation_color' ) ) {
-		echo '.infomation a{color:' . esc_attr( get_theme_mod( 'my_infomation_color' ) ) . ';}';
+	/* ヘッダーロゴ色 */
+	if ( get_theme_mod( 'my_colors_header_logo' ) ) {
+		echo '.header-logo a{color:' . esc_attr( get_theme_mod( 'my_colors_header_logo' ) ) . ';}';
 	}
 
-	/* my_footer_background */
-	if ( get_theme_mod( 'my_footer_background' ) ) {
-		echo '#footer{background:' . esc_attr( get_theme_mod( 'my_footer_background' ) ) . ';}';
+	/* フッター背景色 */
+	if ( get_theme_mod( 'my_colors_footer_background' ) ) {
+		echo '#footer{background:' . esc_attr( get_theme_mod( 'my_colors_footer_background' ) ) . ';}';
 	}
 
-	/* my_twitter_background */
-	if ( get_theme_mod( 'my_twitter_background' ) ) {
-		echo '.sns-buttons li a.m_twitter{background:' . esc_attr( get_theme_mod( 'my_twitter_background' ) ) . ';}';
+	/* フッターテキスト色 */
+	if ( get_theme_mod( 'my_colors_footer_text' ) ) {
+		echo '#footer{color:' . esc_attr( get_theme_mod( 'my_colors_footer_text' ) ) . ';}';
 	}
 
-	/* my_facebook_background */
-	if ( get_theme_mod( 'my_facebook_background' ) ) {
-		echo '.sns-buttons li a.m_facebook{background:' . esc_attr( get_theme_mod( 'my_facebook_background' ) ) . ';}';
+	/* ウィジェット見出し背景色 */
+	if ( get_theme_mod( 'my_colors_widget_background' ) ) {
+		echo '.widget-title{background:' . esc_attr( get_theme_mod( 'my_colors_widget_background' ) ) . ';}';
+	}
+	/* ウィジェット見出しテキスト色 */
+	if ( get_theme_mod( 'my_colors_widget_text' ) ) {
+		echo '.widget-title{color:' . esc_attr( get_theme_mod( 'my_colors_widget_text' ) ) . ';}';
 	}
 
-	/* my_hatena_background */
-	if ( get_theme_mod( 'my_hatena_background' ) ) {
-		echo '.sns-buttons li a.m_hatena{background:' . esc_attr( get_theme_mod( 'my_hatena_background' ) ) . ';}';
+	/* Twitter色 */
+	if ( get_theme_mod( 'my_colors_sns_twitter' ) ) {
+		echo '.sns-buttons li a.m_twitter{background:' . esc_attr( get_theme_mod( 'my_colors_sns_twitter' ) ) . ';}';
 	}
 
-	/* my_line_background */
-	if ( get_theme_mod( 'my_line_background' ) ) {
-		echo '.sns-buttons li a.m_line{background:' . esc_attr( get_theme_mod( 'my_line_background' ) ) . ';}';
+	/* Facebook色 */
+	if ( get_theme_mod( 'my_colors_sns_facebook' ) ) {
+		echo '.sns-buttons li a.m_facebook{background:' . esc_attr( get_theme_mod( 'my_colors_sns_facebook' ) ) . ';}';
 	}
 
-	/* my_pocket_background */
-	if ( get_theme_mod( 'my_pocket_background' ) ) {
-		echo '.sns-buttons li a.m_pocket{background:' . esc_attr( get_theme_mod( 'my_pocket_background' ) ) . ';}';
+	/* はてなブックマーク色 */
+	if ( get_theme_mod( 'my_colors_sns_hatena' ) ) {
+		echo '.sns-buttons li a.m_hatena{background:' . esc_attr( get_theme_mod( 'my_colors_sns_hatena' ) ) . ';}';
+	}
+
+	/* LINE色 */
+	if ( get_theme_mod( 'my_colors_sns_line' ) ) {
+		echo '.sns-buttons li a.m_line{background:' . esc_attr( get_theme_mod( 'my_colors_sns_line' ) ) . ';}';
+	}
+
+	/* Pocket色 */
+	if ( get_theme_mod( 'my_colors_sns_pocket' ) ) {
+		echo '.sns-buttons li a.m_pocket{background:' . esc_attr( get_theme_mod( 'my_colors_sns_pocket' ) ) . ';}';
+	}
+
+	/* コンテンツのリンク色 */
+	if ( get_theme_mod( 'my_colors_content_link' ) ) {
+		echo '.entry-body a{color:' . esc_attr( get_theme_mod( 'my_colors_content_link' ) ) . ';}';
 	}
 
 	echo '</style>';

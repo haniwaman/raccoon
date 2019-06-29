@@ -11,9 +11,10 @@
 	}
 
 	li {
-		// width: calc(20% - 12px * 4 / 5);
-		width: calc(25% - 12px * 3 / 4);
-		margin: 16px 12px 16px 0;
+		width: calc(20% - 12px * 4 / 5);
+		// width: calc(25% - 12px * 3 / 4);
+		margin: 3px 12px 3px 0;
+		font-size: 13px;
 
 		@include mq("sp") {
 			width: calc(50% - 12px * 1 / 2);
@@ -46,6 +47,7 @@
 			box-shadow: 0 0 3px 0 rgba(#000, 0.16);
 			transition: all 0.3s ease 0s;
 			font-weight: 700;
+			white-space: nowrap;
 
 			&:hover {
 				opacity: $opacity; /* opacity */

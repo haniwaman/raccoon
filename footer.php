@@ -16,7 +16,7 @@
 </div><!-- /inner -->
 </footer><!-- /footer -->
 
-<div class="totop"><a href="#" title="トップへ戻る"><i class="fas fa-chevron-up"></i></a></div><!-- /totop -->
+<div class="floating"><a href="#" title="トップへ戻る"><i class="fas fa-chevron-up"></i></a></div><!-- /floating -->
 
 <?php wp_footer(); ?>
 </body>

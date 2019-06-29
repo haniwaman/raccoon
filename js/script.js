@@ -21,12 +21,12 @@ jQuery('a[href^="#"]').click(function() {
 	);
 });
 
-/* ToTop */
+/* floating */
 jQuery(window).on("scroll", function() {
 	if (500 < jQuery(this).scrollTop()) {
-		jQuery(".totop").show();
+		jQuery(".floating").show();
 	} else {
-		jQuery(".totop").hide();
+		jQuery(".floating").hide();
 	}
 });
 

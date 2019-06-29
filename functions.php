@@ -113,6 +113,9 @@ function my_wp_head() {
 		echo '.entry-links a:hover{background:' . esc_attr( get_theme_mod( 'my_colors_site_main' ) ) . ';border-color:' . esc_attr( get_theme_mod( 'my_colors_site_main' ) ) . ';}';
 		/* インフォメーション */
 		echo '.infomation a{background:' . esc_attr( get_theme_mod( 'my_colors_site_main' ) ) . ';}';
+		/* カレンダー */
+		echo '#wp-calendar a{color:' . esc_attr( get_theme_mod( 'my_colors_site_main' ) ) . ';}';
+
 	}
 
 	/* サイトのアクセント色 */
@@ -121,7 +124,7 @@ function my_wp_head() {
 		echo '.header-nav li.m_pickup a{background:' . esc_attr( get_theme_mod( 'my_colors_site_accent' ) ) . ';}';
 		echo '.sticky::before{background:' . esc_attr( get_theme_mod( 'my_colors_site_accent' ) ) . ';}';
 		/* フローティング */
-		echo '.totop a{background:' . esc_attr( get_theme_mod( 'my_colors_site_accent' ) ) . ';}';
+		echo '.floating a{background:' . esc_attr( get_theme_mod( 'my_colors_site_accent' ) ) . ';}';
 		/* ボタン */
 		echo 'form button,input[type="submit"],input[type="button"],.btn{background:' . esc_attr( get_theme_mod( 'my_colors_site_accent' ) ) . ';}';
 
@@ -134,7 +137,7 @@ function my_wp_head() {
 
 	/* サイトの文字色 */
 	if ( get_theme_mod( 'my_colors_site_text' ) ) {
-		echo 'body{color:' . esc_attr( gget_theme_mod( 'my_colors_site_text' ) ) . ';}';
+		echo '#content{color:' . esc_attr( get_theme_mod( 'my_colors_site_text' ) ) . ';}';
 	}
 
 	/* ヘッダー背景色 */
@@ -420,6 +423,8 @@ add_filter( 'excerpt_more', 'my_excerpt_more' );
 /**
  * カスタマイザー追加
  */
-require_once get_template_directory() . '/inc/customizer.php';
+require_once get_template_directory() . '/inc/customizer/color.php';
+require_once get_template_directory() . '/inc/customizer/sns.php';
+require_once get_template_directory() . '/inc/customizer/test.php';
 
 

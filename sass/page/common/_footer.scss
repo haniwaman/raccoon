@@ -22,7 +22,7 @@
 	}
 }
 
-.totop {
+.floating {
 	position: fixed;
 	right: 8px;
 	bottom: 8px;
@@ -33,8 +33,8 @@
 		width: 42px;
 		height: 42px;
 		line-height: 42px;
-		color: map-get($totop, "color"); /* totop color */
-		background: map-get($totop, "background"); /* totop background */
+		color: map-get($floating, "color"); /* floating color */
+		background: map-get($floating, "background"); /* floating background */
 		text-decoration: none;
 		transition: all 0.3s ease 0s;
 		text-align: center;

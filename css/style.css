@@ -1820,8 +1820,9 @@ span.wpcf7-list-item {
 }
 
 .sns-buttons li {
-	margin: 16px 12px 16px 0;
-	width: calc(25% - 12px * 3 / 4);
+	font-size: 13px;
+	margin: 3px 12px 3px 0;
+	width: calc(20% - 12px * 4 / 5);
 }
 
 .sns-buttons li:last-child {
@@ -1845,6 +1846,7 @@ span.wpcf7-list-item {
 	text-align: center;
 	text-decoration: none;
 	transition: all 0.3s ease 0s;
+	white-space: nowrap;
 }
 
 .sns-buttons li a:hover {
@@ -2174,6 +2176,7 @@ span.wpcf7-list-item {
 #wp-calendar th,
 #wp-calendar td {
 	font-size: 12px;
+	padding: 8px;
 	text-align: center;
 }
 
@@ -2186,7 +2189,7 @@ span.wpcf7-list-item {
 }
 
 #wp-calendar a {
-	color: #e65100;
+	color: #efa336;
 	text-decoration: none;
 	transition: all 0.3s ease 0s;
 }
@@ -2371,27 +2374,27 @@ span.wpcf7-list-item {
 	opacity: 0.6; /* opacity */
 }
 
-.totop {
+.floating {
 	bottom: 8px;
 	display: none;
 	position: fixed;
 	right: 8px;
 }
 
-.totop a { /* totop color */
+.floating a { /* floating color */
 	background: #e65100;
 	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);
 	color: #fff;
 	display: block;
 	height: 42px;
 	line-height: 42px;
-	text-align: center; /* totop background */
+	text-align: center; /* floating background */
 	text-decoration: none;
 	transition: all 0.3s ease 0s;
 	width: 42px;
 }
 
-.totop a:hover {
+.floating a:hover {
 	opacity: 0.6; /* opacity */
 }
 
@@ -2588,7 +2591,7 @@ span.wpcf7-list-item {
 	min-width: 38px;
 }
 
-.totop a {
+.floating a {
 	height: 38px;
 	line-height: 38px;
 	width: 38px;

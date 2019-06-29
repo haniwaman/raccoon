@@ -24,12 +24,18 @@ get_header(); ?>
 <div class="archive-header">
 	<?php my_breadcrumb(); ?>
 	<h1 class="archive-title">404</h1><!-- /archive-title -->
-	<div class="archive-description"><p>コンテンツが存在しません。</p></div><!-- /archive-description -->
+	<div class="archive-description"><p><?php esc_html_e( 'コンテンツが存在しません。', 'raccoon' ); ?></p></div><!-- /archive-description -->
 	<?php get_search_form(); ?>
 </div><!-- /archive-header -->
 
 <!-- entry -->
 <article <?php post_class( array( 'entry' ) ); ?>>
+
+<!-- entry-body -->
+<div class="entry-body four04-content">
+	<p><?php esc_html_e( '申し訳ございません。コンテンツが存在しません。', 'raccoon' ); ?></p>
+</div><!-- /entry-body -->
+<div class="four04-link"><a class="btn" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'トップへ戻る', 'raccoon' ); ?></a></div>
 
 </article><!-- /entry -->
 

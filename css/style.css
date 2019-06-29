@@ -2425,6 +2425,19 @@ span.wpcf7-list-item {
 	font-size: 14px;
 }
 
+.four04-content {
+	margin-bottom: 36px;
+	text-align: center;
+}
+
+.four04-content p:first-child {
+	margin-top: 0;
+}
+
+.four04-link {
+	text-align: center;
+}
+
 @media screen and (max-width: 1179px) {
 
 .inner {

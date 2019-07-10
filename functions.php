@@ -425,6 +425,3 @@ add_filter( 'excerpt_more', 'my_excerpt_more' );
  */
 require_once get_template_directory() . '/inc/customizer/color.php';
 require_once get_template_directory() . '/inc/customizer/sns.php';
-require_once get_template_directory() . '/inc/customizer/test.php';
-
-

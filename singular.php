@@ -9,7 +9,7 @@ get_header(); ?>
 
 
 
-<?php get_template_part( 'mv/mv', 'image' ); ?>
+<?php get_template_part( 'mv' ); ?>
 
 
 

@@ -36,7 +36,7 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 		);
 
 		// サイトのメイン色.
-		$wp_customize->add_setting( 'my_colors_site_main' );
+		$wp_customize->add_setting( 'my_colors_site_main', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
@@ -51,7 +51,7 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 		);
 
 		// サイトのアクセント色.
-		$wp_customize->add_setting( 'my_colors_site_accent' );
+		$wp_customize->add_setting( 'my_colors_site_accent', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
@@ -66,7 +66,7 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 		);
 
 		// サイトの背景色.
-		$wp_customize->add_setting( 'my_colors_site_background' );
+		$wp_customize->add_setting( 'my_colors_site_background', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
@@ -81,7 +81,7 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 		);
 
 		// サイトの文字色.
-		$wp_customize->add_setting( 'my_colors_site_text' );
+		$wp_customize->add_setting( 'my_colors_site_text', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
@@ -106,7 +106,7 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 		);
 
 		// ヘッダー背景色.
-		$wp_customize->add_setting( 'my_colors_header_background' );
+		$wp_customize->add_setting( 'my_colors_header_background', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
@@ -121,7 +121,7 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 		);
 
 		// ヘッダーテキスト色.
-		$wp_customize->add_setting( 'my_colors_header_text' );
+		$wp_customize->add_setting( 'my_colors_header_text', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
@@ -136,7 +136,7 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 		);
 
 		// ヘッダーロゴ色.
-		$wp_customize->add_setting( 'my_colors_header_logo' );
+		$wp_customize->add_setting( 'my_colors_header_logo', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
@@ -161,7 +161,7 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 		);
 
 		// フッター背景色.
-		$wp_customize->add_setting( 'my_colors_footer_background' );
+		$wp_customize->add_setting( 'my_colors_footer_background', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
@@ -176,7 +176,7 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 		);
 
 		// フッターテキスト色.
-		$wp_customize->add_setting( 'my_colors_footer_text' );
+		$wp_customize->add_setting( 'my_colors_footer_text', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
@@ -201,7 +201,7 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 		);
 
 		// ウィジェット見出し背景色.
-		$wp_customize->add_setting( 'my_colors_widget_background' );
+		$wp_customize->add_setting( 'my_colors_widget_background', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
@@ -216,7 +216,7 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 		);
 
 		// ウィジェット見出しテキスト色.
-		$wp_customize->add_setting( 'my_colors_widget_text' );
+		$wp_customize->add_setting( 'my_colors_widget_text', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
@@ -241,7 +241,7 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 		);
 
 		// Twitter色.
-		$wp_customize->add_setting( 'my_colors_sns_twitter' );
+		$wp_customize->add_setting( 'my_colors_sns_twitter', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
@@ -256,7 +256,7 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 		);
 
 		// Facebook色.
-		$wp_customize->add_setting( 'my_colors_sns_facebook' );
+		$wp_customize->add_setting( 'my_colors_sns_facebook', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
@@ -271,7 +271,7 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 		);
 
 		// はてなブックマーク色.
-		$wp_customize->add_setting( 'my_colors_sns_hatena' );
+		$wp_customize->add_setting( 'my_colors_sns_hatena', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
@@ -286,7 +286,7 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 		);
 
 		// LINE色.
-		$wp_customize->add_setting( 'my_colors_sns_line' );
+		$wp_customize->add_setting( 'my_colors_sns_line', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
@@ -301,7 +301,7 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 		);
 
 		// Pocket色.
-		$wp_customize->add_setting( 'my_colors_sns_pocket' );
+		$wp_customize->add_setting( 'my_colors_sns_pocket', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
@@ -326,7 +326,7 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 		);
 
 		// リンク色.
-		$wp_customize->add_setting( 'my_colors_content_link' );
+		$wp_customize->add_setting( 'my_colors_content_link', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,

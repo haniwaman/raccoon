@@ -35,7 +35,7 @@ if ( ! function_exists( 'my_customize_sns' ) ) {
 		);
 
 		// Twitter.
-		$wp_customize->add_setting( 'my_sns_links_twitter' );
+		$wp_customize->add_setting( 'my_sns_links_twitter', array( 'sanitize_callback' => 'esc_url_raw' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
@@ -51,7 +51,7 @@ if ( ! function_exists( 'my_customize_sns' ) ) {
 		);
 
 		// Facebook.
-		$wp_customize->add_setting( 'my_sns_links_facebook' );
+		$wp_customize->add_setting( 'my_sns_links_facebook', array( 'sanitize_callback' => 'esc_url_raw' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
@@ -60,13 +60,14 @@ if ( ! function_exists( 'my_customize_sns' ) ) {
 					'label'    => __( 'Facebook', 'raccoon' ),
 					'section'  => 'my_sns_links',
 					'settings' => 'my_sns_links_facebook',
+					'type'     => 'url',
 					'priority' => 1,
 				)
 			)
 		);
 
 		// Instagram.
-		$wp_customize->add_setting( 'my_sns_links_instagram' );
+		$wp_customize->add_setting( 'my_sns_links_instagram', array( 'sanitize_callback' => 'esc_url_raw' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
@@ -75,13 +76,14 @@ if ( ! function_exists( 'my_customize_sns' ) ) {
 					'label'    => __( 'Instagram', 'raccoon' ),
 					'section'  => 'my_sns_links',
 					'settings' => 'my_sns_links_instagram',
+					'type'     => 'url',
 					'priority' => 1,
 				)
 			)
 		);
 
 		// Youtube.
-		$wp_customize->add_setting( 'my_sns_links_youtube' );
+		$wp_customize->add_setting( 'my_sns_links_youtube', array( 'sanitize_callback' => 'esc_url_raw' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
@@ -90,13 +92,14 @@ if ( ! function_exists( 'my_customize_sns' ) ) {
 					'label'    => __( 'Youtube', 'raccoon' ),
 					'section'  => 'my_sns_links',
 					'settings' => 'my_sns_links_youtube',
+					'type'     => 'url',
 					'priority' => 1,
 				)
 			)
 		);
 
 		// Line.
-		$wp_customize->add_setting( 'my_sns_links_line' );
+		$wp_customize->add_setting( 'my_sns_links_line', array( 'sanitize_callback' => 'esc_url_raw' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
@@ -105,6 +108,7 @@ if ( ! function_exists( 'my_customize_sns' ) ) {
 					'label'    => __( 'Line@', 'raccoon' ),
 					'section'  => 'my_sns_links',
 					'settings' => 'my_sns_links_line',
+					'type'     => 'url',
 					'priority' => 1,
 				)
 			)

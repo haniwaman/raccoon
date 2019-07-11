@@ -21,6 +21,7 @@ $relation_query = new WP_Query(
 	)
 );
 ?>
+
 <?php if ( $relation_query->have_posts() ) : ?>
 <!-- relation-items -->
 <div class="relation-items">

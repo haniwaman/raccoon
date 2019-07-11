@@ -43,7 +43,9 @@ if ( have_posts() ) :
 			<?php endif; ?>
 		</div><!-- /entry-meta -->
 
-		<?php get_template_part( 'parts/sns' ); ?>
+		<?php if ( 'select1' === get_theme_mod( 'my_parts_sns_select_place' ) || 'select3' === get_theme_mod( 'my_parts_sns_select_place' ) ) : ?>
+			<?php get_template_part( 'parts/sns' ); ?>
+		<?php endif; ?>
 
 		<!-- entry-img -->
 		<figure class="entry-img">
@@ -75,8 +77,14 @@ if ( have_posts() ) :
 		<?php my_the_post_tags(); ?>
 
 		<?php get_template_part( 'parts/likebox' ); ?>
-		<?php get_template_part( 'parts/sns' ); ?>
-		<?php get_template_part( 'parts/relation' ); ?>
+
+		<?php if ( 'select2' === get_theme_mod( 'my_parts_sns_select_place' ) || 'select3' === get_theme_mod( 'my_parts_sns_select_place' ) ) : ?>
+			<?php get_template_part( 'parts/sns' ); ?>
+		<?php endif; ?>
+
+		<?php if ( get_theme_mod( 'my_parts_relation_check' ) ) : ?>
+			<?php get_template_part( 'parts/relation' ); ?>
+		<?php endif; ?>
 
 		<?php comments_template(); ?>
 

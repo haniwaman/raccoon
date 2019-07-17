@@ -27,6 +27,9 @@
 	<?php if ( get_theme_mod( 'my_parts_sns_check_pocket' ) ) : ?>
 		<li><a class="m_pocket" href="https://getpocket.com/edit?url=<?php the_permalink(); ?>" rel="nofollow" target="_blank"><i class="fab fa-get-pocket"></i><?php esc_html_e( 'ポケット', 'raccoon' ); ?></a></li>
 		<?php endif; ?>
+		<?php if ( get_theme_mod( 'my_parts_sns_check_rss' ) ) : ?>
+		<li><a class="m_rss" href="<?php bloginfo( 'rss2_url' ); ?>" rel="nofollow" target="_blank"><i class="fas fa-rss-square"></i><?php esc_html_e( 'RSS', 'raccoon' ); ?></a></li>
+		<?php endif; ?>
 	</ul>
 </nav><!-- /sns-buttons -->
 
@@ -49,6 +52,9 @@
 <?php endif; ?>
 	<?php if ( get_theme_mod( 'my_parts_sns_check_pocket' ) ) : ?>
 		<li><a data-pocket-label="pocket" data-pocket-count="none" class="pocket-btn" data-lang="en"></a><script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script></li>
+<?php endif; ?>
+<?php if ( get_theme_mod( 'my_parts_sns_check_rss' ) ) : ?>
+		<li><a href='<?php bloginfo( 'rss2_url' ); ?>' target='blank'><img src='' alt=''></a></li>
 <?php endif; ?>
 	</ul>
 </nav><!-- /sns-buttons-org -->

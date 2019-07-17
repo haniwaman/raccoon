@@ -315,6 +315,36 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 			)
 		);
 
+		// Feedly色.
+		$wp_customize->add_setting( 'my_colors_sns_feedly', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'my_colors_sns_feedly',
+				array(
+					'label'    => __( 'Feedly', 'raccoon' ),
+					'section'  => 'my_colors_sns',
+					'settings' => 'my_colors_sns_feedly',
+					'priority' => 1,
+				)
+			)
+		);
+
+		// RSS色.
+		$wp_customize->add_setting( 'my_colors_sns_rss', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'my_colors_sns_rss',
+				array(
+					'label'    => __( 'RSS', 'raccoon' ),
+					'section'  => 'my_colors_sns',
+					'settings' => 'my_colors_sns_rss',
+					'priority' => 1,
+				)
+			)
+		);
+
 		// コンテンツ.
 		$wp_customize->add_section(
 			'my_colors_content',

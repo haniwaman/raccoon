@@ -199,6 +199,16 @@ function my_wp_head() {
 		echo '.sns-buttons li a.m_pocket{background:' . esc_attr( get_theme_mod( 'my_colors_sns_pocket' ) ) . ';}';
 	}
 
+	/* Feedly色 */
+	if ( get_theme_mod( 'my_colors_sns_feedly' ) ) {
+		echo '.sns-buttons li a.m_feedly{background:' . esc_attr( get_theme_mod( 'my_colors_sns_feedly' ) ) . ';}';
+	}
+
+	/* RSS色 */
+	if ( get_theme_mod( 'my_colors_sns_rss' ) ) {
+		echo '.sns-buttons li a.m_rss{background:' . esc_attr( get_theme_mod( 'my_colors_sns_rss' ) ) . ';}';
+	}
+
 	/* コンテンツのリンク色 */
 	if ( get_theme_mod( 'my_colors_content_link' ) ) {
 		echo '.entry-body a{color:' . esc_attr( get_theme_mod( 'my_colors_content_link' ) ) . ';}';

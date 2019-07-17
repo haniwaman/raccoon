@@ -1822,7 +1822,7 @@ span.wpcf7-list-item {
 .sns-buttons li {
 	font-size: 13px;
 	margin: 3px 12px 3px 0;
-	width: calc(20% - 12px * 4 / 5);
+	width: calc((100% / 6) - 12px * 5 / 6);
 }
 
 .sns-buttons li:last-child {
@@ -1871,6 +1871,14 @@ span.wpcf7-list-item {
 
 .sns-buttons li a.m_pocket {
 	background: #ef4156; /* sns pocket */
+}
+
+.sns-buttons li a.m_feedly {
+	background: #6cc654; /* sns feedly */
+}
+
+.sns-buttons li a.m_rss {
+	background: #ea781a; /* sns rss */
 }
 
 .sns-buttons-org ul {

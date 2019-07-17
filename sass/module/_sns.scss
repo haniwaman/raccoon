@@ -11,8 +11,7 @@
 	}
 
 	li {
-		width: calc(20% - 12px * 4 / 5);
-		// width: calc(25% - 12px * 3 / 4);
+		width: calc((100% / 6) - 12px * 5 / 6);
 		margin: 3px 12px 3px 0;
 		font-size: 13px;
 
@@ -71,6 +70,14 @@
 
 			&.m_pocket {
 				background: map-get($sns-color, "pocket"); /* sns pocket */
+			}
+
+			&.m_feedly {
+				background: map-get($sns-color, "feedly"); /* sns feedly */
+			}
+
+			&.m_rss {
+				background: map-get($sns-color, "rss"); /* sns rss */
 			}
 		}
 	}

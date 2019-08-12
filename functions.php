@@ -221,22 +221,13 @@ add_action( 'wp_head', 'my_wp_head' );
 
 
 /**
- * 編集画面用のスタイルシート
- *
- * @return void
- */
-function my_editor_style() {
-	// add_editor_style( get_template_directory_uri() . '/css/admin/editor-style.css' );
-}
-// add_action( 'admin_init', 'my_editor_style' );
-
-
-/**
- * Undocumented function
+ * 管理画面用のCSSとJavaScriptの読み込み
  *
  * @return void
  */
 function my_admin_script() {
+	// add_editor_style( get_template_directory_uri() . '/css/admin/editor-style.css' );
+	wp_enqueue_style( 'wp-color-picker' );
 	wp_enqueue_script( 'wp-color-picker' );
 	wp_enqueue_script( 'admin', get_template_directory_uri() . '/js/admin/script.js', array( 'wp-color-picker' ), '1.0.0', true );
 }

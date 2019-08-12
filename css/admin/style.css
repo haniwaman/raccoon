@@ -40,7 +40,7 @@
 }
 
 .my-img-icon::before {
-	content: "\f104";
+	content: "\f128";
 	font: normal 18px/1 dashicons;
 	speak: none;
 	color: #82878c;

@@ -74,4 +74,5 @@ function my_category_fileds_save( $category_id ) {
 		}
 	}
 }
+add_action( 'created_term', 'my_category_fileds_save' );
 add_action( 'edited_term', 'my_category_fileds_save' );

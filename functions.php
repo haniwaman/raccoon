@@ -227,6 +227,8 @@ add_action( 'wp_head', 'my_wp_head' );
  */
 function my_admin_script() {
 	// add_editor_style( get_template_directory_uri() . '/css/admin/editor-style.css' );
+	wp_enqueue_style( 'admin', get_template_directory_uri() . '/css/admin/style.css', array(), '1.0.1', 'all' );
+	wp_enqueue_media();
 	wp_enqueue_style( 'wp-color-picker' );
 	wp_enqueue_script( 'wp-color-picker' );
 	wp_enqueue_script( 'admin', get_template_directory_uri() . '/js/admin/script.js', array( 'wp-color-picker' ), '1.0.0', true );

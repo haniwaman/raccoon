@@ -20,15 +20,36 @@ if ( ! function_exists( 'my_category_fields_edit' ) ) {
 		?>
 
 <tr class="form-field">
-	<th><label for="color">色</label></th>
+	<th><label>色</label></th>
 	<td>
-		<input name="my_category_meta[my_category_color]" class="my_color_picker" type="text" value="
+		<input name="my_category_color" class="my-color-picker" type="text" value="
 		<?php
 		if ( isset( $cat_meta['my_category_color'][0] ) ) {
 			echo esc_html( $cat_meta['my_category_color'][0] );}
 		?>
 		" size="40">
 		<p class="description">カテゴリーに紐づく色です。</p>
+	</td>
+</tr>
+<tr class="form-field">
+	<th><label>画像</label></th>
+	<td>
+		<div class="my-img-btns">
+			<div class="my-btn my-img-select"><span class="my-img-icon"></span>画像を選択</div>
+			<div class="my-btn my-img-clear">画像をクリア</div>
+		</div><!-- /my-img-btns -->
+		<input name="my_category_img" class="my-img-url" type="hidden" value="
+		<?php
+		if ( isset( $cat_meta['my_category_img'][0] ) ) {
+			echo esc_html( $cat_meta['my_category_img'][0] );}
+		?>
+		" size="40">
+		<div class="my-img-show">
+			<?php if ( isset( $cat_meta['my_category_img'][0] ) ) : ?>
+				<img src="<?php echo esc_html( $cat_meta['my_category_img'][0] ); ?>">
+			<?php endif; ?>
+		</div><!-- /my-img-show -->
+	<p class="description">カテゴリーに紐づく画像です。</p>
 	</td>
 </tr>
 		<?php
@@ -51,9 +72,24 @@ if ( ! function_exists( 'my_category_fields_set' ) ) {
 
 <div class="form-field">
 	<label for="color">色</label>
-	<input name="my_category_meta[my_category_color]" class="my_color_picker" type="text" value="<?php echo esc_html( $default_color ); ?>" size="40">
+	<input name="my_category_color" class="my-color-picker" type="text" value="<?php echo esc_html( $default_color ); ?>" size="40">
 	<p class="description">カテゴリーに紐づく色です。</p>
-</div>
+</div><!-- /form-field -->
+
+<div class="form-field">
+	<label>画像</label>
+	<div class="my-img-btns">
+		<div class="my-btn my-img-select"><span class="my-img-icon"></span>画像を選択</div>
+		<div class="my-btn my-img-clear">画像をクリア</div>
+	</div><!-- /my-img-btns -->
+	<input name="my_category_img" class="my-img-url" type="hidden" value="" size="40">
+	<div class="my-img-show">
+		<?php if ( isset( $cat_meta['my_category_img'][0] ) ) : ?>
+			<img src="<?php echo esc_html( $cat_meta['my_category_img'][0] ); ?>">
+		<?php endif; ?>
+	</div><!-- /my-img-show -->
+	<p class="description">カテゴリーに紐づく画像です。</p>
+</div><!-- /form-field -->
 		<?php
 	}
 }
@@ -67,11 +103,12 @@ add_action( 'category_add_form_fields', 'my_category_fields_set' );
  */
 function my_category_fileds_save( $category_id ) {
 
-	if ( isset( $_POST['my_category_meta'] ) ) {
-		$category_keys = array_keys( $_POST['my_category_meta'] );
-		foreach ( $category_keys as $key ) {
-			update_term_meta( $category_id, $key, $_POST['my_category_meta'][ $key ] );
-		}
+	if ( isset( $_POST['my_category_color'] ) ) {
+		update_term_meta( $category_id, 'my_category_color', sanitize_hex_color( trim( $_POST['my_category_color'] ) ) );
+	}
+
+	if ( isset( $_POST['my_category_img'] ) ) {
+		update_term_meta( $category_id, 'my_category_img', esc_url_raw( trim( $_POST['my_category_img'] ) ) );
 	}
 }
 add_action( 'created_term', 'my_category_fileds_save' );

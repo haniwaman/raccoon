@@ -58,7 +58,7 @@ add_action( 'after_setup_theme', 'my_setup' );
  *
  * @codex https://wpdocs.osdn.jp/%E3%83%8A%E3%83%93%E3%82%B2%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC
  */
-function my_script_init() {
+function my_script() {
 
 	/* CSS */
 	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/lib/fontawesome/css/all.min.css', array(), '5.8.2', 'all' );
@@ -74,7 +74,7 @@ function my_script_init() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'my_script_init' );
+add_action( 'wp_enqueue_scripts', 'my_script' );
 
 
 
@@ -229,6 +229,19 @@ function my_editor_style() {
 	// add_editor_style( get_template_directory_uri() . '/css/admin/editor-style.css' );
 }
 // add_action( 'admin_init', 'my_editor_style' );
+
+
+/**
+ * Undocumented function
+ *
+ * @return void
+ */
+function my_admin_script() {
+	wp_enqueue_script( 'wp-color-picker' );
+	wp_enqueue_script( 'admin', get_template_directory_uri() . '/js/admin/script.js', array( 'wp-color-picker' ), '1.0.0', true );
+}
+add_action( 'admin_enqueue_scripts', 'my_admin_script' );
+
 
 
 
@@ -434,3 +447,9 @@ add_filter( 'excerpt_more', 'my_excerpt_more' );
  * カスタマイザー追加
  */
 require_once get_template_directory() . '/inc/customizer/base.php';
+
+
+/**
+ * 入力エリア追加
+ */
+require_once get_template_directory() . '/inc/fields/base.php';

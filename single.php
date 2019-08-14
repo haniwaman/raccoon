@@ -15,11 +15,11 @@ get_header(); ?>
 
 <!-- content -->
 <div id="content">
-<div class="inner">
-<div class="row">
+<div class="l-inner">
+<div class="l-row">
 
-<!-- primary -->
-<main id="primary">
+<!-- l-primary -->
+<main id="l-primary">
 
 <?php
 if ( have_posts() ) :
@@ -27,39 +27,39 @@ if ( have_posts() ) :
 		the_post();
 		?>
 
-<!-- entry -->
-<article <?php post_class( array( 'entry' ) ); ?>>
+<!-- p-entry -->
+<article <?php post_class( array( 'p-entry' ) ); ?>>
 
-	<!-- entry-header -->
-	<div class="entry-header">
+	<!-- e-header -->
+	<div class="e-header">
 		<?php my_breadcrumb(); ?>
-		<h1 class="entry-title"><?php the_title(); ?></h1><!-- /entry-title -->
+		<h1 class="e-title"><?php the_title(); ?></h1><!-- /e-title -->
 
-		<!-- entry-meta -->
-		<div class="entry-meta">
-			<div class="entry-label"><?php my_the_post_category(); ?></div><!-- /entry-item-label -->
-			<time class="entry-published" datetime="<?php the_time( 'c' ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time>
+		<!-- e-meta -->
+		<div class="e-meta">
+			<div class="e-label"><?php my_the_post_category(); ?></div><!-- /e-label -->
+			<time class="e-published" datetime="<?php the_time( 'c' ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time>
 			<?php if ( get_the_modified_time( 'Y.m.d' ) !== get_the_time( 'Y.m.d' ) ) : ?>
-			<time class="entry-update" datetime="<?php the_modified_time( 'c' ); ?>"><?php the_modified_time( get_option( 'date_format' ) ); ?></time>
+			<time class="e-update" datetime="<?php the_modified_time( 'c' ); ?>"><?php the_modified_time( get_option( 'date_format' ) ); ?></time>
 			<?php endif; ?>
-		</div><!-- /entry-meta -->
+		</div><!-- /e-meta -->
 
 		<?php if ( 'select1' === get_theme_mod( 'my_parts_sns_select_place' ) || 'select3' === get_theme_mod( 'my_parts_sns_select_place' ) ) : ?>
 			<?php get_template_part( 'parts/sns' ); ?>
 		<?php endif; ?>
 
-		<!-- entry-img -->
-		<figure class="entry-img">
+		<!-- e-img -->
+		<figure class="e-img">
 		<?php
 		if ( has_post_thumbnail() ) {
 			the_post_thumbnail( 'my_thumbnail' );
 		}
 		?>
-		</figure><!-- /entry-img -->
-	</div><!-- /entry-header -->
+		</figure><!-- /e-img -->
+	</div><!-- /e-header -->
 
-	<!-- entry-body -->
-	<div class="entry-body rc_heading01">
+	<!-- e-body -->
+	<div class="e-body rc_heading01">
 		<?php the_content(); ?>
 		<?php
 		wp_link_pages(
@@ -73,7 +73,7 @@ if ( have_posts() ) :
 			)
 		);
 		?>
-	</div><!-- /entry-body -->
+	</div><!-- /e-body -->
 
 		<?php my_the_post_tags(); ?>
 
@@ -89,19 +89,19 @@ if ( have_posts() ) :
 
 		<?php comments_template(); ?>
 
-</article><!-- /entry -->
+</article><!-- /p-entry -->
 
 		<?php
 		$prev_post = get_previous_post();
 		$next_post = get_next_post();
 		?>
-<!-- entry-pager -->
-<nav class="entry-pager">
+<!-- p-entry-pager -->
+<nav class="p-entry-pager">
 		<?php if ( $next_post ) : ?>
-	<div class="entry-next">
-		<a href="<?php the_permalink( $next_post->ID ); ?>" class="entry-pager-head">次の記事</a>
-		<a href="<?php the_permalink( $next_post->ID ); ?>" class="entry-pager-item">
-			<div class="entry-pager-img">
+	<div class="e-next">
+		<a href="<?php the_permalink( $next_post->ID ); ?>" class="e-head">次の記事</a>
+		<a href="<?php the_permalink( $next_post->ID ); ?>" class="e-item">
+			<div class="e-img">
 			<?php
 			if ( has_post_thumbnail( $next_post->ID ) ) {
 				echo get_the_post_thumbnail( $next_post->ID, 'thumbnail' );
@@ -109,18 +109,18 @@ if ( have_posts() ) :
 				echo '<img src="' . esc_url( get_template_directory_uri() ) . '/img/no-thumbnail.png">';
 			}
 			?>
-			</div><!-- /entry-pager-img -->
-			<div class="entry-pager-body">
-				<div class="entry-pager-title"><?php echo esc_html( mb_strimwidth( get_the_title( $next_post->ID ), 0, 64, '…', 'UTF-8' ) ); ?></div>
-			</div><!-- /entry-pager-body -->
-		</a><!-- /entry-pager-item -->
-	</div><!-- /entry-next -->
+			</div><!-- /e-img -->
+			<div class="e-body">
+				<div class="e-title"><?php echo esc_html( mb_strimwidth( get_the_title( $next_post->ID ), 0, 64, '…', 'UTF-8' ) ); ?></div>
+			</div><!-- /e-body -->
+		</a><!-- /e-item -->
+	</div><!-- /e-next -->
 			<?php endif; ?>
 		<?php if ( $prev_post ) : ?>
-	<div class="entry-prev">
-		<a href="<?php the_permalink( $prev_post->ID ); ?>" class="entry-pager-head">前の記事</a>
-		<a href="<?php the_permalink( $prev_post->ID ); ?>" class="entry-pager-item">
-			<div class="entry-pager-img">
+	<div class="e-prev">
+		<a href="<?php the_permalink( $prev_post->ID ); ?>" class="e-head">前の記事</a>
+		<a href="<?php the_permalink( $prev_post->ID ); ?>" class="e-item">
+			<div class="e-img">
 			<?php
 			if ( has_post_thumbnail( $prev_post->ID ) ) {
 				echo get_the_post_thumbnail( $prev_post->ID, 'thumbnail' );
@@ -128,28 +128,28 @@ if ( have_posts() ) :
 				echo '<img src="' . esc_url( get_template_directory_uri() ) . '/img/no-thumbnail.png">';
 			}
 			?>
-			</div><!-- /entry-pager-img -->
-			<div class="entry-pager-body">
-				<div class="entry-pager-title"><?php echo esc_html( mb_strimwidth( get_the_title( $prev_post->ID ), 0, 64, '…', 'UTF-8' ) ); ?></div>
-			</div><!-- /entry-pager-body -->
-		</a><!-- /entry-pager-item -->
-	</div><!-- /entry-prev -->
+			</div><!-- /e-img -->
+			<div class="e-body">
+				<div class="e-title"><?php echo esc_html( mb_strimwidth( get_the_title( $prev_post->ID ), 0, 64, '…', 'UTF-8' ) ); ?></div>
+			</div><!-- /e-body -->
+		</a><!-- /e-item -->
+	</div><!-- /e-prev -->
 			<?php endif; ?>
-</nav><!-- /entry-pager -->
+</nav><!-- /p-entry-pager -->
 
 		<?php
 endwhile;
 endif;
 ?>
 
-</main><!-- /primary -->
+</main><!-- /l-primary -->
 
 
 <?php get_sidebar(); ?>
 
 
-</div><!-- /row -->
-</div><!-- /inner -->
+</div><!-- /l-row -->
+</div><!-- /l-inner -->
 </div><!-- /content -->
 
 

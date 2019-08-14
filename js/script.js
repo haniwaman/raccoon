@@ -20,7 +20,7 @@ jQuery(function() {
 		}
 	});
 
-	/* SmoothScroll */
+	/* スムーススクロール */
 	jQuery('a[href^="#"]').click(function() {
 		var header = 0;
 		var speed = 300;
@@ -46,9 +46,9 @@ jQuery(function() {
 	/* floating */
 	jQuery(window).on("scroll", function() {
 		if (500 < jQuery(this).scrollTop()) {
-			jQuery(".floating").show();
+			jQuery(".p-floating").show();
 		} else {
-			jQuery(".floating").hide();
+			jQuery(".p-floating").hide();
 		}
 	});
 
@@ -57,7 +57,7 @@ jQuery(function() {
 	jQuery(".menu-item-has-children span").on("click", function() {
 		jQuery(this)
 			.parent(".menu-item-has-children")
-			.toggleClass("m_open");
+			.toggleClass("m-open");
 	});
 
 	/* widget_nav_menu fixed */
@@ -65,11 +65,11 @@ jQuery(function() {
 	jQuery(".menu-item-has-children span").on("click", function() {
 		jQuery(this)
 			.parent(".menu-item-has-children")
-			.toggleClass("m_open");
+			.toggleClass("m-open");
 	});
 
 	/* Polyfill */
-	Stickyfill.add(document.querySelectorAll("#sidebar-fixed"));
+	Stickyfill.add(document.querySelectorAll("#p-sidebar-fixed"));
 
 	// ドロワー
 	jQuery(".js-drawer").on("click", function(e) {

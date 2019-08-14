@@ -13,33 +13,33 @@ get_header(); ?>
 
 
 
-<!-- content -->
-<div id="content">
-<div class="inner">
-<div class="row">
+<!-- l-content -->
+<div id="l-content">
+<div class="l-inner">
+<div class="l-row">
 
-<!-- primary -->
-<main id="primary">
+<!-- l-primary -->
+<main id="l-primary">
 
 <?php if ( have_posts() ) : ?>
 	<?php while ( have_posts() ) : ?>
 		<?php the_post(); ?>
 
-<!-- entry -->
-<article <?php post_class( array( 'entry' ) ); ?>>
+<!-- p-entry -->
+<article <?php post_class( array( 'p-entry' ) ); ?>>
 
-	<!-- entry-header -->
-	<div class="entry-header">
+	<!-- e-header -->
+	<div class="e-header">
 		<?php my_breadcrumb(); ?>
-		<h1 class="entry-title"><?php the_title(); ?></h1><!-- /entry-title -->
+		<h1 class="e-title"><?php the_title(); ?></h1><!-- /e-title -->
 
-		<!-- entry-meta -->
-		<div class="entry-meta">
-		<div class="entry-label"><span><?php echo esc_html( get_post_mime_type( get_the_ID() ) ); ?></span></div><!-- /entry-item-label -->
-			<time class="entry-published" datetime="<?php the_time( 'c' ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time>
+		<!-- e-meta -->
+		<div class="e-meta">
+		<div class="e-label"><span><?php echo esc_html( get_post_mime_type( get_the_ID() ) ); ?></span></div><!-- /e-label -->
+			<time class="e-published" datetime="<?php the_time( 'c' ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time>
 		</div><!-- /entry-meta -->
 
-		<figure class="entry-img">
+		<figure class="e-img">
 		<?php if ( wp_attachment_is_image( get_the_ID() ) ) : ?>
 			<?php echo wp_get_attachment_image( get_the_ID(), 'my_thumbnail' ); ?>
 		<?php elseif ( false !== strpos( get_post_mime_type( get_the_ID() ), 'video' ) ) : ?>
@@ -48,31 +48,31 @@ get_header(); ?>
 			<audio src="<?php echo esc_url( wp_get_attachment_url( get_the_ID() ) ); ?>" controls></audio>
 		<?php else : ?>
 			<div class="attachment-btn">
-				<a class="btn" href="<?php echo esc_url( wp_get_attachment_url( get_the_ID() ) ); ?>" rel="noopener" target="_blank">この添付のURL</a>
+				<a class="c-btn" href="<?php echo esc_url( wp_get_attachment_url( get_the_ID() ) ); ?>" rel="noopener" target="_blank">この添付のURL</a>
 			</div><!-- /attachment-btn -->
 		<?php endif; ?>
-			<figcaption class="entry-img-caption"><?php the_excerpt(); ?></figcaption>
-		</figure><!-- /entry-img -->
-	</div><!-- /entry-header -->
+			<figcaption class="e-caption"><?php the_excerpt(); ?></figcaption>
+		</figure><!-- /e-img -->
+	</div><!-- /e-header -->
 
-	<!-- entry-body -->
-	<div class="entry-body">
+	<!-- e-body -->
+	<div class="e-body">
 		<?php the_content(); ?>
-	</div><!-- /entry-body -->
+	</div><!-- /e-body -->
 
-</article><!-- /entry -->
+</article><!-- /p-entry -->
 
 	<?php endwhile; ?>
 <?php endif; ?>
 
-</main><!-- /primary -->
+</main><!-- /l-primary -->
 
 <?php get_sidebar(); ?>
 
 
-</div><!-- /row -->
-</div><!-- /inner -->
-</div><!-- /content -->
+</div><!-- /l-row -->
+</div><!-- /l-inner -->
+</div><!-- /l-content -->
 
 
 

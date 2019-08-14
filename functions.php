@@ -17,7 +17,7 @@ function my_setup() {
 	add_theme_support(
 		'html5', /* HTML5のタグで出力 */
 		array(
-			'search-form',
+			'p-search-form',
 			'comment-form',
 			'comment-list',
 			'gallery',
@@ -113,7 +113,7 @@ add_action( 'wp_head', 'my_wp_head' );
  * @return void
  */
 function my_admin_script() {
-	// add_editor_style( get_template_directory_uri() . '/css/admin/editor-style.css' );
+	add_editor_style( get_template_directory_uri() . '/css/admin/editor-style.css' );
 	wp_enqueue_style( 'admin', get_template_directory_uri() . '/css/admin/style.css', array(), '1.0.1', 'all' );
 	wp_enqueue_media();
 	wp_enqueue_style( 'wp-color-picker' );
@@ -152,30 +152,30 @@ function my_widget_init() {
 		array(
 			'name'          => __( 'サイドバー', 'raccoon' ),
 			'id'            => 'sidebar',
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div><!-- /widget -->',
-			'before_title'  => '<div class="widget-title">',
-			'after_title'   => '</div><!-- /widget-title -->',
+			'before_widget' => '<div id="%1$s" class="p-widget %2$s">',
+			'after_widget'  => '</div><!-- /p-widget -->',
+			'before_title'  => '<div class="p-widget-title">',
+			'after_title'   => '</div><!-- /p-widget-title -->',
 		)
 	);
 	register_sidebar(
 		array(
 			'name'          => __( '追従', 'raccoon' ),
-			'id'            => 'sidebar-fixed',
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div><!-- /widget -->',
-			'before_title'  => '<div class="widget-title">',
-			'after_title'   => '</div><!-- /widget-title -->',
+			'id'            => 'p-sidebar-fixed',
+			'before_widget' => '<div id="%1$s" class="p-widget %2$s">',
+			'after_widget'  => '</div><!-- /p-widget -->',
+			'before_title'  => '<div class="p-widget-title">',
+			'after_title'   => '</div><!-- /p-widget-title -->',
 		)
 	);
 	register_sidebar(
 		array(
 			'name'          => __( 'スマホメニュー', 'raccoon' ),
 			'id'            => 'spmenu',
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div><!-- /widget -->',
-			'before_title'  => '<div class="widget-title">',
-			'after_title'   => '</div><!-- /widget-title -->',
+			'before_widget' => '<div id="%1$s" class="p-widget %2$s">',
+			'after_widget'  => '</div><!-- /p-widget -->',
+			'before_title'  => '<div class="p-widget-title">',
+			'after_title'   => '</div><!-- /p-widget-title -->',
 		)
 	);
 }

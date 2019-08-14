@@ -1,16 +1,13 @@
-#footer {
-	background: $footer-background; /* footer background */
-	color: $footer-color; /* footer background */
+.p-footer {
 
-	> .inner {
-		padding-top: 0;
-		padding-bottom: 0;
+	.inner {
 	}
 }
 
-.copy {
+.p-copy {
 	font-size: 13px;
 	padding: 8px;
+	color: #fff;
 
 	a {
 		text-decoration: none;
@@ -22,7 +19,7 @@
 	}
 }
 
-.floating {
+.p-floating {
 	position: fixed;
 	right: 8px;
 	bottom: 8px;

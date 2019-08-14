@@ -1,4 +1,4 @@
-.likebox {
+.p-likebox {
 	display: flex;
 	box-shadow: 0 0 3px 0 rgba(#000, 0.16);
 	margin-top: 32px;
@@ -8,44 +8,34 @@
 		margin-right: -$pd-entry-sp;
 		margin-left: -$pd-entry-sp;
 	}
-}
 
-.likebox-img {
-	width: 40%;
-	background: transparent no-repeat center center / cover;
-}
-
-.likebox-body {
-	width: 60%;
-	padding: 24px 10px;
-	color: #fff;
-	text-align: center;
-
-	@include mq("sp") {
-		padding: 10px 4px;
+	> .e-img {
+		width: 40%;
+		background: transparent no-repeat center center / cover;
 	}
-}
 
-.likebox-lead {
-	font-weight: 700;
-	margin-bottom: 16px;
-	line-height: 1.6;
+	> .e-body {
+		width: 60%;
+		padding: 24px 10px;
+		color: #fff;
+		text-align: center;
 
-	@include mq("sp") {
-		font-size: 12px;
-		margin-bottom: 8px;
-	}
-}
+		@include mq("sp") {
+			padding: 10px 4px;
+		}
 
-.likebox-btn {
-}
+		> .e-lead {
+			font-weight: 700;
+			margin-bottom: 16px;
+			line-height: 1.6;
 
-.likebox-content {
-	font-size: 14px;
-	margin-top: 16px;
+			@include mq("sp") {
+				font-size: 12px;
+				margin-bottom: 8px;
+			}
+		}
 
-	@include mq("sp") {
-		font-size: 12px;
-		margin-top: 12px;
+		> .e-btn {
+		}
 	}
 }

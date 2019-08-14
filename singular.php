@@ -15,11 +15,11 @@ get_header(); ?>
 
 <!-- content -->
 <div id="content">
-<div class="inner">
-<div class="row">
+<div class="l-inner">
+<div class="l-row">
 
-<!-- primary -->
-<main id="primary">
+<!-- l-primary -->
+<main id="l-primary">
 
 <?php
 if ( have_posts() ) :
@@ -27,34 +27,34 @@ if ( have_posts() ) :
 		the_post();
 		?>
 
-<!-- entry -->
-<article <?php post_class( array( 'entry' ) ); ?>>
+<!-- p-entry -->
+<article <?php post_class( array( 'p-entry' ) ); ?>>
 
-	<!-- entry-header -->
-	<div class="entry-header">
+	<!-- e-header -->
+	<div class="e-header">
 		<?php my_breadcrumb(); ?>
-		<h1 class="entry-title"><?php the_title(); ?></h1><!-- /entry-title -->
+		<h1 class="e-title"><?php the_title(); ?></h1><!-- /e-title -->
 
-		<!-- entry-meta -->
-		<div class="entry-meta">
-			<div class="entry-label"><?php my_the_post_category(); ?></div><!-- /entry-item-label -->
-			<time class="entry-published" datetime="<?php the_time( 'c' ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time>
+		<!-- e-meta -->
+		<div class="e-meta">
+			<div class="e-label"><?php my_the_post_category(); ?></div><!-- /e-label -->
+			<time class="e-published" datetime="<?php the_time( 'c' ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time>
 		</div><!-- /entry-meta -->
 
 		<?php get_template_part( 'parts/sns' ); ?>
 
-		<!-- entry-img -->
-		<figure class="entry-img">
+		<!-- e-img -->
+		<figure class="e-img">
 		<?php
 		if ( has_post_thumbnail() ) {
 			the_post_thumbnail( 'my_thumbnail' );
 		}
 		?>
-		</figure><!-- /entry-img -->
-	</div><!-- /entry-header -->
+		</figure><!-- /e-img -->
+	</div><!-- /e-header -->
 
-	<!-- entry-body -->
-	<div class="entry-body rc_heading01">
+	<!-- e-body -->
+	<div class="e-body rc_heading01">
 		<?php the_content(); ?>
 		<?php
 		wp_link_pages(
@@ -68,23 +68,23 @@ if ( have_posts() ) :
 			)
 		);
 		?>
-	</div><!-- /entry-body -->
+	</div><!-- /e-body -->
 
-</article><!-- /entry -->
+</article><!-- /p-entry -->
 
 		<?php
 endwhile;
 endif;
 ?>
 
-</main><!-- /primary -->
+</main><!-- /l-primary -->
 
 
 <?php get_sidebar(); ?>
 
 
-</div><!-- /row -->
-</div><!-- /inner -->
+</div><!-- /l-row -->
+</div><!-- /l-inner -->
 </div><!-- /content -->
 
 

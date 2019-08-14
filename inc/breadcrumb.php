@@ -15,7 +15,7 @@ if ( ! function_exists( 'my_breadcrumb' ) ) {
 	 */
 	function my_breadcrumb( $object_type = '' ) {
 		$breadcrumb_html       = '';
-		$breadcrumb_beore      = '<nav class="breadcrumb"><div class="inner"><ul class="breadcrumb-list">';
+		$breadcrumb_beore      = '<nav class="breadcrumb"><div class="l-inner"><ul class="breadcrumb-list">';
 		$breadcrumb_after      = '</ul></div></nav>';
 		$breadcrumb_home       = apply_filters( 'raccoon_breadcrumb_home', __( 'ホーム', 'raccoon' ) );
 		$breadcrumb_home_tag   = '<li><a href="' . esc_url( home_url( '/' ) ) . '">' . $breadcrumb_home . '</a></li>';

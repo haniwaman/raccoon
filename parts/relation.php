@@ -7,10 +7,9 @@
 
 ?>
 
-<!-- relation -->
-<div class="relation">
-
-<div class="relation-head"><span>関連</span>の記事</div><!-- /relation-head -->
+<!-- p-relation -->
+<div class="p-relation">
+	<div class="e-head"><span>関連</span>の記事</div><!-- /e-head -->
 
 <?php
 $relation_query = new WP_Query(
@@ -23,15 +22,15 @@ $relation_query = new WP_Query(
 ?>
 
 <?php if ( $relation_query->have_posts() ) : ?>
-<!-- relation-items -->
-<div class="relation-items">
+<!-- p-relation-items -->
+<div class="p-relation-items">
 	<?php while ( $relation_query->have_posts() ) : ?>
 		<?php $relation_query->the_post(); ?>
 
-<div <?php post_class( array( 'relation-item' ) ); ?>>
+<div <?php post_class( array( 'e-item' ) ); ?>>
 
-<!-- relation-iitem-img -->
-<div class="relation-iitem-img">
+<!-- e-img -->
+<div class="e-img">
 	<a href="<?php the_permalink(); ?>">
 		<?php
 		if ( has_post_thumbnail() ) {
@@ -41,22 +40,22 @@ $relation_query = new WP_Query(
 		}
 		?>
 	</a>
-</div><!-- /relation-item-img -->
+</div><!-- /e-img -->
 
-<!-- relation-item-body -->
-<div class="relation-item-body">
-	<div class="relation-item-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div><!-- /relation-item-title -->
-</div><!-- /relation-item-body -->
+<!-- e-body -->
+<div class="e-body">
+	<div class="e-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div><!-- /e-title -->
+</div><!-- /e-body -->
 
-</div><!-- /relation-item -->
+</div><!-- /e-item -->
 
 	<?php endwhile; ?>
-</div><!-- /relation-items -->
+</div><!-- /p-relation-items -->
 <?php endif; ?>
 <?php wp_reset_postdata(); ?>
 
-<div class="relation-btn">
-	<a class="btn" href="<?php echo esc_url( get_category_link( get_the_category()[0]->cat_ID ) ); ?>">同じカテゴリーの一覧を見る</a>
-</div><!-- /relation-btn -->
+<div class="e-btn">
+	<a class="c-btn" href="<?php echo esc_url( get_category_link( get_the_category()[0]->cat_ID ) ); ?>">同じカテゴリーの一覧を見る</a>
+</div><!-- /e-btn -->
 
-</div><!-- /relation -->
+</div><!-- /p-relation -->

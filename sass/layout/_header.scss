@@ -3,7 +3,6 @@
 	height: $header-height;
 	z-index: map-get($layer, "header");
 	background: $header-background;
-	color: color-from-background($header-background);
 
 	@include mq("sp") {
 		height: $header-height-sp;

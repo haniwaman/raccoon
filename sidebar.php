@@ -6,16 +6,17 @@
  */
 ?>
 
-<!-- secondary -->
-<aside id="secondary">
+<!-- l-secondary -->
+<aside id="l-secondary">
 <?php if ( is_active_sidebar( 'sidebar' ) ) : ?>
 	<?php dynamic_sidebar( 'sidebar' ); ?>
 <?php endif; ?>
 
-<?php if ( is_active_sidebar( 'sidebar-fixed' ) ) : ?>
-<div id="sidebar-fixed">
-	<?php dynamic_sidebar( 'sidebar-fixed' ); ?>
-</div><!-- /sidebar-fixed -->
+<?php if ( is_active_sidebar( 'p-sidebar-fixed' ) ) : ?>
+<!-- .p-sidebar-fixed -->
+<div id="p-sidebar-fixed">
+	<?php dynamic_sidebar( 'p-sidebar-fixed' ); ?>
+</div><!-- /p-sidebar-fixed -->
 <?php endif; ?>
-</aside><!-- secondary -->
+</aside><!-- l-secondary -->
 

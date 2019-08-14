@@ -27,7 +27,7 @@
 	}
 }
 
-.header-logo {
+.p-header-logo {
 	margin-right: auto;
 
 	a {
@@ -53,13 +53,13 @@
 	}
 }
 
-.header-nav {
+.p-header-nav {
 
 	@include mq("sp") {
 		display: none;
 	}
 
-	.header-list {
+	ul {
 		display: flex;
 	}
 

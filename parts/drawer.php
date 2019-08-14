@@ -7,6 +7,7 @@
 
 ?>
 
+<!-- c-drawer -->
 <div class="c-drawer">
 	<div class="c-drawer__icon js-drawer for-drawer01" data-target="for-drawer01">
 			<div class="c-drawer__bars">
@@ -27,7 +28,7 @@
 				'depth'           => 2,
 				'theme_location'  => 'header',
 				'container'       => 'nav',
-				'container_class' => 'drawer-nav',
+				'container_class' => 'p-drawer-nav',
 			)
 		);
 		?>

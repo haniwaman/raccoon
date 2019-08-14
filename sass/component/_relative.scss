@@ -1,94 +1,94 @@
-.relation {
+.p-relation {
 	margin-top: 32px;
-}
 
-.relation-head {
-	color: $color-key; /* $color-key */
-	text-align: center;
-	font-weight: 700;
-	margin-bottom: 16px;
-
-	&::before {
-		content: "|";
-		margin-right: 12px;
-		transform: rotate(-30deg);
-		display: inline-block;
-	}
-
-	&::after {
-		content: "|";
-		margin-left: 12px;
-		transform: rotate(30deg);
-		display: inline-block;
-	}
-
-	span {
-		font-size: 18px;
+	> .e-head {
+		color: $color-key; /* $color-key */
+		text-align: center;
+		font-weight: 700;
+		margin-bottom: 16px;
 
 		&::before {
-			content: "\f02b";
-			font-family: $font-family-awesome;
-			font-weight: 900;
-			margin-right: 4px;
-			font-size: 14px;
+			content: "|";
+			margin-right: 12px;
+			transform: rotate(-30deg);
+			display: inline-block;
+		}
+
+		&::after {
+			content: "|";
+			margin-left: 12px;
+			transform: rotate(30deg);
+			display: inline-block;
+		}
+
+		span {
+			font-size: 18px;
+
+			&::before {
+				content: "\f02b";
+				font-family: $font-family-awesome;
+				font-weight: 900;
+				margin-right: 4px;
+				font-size: 14px;
+			}
 		}
 	}
 }
 
-.relation-items {
+.p-relation-items {
 	display: flex;
 	flex-wrap: wrap;
-}
 
-.relation-item {
-	width: calc(25% - 12px * 3 / 4);
-	margin-right: 12px;
-	margin-bottom: 12px;
+	.e-item {
+		width: calc(25% - 12px * 3 / 4);
+		margin-right: 12px;
+		margin-bottom: 12px;
 
-	&:nth-child(4n) {
-		margin-right: 0;
-	}
-
-	@include mq("sp") {
-		width: calc(50% - 12px * 1 / 2);
-
-		&:nth-child(2n) {
+		&:nth-child(4n) {
 			margin-right: 0;
 		}
-	}
-}
 
-.relation-iitem-img {
+		@include mq("sp") {
+			width: calc(50% - 12px * 1 / 2);
 
-	a {
-		text-decoration: none;
-		transition: all 0.3s ease 0s;
+			&:nth-child(2n) {
+				margin-right: 0;
+			}
+		}
 
-		&:hover {
-			opacity: $opacity; /* opacity */
+		> .e-img {
+
+			a {
+				text-decoration: none;
+				transition: all 0.3s ease 0s;
+
+				&:hover {
+					opacity: $opacity; /* opacity */
+				}
+			}
+		}
+
+		> .e-body {
+			padding: 4px;
+
+			> .e-title {
+				line-height: 1.4;
+
+				a {
+					text-decoration: none;
+					font-size: 14px;
+					transition: all 0.3s ease 0s;
+
+					&:hover {
+						opacity: $opacity; /* opacity */
+					}
+				}
+			}
+
+			> .e-btn {
+				text-align: center;
+				margin-top: 24px;
+			}
 		}
 	}
-}
-
-.relation-item-body {
-	padding: 4px;
-}
-
-.relation-item-title {
-	line-height: 1.4;
-
-	a {
-		text-decoration: none;
-		font-size: 14px;
-		transition: all 0.3s ease 0s;
-
-		&:hover {
-			opacity: $opacity; /* opacity */
-		}
-	}
-}
-
-.relation-btn {
-	text-align: center;
-	margin-top: 24px;
 }

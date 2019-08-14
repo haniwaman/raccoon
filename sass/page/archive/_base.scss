@@ -1,25 +1,25 @@
-.archive-header {
+.p-archive-header {
 	background: #fff;
 	border: 1px solid #eee;
 	padding: 24px 16px;
 	margin-bottom: 48px;
 	text-align: center;
 
-	.search-form {
+	.p-search-form {
 		margin-top: 32px;
 		text-align: left;
 	}
-}
 
-.archive-title {
-	font-size: 32px;
-	margin-bottom: 8px;
-	font-weight: 700;
-}
+	> .e-title {
+		font-size: 32px;
+		margin-bottom: 8px;
+		font-weight: 700;
+	}
 
-.archive-description {
-	font-size: 14px;
-	color: #666;
+	> .e-description {
+		font-size: 14px;
+		color: #666;
+	}
 }
 
 .four04-content {

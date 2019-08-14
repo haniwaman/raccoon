@@ -8,8 +8,9 @@
 ?>
 
 <!-- header -->
-<header id="header">
-<div class="inner">
+<header class="l-header p-header">
+<div class="l-inner">
+<div class="l-row m-middle">
 
 <?php
 $logo_tag = 'div';
@@ -17,14 +18,14 @@ if ( is_front_page() ) {
 	$logo_tag = 'h1';
 }
 ?>
-<!-- header-logo -->
-<<?php echo esc_attr( $logo_tag ); ?> class="header-logo">
+<!-- p-header-logo -->
+<<?php echo esc_attr( $logo_tag ); ?> class="p-header-logo">
 <?php if ( has_custom_logo() ) : ?>
 	<?php the_custom_logo(); ?>
 <?php else : ?>
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo wp_kses_post( apply_filters( 'raccoon_logo', get_bloginfo( 'name' ) ) ); ?></a>
 <?php endif; ?>
-</<?php echo esc_attr( $logo_tag ); ?>><!-- /header-logo -->
+</<?php echo esc_attr( $logo_tag ); ?>><!-- /p-header-logo -->
 
 <?php
 wp_nav_menu(
@@ -33,15 +34,15 @@ wp_nav_menu(
 		'depth'           => 2,
 		'theme_location'  => 'header',
 		'container'       => 'nav',
-		'container_class' => 'header-nav',
-		'menu_class'      => 'header-list',
+		'container_class' => 'p-header-nav',
 	)
 );
 ?>
 
 <?php get_template_part( 'parts/drawer' ); ?>
 
-</div><!-- /inner -->
+</div><!-- /l-row -->
+</div><!-- /l-inner -->
 </header><!-- /header -->
 
 

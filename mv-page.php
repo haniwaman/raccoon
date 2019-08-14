@@ -9,7 +9,7 @@
 
 <?php if ( get_header_image() ) : ?>
 
-<!-- mainvisual -->
+<!-- c-mainvisual -->
 <div class="c-mainvisual c-mainvisual--mask">
 <?php if ( get_header_image() ) : ?>
 	<img src="<?php echo esc_url( get_header_image() ); ?>" alt="">
@@ -20,5 +20,5 @@
 	<div class="c-mainvisual__lead"><?php the_excerpt(); ?></div><!-- /c-mainvisual__lead -->
 </div><!-- /c-mainvisual__content -->
 
-</div><!-- /mainvisual -->
+</div><!-- /c-mainvisual -->
 <?php endif ?>

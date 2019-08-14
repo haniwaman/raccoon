@@ -1,4 +1,4 @@
-.sns-buttons {
+.p-sns-buttons {
 
 	@include mq("sp") {
 		margin-top: 6px;
@@ -79,7 +79,7 @@
 	}
 }
 
-.sns-buttons-org {
+.p-sns-buttons-org {
 
 	ul {
 		display: flex;

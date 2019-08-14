@@ -1,13 +1,13 @@
-.entries {
+.p-entry-items {
 	margin-top: 32px;
 
-	&.entries-square {
+	&.m-square {
 		display: flex;
 		flex-wrap: wrap;
 	}
 }
 
-.entry-item {
+.p-entry-item {
 	display: flex;
 	padding: 24px 12px;
 	border: 1px solid #eee;
@@ -25,7 +25,129 @@
 		margin-bottom: 0;
 	}
 
-	.entries-square & {
+	.e-img {
+		text-align: center;
+		width: 30%;
+		padding: 0 12px;
+
+		@include mq("sp") {
+			width: 100%;
+			padding: 0;
+		}
+
+		a {
+			transition: all 0.3s ease 0s;
+
+			&:hover {
+				opacity: $opacity; /* opacity */
+			}
+		}
+	}
+
+	.e-body {
+		width: 70%;
+		padding: 0 12px;
+
+		@include mq("sp") {
+			width: 100%;
+			padding: 12px 0 0;
+		}
+	}
+
+	.e-meta {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		margin-bottom: 8px;
+	}
+
+	.e-published {
+		font-size: 12px;
+		color: #666;
+		white-space: nowrap;
+		margin-left: auto;
+
+		&::before {
+			content: "\f073";
+			font-family: $font-family-awesome;
+			font-weight: 400;
+			margin-right: 6px;
+		}
+	}
+
+	.e-label {
+		white-space: nowrap;
+
+		a,
+		span {
+			color: #fff;
+			display: block;
+			padding: 4px 8px;
+			background: #333;
+			font-size: 12px;
+			transition: all 0.3s ease 0s;
+			border-radius: 2px;
+		}
+
+		a {
+			text-decoration: none;
+
+			&:hover {
+				opacity: $opacity; /* opacity */
+			}
+		}
+	}
+
+	.e-title {
+		margin-bottom: 8px;
+		line-height: 1.2;
+		font-size: 20px;
+		font-weight: 700;
+
+		a {
+			transition: all 0.3s ease 0s;
+			text-decoration: none;
+
+			&:hover {
+				opacity: $opacity; /* opacity */
+			}
+		}
+	}
+
+	.e-excerpt {
+		font-size: 14px;
+		color: #666;
+	}
+
+	.e-auther {
+		text-align: right;
+		margin-top: 16px;
+
+		a,
+		span {
+			color: #666;
+			font-size: 14px;
+			vertical-align: middle;
+		}
+
+		a {
+			text-decoration: none;
+			transition: all 0.3s ease 0s;
+
+			&:hover {
+				opacity: $opacity; /* opacity */
+			}
+		}
+
+		img {
+			margin-right: 4px;
+			width: 30px;
+			border-radius: 50%;
+			vertical-align: middle;
+		}
+	}
+
+	.m-square & {
 		display: block;
 		width: calc(50% - 32px / 2);
 		margin-right: 32px;
@@ -47,137 +169,15 @@
 				margin-bottom: 0;
 			}
 		}
-	}
-}
 
-.entry-item-img {
-	text-align: center;
-	width: 30%;
-	padding: 0 12px;
-
-	@include mq("sp") {
-		width: 100%;
-		padding: 0;
-	}
-
-	a {
-		transition: all 0.3s ease 0s;
-
-		&:hover {
-			opacity: $opacity; /* opacity */
+		.e-img {
+			width: 100%;
+			padding: 0;
 		}
-	}
 
-	.entries-square & {
-		width: 100%;
-		padding: 0;
-	}
-}
-
-.entry-item-body {
-	width: 70%;
-	padding: 0 12px;
-
-	@include mq("sp") {
-		width: 100%;
-		padding: 12px 0 0;
-	}
-
-	.entries-square & {
-		width: 100%;
-		padding: 12px 0 0;
-	}
-}
-
-.entry-item-meta {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	margin-bottom: 8px;
-}
-
-.entry-item-published {
-	font-size: 12px;
-	color: #666;
-	white-space: nowrap;
-	margin-left: auto;
-
-	&::before {
-		content: "\f073";
-		font-family: $font-family-awesome;
-		font-weight: 400;
-		margin-right: 6px;
-	}
-}
-
-.entry-item-label {
-	white-space: nowrap;
-
-	a,
-	span {
-		color: #fff;
-		display: block;
-		padding: 4px 8px;
-		background: #333;
-		font-size: 12px;
-		transition: all 0.3s ease 0s;
-		border-radius: 2px;
-	}
-
-	a {
-		text-decoration: none;
-
-		&:hover {
-			opacity: $opacity; /* opacity */
+		.e-body {
+			width: 100%;
+			padding: 12px 0 0;
 		}
-	}
-}
-
-.entry-item-title {
-	margin-bottom: 8px;
-	line-height: 1.2;
-	font-size: 20px;
-	font-weight: 700;
-
-	a {
-		transition: all 0.3s ease 0s;
-		text-decoration: none;
-
-		&:hover {
-			opacity: $opacity; /* opacity */
-		}
-	}
-}
-
-.entry-item-excerpt {
-	font-size: 14px;
-	color: #666;
-}
-
-.entry-item-auther {
-	text-align: right;
-	margin-top: 16px;
-
-	a,
-	span {
-		color: #666;
-		font-size: 14px;
-		vertical-align: middle;
-	}
-
-	a {
-		text-decoration: none;
-		transition: all 0.3s ease 0s;
-
-		&:hover {
-			opacity: $opacity; /* opacity */
-		}
-	}
-
-	img {
-		margin-right: 4px;
-		width: 30px;
-		border-radius: 50%;
-		vertical-align: middle;
 	}
 }

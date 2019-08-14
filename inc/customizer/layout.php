@@ -23,6 +23,7 @@ if ( ! function_exists( 'my_customize_layout' ) ) {
 			)
 		);
 
+		/* 全体 */
 		$wp_customize->add_section(
 			'my_layout_all',
 			array(
@@ -48,6 +49,31 @@ if ( ! function_exists( 'my_customize_layout' ) ) {
 						'two-right' => '2カラム（サイドメニュー右）',
 						'two-left' => '2カラム（サイドメニュー左）',
 					),
+				)
+			)
+		);
+
+		/* ヘッダー */
+		$wp_customize->add_section(
+			'my_layout_header',
+			array(
+				'title'    => __( 'ヘッダー', 'raccoon' ),
+				'panel'    => 'my_layout',
+				'priority' => 2,
+			)
+		);
+
+		$wp_customize->add_setting( 'my_layout_header_check', array( 'default' => false, array( 'sanitize_callback' => 'my_sanitize_checkbox' ), ) );
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'my_layout_header_check',
+				array(
+					'label'    => __( 'インフォメーション', 'raccoon' ),
+					'section'  => 'my_layout_header',
+					'settings' => 'my_layout_header_check',
+					'priority' => 1,
+					'type'     => 'checkbox',
 				)
 			)
 		);

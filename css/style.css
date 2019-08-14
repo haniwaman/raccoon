@@ -1973,11 +1973,11 @@ span.wpcf7-list-item {
 	color: #efa336; /* $color-key */
 }
 
-.infomation {
+.p-infomation {
 	background: #efa336; /* infomation background */
 }
 
-.infomation a {
+.p-infomation a {
 	color: #fff;
 	display: block;
 	font-size: 14px;
@@ -1988,7 +1988,7 @@ span.wpcf7-list-item {
 	transition: all 0.3s ease 0s;
 }
 
-.infomation a:hover {
+.p-infomation a:hover {
 	opacity: 0.6;
 }
 

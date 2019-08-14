@@ -7,7 +7,11 @@
 
 ?>
 
+<?php if ( get_theme_mod( 'my_layout_header_check' ) ) : ?>
+
 <!-- infomation -->
-<aside class="infomation">
-<div class="infomation-link"><a href="">お問い合わせはこちら！</a></div><!-- /infomation-link -->
-</aside><!-- /infomation -->
+<aside class="p-infomation">
+	<div class="e-link"><a href="">お問い合わせはこちら！</a></div><!-- /e-link -->
+</aside><!-- /p-infomation -->
+
+<?php endif; ?>

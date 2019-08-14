@@ -202,27 +202,6 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 			)
 		);
 
-		// チェックボックス（Feedly）.
-		// $wp_customize->add_setting(
-		// 	'my_parts_sns_check_feedly',
-		// 	array(
-		// 		'default' => true,
-		// 		array( 'sanitize_callback' => 'my_sanitize_checkbox' ),
-		// 	)
-		// );
-		// $wp_customize->add_control(
-		// 	new WP_Customize_Control(
-		// 		$wp_customize,
-		// 		'my_parts_sns_check_feedly',
-		// 		array(
-		// 			'label'    => __( 'Feedly', 'raccoon' ),
-		// 			'section'  => 'my_parts_sns',
-		// 			'settings' => 'my_parts_sns_check_feedly',
-		// 			'type'     => 'checkbox',
-		// 		)
-		// 	)
-		// );
-
 		// チェックボックス（RSS）.
 		$wp_customize->add_setting(
 			'my_parts_sns_check_rss',

@@ -52,31 +52,27 @@
 				opacity: $opacity; /* opacity */
 			}
 
-			&.m_twitter {
+			&.m-twitter {
 				background: map-get($sns-color, "twitter"); /* sns twitter */
 			}
 
-			&.m_facebook {
+			&.m-facebook {
 				background: map-get($sns-color, "facebook"); /* sns facebook */
 			}
 
-			&.m_hatena {
+			&.m-hatena {
 				background: map-get($sns-color, "hatena"); /* sns hatena */
 			}
 
-			&.m_line {
+			&.m-line {
 				background: map-get($sns-color, "line"); /* sns line */
 			}
 
-			&.m_pocket {
+			&.m-pocket {
 				background: map-get($sns-color, "pocket"); /* sns pocket */
 			}
 
-			&.m_feedly {
-				background: map-get($sns-color, "feedly"); /* sns feedly */
-			}
-
-			&.m_rss {
+			&.m-rss {
 				background: map-get($sns-color, "rss"); /* sns rss */
 			}
 		}

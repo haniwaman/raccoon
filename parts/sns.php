@@ -13,22 +13,22 @@
 <nav class="sns-buttons">
 	<ul>
 	<?php if ( get_theme_mod( 'my_parts_sns_check_twitter' ) ) : ?>
-		<li><a class="m_twitter" href="https://twitter.com/share?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>" rel="nofollow" target="_blank"><i class="fab fa-twitter"></i><?php esc_html_e( 'ツイート', 'raccoon' ); ?></a></li>
+		<li><a class="m-twitter" href="https://twitter.com/share?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>" rel="nofollow" target="_blank"><i class="fab fa-twitter"></i><?php esc_html_e( 'ツイート', 'raccoon' ); ?></a></li>
 <?php endif; ?>
 	<?php if ( get_theme_mod( 'my_parts_sns_check_facebook' ) ) : ?>
-		<li><a class="m_facebook" href="https://www.facebook.com/share.php?u=<?php the_permalink(); ?>" rel="nofollow" target="_blank"><i class="fab fa-facebook-f"></i><?php esc_html_e( 'シェア', 'raccoon' ); ?></a></li>
+		<li><a class="m-facebook" href="https://www.facebook.com/share.php?u=<?php the_permalink(); ?>" rel="nofollow" target="_blank"><i class="fab fa-facebook-f"></i><?php esc_html_e( 'シェア', 'raccoon' ); ?></a></li>
 		<?php endif; ?>
 	<?php if ( get_theme_mod( 'my_parts_sns_check_hatena' ) ) : ?>
-		<li><a class="m_hatena" href="https://b.hatena.ne.jp/add?mode=confirm&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>" rel="nofollow" target="_blank"><i>B!</i><?php esc_html_e( 'はてブ', 'raccoon' ); ?></a></li>
+		<li><a class="m-hatena" href="https://b.hatena.ne.jp/add?mode=confirm&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>" rel="nofollow" target="_blank"><i>B!</i><?php esc_html_e( 'はてブ', 'raccoon' ); ?></a></li>
 		<?php endif; ?>
 	<?php if ( get_theme_mod( 'my_parts_sns_check_line' ) ) : ?>
-		<li><a class="m_line" href="https://social-plugins.line.me/lineit/share?url=<?php the_permalink(); ?>" rel="nofollow" target="_blank"><i class="fab fa-line"></i>LINE</a></li>
+		<li><a class="m-line" href="https://social-plugins.line.me/lineit/share?url=<?php the_permalink(); ?>" rel="nofollow" target="_blank"><i class="fab fa-line"></i>LINE</a></li>
 		<?php endif; ?>
 	<?php if ( get_theme_mod( 'my_parts_sns_check_pocket' ) ) : ?>
-		<li><a class="m_pocket" href="https://getpocket.com/edit?url=<?php the_permalink(); ?>" rel="nofollow" target="_blank"><i class="fab fa-get-pocket"></i><?php esc_html_e( 'ポケット', 'raccoon' ); ?></a></li>
+		<li><a class="m-pocket" href="https://getpocket.com/edit?url=<?php the_permalink(); ?>" rel="nofollow" target="_blank"><i class="fab fa-get-pocket"></i><?php esc_html_e( 'ポケット', 'raccoon' ); ?></a></li>
 		<?php endif; ?>
 		<?php if ( get_theme_mod( 'my_parts_sns_check_rss' ) ) : ?>
-		<li><a class="m_rss" href="<?php bloginfo( 'rss2_url' ); ?>" rel="nofollow" target="_blank"><i class="fas fa-rss-square"></i><?php esc_html_e( 'RSS', 'raccoon' ); ?></a></li>
+		<li><a class="m-rss" href="<?php bloginfo( 'rss2_url' ); ?>" rel="nofollow" target="_blank"><i class="fas fa-rss-square"></i><?php esc_html_e( 'RSS', 'raccoon' ); ?></a></li>
 		<?php endif; ?>
 	</ul>
 </nav><!-- /sns-buttons -->

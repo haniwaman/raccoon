@@ -3,11 +3,11 @@
 	background: #fff;
 	z-index: map-get($layer, "header");
 
-	&.m_anim {
+	&.m-anim {
 		animation: fadeInDown 0.5s ease 0s 1 normal none;
 	}
 
-	&.m_fixed {
+	&.m-fixed {
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -98,7 +98,7 @@
 			}
 		}
 
-		&.m_pickup {
+		&.m-pickup {
 
 			a {
 				background: map-get($header, "pickup"); /* header pickup */

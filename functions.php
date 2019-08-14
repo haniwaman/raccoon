@@ -67,6 +67,7 @@ function my_script() {
 
 	/* JavaScript */
 	wp_enqueue_script( 'stickyfill', get_template_directory_uri() . '/lib/stickyfill/stickyfill.min.js', array(), '2.1.0', true );
+	wp_enqueue_script( 'intersection-observer', get_template_directory_uri() . '/lib/intersection-observer/intersection-observer.js', array(), '2.1.0', true );
 	wp_enqueue_script( 'my', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '1.0.1', true );
 
 	/* 投稿・固定 */

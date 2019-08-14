@@ -7,17 +7,16 @@
 
 ?>
 
-<!-- drawer -->
 <div class="drawer">
-<div class="hamburger-close"></div>
-
-<div class="hamburger-icon m_drawer">
-	<div class="hamburger-open"></div><!-- /hamburger-open -->
-	<div class="hamburger-text"><span class="m_open">MENU</span><span class="m_close">CLOSE</span></div><!-- /hamburger-text -->
-</div><!-- /hamburger-icon -->
-
-<!-- drawer-content m_left -->
-<div class="drawer-content widget-sp">
+	<div class="drawer-icon js-drawer for-drawer01" data-target="for-drawer01">
+		<div class="drawer-bars">
+				<span class="drawer-bar"></span>
+				<span class="drawer-bar"></span>
+				<span class="drawer-bar"></span>
+		</div><!-- /drawer-bars -->
+	</div><!-- /drawer-icon -->
+	<div class="drawer-close js-drawer for-drawer01"></div>
+	<div class="drawer-content for-drawer01 m-left">
 <?php if ( is_active_sidebar( 'spmenu' ) ) : ?>
 	<?php dynamic_sidebar( 'spmenu' ); ?>
 <?php else : ?>
@@ -34,5 +33,5 @@
 	);
 	?>
 <?php endif; ?>
-</div><!-- /drawer-content -->
+	</div><!-- /drawer-content -->
 </div><!-- /drawer -->

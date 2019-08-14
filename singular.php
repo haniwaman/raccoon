@@ -16,6 +16,7 @@ get_header(); ?>
 <!-- content -->
 <div id="content">
 <div class="inner">
+<div class="row">
 
 <!-- primary -->
 <main id="primary">
@@ -82,6 +83,7 @@ endif;
 <?php get_sidebar(); ?>
 
 
+</div><!-- /row -->
 </div><!-- /inner -->
 </div><!-- /content -->
 

@@ -35,36 +35,6 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 			)
 		);
 
-		// サイトのメイン色.
-		$wp_customize->add_setting( 'my_colors_site_main', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
-		$wp_customize->add_control(
-			new WP_Customize_Color_Control(
-				$wp_customize,
-				'my_colors_site_main',
-				array(
-					'label'    => __( 'メインカラー', 'raccoon' ),
-					'section'  => 'my_colors_site',
-					'settings' => 'my_colors_site_main',
-					'priority' => 1,
-				)
-			)
-		);
-
-		// サイトのアクセント色.
-		$wp_customize->add_setting( 'my_colors_site_accent', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
-		$wp_customize->add_control(
-			new WP_Customize_Color_Control(
-				$wp_customize,
-				'my_colors_site_accent',
-				array(
-					'label'    => __( 'アクセントカラー', 'raccoon' ),
-					'section'  => 'my_colors_site',
-					'settings' => 'my_colors_site_accent',
-					'priority' => 2,
-				)
-			)
-		);
-
 		// サイトの背景色.
 		$wp_customize->add_setting( 'my_colors_site_background', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
 		$wp_customize->add_control(
@@ -190,46 +160,6 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 			)
 		);
 
-		// ウィジェット見出し.
-		$wp_customize->add_section(
-			'my_colors_widget',
-			array(
-				'title'    => __( 'ウィジェット見出し', 'raccoon' ),
-				'panel'    => 'my_colors',
-				'priority' => 2,
-			)
-		);
-
-		// ウィジェット見出し背景色.
-		$wp_customize->add_setting( 'my_colors_widget_background', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
-		$wp_customize->add_control(
-			new WP_Customize_Color_Control(
-				$wp_customize,
-				'my_colors_widget_background',
-				array(
-					'label'    => __( '背景色', 'raccoon' ),
-					'section'  => 'my_colors_widget',
-					'settings' => 'my_colors_widget_background',
-					'priority' => 1,
-				)
-			)
-		);
-
-		// ウィジェット見出しテキスト色.
-		$wp_customize->add_setting( 'my_colors_widget_text', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
-		$wp_customize->add_control(
-			new WP_Customize_Color_Control(
-				$wp_customize,
-				'my_colors_widget_text',
-				array(
-					'label'    => __( 'テキスト色', 'raccoon' ),
-					'section'  => 'my_colors_widget',
-					'settings' => 'my_colors_widget_text',
-					'priority' => 2,
-				)
-			)
-		);
-
 		// SNS.
 		$wp_customize->add_section(
 			'my_colors_sns',
@@ -241,7 +171,13 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 		);
 
 		// Twitter色.
-		$wp_customize->add_setting( 'my_colors_sns_twitter', array( 'default' => '#1da1f2', 'sanitize_callback' => 'sanitize_hex_color' ) );
+		$wp_customize->add_setting(
+			'my_colors_sns_twitter',
+			array(
+				'default'           => '#1da1f2',
+				'sanitize_callback' => 'sanitize_hex_color',
+			)
+		);
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
@@ -256,7 +192,13 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 		);
 
 		// Facebook色.
-		$wp_customize->add_setting( 'my_colors_sns_facebook', array( 'default' => '#3b5998', 'sanitize_callback' => 'sanitize_hex_color' ) );
+		$wp_customize->add_setting(
+			'my_colors_sns_facebook',
+			array(
+				'default'           => '#3b5998',
+				'sanitize_callback' => 'sanitize_hex_color',
+			)
+		);
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
@@ -271,7 +213,13 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 		);
 
 		// はてなブックマーク色.
-		$wp_customize->add_setting( 'my_colors_sns_hatena', array( 'default' => '#018fde', 'sanitize_callback' => 'sanitize_hex_color' ) );
+		$wp_customize->add_setting(
+			'my_colors_sns_hatena',
+			array(
+				'default'           => '#018fde',
+				'sanitize_callback' => 'sanitize_hex_color',
+			)
+		);
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
@@ -286,7 +234,13 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 		);
 
 		// LINE色.
-		$wp_customize->add_setting( 'my_colors_sns_line', array( 'default' => '#00b902', 'sanitize_callback' => 'sanitize_hex_color' ) );
+		$wp_customize->add_setting(
+			'my_colors_sns_line',
+			array(
+				'default'           => '#00b902',
+				'sanitize_callback' => 'sanitize_hex_color',
+			)
+		);
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
@@ -301,7 +255,13 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 		);
 
 		// Pocket色.
-		$wp_customize->add_setting( 'my_colors_sns_pocket', array( 'default' => '#ef4156', 'sanitize_callback' => 'sanitize_hex_color' ) );
+		$wp_customize->add_setting(
+			'my_colors_sns_pocket',
+			array(
+				'default'           => '#ef4156',
+				'sanitize_callback' => 'sanitize_hex_color',
+			)
+		);
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
@@ -316,7 +276,13 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 		);
 
 		// RSS色.
-		$wp_customize->add_setting( 'my_colors_sns_rss', array( 'default' => '#ea781a', 'sanitize_callback' => 'sanitize_hex_color' ) );
+		$wp_customize->add_setting(
+			'my_colors_sns_rss',
+			array(
+				'default'           => '#ea781a',
+				'sanitize_callback' => 'sanitize_hex_color',
+			)
+		);
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,

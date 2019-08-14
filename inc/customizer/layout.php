@@ -32,7 +32,7 @@ if ( ! function_exists( 'my_customize_layout' ) ) {
 			)
 		);
 
-		$wp_customize->add_setting( 'my_layout_all_radio' );
+		$wp_customize->add_setting( 'my_layout_all_radio', array( 'default' => 'two-right', 'sanitize_callback' => 'my_sanitize_select' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
@@ -44,9 +44,9 @@ if ( ! function_exists( 'my_customize_layout' ) ) {
 					'priority' => 1,
 					'type'     => 'radio',
 					'choices'  => array(
-						'radio1' => '1カラム',
-						'radio2' => '2カラム（サイドメニュー右）',
-						'radio3' => '2カラム（サイドメニュー左）',
+						'one' => '1カラム',
+						'two-right' => '2カラム（サイドメニュー右）',
+						'two-left' => '2カラム（サイドメニュー左）',
 					),
 				)
 			)

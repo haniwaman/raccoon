@@ -16,10 +16,10 @@
 }
 
 #content {
-	// color: $cr-txt;
 
 	> .inner {
 		display: flex;
+		flex-wrap: wrap;
 
 		@include mq("sp") {
 			display: block;

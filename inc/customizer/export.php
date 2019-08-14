@@ -15,7 +15,7 @@ echo '@keyframes fadeInDown{from{opacity:0;transform:translateY(-50px)}to{opacit
 if ( get_theme_mod( 'my_colors_site_main' ) ) {
 	/* ページネーション */
 	echo esc_attr( '.page-numbers.current{background:' . get_theme_mod( 'my_colors_site_main' ) . ';border-color:' . get_theme_mod( 'my_colors_site_main' ) . ';}' );
-	echo  esc_attr( '.pagenation a:hover{background:' . get_theme_mod( 'my_colors_site_main' ) . ';border-color:' . get_theme_mod( 'my_colors_site_main' ) . ';}' );
+	echo esc_attr( '.pagenation a:hover{background:' . get_theme_mod( 'my_colors_site_main' ) . ';border-color:' . get_theme_mod( 'my_colors_site_main' ) . ';}' );
 	echo esc_attr( '.pagenation a.next:hover, .pagenation a.prev:hover{background:' . get_theme_mod( 'my_colors_site_main' ) . ';border-color:' . get_theme_mod( 'my_colors_site_main' ) . ';}' );
 	echo esc_attr( '.entry-links .post-page-numbers.current{background:' . get_theme_mod( 'my_colors_site_main' ) . ';border-color:' . get_theme_mod( 'my_colors_site_main' ) . ';}' );
 	echo esc_attr( '.entry-links a:hover{background:' . get_theme_mod( 'my_colors_site_main' ) . ';border-color:' . get_theme_mod( 'my_colors_site_main' ) . ';}' );
@@ -34,7 +34,7 @@ if ( get_theme_mod( 'my_colors_site_accent' ) ) {
 	/* フローティング */
 	echo esc_attr( '.floating a{background:' . get_theme_mod( 'my_colors_site_accent' ) . ';}' );
 	/* ボタン */
-	echo esc_attr( 'form button,input[type="submit"],input[type="button"],.btn{background:' .  get_theme_mod( 'my_colors_site_accent' ) . ';}' );
+	echo esc_attr( 'form button,input[type="submit"],input[type="button"],.btn{background:' . get_theme_mod( 'my_colors_site_accent' ) . ';}' );
 
 }
 
@@ -120,6 +120,24 @@ if ( get_theme_mod( 'my_colors_sns_rss' ) ) {
 /* コンテンツのリンク色 */
 if ( get_theme_mod( 'my_colors_content_link' ) ) {
 	echo esc_attr( '.entry-body a{color:' . get_theme_mod( 'my_colors_content_link' ) . ';}' );
+}
+
+/* レイアウト */
+if ( get_theme_mod( 'my_layout_all_radio' ) ) {
+	switch ( get_theme_mod( 'my_layout_all_radio' ) ) {
+		case 'one':
+			echo '#primary{width:100%;margin-bottom:32px;}';
+			echo '#secondary{width:100%;}';
+			break;
+		case 'two-right':
+			echo '#content>.inner{flex-direction:row;}';
+			echo '#secondary{margin-left:auto;margin-right:0;}';
+			break;
+		case 'two-left':
+			echo '#content>.inner{flex-direction:row-reverse;}';
+			echo '#secondary{margin-left:0;margin-right:auto;}';
+			break;
+	}
 }
 
 echo '</style>';

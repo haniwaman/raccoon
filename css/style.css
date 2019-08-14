@@ -403,6 +403,7 @@ select:focus {
 
 #content > .inner {
 	display: flex;
+	flex-wrap: wrap;
 }
 
 #content.m_one > .inner {

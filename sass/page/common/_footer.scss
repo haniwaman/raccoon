@@ -1,6 +1,6 @@
 #footer {
-	background: map-get($footer, "background"); /* footer background */
-	color: map-get($footer, "color"); /* footer background */
+	background: $footer-background; /* footer background */
+	color: $footer-color; /* footer background */
 
 	> .inner {
 		padding-top: 0;

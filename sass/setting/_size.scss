@@ -30,18 +30,15 @@ $layer: (
 	default: 1
 );
 
-// ベースの余白
-$pd-tab: 24px;
-$pd-sp: 12px;
+// 余白
+$pd-x-pc: 0;
+$pd-x-tab: 32px;
+$pd-x-sp: 24px;
 
 // ベースの余白
 $pd-entry-pc: 24px;
 $pd-entry-sp: 16px;
 
-// フォーム
-$size-checkbox: 20px;
-$size-checkbox-pd_left: 26px;
-
-$size-radio: 20px;
-$size-radio_active: 10px;
-$size-radio-pd_left: 26px;
+// マーカー
+$marker-pd-x: 0.4em;
+$marker-pd-y: 1em;

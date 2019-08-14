@@ -68,18 +68,6 @@ jQuery(function() {
 			.toggleClass("m_open");
 	});
 
-	/* Hamburger */
-	jQuery(".hamburger-icon").on("click", function() {
-		jQuery(this).toggleClass("m_checked");
-		jQuery(".hamburger-close").toggleClass("m_checked");
-
-		if (jQuery(this).hasClass("m_modal")) {
-			jQuery(".modal-content").toggleClass("m_checked");
-		} else if (jQuery(this).hasClass("m_drawer")) {
-			jQuery(".drawer-content").toggleClass("m_checked");
-		}
-	});
-
 	/* Polyfill */
 	Stickyfill.add(document.querySelectorAll("#sidebar-fixed"));
 

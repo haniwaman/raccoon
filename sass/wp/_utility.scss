@@ -64,8 +64,8 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		color: map-get($sticky, "color"); /* sticky color */
-		background: map-get($sticky, "background"); /* sticky background */
+		color: $pickup-color; /* sticky color */
+		background: $pickup-background; /* sticky background */
 		font-size: 12px;
 		padding: 4px 8px;
 		z-index: 2;

@@ -16,6 +16,7 @@ get_header(); ?>
 <!-- content -->
 <div id="content">
 <div class="inner">
+<div class="row">
 
 <!-- primary -->
 <main id="primary">
@@ -53,7 +54,7 @@ if ( have_posts() ) :
 	</div><!-- /entry-header -->
 
 	<!-- entry-body -->
-	<div class="entry-body rc_heading1">
+	<div class="entry-body rc_heading01">
 		<?php the_content(); ?>
 		<?php
 		wp_link_pages(
@@ -82,6 +83,7 @@ endif;
 <?php get_sidebar(); ?>
 
 
+</div><!-- /row -->
 </div><!-- /inner -->
 </div><!-- /content -->
 

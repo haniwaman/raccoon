@@ -36,7 +36,7 @@
 
 	&::before {
 		content: "\f073";
-		font-family: $ff-awesome;
+		font-family: $font-family-awesome;
 		font-weight: 400;
 		margin-right: 6px;
 	}
@@ -50,7 +50,7 @@
 
 	&::before {
 		content: "\f2f1";
-		font-family: $ff-awesome;
+		font-family: $font-family-awesome;
 		font-weight: 900;
 		margin-right: 6px;
 	}
@@ -212,7 +212,7 @@
 	}
 
 	th {
-		background: map-get($table-color, "background-th"); /* table border */
+		background: $table-th-background; /* table border */
 	}
 
 	strong,
@@ -258,7 +258,7 @@
 		vertical-align: baseline;
 		font-style: normal;
 		font-weight: 700;
-		font-family: $ff-code;
+		font-family: $font-family-code;
 	}
 
 	pre {
@@ -275,7 +275,7 @@
 			position: relative;
 			margin: -1em;
 			display: block;
-			font-family: $ff-code;
+			font-family: $font-family-code;
 			font-weight: 400;
 		}
 	}
@@ -375,7 +375,7 @@
 
 	&::before {
 		content: "\f053";
-		font-family: $ff-awesome;
+		font-family: $font-family-awesome;
 		font-weight: 900;
 		margin-right: 6px;
 	}
@@ -389,7 +389,7 @@
 
 		&::after {
 			content: "\f054";
-			font-family: $ff-awesome;
+			font-family: $font-family-awesome;
 			font-weight: 900;
 			margin-left: 6px;
 		}

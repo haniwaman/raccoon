@@ -1,43 +1,56 @@
 // ベース色
-$cr-m: #efa336;
+$color-key: #efa336;
+$color-accent: #e65100;
 
 // 背景
-$cr-bg: #f9f8f5;
+$body-background: #fff;
 
 // テキスト色
-$cr-txt: #333;
+$body-color: #424242;
 
 // 透過度
 $opacity: 0.6;
 
-// テーブル
-$table-color: (
-	"background": #fff,
-	"background-th": #ffecb3,
-	"border": #ddd
-);
+// ヘッダー
+$header-background: rgba(#fff, 0);
+$header-background-sub: #efa336;
+$header-color-sub: #fff;
+
+// フッター
+$footer-background: #666;
+$footer-color: #fff;
 
 // フォーム
-$my-form: (
-	"border": #eee,
-	"border-active": #eee,
-	"radio": #efa336,
-	"checkbox": #efa336
-);
+$form-border-color: #bdbdbd;
+$form-border-color-foucs: #9e9e9e;
+$form-color-required: #e57373; // 必須
+
+// チェックボックス
+$form-check-color: #616161;
+
+// ラジオボタン
+$form-radio-color: #616161;
+
+// テーブル
+$table-border-color: #bdbdbd;
+$table-background: #fff;
+$table-background-active: #e0e0e0;
+
+// テーブル見出し
+$table-th-background: #ffecb3;
 
 // コード
-$code-bg: #ef5350;
-$code-txt: #fff;
-$pre-code-bg: #2d2d2d;
+$code-background: #ef5350;
+$code-color: #fff;
+$pre-code-background: #2d2d2d;
 
 // ボタン
-$btn: (
-	"background": #e65100,
-	"color": #fff
-);
+$button-background: #757575;
+$button-color: #fff;
 
-// 必須
-$cr-required: #e57373;
+// ピックアップ
+$pickup-background: #e65100;
+$pickup-color: #fff;
 
 // SNS
 $sns-color: (
@@ -50,20 +63,7 @@ $sns-color: (
 	"rss": #ea781a
 );
 
-// ヘッダー
-$header: (
-	"pickup": #e65100,
-	"background-sub": #efa336,
-	"color-sub": #fff
-);
-
-// フッター
-$footer: (
-	"background": #666,
-	"color": #fff
-);
-
-// ウィジェット
+// ウィジェット見出し
 $widget: (
 	"background": #efa336,
 	"color": #fff
@@ -85,12 +85,6 @@ $pagenation: (
 	"border-active": #efa336
 );
 
-// sticky
-$sticky: (
-	"background": #e65100,
-	"color": #fff
-);
-
 // floating
 $floating: (
 	"background": #e65100,
@@ -107,3 +101,6 @@ $infomation: (
 $link: (
 	"color": #efa336
 );
+
+// マーカー
+$color-marker: #e0e0e0;

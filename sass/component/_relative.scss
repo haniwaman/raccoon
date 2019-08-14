@@ -3,7 +3,7 @@
 }
 
 .relation-head {
-	color: $cr-m; /* $cr-m */
+	color: $color-key; /* $color-key */
 	text-align: center;
 	font-weight: 700;
 	margin-bottom: 16px;
@@ -27,7 +27,7 @@
 
 		&::before {
 			content: "\f02b";
-			font-family: $ff-awesome;
+			font-family: $font-family-awesome;
 			font-weight: 900;
 			margin-right: 4px;
 			font-size: 14px;

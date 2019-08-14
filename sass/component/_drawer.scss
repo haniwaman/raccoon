@@ -3,74 +3,14 @@ $drawer-bar-space: 5px;
 $drawer-bar-width: 30px;
 $drawer-bar-height: 3px;
 
-$color-drawer-bar: #757575;
-$color-drawer-text: #757575;
+$drawer-bar-color: #757575;
+$drawer-color: #757575;
 
-// .drawer-nav {
-
-// 	li {
-
-// 		a {
-// 			text-decoration: none;
-// 			display: block;
-// 			padding: 16px;
-// 			font-size: 16px;
-// 		}
-
-// 		&.menu-item-has-children {
-// 			position: relative;
-
-// 			.sub-menu {
-// 				display: none;
-// 				padding-left: 24px;
-
-// 				a {
-// 					font-size: 14px;
-// 					padding-bottom: 12px;
-// 					padding-top: 12px;
-// 				}
-// 			}
-
-// 			a {
-// 				padding-right: 46px;
-// 			}
-
-// 			span {
-
-// 				&::after {
-// 					content: "\f078";
-// 					font-family: $ff-awesome;
-// 					font-size: 18px;
-// 					font-weight: 900;
-// 					position: absolute;
-// 					right: 16px;
-// 					top: 12px;
-// 				}
-// 			}
-
-// 			&.m_open {
-
-// 				.sub-menu {
-// 					display: block;
-// 				}
-
-// 				span {
-
-// 					&::after {
-// 						content: "\f106";
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// }
-
-/* ここから */
-.drawer {
+.c-drawer {
 	z-index: map-get($layer, "drawer");
 }
 
-.drawer-close {
+.c-drawer__close {
 	display: none;
 	position: fixed;
 	z-index: map-get($layer, "drawer") - 1;
@@ -88,7 +28,7 @@ $color-drawer-text: #757575;
 	}
 }
 
-.drawer-icon {
+.c-drawer__icon {
 	display: inline-block;
 	position: relative;
 	z-index: map-get($layer, "drawer") + 1;
@@ -98,7 +38,7 @@ $color-drawer-text: #757575;
 	&::after {
 		content: "MENU";
 		display: block;
-		color: $color-drawer-text;
+		color: $drawer-color;
 		font-size: 8px;
 		text-align: center;
 		font-weight: 700;
@@ -114,7 +54,7 @@ $color-drawer-text: #757575;
 	}
 }
 
-.drawer-bars {
+.c-drawer__bars {
 	display: inline-block;
 	width: $drawer-bar-width;
 	height: $drawer-bar-height + ($drawer-bar-space + $drawer-bar-height) * 2;
@@ -122,12 +62,12 @@ $color-drawer-text: #757575;
 	vertical-align: bottom;
 }
 
-.drawer-bar {
+.c-drawer__bar {
 	position: absolute;
 	right: 0;
 	left: 0;
 	display: block;
-	background-color: $color-drawer-bar;
+	background-color: $drawer-bar-color;
 	width: 100%;
 	height: $drawer-bar-height;
 	border-radius: 2px;
@@ -163,7 +103,7 @@ $color-drawer-text: #757575;
 	}
 }
 
-.drawer-content {
+.c-drawer__content {
 	overflow: auto;
 	position: fixed;
 	top: 0;
@@ -179,6 +119,11 @@ $color-drawer-text: #757575;
 	transition: all 0.5s ease 0s;
 	padding-top: $header-height;
 	text-align: left;
+
+	&.is-checked {
+		transform: translateX(0);
+		box-shadow: 6px 0 25px rgba(#000, 0.16);
+	}
 
 	// 左から
 	&.m-left {

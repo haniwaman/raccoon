@@ -33,7 +33,7 @@
 
 		&::before {
 			content: "\f3e5";
-			font-family: $ff-awesome;
+			font-family: $font-family-awesome;
 			font-weight: 900;
 			margin-right: 6px;
 		}
@@ -119,7 +119,7 @@
 
 				&::before {
 					content: "\f053";
-					font-family: $ff-awesome;
+					font-family: $font-family-awesome;
 					font-weight: 900;
 					margin-right: 6px;
 				}
@@ -132,7 +132,7 @@
 
 				&::after {
 					content: "\f054";
-					font-family: $ff-awesome;
+					font-family: $font-family-awesome;
 					font-weight: 900;
 					margin-left: 6px;
 				}
@@ -281,8 +281,8 @@
 	var,
 	code,
 	kbd {
-		color: $code-txt; /* code-txt */
-		background: $code-bg; /* code-bg */
+		color: $code-color; /* code-txt */
+		background: $code-background; /* code-bg */
 		display: inline-block;
 		padding-left: 0.2em;
 		padding-right: 0.2em;
@@ -297,7 +297,7 @@
 		padding: 1em;
 
 		code {
-			background: $pre-code-bg; /* pre-code-bg */
+			background: $pre-code-background; /* pre-code-bg */
 			color: #fff;
 			padding: 12px;
 			position: relative;
@@ -310,7 +310,7 @@
 	margin-top: 60px;
 
 	.required {
-		color: $cr-required; /* cr-required */
+		color: $form-color-required; /* cr-required */
 		vertical-align: middle;
 	}
 
@@ -359,7 +359,7 @@
 	+ label {
 		display: inline-block;
 		position: relative;
-		padding: 0 0 0 $size-checkbox-pd_left;
+		padding: 0 0 0 1.4em;
 		margin: 24px 0 0 0;
 		cursor: pointer;
 		transition: all 1s ease 0s;
@@ -371,10 +371,10 @@
 			left: 0;
 			transform: translateY(-50%);
 			background: #fff;
-			border: 1px solid map-get($my-form, "border"); /* form border */
+			border: 1px solid $form-border-color; /* form border */
 			border-radius: 2px;
-			width: $size-checkbox;
-			height: $size-checkbox;
+			width: 1em;
+			height: 1em;
 			display: block;
 		}
 
@@ -392,12 +392,12 @@
 			top: 50%;
 			left: 0;
 			transform: translateY(-50%) rotate(-45deg);
-			width: $size-checkbox;
-			height: ($size-checkbox * 0.6);
+			width: 1em;
+			height: 0.6em;
 			margin-top: -0.2em;
 			display: block;
-			border-left: 4px solid map-get($my-form, "checkbox"); /* form checkbox */
-			border-bottom: 4px solid map-get($my-form, "checkbox"); /* form checkbox */
+			border-left: 4px solid $form-check-color; /* form checkbox */
+			border-bottom: 4px solid $form-check-color; /* form checkbox */
 			opacity: 1;
 		}
 	}

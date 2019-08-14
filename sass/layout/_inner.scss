@@ -6,12 +6,12 @@
 	height: inherit;
 
 	@include mq("tab") {
-		padding-right: $pd-tab;
-		padding-left: $pd-tab;
+		padding-right: $pd-x-tab;
+		padding-left: $pd-x-tab;
 	}
 
 	@include mq("sp") {
-		padding-right: $pd-sp;
-		padding-left: $pd-sp;
+		padding-right: $pd-x-sp;
+		padding-left: $pd-x-sp;
 	}
 }

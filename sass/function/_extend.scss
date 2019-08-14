@@ -3,8 +3,8 @@
 	padding: 8px 24px;
 	margin: 0;
 	background-image: none;
-	background-color: map-get($btn, "background"); /* btn background */
-	color: map-get($btn, "color"); /* btn color */
+	background-color: $button-background; /* btn background */
+	color: $button-color; /* btn color */
 	text-decoration: none;
 	border: none;
 	border-radius: 0;

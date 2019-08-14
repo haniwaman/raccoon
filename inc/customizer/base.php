@@ -60,3 +60,22 @@ if ( ! function_exists( 'my_sanitize_image' ) ) {
 		return ( $file['ext'] ? $image : $setting->default );
 	}
 }
+
+if ( ! function_exists( 'my_sanitize_number_range' ) ) {
+
+	/**
+	 * 数字のサニタイズ
+	 *
+	 * @param [type] $number .
+	 * @param [type] $setting .
+	 * @return [type] .
+	 */
+	function my_sanitize_number_range( $number, $setting ) {
+		$number = absint( $number );
+		$atts   = $setting->manager->get_control( $setting->id )->input_attrs;
+		$min    = ( isset( $atts['min'] ) ? $atts['min'] : $number );
+		$max    = ( isset( $atts['max'] ) ? $atts['max'] : $number );
+		$step   = ( isset( $atts['step'] ) ? $atts['step'] : 1 );
+		return ( $min <= $number && $number <= $max && is_int( $number / $step ) ? $number : $setting->default );
+	}
+}

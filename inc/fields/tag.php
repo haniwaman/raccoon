@@ -20,7 +20,7 @@ if ( ! function_exists( 'my_tag_fields_edit' ) ) {
 		?>
 
 <tr class="form-field">
-	<th><label for="color">色</label></th>
+	<th><label for="color"><?php esc_html_e( '色', 'raccoon' ); ?></label></th>
 	<td>
 		<input name="my_tag_color" class="my-color-picker" type="text" value="
 		<?php
@@ -28,15 +28,15 @@ if ( ! function_exists( 'my_tag_fields_edit' ) ) {
 			echo esc_html( $tag_meta['my_tag_color'][0] );}
 		?>
 		" size="40">
-		<p class="description">タグに紐づく色です。</p>
+		<p class="description"><?php esc_html_e( 'タグに紐づく色です。', 'raccoon' ); ?></p>
 	</td>
 </tr>
 <tr class="form-field">
-	<th><label>画像</label></th>
+	<th><label><?php esc_html_e( '画像', 'raccoon' ); ?></label></th>
 	<td>
 		<div class="my-img-btns">
-			<div class="my-btn my-img-select"><span class="my-img-icon"></span>画像を選択</div>
-			<div class="my-btn my-img-clear">画像をクリア</div>
+			<div class="my-btn my-img-select"><span class="my-img-icon"></span><?php esc_html_e( '画像を選択', 'raccoon' ); ?></div>
+			<div class="my-btn my-img-clear"><?php esc_html_e( '画像をクリア', 'raccoon' ); ?></div>
 		</div><!-- /my-img-btns -->
 		<input name="my_tag_img" class="my-img-url" type="hidden" value="
 		<?php
@@ -49,7 +49,7 @@ if ( ! function_exists( 'my_tag_fields_edit' ) ) {
 				<img src="<?php echo esc_html( $tag_meta['my_tag_img'][0] ); ?>">
 			<?php endif; ?>
 		</div><!-- /my-img-show -->
-		<p class="description">タグに紐づく画像です。</p>
+		<p class="description"><?php esc_html_e( 'タグに紐づく画像です。', 'raccoon' ); ?></p>
 	</td>
 </tr>
 		<?php
@@ -71,16 +71,16 @@ if ( ! function_exists( 'my_tag_fields_set' ) ) {
 		?>
 
 <div class="form-field">
-	<label for="color">色</label>
+	<label for="color"><?php esc_html_e( '色', 'raccoon' ); ?></label>
 	<input name="my_tag_color" class="my-color-picker" type="text" value="<?php echo esc_html( $default_color ); ?>" size="40">
-	<p class="description">タグに紐づく色です。</p>
+	<p class="description"><?php esc_html_e( 'タグに紐づく色です。', 'raccoon' ); ?></p>
 </div><!-- /form-field -->
 
 <div class="form-field">
-	<label>画像</label>
+	<label><?php esc_html_e( '画像', 'raccoon' ); ?></label>
 	<div class="my-img-btns">
-		<div class="my-btn my-img-select"><span class="my-img-icon"></span>画像を選択</div>
-		<div class="my-btn my-img-clear">画像をクリア</div>
+		<div class="my-btn my-img-select"><span class="my-img-icon"></span><?php esc_html_e( '画像を選択', 'raccoon' ); ?></div>
+		<div class="my-btn my-img-clear"><?php esc_html_e( '画像をクリア', 'raccoon' ); ?></div>
 	</div><!-- /my-img-btns -->
 	<input name="my_tag_img" class="my-img-url" type="hidden" value="" size="40">
 	<div class="my-img-show">
@@ -88,7 +88,7 @@ if ( ! function_exists( 'my_tag_fields_set' ) ) {
 			<img src="<?php echo esc_html( $tag_meta['my_tag_img'][0] ); ?>">
 		<?php endif; ?>
 	</div><!-- /my-img-show -->
-	<p class="description">タグに紐づく画像です。</p>
+	<p class="description"><?php esc_html_e( 'タグに紐づく画像です。', 'raccoon' ); ?></p>
 </div><!-- /form-field -->
 		<?php
 	}

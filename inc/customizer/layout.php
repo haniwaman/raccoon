@@ -15,103 +15,38 @@ if ( ! function_exists( 'my_customize_layout' ) ) {
 	 */
 	function my_customize_layout( $wp_customize ) {
 
-		// レイアウト.
 		$wp_customize->add_panel(
 			'my_layout',
 			array(
-				'priority' => 35,
 				'title'    => __( 'レイアウト', 'raccoon' ),
+				'priority' => 35,
 			)
 		);
 
-		// 固定.
 		$wp_customize->add_section(
-			'my_layout_page',
+			'my_layout_all',
 			array(
-				'title'    => __( '固定', 'raccoon' ),
+				'title'    => __( '全体', 'raccoon' ),
 				'panel'    => 'my_layout',
-				'priority' => 20,
+				'priority' => 1,
 			)
 		);
 
-		// 固定のパターン.
-		$wp_customize->add_setting( 'my_layout_page_radio' );
+		$wp_customize->add_setting( 'my_layout_all_radio' );
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
-				'my_layout_page_radio',
+				'my_layout_all_radio',
 				array(
-					'label'    => __( '固定のパターン', 'raccoon' ),
-					'section'  => 'my_layout_page',
-					'settings' => 'my_layout_page_radio',
+					'label'    => __( 'カラム選択', 'raccoon' ),
+					'section'  => 'my_layout_all',
+					'settings' => 'my_layout_all_radio',
 					'priority' => 1,
 					'type'     => 'radio',
 					'choices'  => array(
-						'radio1' => 'レイアウト1',
-						'radio2' => 'レイアウト2',
-						'radio3' => 'レイアウト3',
-					),
-				)
-			)
-		);
-
-		// 投稿.
-		$wp_customize->add_section(
-			'my_layout_single',
-			array(
-				'title'    => __( '投稿', 'raccoon' ),
-				'panel'    => 'my_layout',
-				'priority' => 10,
-			)
-		);
-
-		// 投稿のパターン.
-		$wp_customize->add_setting( 'my_layout_single_radio' );
-		$wp_customize->add_control(
-			new WP_Customize_Control(
-				$wp_customize,
-				'my_layout_single_radio',
-				array(
-					'label'    => __( '投稿のパターン', 'raccoon' ),
-					'section'  => 'my_layout_single',
-					'settings' => 'my_layout_single_radio',
-					'priority' => 1,
-					'type'     => 'radio',
-					'choices'  => array(
-						'radio1' => 'レイアウト1',
-						'radio2' => 'レイアウト2',
-						'radio3' => 'レイアウト3',
-					),
-				)
-			)
-		);
-
-		// 一覧.
-		$wp_customize->add_section(
-			'my_layout_archive',
-			array(
-				'title'    => __( '一覧', 'raccoon' ),
-				'panel'    => 'my_layout',
-				'priority' => 20,
-			)
-		);
-
-		// 一覧のパターン.
-		$wp_customize->add_setting( 'my_layout_archive_radio' );
-		$wp_customize->add_control(
-			new WP_Customize_Control(
-				$wp_customize,
-				'my_layout_archive_radio',
-				array(
-					'label'    => __( '一覧のパターン', 'raccoon' ),
-					'section'  => 'my_layout_archive',
-					'settings' => 'my_layout_archive_radio',
-					'priority' => 1,
-					'type'     => 'radio',
-					'choices'  => array(
-						'radio1' => 'レイアウト1',
-						'radio2' => 'レイアウト2',
-						'radio3' => 'レイアウト3',
+						'radio1' => '1カラム',
+						'radio2' => '2カラム（サイドメニュー右）',
+						'radio3' => '2カラム（サイドメニュー左）',
 					),
 				)
 			)

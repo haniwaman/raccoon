@@ -10,7 +10,7 @@
 <!-- header -->
 <header class="l-header p-header">
 <div class="l-inner">
-<div class="l-row m-middle">
+<div class="l-row l-row--middle">
 
 <?php
 $logo_tag = 'div';

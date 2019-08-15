@@ -77,6 +77,35 @@ if ( ! function_exists( 'my_customize_layout' ) ) {
 				)
 			)
 		);
+
+		/* 一覧 */
+		$wp_customize->add_section(
+			'my_layout_archive',
+			array(
+				'title'    => __( '一覧', 'raccoon' ),
+				'panel'    => 'my_layout',
+				'priority' => 3,
+			)
+		);
+
+		$wp_customize->add_setting( 'my_layout_archive_check', array( 'default' => 'horizon', array( 'sanitize_callback' => 'my_sanitize_checkbox' ), ) );
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'my_layout_archive_check',
+				array(
+					'label'    => __( '一覧レイアウト', 'raccoon' ),
+					'section'  => 'my_layout_archive',
+					'settings' => 'my_layout_archive_check',
+					'priority' => 1,
+					'type'     => 'radio',
+					'choices'  => array(
+						'horizon' => '横並び',
+						'vertical' => '縦並び',
+					),
+				)
+			)
+		);
 	}
 }
 add_action( 'customize_register', 'my_customize_layout' );

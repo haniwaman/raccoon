@@ -33,7 +33,13 @@ get_header(); ?>
 	</div><!-- /p-archive-header -->
 
 	<!-- p-entry-items -->
+	<?php if ( 'horizon' === get_theme_mod( 'my_layout_archive_check' ) ) : ?>
 	<div class="p-entry-items m-square">
+	<?php elseif ( 'vertical' === get_theme_mod( 'my_layout_archive_check' ) ) : ?>
+	<div class="p-entry-items">
+	<?php else: ?>
+	<div class="p-entry-items m-square">
+	<?php endif; ?>
 		<?php
 		while ( have_posts() ) :
 			the_post();

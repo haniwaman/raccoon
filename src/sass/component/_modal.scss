@@ -1,6 +1,3 @@
-$modal-background: #fff;
-$modal-background-cover: rgba($color-key, 0.78);
-
 .c-modal {
 	z-index: map-get($layer, "modal");
 }
@@ -46,6 +43,6 @@ $modal-background-cover: rgba($color-key, 0.78);
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: $modal-background-cover;
+	background: $modal-background--cover;
 	transform: none;
 }

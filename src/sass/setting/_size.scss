@@ -1,23 +1,28 @@
 // レイアウト幅
 $layout-width-canvas: 1440px;
-$layout-width-inner: 1180px;
-$layout-width-main: 840px;
+$layout-width-container: 1080px;
 
-// 38pxは余白の幅
-$layout-width-side: $layout-width-inner - $layout-width-main - 38px;
+// ブレークポイント（PCベース）
+// $breakpoints: (
+// 	"sp": "screen and (max-width: 767px)",
+// 	"tab+sp": "screen and (min-width: 768px) and (max-width: #{$layout-width-container - 1px})",
+// 	"tab": "screen and (max-width: #{$layout-width-container - 1px})",
+// 	"pc": "screen and (min-width: #{$layout-width-container})",
+// 	"ie": "screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none)"
+// );
 
-// ブレークポイント
+// ブレークポイント（スマホベース）
 $breakpoints: (
-	"sp": "screen and (max-width: 767px)",
-	"tab-only": "(min-width: 768px) and (max-width: #{$layout-width-inner - 1px})",
-	"tab": "screen and (max-width: #{$layout-width-inner - 1px})",
-	"pc": "screen and (min-width: #{$layout-width-inner})",
-	"ie": "screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none)"
+	"sp": "(max-width: 767px)",
+	"tab-only": "(min-width: 768px) and (max-width: #{$layout-width-container - 1px})",
+	"tab": "(min-width: 768px)",
+	"pc": "(min-width: #{$layout-width-container})",
+	"ie": "(-ms-high-contrast: active), (-ms-high-contrast: none)"
 );
 
 // ヘッダー高さ
-$header-height: 80px;
-$header-height-sp: 60px;
+$header-height: 60px;
+$header-height-pc: 60px;
 
 // z-index の指定
 $layer: (
@@ -35,10 +40,16 @@ $pd-x-pc: 0;
 $pd-x-tab: 32px;
 $pd-x-sp: 24px;
 
-// ベースの余白
-$pd-entry-pc: 24px;
-$pd-entry-sp: 16px;
+// アイコン
+$icon-widht: 50px;
+$icon-height: 50px;
+$icon-font: 50px;
 
 // マーカー
 $marker-pd-x: 0.4em;
 $marker-pd-y: 1em;
+
+// ドロワー
+$drawer-bar-space: 5px;
+$drawer-bar-width: 30px;
+$drawer-bar-height: 3px;

@@ -1,11 +1,3 @@
-// ドロワー
-$drawer-bar-space: 5px;
-$drawer-bar-width: 30px;
-$drawer-bar-height: 3px;
-
-$drawer-bar-color: #757575;
-$drawer-color: #757575;
-
 .c-drawer {
 	z-index: map-get($layer, "drawer");
 }
@@ -38,7 +30,7 @@ $drawer-color: #757575;
 	&::after {
 		content: "MENU";
 		display: block;
-		color: $drawer-color;
+		color: $drawer-text-color;
 		font-size: 8px;
 		text-align: center;
 		font-weight: 700;
@@ -119,49 +111,42 @@ $drawer-color: #757575;
 	transition: all 0.5s ease 0s;
 	padding-top: $header-height;
 	text-align: left;
+	color: $color-text;
 
 	&.is-checked {
 		transform: translateX(0);
 		box-shadow: 6px 0 25px rgba(#000, 0.16);
 	}
+}
 
-	// 左から
-	&.m-left {
-		transform: translateX(-105%);
-		left: 0;
-		right: auto;
-	}
+.c-drawer__content--left {
+	transform: translateX(-105%);
+	left: 0;
+	right: auto;
+}
 
-	// 左から
-	&.m-top {
-		transform: translateY(-105%);
-		top: 0;
-		bottom: auto;
-		width: 100%;
-		height: 100%;
-		max-width: 100%;
-	}
+.c-drawer__content--top {
+	transform: translateY(-105%);
+	top: 0;
+	bottom: auto;
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+}
 
-	// 覆うように
-	&.m-cover {
-		visibility: hidden;
-		opacity: 0;
-		transform: translateX(0);
-		top: 0;
-		bottom: auto;
-		width: 100%;
-		height: 100%;
-		max-width: 100%;
-		transition: all 0.5s linear 0s;
-
-		&.is-checked {
-			visibility: visible;
-			opacity: 1;
-		}
-	}
+.c-drawer__content--cover {
+	visibility: hidden;
+	opacity: 0;
+	transform: translateX(0);
+	top: 0;
+	bottom: auto;
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+	transition: all 0.5s linear 0s;
 
 	&.is-checked {
-		transform: translateX(0);
-		box-shadow: 6px 0 25px rgba(#000, 0.16);
+		visibility: visible;
+		opacity: 1;
 	}
 }

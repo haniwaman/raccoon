@@ -1,5 +1,36 @@
-/* input[type="text"] */
-.c-text {
+// ボタン
+%button {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0.3em 1.2em;
+	margin: 0;
+	background-image: none;
+	background-color: $button-background;
+	color: $button-color;
+	text-decoration: none;
+	border: 1px solid transparent;
+	border-radius: 0;
+	font-size: 1em;
+	text-align: center;
+	-webkit-appearance: none;
+
+	&:not(:disabled) {
+		cursor: pointer;
+	}
+
+	&:hover,
+	&:focus {
+		outline: none;
+	}
+
+	&::-moz-foucus-inner {
+		padding: 0;
+		border: none;
+	}
+}
+
+// テキスト
+%text {
 	width: auto;
 	padding: 0.4em 0.8em;
 	border-radius: 0;
@@ -16,16 +47,12 @@
 	&:focus {
 		outline: none;
 		box-shadow: none;
-		border: 1px solid $form-border-color-foucs;
-	}
-
-	&.m-full {
-		width: 100%;
+		border: 1px solid $form-border-color--foucs;
 	}
 }
 
-/* textarea */
-.c-textarea {
+// テキストエリア
+%textarea {
 	width: auto;
 	height: 100px;
 	padding: 0.4em 0.8em;
@@ -44,60 +71,12 @@
 	&:focus {
 		outline: none;
 		box-shadow: none;
-		border: 1px solid $form-border-color-foucs;
-	}
-
-	&.m-resize {
-		resize: both;
-	}
-
-	&.m-full {
-		width: 100%;
+		border: 1px solid $form-border-color--foucs;
 	}
 }
 
-/* select */
-.c-select {
-	width: auto;
-	padding: 0.4em 2.4em 0.4em 0.8em;
-	border-radius: 0;
-	background-color: #fff;
-	background-image: url(../img/arrow-select.svg);
-	background-repeat: no-repeat;
-	background-size: 16px auto;
-	background-position: center right 0.2em;
-	border: 1px solid $form-border-color;
-	font-family: inherit;
-	font-size: 1em;
-	color: inherit;
-	-moz-appearance: none;
-	-webkit-appearance: none;
-	appearance: none;
-	cursor: pointer;
-
-	&::-ms-expand {
-		display: none;
-	}
-
-	&:focus {
-		outline: none;
-		border: 1px solid $form-border-color-foucs;
-		box-shadow: none;
-	}
-
-	&[multiple] {
-		height: 100px;
-		padding: 0;
-		background-image: none;
-
-		option {
-			padding: 0.4em 1.2em 0.4em 0.4em;
-		}
-	}
-}
-
-/* input[type="radio"] */
-.c-radio {
+// ラジオボタン
+%radio {
 	display: none;
 
 	+ span {
@@ -131,7 +110,7 @@
 			border-radius: 50%;
 			width: 1em;
 			height: 1em;
-			border: 1px solid $form-border-color-foucs;
+			border: 1px solid $form-border-color--foucs;
 			box-shadow: 0 0 0 0.1em #fff inset;
 			display: block;
 			opacity: 0;
@@ -144,7 +123,7 @@
 		+ span {
 
 			&::before {
-				border: 1px solid $form-border-color-foucs;
+				border: 1px solid $form-border-color--foucs;
 			}
 
 			&::after {
@@ -154,8 +133,8 @@
 	}
 }
 
-/* input[type="checkbox"] */
-.c-checkbox {
+// チェックボックス
+%checkbox {
 	display: none;
 
 	+ span {
@@ -201,7 +180,7 @@
 		+ span {
 
 			&::before {
-				border: 1px solid $form-border-color-foucs;
+				border: 1px solid $form-border-color--foucs;
 			}
 
 			&::after {
@@ -211,36 +190,42 @@
 	}
 }
 
-/* input[type="file"] */
-.c-file {
-}
-
-.c-file__label {
-	padding: 0.4em 0.8em;
-	border: 1px solid $form-border-color;
-	cursor: pointer;
-	background: #fff;
-	color: $color-text;
-	font-weight: $font-weight-base;
-	font-size: $font-size-base;
-}
-
-.c-file__input {
-	display: none;
-}
-
-.c-file__result {
-	display: none;
-	width: 100%;
-	padding: 0.4em 0;
+// セレクトボックス
+%select {
+	width: auto;
+	padding: 0.4em 2.4em 0.4em 0.8em;
 	border-radius: 0;
-	background-image: none;
-	background-color: transparent;
-	border: none;
+	background-color: #fff;
+	background-image: url(../img/arrow-bottom.png);
+	background-repeat: no-repeat;
+	background-size: 16px auto;
+	background-position: center right 0.2em;
+	border: 1px solid $form-border-color;
 	font-family: inherit;
-	font-size: 0.95em;
+	font-size: 1em;
 	color: inherit;
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	appearance: none;
+	cursor: pointer;
+
+	&::-ms-expand {
+		display: none;
+	}
+
+	&:focus {
+		outline: none;
+		border: 1px solid $form-border-color--foucs;
+		box-shadow: none;
+	}
+
+	&[multiple] {
+		height: 100px;
+		padding: 0;
+		background-image: none;
+
+		option {
+			padding: 0.4em 1.2em 0.4em 0.4em;
+		}
+	}
 }

@@ -2,7 +2,7 @@
 	margin: 0 auto;
 	padding: 0;
 	max-width: 100%;
-	width: $layout-width-inner;
+	width: $layout-width-container;
 	height: inherit;
 
 	@include mq("tab") {

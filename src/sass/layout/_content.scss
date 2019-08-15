@@ -2,7 +2,7 @@
 }
 
 #l-primary {
-	width: ($layout-width-main / $layout-width-inner) * 100%;
+	width: ($layout-width-main / $layout-width-container) * 100%;
 
 	@include mq("sp") {
 		width: 100%;
@@ -11,7 +11,7 @@
 }
 
 #l-secondary {
-	width: ($layout-width-side / $layout-width-inner) * 100%;
+	width: ($layout-width-side / $layout-width-container) * 100%;
 	margin-left: auto;
 
 	@include mq("sp") {

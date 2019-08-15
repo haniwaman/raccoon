@@ -486,16 +486,72 @@ select[multiple] option {
 	height: inherit;
 }
 
-.l-row.l-row--middle {
+.l-row--middle {
 	align-items: center;
 }
 
-.l-row.l-row--center {
+.l-row--center {
 	align-items: center;
 }
 
-.l-row .l-row--reverse {
+.l-row--reverse {
 	flex-direction: row-reverse;
+}
+
+.l-row__col {
+	padding: 0;
+}
+
+.l-row--padding .l-row__col {
+	padding: 0.8em;
+}
+
+.l-row__col01 {
+	width: 8.33333%;
+}
+
+.l-row__col02 {
+	width: 16.66667%;
+}
+
+.l-row__col03 {
+	width: 25%;
+}
+
+.l-row__col04 {
+	width: 33.33333%;
+}
+
+.l-row__col05 {
+	width: 41.66667%;
+}
+
+.l-row__col06 {
+	width: 50%;
+}
+
+.l-row__col07 {
+	width: 58.33333%;
+}
+
+.l-row__col08 {
+	width: 66.66667%;
+}
+
+.l-row__col09 {
+	width: 75%;
+}
+
+.l-row__col10 {
+	width: 83.33333%;
+}
+
+.l-row__col11 {
+	width: 91.66667%;
+}
+
+.l-row__col12 {
+	width: 100%;
 }
 
 .attachment-btn {
@@ -3328,6 +3384,54 @@ span.wpcf7-list-item {
 	padding-right: 32px;
 }
 
+.l-row__col01-tab {
+	width: 8.33333%;
+}
+
+.l-row__col02-tab {
+	width: 16.66667%;
+}
+
+.l-row__col03-tab {
+	width: 25%;
+}
+
+.l-row__col04-tab {
+	width: 33.33333%;
+}
+
+.l-row__col05-tab {
+	width: 41.66667%;
+}
+
+.l-row__col06-tab {
+	width: 50%;
+}
+
+.l-row__col07-tab {
+	width: 58.33333%;
+}
+
+.l-row__col08-tab {
+	width: 66.66667%;
+}
+
+.l-row__col09-tab {
+	width: 75%;
+}
+
+.l-row__col10-tab {
+	width: 83.33333%;
+}
+
+.l-row__col11-tab {
+	width: 91.66667%;
+}
+
+.l-row__col12-tab {
+	width: 100%;
+}
+
 }
 
 @media screen and (max-width: 767px) {
@@ -3348,6 +3452,54 @@ span.wpcf7-list-item {
 .l-inner {
 	padding-left: 24px;
 	padding-right: 24px;
+}
+
+.l-row__col01-sp {
+	width: 8.33333%;
+}
+
+.l-row__col02-sp {
+	width: 16.66667%;
+}
+
+.l-row__col03-sp {
+	width: 25%;
+}
+
+.l-row__col04-sp {
+	width: 33.33333%;
+}
+
+.l-row__col05-sp {
+	width: 41.66667%;
+}
+
+.l-row__col06-sp {
+	width: 50%;
+}
+
+.l-row__col07-sp {
+	width: 58.33333%;
+}
+
+.l-row__col08-sp {
+	width: 66.66667%;
+}
+
+.l-row__col09-sp {
+	width: 75%;
+}
+
+.l-row__col10-sp {
+	width: 83.33333%;
+}
+
+.l-row__col11-sp {
+	width: 91.66667%;
+}
+
+.l-row__col12-sp {
+	width: 100%;
 }
 
 .p-floating a {

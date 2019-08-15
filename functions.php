@@ -47,7 +47,7 @@ function my_setup() {
 	if ( ! isset( $content_width ) ) {
 		$content_width = 840; /* コンテンツ幅 */
 	}
-	load_theme_textdomain( 'raccoon', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'raccoon', get_template_directory() . '/src/languages' );
 }
 add_action( 'after_setup_theme', 'my_setup' );
 
@@ -61,14 +61,14 @@ add_action( 'after_setup_theme', 'my_setup' );
 function my_script() {
 
 	/* CSS */
-	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/lib/fontawesome/css/all.min.css', array(), '5.8.2', 'all' );
-	wp_enqueue_style( 'my', get_template_directory_uri() . '/css/style.css', array(), '1.0.1', 'all' );
+	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/src/lib/fontawesome/css/all.min.css', array(), '5.8.2', 'all' );
+	wp_enqueue_style( 'my', get_template_directory_uri() . '/src/css/style.css', array(), '1.0.1', 'all' );
 	wp_enqueue_style( 'df', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ), 'all' );
 
 	/* JavaScript */
-	wp_enqueue_script( 'stickyfill', get_template_directory_uri() . '/lib/stickyfill/stickyfill.min.js', array(), '2.1.0', true );
-	wp_enqueue_script( 'intersection-observer', get_template_directory_uri() . '/lib/intersection-observer/intersection-observer.js', array(), '2.1.0', true );
-	wp_enqueue_script( 'my', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '1.0.1', true );
+	wp_enqueue_script( 'stickyfill', get_template_directory_uri() . '/src/lib/stickyfill/stickyfill.min.js', array(), '2.1.0', true );
+	wp_enqueue_script( 'intersection-observer', get_template_directory_uri() . '/src/lib/intersection-observer/intersection-observer.js', array(), '2.1.0', true );
+	wp_enqueue_script( 'my', get_template_directory_uri() . '/src/js/script.js', array( 'jquery' ), '1.0.1', true );
 
 	/* 投稿・固定 */
 	if ( is_singular() ) {
@@ -113,8 +113,8 @@ add_action( 'wp_head', 'my_wp_head' );
  * @return void
  */
 function my_admin_script() {
-	add_editor_style( get_template_directory_uri() . '/css/admin/editor-style.css' );
-	wp_enqueue_style( 'admin', get_template_directory_uri() . '/css/admin/style.css', array(), '1.0.1', 'all' );
+	add_editor_style( get_template_directory_uri() . '/src/css/admin/editor-style.css' );
+	wp_enqueue_style( 'admin', get_template_directory_uri() . '/src/css/admin/style.css', array(), '1.0.1', 'all' );
 	wp_enqueue_media();
 	wp_enqueue_style( 'wp-color-picker' );
 	wp_enqueue_script( 'wp-color-picker' );

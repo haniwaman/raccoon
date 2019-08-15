@@ -9,7 +9,7 @@
 echo '<style>';
 
 /* First View */
-load_template( get_template_directory() . '/css/header.css' );
+load_template( get_template_directory() . '/src/css/header.css' );
 
 /* サイトの背景色 */
 if ( get_theme_mod( 'my_colors_site_background' ) ) {

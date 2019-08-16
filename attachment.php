@@ -9,7 +9,7 @@ get_header(); ?>
 
 
 
-<?php get_template_part( 'mv' ); ?>
+<?php get_template_part( 'template/mainvisual/page' ); ?>
 
 
 

@@ -13,10 +13,7 @@
 <div class="l-row l-row--middle">
 
 <?php
-$logo_tag = 'div';
-if ( is_front_page() ) {
-	$logo_tag = 'h1';
-}
+$logo_tag = is_front_page() ? 'h1' : 'div';
 ?>
 <!-- p-header-logo -->
 <<?php echo esc_attr( $logo_tag ); ?> class="p-header-logo">

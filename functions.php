@@ -47,7 +47,7 @@ function my_setup() {
 	if ( ! isset( $content_width ) ) {
 		$content_width = 840; /* コンテンツ幅 */
 	}
-	load_theme_textdomain( 'raccoon', get_template_directory() . '/src/languages' );
+	load_theme_textdomain( 'raccoon', get_template_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'my_setup' );
 

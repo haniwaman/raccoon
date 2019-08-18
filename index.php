@@ -9,7 +9,7 @@ get_header(); ?>
 
 
 
-<?php get_template_part( 'template/mainvisual/index' ); ?>
+<?php get_template_part( 'template/mainvisual/page' ); // get_template_part( 'template/mainvisual/index' ); ?>
 
 
 
@@ -27,9 +27,9 @@ get_header(); ?>
 	<!-- p-archive-header -->
 	<div class="p-archive-header">
 		<?php my_breadcrumb(); ?>
-		<h1 class="archive-title"><?php the_archive_title(); ?></h1><!-- /archive-title -->
-		<div class="archive-description"><?php the_archive_description(); ?></div><!-- /archive-description -->
-		<?php get_search_form(); ?>
+		<h1 class="e-title"><?php the_archive_title(); ?></h1><!-- /e-title -->
+		<div class="e-description"><?php the_archive_description(); ?></div><!-- /e-description -->
+		<div class="e-form"><?php get_search_form(); ?><!-- /e-form -->
 	</div><!-- /p-archive-header -->
 
 	<!-- p-entry-items -->

@@ -5,11 +5,6 @@
 	margin-bottom: 48px;
 	text-align: center;
 
-	.p-search-form {
-		margin-top: 32px;
-		text-align: left;
-	}
-
 	> .e-title {
 		font-size: 32px;
 		margin-bottom: 8px;
@@ -20,20 +15,9 @@
 		font-size: 14px;
 		color: #666;
 	}
-}
 
-.four04-content {
-	text-align: center;
-	margin-bottom: 36px;
-
-	p {
-
-		&:first-child {
-			margin-top: 0;
-		}
+	> .e-form {
+		margin-top: 32px;
+		text-align: left;
 	}
-}
-
-.four04-link {
-	text-align: center;
 }

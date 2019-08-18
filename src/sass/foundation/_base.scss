@@ -181,6 +181,10 @@ select {
 input:not([type="file"]) {
 
 	@extend %text;
+
+	&.m-full {
+		width: 100%;
+	}
 }
 
 textarea {

@@ -26,17 +26,17 @@ get_header(); ?>
 	<?php my_breadcrumb(); ?>
 	<h1 class="e-title">404</h1><!-- /e-title -->
 	<div class="e-description"><p><?php esc_html_e( 'コンテンツが存在しません。', 'raccoon' ); ?></p></div><!-- /e-description -->
-	<?php get_search_form(); ?>
+	<div class="e-form"><?php get_search_form(); ?><!-- /e-form -->
 </div><!-- /p-archive-header -->
 
 <!-- p-entry -->
-<article <?php post_class( array( 'p-entry' ) ); ?>>
+<article <?php post_class( 'p-notfound' ); ?>>
 
-<!-- e-body -->
-<div class="ee-body four04-content">
-	<p><?php esc_html_e( '申し訳ございません。コンテンツが存在しません。', 'raccoon' ); ?></p>
-</div><!-- /e-body -->
-<div class="four04-link"><a class="c-btn" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'トップへ戻る', 'raccoon' ); ?></a></div>
+	<!-- e-body -->
+	<div class="e-body">
+		<p><?php esc_html_e( '申し訳ございません。コンテンツが存在しません。', 'raccoon' ); ?></p>
+	</div><!-- /e-body -->
+	<div class="e-link"><a class="c-btn" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'トップへ戻る', 'raccoon' ); ?></a></div>
 
 </article><!-- /p-entry -->
 

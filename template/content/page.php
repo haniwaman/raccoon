@@ -35,7 +35,8 @@
 
 	<?php $rc_heading = get_theme_mod( 'my_parts_heading_select' ) ? 'rc-' . get_theme_mod( 'my_parts_heading_select' ) : ''; ?>
 	<!-- e-body -->
-	<div class="e-body <?php echo esc_attr( $rc_heading ); ?>">
+	<div class="e-body">
+		<div class="p-entry-content <?php echo esc_attr( $rc_heading ); ?>">
 		<?php the_content(); ?>
 		<?php
 		wp_link_pages(
@@ -49,6 +50,7 @@
 			)
 		);
 		?>
+		</div><!-- /p-entry-content -->
 	</div><!-- /e-body -->
 
 </article><!-- /p-entry -->

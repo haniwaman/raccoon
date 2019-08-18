@@ -7,7 +7,7 @@
 
 ?>
 
-<?php if ( 'select1' === get_theme_mod( 'my_parts_sns_select_type' ) ) : ?>
+<?php if ( 'select01' === get_theme_mod( 'my_parts_sns_select_type' ) ) : ?>
 
 <!-- p-sns-buttons -->
 <nav class="p-sns-buttons">
@@ -33,7 +33,7 @@
 	</ul>
 </nav><!-- /p-sns-buttons -->
 
-<?php elseif ( 'select2' === get_theme_mod( 'my_parts_sns_select_type' ) ) : ?>
+<?php elseif ( 'select02' === get_theme_mod( 'my_parts_sns_select_type' ) ) : ?>
 
 <!-- p-sns-buttons-org -->
 <nav class="p-sns-buttons-org">

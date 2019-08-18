@@ -260,7 +260,7 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 		$wp_customize->add_setting(
 			'my_parts_sns_select_type',
 			array(
-				'default' => 'select1',
+				'default' => 'select01',
 				array( 'sanitize_callback' => 'my_sanitize_select' ),
 			)
 		);
@@ -274,8 +274,8 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 					'settings' => 'my_parts_sns_select_type',
 					'type'     => 'select',
 					'choices'  => array(
-						'select1' => 'オリジナル',
-						'select2' => '公式',
+						'select01' => 'オリジナル',
+						'select02' => '公式',
 					),
 				)
 			)
@@ -284,7 +284,7 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 		$wp_customize->add_setting(
 			'my_parts_sns_select_place',
 			array(
-				'default' => 'select2',
+				'default' => 'select02',
 				array( 'sanitize_callback' => 'my_sanitize_select' ),
 			)
 		);
@@ -298,9 +298,9 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 					'settings' => 'my_parts_sns_select_place',
 					'type'     => 'select',
 					'choices'  => array(
-						'select1' => 'コンテンツ上',
-						'select2' => 'コンテンツ下',
-						'select3' => 'コンテンツ上下',
+						'select01' => 'コンテンツ上',
+						'select02' => 'コンテンツ下',
+						'select03' => 'コンテンツ上下',
 						'select4' => '表示しない',
 					),
 				)

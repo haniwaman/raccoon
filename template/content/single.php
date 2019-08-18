@@ -10,7 +10,6 @@
 <!-- p-entry -->
 <article <?php post_class( array( 'p-entry' ) ); ?>>
 
-	<!-- e-header -->
 	<div class="e-header">
 		<?php my_breadcrumb(); ?>
 		<h1 class="e-title"><?php the_title(); ?></h1><!-- /e-title -->
@@ -24,7 +23,7 @@
 			<?php endif; ?>
 		</div><!-- /e-meta -->
 
-		<?php if ( 'select1' === get_theme_mod( 'my_parts_sns_select_place' ) || 'select3' === get_theme_mod( 'my_parts_sns_select_place' ) ) : ?>
+		<?php if ( 'select01' === get_theme_mod( 'my_parts_sns_select_place' ) || 'select03' === get_theme_mod( 'my_parts_sns_select_place' ) ) : ?>
 			<?php get_template_part( 'parts/sns' ); ?>
 		<?php endif; ?>
 
@@ -39,8 +38,8 @@
 	</div><!-- /e-header -->
 
 	<?php $rc_heading = get_theme_mod( 'my_parts_heading_select' ) ? 'rc-' . get_theme_mod( 'my_parts_heading_select' ) : ''; ?>
-	<!-- e-body -->
-	<div class="e-body <?php echo esc_attr( $rc_heading ); ?>">
+	<div class="e-body">
+		<div class="p-entry-content <?php echo esc_attr( $rc_heading ); ?>">
 		<?php the_content(); ?>
 		<?php
 		wp_link_pages(
@@ -54,13 +53,14 @@
 			)
 		);
 		?>
+		</div><!-- /p-entry-content -->
 	</div><!-- /e-body -->
 
 		<?php my_the_post_tags(); ?>
 
 		<?php get_template_part( 'parts/likebox' ); ?>
 
-		<?php if ( 'select2' === get_theme_mod( 'my_parts_sns_select_place' ) || 'select3' === get_theme_mod( 'my_parts_sns_select_place' ) ) : ?>
+		<?php if ( 'select02' === get_theme_mod( 'my_parts_sns_select_place' ) || 'select03' === get_theme_mod( 'my_parts_sns_select_place' ) ) : ?>
 			<?php get_template_part( 'parts/sns' ); ?>
 		<?php endif; ?>
 

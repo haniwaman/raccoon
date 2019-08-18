@@ -72,7 +72,7 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 		$wp_customize->add_setting(
 			'my_parts_likebox_check',
 			array(
-				'default' => true,
+				'default' => false,
 				array( 'sanitize_callback' => 'my_sanitize_checkbox' ),
 			)
 		);
@@ -284,7 +284,7 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 		$wp_customize->add_setting(
 			'my_parts_sns_select_place',
 			array(
-				'default' => 'select02',
+				'default' => 'select04',
 				array( 'sanitize_callback' => 'my_sanitize_select' ),
 			)
 		);
@@ -301,7 +301,7 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 						'select01' => 'コンテンツ上',
 						'select02' => 'コンテンツ下',
 						'select03' => 'コンテンツ上下',
-						'select4' => '表示しない',
+						'select04' => '表示しない',
 					),
 				)
 			)
@@ -321,7 +321,7 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 		$wp_customize->add_setting(
 			'my_parts_relation_check',
 			array(
-				'default' => true,
+				'default' => false,
 				array( 'sanitize_callback' => 'my_sanitize_checkbox' ),
 			)
 		);

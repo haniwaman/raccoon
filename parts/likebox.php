@@ -5,19 +5,20 @@
  * @package WordPress
  */
 
-$post_thumbnail_id = get_post_thumbnail_id();
-$facebook_url      = 'https://developers.facebook.com/docs/plugins/';
-if ( get_theme_mod( 'my_parts_likebox_url' ) ) {
-	$facebook_url = get_theme_mod( 'my_parts_likebox_url' );
-}
-$facebook_txt = 'このページが役に立ったら<br>いいね！お願いします';
-if ( get_theme_mod( 'my_parts_likebox_txt' ) ) {
-	$facebook_txt = nl2br( get_theme_mod( 'my_parts_likebox_txt' ) );
-}
-$facebook_check = get_theme_mod( 'my_parts_likebox_check' );
-?>
+if ( get_theme_mod( 'my_parts_likebox_url' ) ) : ?>
 
-<?php if ( $facebook_check ) : ?>
+	<?php
+	$post_thumbnail_id = get_post_thumbnail_id();
+	$facebook_url      = 'https://developers.facebook.com/docs/plugins/';
+	$facebook_url      = get_theme_mod( 'my_parts_likebox_url' );
+	$facebook_txt      = 'このページが役に立ったら<br>いいね！お願いします';
+	if ( get_theme_mod( 'my_parts_likebox_txt' ) ) {
+		$facebook_txt = nl2br( get_theme_mod( 'my_parts_likebox_txt' ) );
+	}
+	$facebook_check = get_theme_mod( 'my_parts_likebox_check' );
+	?>
+
+	<?php if ( $facebook_check ) : ?>
 
 <!-- p-likebox -->
 <div class="p-likebox">
@@ -30,4 +31,5 @@ $facebook_check = get_theme_mod( 'my_parts_likebox_check' );
 	</div><!-- /e-body -->
 </div><!-- /p-likebox -->
 
+<?php endif; ?>
 <?php endif; ?>

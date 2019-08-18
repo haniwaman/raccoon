@@ -1,14 +1,25 @@
-.comments {
+.p-comments {
+
+	> .e-title {
+		font-size: 20px;
+		font-weight: 700;
+		margin: 42px 0 24px;
+	}
+
+	> .e-list {
+		margin-bottom: 32px;
+	}
+
+	> .e-nav {
+		margin-top: 32px;
+	}
+
+	> .e-form {
+		margin-top: 60px;
+	}
 }
 
-.comments-title {
-	font-size: 20px;
-	font-weight: 700;
-	margin: 42px 0 24px;
-}
-
-.comments-list {
-	margin-bottom: 32px;
+.p-comments-list {
 
 	li {
 		margin-bottom: 24px;
@@ -18,85 +29,85 @@
 		margin-top: 24px;
 		padding-left: 12px;
 	}
-}
 
-.comment-body {
+	.comment-body {
 
-	.reply {
-		font-size: 14px;
-		text-align: right;
-		transition: all 0.3s ease 0s;
-
-		&:hover {
-			opacity: $opacity; /* opacity */
-		}
-
-		&::before {
-			content: "\f3e5";
-			font-family: $font-family-awesome;
-			font-weight: 900;
-			margin-right: 6px;
-		}
-	}
-}
-
-.comment-meta {
-	display: flex;
-	align-items: center;
-	margin-bottom: 8px;
-
-	.bypostauthor & {
-		flex-direction: row-reverse;
-	}
-}
-
-.comment-author {
-	margin-right: auto;
-
-	.bypostauthor & {
-		margin-right: 0;
-		margin-left: auto;
-	}
-
-	img {
-		margin-right: 4px;
-		vertical-align: middle;
-		border-radius: 50%;
-	}
-
-	.fn {
-		vertical-align: middle;
-		font-size: 14px;
-
-		a {
+		.reply {
+			font-size: 14px;
+			text-align: right;
 			transition: all 0.3s ease 0s;
 
 			&:hover {
 				opacity: $opacity; /* opacity */
 			}
+
+			&::before {
+				content: "\f3e5";
+				font-family: $font-family-awesome;
+				font-weight: 900;
+				margin-right: 6px;
+			}
 		}
 	}
 
-	.says {
+	.comment-meta {
+		display: flex;
+		align-items: center;
+		margin-bottom: 8px;
+
+		.bypostauthor & {
+			flex-direction: row-reverse;
+		}
+	}
+
+	.comment-author {
+		margin-right: auto;
+
+		.bypostauthor & {
+			margin-right: 0;
+			margin-left: auto;
+		}
+
+		img {
+			margin-right: 4px;
+			vertical-align: middle;
+			border-radius: 50%;
+		}
+
+		.fn {
+			vertical-align: middle;
+			font-size: 14px;
+
+			a {
+				transition: all 0.3s ease 0s;
+
+				&:hover {
+					opacity: $opacity; /* opacity */
+				}
+			}
+		}
+
+		.says {
+			font-size: 12px;
+			color: #666;
+			vertical-align: middle;
+		}
+	}
+
+	.comment-metadata {
 		font-size: 12px;
 		color: #666;
-		vertical-align: middle;
 	}
 }
 
-.comment-metadata {
-	font-size: 12px;
-	color: #666;
-}
-
-.comments-nav {
-	margin-top: 32px;
+.p-comments-nav {
 
 	ul {
 		display: flex;
 	}
 
-	li {
+	.e-prev,
+	.e-next {
 		margin-right: auto;
 
 		&:last-child {
@@ -112,30 +123,30 @@
 				opacity: $opacity; /* opacity */
 			}
 		}
+	}
 
-		&.comments-prev {
+	.e-prev {
 
-			a {
+		a {
 
-				&::before {
-					content: "\f053";
-					font-family: $font-family-awesome;
-					font-weight: 900;
-					margin-right: 6px;
-				}
+			&::before {
+				content: "\f053";
+				font-family: $font-family-awesome;
+				font-weight: 900;
+				margin-right: 6px;
 			}
 		}
+	}
 
-		&.comments-next {
+	.e-next {
 
-			a {
+		a {
 
-				&::after {
-					content: "\f054";
-					font-family: $font-family-awesome;
-					font-weight: 900;
-					margin-left: 6px;
-				}
+			&::after {
+				content: "\f054";
+				font-family: $font-family-awesome;
+				font-weight: 900;
+				margin-left: 6px;
 			}
 		}
 	}
@@ -307,7 +318,6 @@
 }
 
 .comment-respond {
-	margin-top: 60px;
 
 	.required {
 		color: $form-color-required; /* cr-required */

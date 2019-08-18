@@ -3419,6 +3419,27 @@ span.wpcf7-list-item {
 	font-size: 14px;
 }
 
+.p-entry-tags {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.p-entry-tags > .e-link {
+	margin: 0 6px 6px 0;
+}
+
+.p-entry-tags > .e-link a {
+	background: #eee;
+	border-radius: 2px;
+	color: #333;
+	display: block;
+	font-size: 12px;
+	padding: 2px 6px;
+	text-decoration: none;
+	transition: all 0.3s ease 0s;
+}
+
 .p-copy {
 	color: #fff;
 	font-size: 13px;
@@ -4642,6 +4663,10 @@ span.wpcf7-list-item {
 .l-inner {
 	padding-left: 0;
 	padding-right: 0;
+}
+
+.p-entry-tags > .e-link a:hover {
+	opacity: 0.6;
 }
 
 .u-hidden-pc {

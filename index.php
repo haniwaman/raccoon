@@ -11,8 +11,6 @@ get_header(); ?>
 
 <?php get_template_part( 'template/mainvisual/page' ); // get_template_part( 'template/mainvisual/index' ); ?>
 
-
-
 <!-- l-content -->
 <div class="l-content p-content">
 <div class="l-inner">
@@ -53,7 +51,6 @@ get_header(); ?>
 		</div><!-- /p-entry-items -->
 
 		<?php if ( paginate_links() ) : ?>
-		<!-- p-pagenation -->
 		<div class="p-pagenation">
 			<?php
 			echo wp_kses_post(

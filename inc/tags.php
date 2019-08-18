@@ -105,11 +105,11 @@ if ( ! function_exists( 'my_the_post_tags' ) ) {
 		if ( $this_tags ) {
 			$i             = 0;
 			$this_tags_num = count( $this_tags );
-			echo '<div class="entry-tags">';
+			echo '<div class="p-entry-tags">';
 			for ( $i; $i < $this_tags_num; $i++ ) {
-				echo '<div class="entry-tag"><a href="' . esc_url( $this_tags[ $i ]['link'] ) . '">' . esc_html( $this_tags[ $i ]['name'] ) . '</a></div><!-- /entry-tag -->';
+				echo '<div class="e-link"><a href="' . esc_url( $this_tags[ $i ]['link'] ) . '">' . esc_html( $this_tags[ $i ]['name'] ) . '</a></div><!-- /e-link -->';
 			}
-			echo '</div><!-- /entry-tags -->';
+			echo '</div><!-- /p-entry-tags -->';
 		}
 	}
 }
@@ -125,7 +125,10 @@ if ( ! function_exists( 'my_get_post_terms' ) ) {
 	function my_get_post_terms( $taxonomy ) {
 		$this_terms = array();
 		$terms      = get_the_terms( get_the_ID(), $taxonomy );
-		$term_num   = count( $terms );
+		if ( ! $terms ) {
+			return $this_terms;
+		}
+		$term_num = count( $terms );
 		for ( $i = 0; $i < $term_num; $i++ ) {
 			$this_terms[ $i ]['id']   = $terms[ $i ]->term_id;
 			$this_terms[ $i ]['name'] = $terms[ $i ]->name;
@@ -142,11 +145,16 @@ if ( ! function_exists( 'my_the_post_term' ) ) {
 	 * タームを1つだけ表示
 	 *
 	 * @param string $taxonomy タクソノミーのスラッグ名.
+	 * @param string $anchor aタグで出力するかどうか.
 	 */
-	function my_the_post_term( $taxonomy ) {
+	function my_the_post_term( $taxonomy, $anchor = false ) {
 		$this_terms = my_get_post_terms( $taxonomy );
 		if ( isset( $this_terms[0] ) ) {
-			echo '<div class="shopnews-tag m_' . esc_attr( $this_terms[0]['slug'] ) . '">' . esc_html( $this_terms[0]['name'] ) . '</div>';
+			if ( $anchor ) {
+				echo '<a href="' . esc_attr( $this_terms[0]['link'] ) . '" class="m-' . esc_attr( $taxonomy ) . ' m-' . esc_attr( $this_terms[0]['slug'] ) . '">' . esc_html( $this_terms[0]['name'] ) . '</a>';
+			} else {
+				echo '<span class="m-' . esc_attr( $taxonomy ) . ' m-' . esc_attr( $this_terms[0]['slug'] ) . '">' . esc_html( $this_terms[0]['name'] ) . '</span>';
+			}
 		}
 	}
 }

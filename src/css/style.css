@@ -3629,25 +3629,6 @@ span.wpcf7-list-item {
 	color: #efa336; /* $color-key */
 }
 
-.p-infomation {
-	background: #efa336; /* infomation background */
-}
-
-.p-infomation a {
-	color: #fff;
-	display: block;
-	font-size: 14px;
-	font-weight: 700;
-	padding: 8px 0;
-	text-align: center;
-	text-decoration: none;
-	transition: all 0.3s ease 0s;
-}
-
-.p-infomation a:hover {
-	opacity: 0.6;
-}
-
 .p-likebox {
 	background: #2d2d2d;
 	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.16);

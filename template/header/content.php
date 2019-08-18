@@ -47,7 +47,3 @@ wp_nav_menu(
 </div><!-- /l-row -->
 </div><!-- /l-inner -->
 </header><!-- /header -->
-
-
-
-<?php get_template_part( 'parts/infomation' ); ?>

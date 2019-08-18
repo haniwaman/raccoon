@@ -28,8 +28,8 @@ jQuery(function() {
 		var target = jQuery("#" == id ? "html" : id);
 		var position = jQuery(target).offset().top - header;
 
-		if ("fixed" === jQuery("#header").css("position")) {
-			header = jQuery("#header").height();
+		if ("fixed" === jQuery(".l-header").css("position")) {
+			header = jQuery(".l-header").height();
 			position = position - header;
 		}
 		if (0 > position) {

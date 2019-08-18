@@ -13,13 +13,13 @@ get_header(); ?>
 
 
 
-<!-- content -->
-<div id="content">
+<!-- l-content -->
+<div class="l-content p-content">
 <div class="l-inner">
 <div class="l-row">
 
 <!-- l-primary -->
-<main id="l-primary">
+<main class="l-primary">
 
 <?php
 if ( have_posts() ) :
@@ -42,7 +42,7 @@ endif;
 
 </div><!-- /l-row -->
 </div><!-- /l-inner -->
-</div><!-- /content -->
+</div><!-- /l-content -->
 
 
 <?php get_footer(); ?>

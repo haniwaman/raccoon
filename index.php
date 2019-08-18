@@ -14,12 +14,12 @@ get_header(); ?>
 
 
 <!-- l-content -->
-<div id="l-content">
+<div class="l-content p-content">
 <div class="l-inner">
 <div class="l-row">
 
 <!-- l-primary -->
-<main id="l-primary">
+<main class="l-primary">
 
 	<?php
 	if ( have_posts() ) :
@@ -29,7 +29,7 @@ get_header(); ?>
 		<?php my_breadcrumb(); ?>
 		<h1 class="e-title"><?php the_archive_title(); ?></h1><!-- /e-title -->
 		<div class="e-description"><?php the_archive_description(); ?></div><!-- /e-description -->
-		<div class="e-form"><?php get_search_form(); ?><!-- /e-form -->
+		<div class="e-form"><?php get_search_form(); ?></div><!-- /e-form -->
 	</div><!-- /p-archive-header -->
 
 	<!-- p-entry-items -->

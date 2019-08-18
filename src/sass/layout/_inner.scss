@@ -1,6 +1,6 @@
 .l-inner {
 	margin: 0 auto;
-	padding: 0;
+	padding: 0 $pd-x-sp;
 	max-width: 100%;
 	width: $layout-width-container;
 	height: inherit;
@@ -10,8 +10,8 @@
 		padding-left: $pd-x-tab;
 	}
 
-	@include mq("sp") {
-		padding-right: $pd-x-sp;
-		padding-left: $pd-x-sp;
+	@include mq("pc") {
+		padding-right: 0;
+		padding-left: 0;
 	}
 }

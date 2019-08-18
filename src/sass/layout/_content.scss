@@ -1,7 +1,9 @@
-#l-content {
+.l-content {
+	padding: 0;
+	width: 100%;
 }
 
-#l-primary {
+.l-primary {
 	width: ($layout-width-main / $layout-width-container) * 100%;
 
 	@include mq("sp") {
@@ -10,7 +12,7 @@
 	}
 }
 
-#l-secondary {
+.l-secondary {
 	width: ($layout-width-side / $layout-width-container) * 100%;
 	margin-left: auto;
 

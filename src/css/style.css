@@ -448,11 +448,16 @@ input:not([type="file"]).m-full {
 	cursor: pointer;
 }
 
-#l-primary {
+.l-content {
+	padding: 0;
+	width: 100%;
+}
+
+.l-primary {
 	width: 71.18644%;
 }
 
-#l-secondary {
+.l-secondary {
 	margin-left: auto;
 	width: 25.59322%;
 }
@@ -465,7 +470,7 @@ input:not([type="file"]).m-full {
 
 .l-header {
 	background: #fff;
-	height: 60px;
+	height: auto;
 	width: 100%;
 	z-index: 20;
 }
@@ -480,7 +485,7 @@ input:not([type="file"]).m-full {
 	height: inherit;
 	margin: 0 auto;
 	max-width: 100%;
-	padding: 0;
+	padding: 0 24px;
 	width: 1180px;
 }
 
@@ -999,7 +1004,7 @@ input:not([type="file"]).m-full {
 	left: auto;
 	max-width: 90%;
 	overflow: auto;
-	padding-top: 60px;
+	padding-top: auto;
 	position: fixed;
 	right: 0;
 	text-align: left;
@@ -2813,6 +2818,10 @@ span.wpcf7-list-item {
 	margin: 0;
 }
 
+.p-content {
+	padding: 60px 0;
+}
+
 .p-drawer-nav li a {
 	display: block;
 	font-size: 16px;
@@ -3449,8 +3458,13 @@ span.wpcf7-list-item {
 	opacity: 0.6; /* opacity */
 }
 
-.p-header-logo {
+.p-header .e-logo {
 	margin-right: auto;
+	padding-right: 12px;
+}
+
+.p-header .e-drawer {
+	display: none;
 }
 
 .p-header-logo a {
@@ -3466,7 +3480,7 @@ span.wpcf7-list-item {
 }
 
 .p-header-logo img {
-	max-height: 60px;
+	max-height: auto;
 	vertical-align: middle;
 	width: auto;
 }
@@ -3812,7 +3826,7 @@ span.wpcf7-list-item {
 	text-align: center;
 }
 
-#p-sidebar-fixed {
+.p-sidebar-fixed {
 	position: -webkit-sticky;
 	position: sticky;
 	top: 32px;
@@ -4625,6 +4639,11 @@ span.wpcf7-list-item {
 
 @media (min-width: 1080px) {
 
+.l-inner {
+	padding-left: 0;
+	padding-right: 0;
+}
+
 .u-hidden-pc {
 	display: none;
 }
@@ -4633,22 +4652,17 @@ span.wpcf7-list-item {
 
 @media (max-width: 767px) {
 
-#l-primary {
+.l-primary {
 	margin-bottom: 32px;
 	width: 100%;
 }
 
-#l-secondary {
+.l-secondary {
 	width: 100%;
 }
 
 .l-header {
 	height: 60px;
-}
-
-.l-inner {
-	padding-left: 24px;
-	padding-right: 24px;
 }
 
 .l-row__col01-sp {
@@ -4774,12 +4788,20 @@ span.wpcf7-list-item {
 	width: 38px;
 }
 
-.p-header-logo img {
-	max-height: 60px;
+.p-header .e-logo {
+	padding-right: 0;
 }
 
-.p-header-nav {
+.p-header .e-global {
 	display: none;
+}
+
+.p-header .e-drawer {
+	display: block;
+}
+
+.p-header-logo img {
+	max-height: 60px;
 }
 
 .p-likebox {

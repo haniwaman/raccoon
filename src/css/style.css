@@ -2082,6 +2082,10 @@ input:not([type="file"]).m-full {
 	height: 700px;
 }
 
+.c-mainvisual--low {
+	height: 300px;
+}
+
 .c-mainvisual--hero {
 	height: 100vh;
 	min-height: initial;
@@ -2888,21 +2892,21 @@ span.wpcf7-list-item {
 	margin-bottom: 0;
 }
 
-.p-entry-item .e-img {
+.p-entry-item > .e-img {
 	padding: 0 12px;
 	text-align: center;
 	width: 30%;
 }
 
-.p-entry-item .e-img a {
+.p-entry-item > .e-img a {
 	transition: all 0.3s ease 0s;
 }
 
-.p-entry-item .e-img a:hover {
+.p-entry-item > .e-img a:hover {
 	opacity: 0.6; /* opacity */
 }
 
-.p-entry-item .e-body {
+.p-entry-item > .e-body {
 	padding: 0 12px;
 	width: 70%;
 }
@@ -2914,26 +2918,26 @@ span.wpcf7-list-item {
 	margin-bottom: 8px;
 }
 
-.p-entry-item .e-published {
+.p-entry-item .e-meta > .e-published {
 	color: #666;
 	font-size: 12px;
 	margin-left: auto;
 	white-space: nowrap;
 }
 
-.p-entry-item .e-published::before {
+.p-entry-item .e-meta > .e-published::before {
 	content: "\f073";
 	font-family: "Font Awesome 5 Free", sans-serif;
 	font-weight: 400;
 	margin-right: 6px;
 }
 
-.p-entry-item .e-label {
+.p-entry-item .e-meta > .e-label {
 	white-space: nowrap;
 }
 
-.p-entry-item .e-label a,
-.p-entry-item .e-label span {
+.p-entry-item .e-meta > .e-label a,
+.p-entry-item .e-meta > .e-label span {
 	background: #333;
 	border-radius: 2px;
 	color: #fff;
@@ -2943,11 +2947,11 @@ span.wpcf7-list-item {
 	transition: all 0.3s ease 0s;
 }
 
-.p-entry-item .e-label a {
+.p-entry-item .e-meta > .e-label a {
 	text-decoration: none;
 }
 
-.p-entry-item .e-label a:hover {
+.p-entry-item .e-meta > .e-label a:hover {
 	opacity: 0.6; /* opacity */
 }
 
@@ -3013,12 +3017,12 @@ span.wpcf7-list-item {
 	margin-right: 0;
 }
 
-.m-square .p-entry-item .e-img {
+.m-square .p-entry-item > .e-img {
 	padding: 0;
 	width: 100%;
 }
 
-.m-square .p-entry-item .e-body {
+.m-square .p-entry-item > .e-body {
 	padding: 12px 0 0;
 	width: 100%;
 }
@@ -4742,12 +4746,12 @@ span.wpcf7-list-item {
 	padding-top: 12px;
 }
 
-.p-entry-item .e-img {
+.p-entry-item > .e-img {
 	padding: 0;
 	width: 100%;
 }
 
-.p-entry-item .e-body {
+.p-entry-item > .e-body {
 	padding: 12px 0 0;
 	width: 100%;
 }

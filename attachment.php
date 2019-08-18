@@ -47,7 +47,7 @@ get_header(); ?>
 				<audio src="<?php echo esc_url( wp_get_attachment_url( get_the_ID() ) ); ?>" controls></audio>
 			<?php else : ?>
 				<div class="attachment-btn">
-					<a class="c-btn" href="<?php echo esc_url( wp_get_attachment_url( get_the_ID() ) ); ?>" rel="noopener" target="_blank">この添付のURL</a>
+					<a class="c-button" href="<?php echo esc_url( wp_get_attachment_url( get_the_ID() ) ); ?>" rel="noopener" target="_blank">この添付のURL</a>
 				</div><!-- /attachment-btn -->
 			<?php endif; ?>
 				<figcaption class="e-caption"><?php the_excerpt(); ?></figcaption>

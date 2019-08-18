@@ -23,6 +23,7 @@
 	?>
 
 	<?php if ( $relation_query->have_posts() ) : ?>
+<div class="e-items">
 <!-- p-relation-items -->
 <div class="p-relation-items">
 		<?php while ( $relation_query->have_posts() ) : ?>
@@ -52,11 +53,12 @@
 
 	<?php endwhile; ?>
 </div><!-- /p-relation-items -->
+</div><!-- /e-items -->
 	<?php endif; ?>
 	<?php wp_reset_postdata(); ?>
 
 <div class="e-btn">
-	<a class="c-btn" href="<?php echo esc_url( get_category_link( get_the_category()[0]->cat_ID ) ); ?>">同じカテゴリーの一覧を見る</a>
+	<a class="c-button" href="<?php echo esc_url( get_category_link( get_the_category()[0]->cat_ID ) ); ?>">同じカテゴリーの一覧を見る</a>
 </div><!-- /e-btn -->
 
 </div><!-- /p-relation -->

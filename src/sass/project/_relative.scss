@@ -33,13 +33,21 @@
 			}
 		}
 	}
+
+	> .e-items {
+	}
+
+	> .e-btn {
+		text-align: center;
+		margin-top: 24px;
+	}
 }
 
 .p-relation-items {
 	display: flex;
 	flex-wrap: wrap;
 
-	.e-item {
+	> .e-item {
 		width: calc(25% - 12px * 3 / 4);
 		margin-right: 12px;
 		margin-bottom: 12px;
@@ -83,11 +91,6 @@
 						opacity: $opacity; /* opacity */
 					}
 				}
-			}
-
-			> .e-btn {
-				text-align: center;
-				margin-top: 24px;
 			}
 		}
 	}

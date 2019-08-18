@@ -34,7 +34,7 @@ get_header(); ?>
 	<div class="e-body">
 		<p><?php esc_html_e( '申し訳ございません。コンテンツが存在しません。', 'raccoon' ); ?></p>
 	</div><!-- /e-body -->
-	<div class="e-link"><a class="c-btn" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'トップへ戻る', 'raccoon' ); ?></a></div>
+	<div class="e-link"><a class="c-button" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'トップへ戻る', 'raccoon' ); ?></a></div>
 
 </article><!-- /p-entry -->
 

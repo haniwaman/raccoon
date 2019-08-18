@@ -29,10 +29,8 @@ get_header(); ?>
 	<div class="e-form"><?php get_search_form(); ?></div><!-- /e-form -->
 </div><!-- /p-archive-header -->
 
-<!-- p-entry -->
 <article <?php post_class( 'p-notfound' ); ?>>
 
-	<!-- e-body -->
 	<div class="e-body">
 		<p><?php esc_html_e( '申し訳ございません。コンテンツが存在しません。', 'raccoon' ); ?></p>
 	</div><!-- /e-body -->

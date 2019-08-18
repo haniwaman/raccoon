@@ -45,8 +45,9 @@ if ( ! function_exists( 'my_breadcrumb' ) ) {
 				$this_categories = my_get_post_categories( get_the_ID() );
 				$thie_parents    = get_ancestors( $this_categories[0]['id'], 'category' );
 				if ( $thie_parents ) {
-					$thie_parents = array_reverse( $thie_parents );
-					for ( $i = 0; $i < count( $thie_parents ); $i++ ) {
+					$thie_parents       = array_reverse( $thie_parents );
+					$thie_parents_count = count( $thie_parents );
+					for ( $i = 0; $i < $thie_parents_count; $i++ ) {
 						$this_parent_category = get_category( $thie_parents[ $i ] );
 						$breadcrumb_html     .= '<li><a href="' . get_category_link( $this_parent_category->term_id ) . '">' . $this_parent_category->cat_name . '</a></li>' . $breadcrumb_bridge_tag;
 					}

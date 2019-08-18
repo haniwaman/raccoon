@@ -3564,7 +3564,7 @@ span.wpcf7-list-item {
 	padding: 8px 28px 8px 16px;
 }
 
-.rc_heading01 h2 {
+.rc-heading01 h2 {
 	background: #efa336; /* $color-key */
 	border: none;
 	border-radius: 2px;
@@ -3575,7 +3575,7 @@ span.wpcf7-list-item {
 	position: relative;
 }
 
-.rc_heading01 h2::after {
+.rc-heading01 h2::after {
 	border-color: #fff #fff #e7e7e7;
 	border-radius: 0 0 0 2px;
 	border-style: solid;
@@ -3587,24 +3587,24 @@ span.wpcf7-list-item {
 	top: 0;
 }
 
-.rc_heading01 h3 {
+.rc-heading01 h3 {
 	border-left: solid #efa336 6px;
 	margin: 3.6em 0 0.8em;
 	padding: 0.4em 0.8em; /* $color-key */
 }
 
-.rc_heading01 h4 { /* $color-key */
+.rc-heading01 h4 { /* $color-key */
 	border-bottom: solid 2px #efa336;
 	border-top: solid 2px #efa336;
 	display: inline-block;
 	padding: 0.4em 0.8em; /* $color-key */
 }
 
-.rc_heading01 h5 {
+.rc-heading01 h5 {
 	color: #efa336; /* $color-key */
 }
 
-.rc_heading01 h6 {
+.rc-heading01 h6 {
 	color: #efa336; /* $color-key */
 }
 

@@ -24,6 +24,40 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 			)
 		);
 
+		// コンテンツ.
+		$wp_customize->add_section(
+			'my_parts_content',
+			array(
+				'title'    => __( 'コンテンツ', 'raccoon' ),
+				'panel'    => 'my_parts',
+				'priority' => 10,
+			)
+		);
+		$wp_customize->add_setting(
+			'my_parts_heading_select',
+			array(
+				'default' => 'heading00',
+				array( 'sanitize_callback' => 'my_sanitize_select' ),
+			)
+		);
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'my_parts_heading_select',
+				array(
+					'label'    => __( '見出しパターン', 'raccoon' ),
+					'section'  => 'my_parts_content',
+					'settings' => 'my_parts_heading_select',
+					'priority' => 1,
+					'type'     => 'select',
+					'choices'  => array(
+						'heading00' => '標準',
+						'heading01' => 'パターン01',
+					),
+				)
+			)
+		);
+
 		// いいねボックス.
 		$wp_customize->add_section(
 			'my_parts_likebox',

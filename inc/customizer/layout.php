@@ -33,7 +33,13 @@ if ( ! function_exists( 'my_customize_layout' ) ) {
 			)
 		);
 
-		$wp_customize->add_setting( 'my_layout_all_radio', array( 'default' => 'two-right', 'sanitize_callback' => 'my_sanitize_select' ) );
+		$wp_customize->add_setting(
+			'my_layout_all_radio',
+			array(
+				'default'           => 'two-right',
+				'sanitize_callback' => 'my_sanitize_select',
+			)
+		);
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
@@ -45,9 +51,9 @@ if ( ! function_exists( 'my_customize_layout' ) ) {
 					'priority' => 1,
 					'type'     => 'radio',
 					'choices'  => array(
-						'one' => '1カラム',
+						'one'       => '1カラム',
 						'two-right' => '2カラム（サイドメニュー右）',
-						'two-left' => '2カラム（サイドメニュー左）',
+						'two-left'  => '2カラム（サイドメニュー左）',
 					),
 				)
 			)
@@ -63,7 +69,13 @@ if ( ! function_exists( 'my_customize_layout' ) ) {
 			)
 		);
 
-		$wp_customize->add_setting( 'my_layout_header_check', array( 'default' => false, array( 'sanitize_callback' => 'my_sanitize_checkbox' ), ) );
+		$wp_customize->add_setting(
+			'my_layout_header_check',
+			array(
+				'default' => false,
+				array( 'sanitize_callback' => 'my_sanitize_checkbox' ),
+			)
+		);
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
@@ -88,7 +100,13 @@ if ( ! function_exists( 'my_customize_layout' ) ) {
 			)
 		);
 
-		$wp_customize->add_setting( 'my_layout_archive_check', array( 'default' => 'horizon', array( 'sanitize_callback' => 'my_sanitize_checkbox' ), ) );
+		$wp_customize->add_setting(
+			'my_layout_archive_check',
+			array(
+				'default' => 'horizon',
+				array( 'sanitize_callback' => 'my_sanitize_checkbox' ),
+			)
+		);
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
@@ -100,10 +118,20 @@ if ( ! function_exists( 'my_customize_layout' ) ) {
 					'priority' => 1,
 					'type'     => 'radio',
 					'choices'  => array(
-						'horizon' => '横並び',
+						'horizon'  => '横並び',
 						'vertical' => '縦並び',
 					),
 				)
+			)
+		);
+
+		/* 記事 */
+		$wp_customize->add_section(
+			'my_layout_page',
+			array(
+				'title'    => __( '記事', 'raccoon' ),
+				'panel'    => 'my_layout',
+				'priority' => 3,
 			)
 		);
 	}

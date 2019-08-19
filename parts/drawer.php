@@ -19,7 +19,9 @@
 	<div class="c-drawer__close js-drawer for-drawer01" data-target="for-drawer01"></div>
 	<div class="c-drawer__content for-drawer01 m-left">
 	<?php if ( is_active_sidebar( 'spmenu' ) ) : ?>
-		<?php dynamic_sidebar( 'spmenu' ); ?>
+		<div class="p-drawer-widget">
+			<?php dynamic_sidebar( 'spmenu' ); ?>
+		</div><!-- /p-drawer-widget -->
 	<?php else : ?>
 		<?php
 		wp_nav_menu(

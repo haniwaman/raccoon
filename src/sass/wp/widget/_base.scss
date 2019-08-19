@@ -1,10 +1,14 @@
 .p-widget {
-	margin-bottom: 32px;
+	margin-bottom: 16px;
 	background: #fff;
 	font-size: 1.4rem;
 
 	&:last-child {
 		margin-bottom: 0;
+	}
+
+	@include mq-up("tab") {
+		margin-bottom: 32px;
 	}
 
 	> .e-title {

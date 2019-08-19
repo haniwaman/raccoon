@@ -936,10 +936,10 @@ input:not([type="file"]).m-full {
 	color: #757575;
 	content: "MENU";
 	display: block;
-	font-size: 8px;
+	font-size: 0.8rem;
 	font-weight: 700;
 	line-height: 1;
-	margin-top: 8px;
+	margin-top: 0.8rem;
 	text-align: center;
 }
 
@@ -2375,14 +2375,14 @@ input:not([type="file"]).m-full {
 }
 
 .p-archive-header > .e-title {
-	font-size: 32px;
+	font-size: 3.2rem;
 	font-weight: 700;
 	margin-bottom: 8px;
 }
 
 .p-archive-header > .e-description {
 	color: #666;
-	font-size: 14px;
+	font-size: 1.4rem;
 }
 
 .p-archive-header > .e-form {
@@ -2433,7 +2433,7 @@ input:not([type="file"]).m-full {
 }
 
 .p-comments > .e-title {
-	font-size: 20px;
+	font-size: 2rem;
 	font-weight: 700;
 	margin: 42px 0 24px;
 }
@@ -2460,7 +2460,7 @@ input:not([type="file"]).m-full {
 }
 
 .p-comments-list .comment-body .reply {
-	font-size: 14px;
+	font-size: 1.4rem;
 	text-align: right;
 	transition: all 0.3s ease 0s;
 }
@@ -2502,7 +2502,7 @@ input:not([type="file"]).m-full {
 }
 
 .p-comments-list .comment-author .fn {
-	font-size: 14px;
+	font-size: 1.4rem;
 	vertical-align: middle;
 }
 
@@ -2516,13 +2516,13 @@ input:not([type="file"]).m-full {
 
 .p-comments-list .comment-author .says {
 	color: #666;
-	font-size: 12px;
+	font-size: 1.2rem;
 	vertical-align: middle;
 }
 
 .p-comments-list .comment-metadata {
 	color: #666;
-	font-size: 12px;
+	font-size: 1.2rem;
 }
 
 .p-comments-nav ul {
@@ -2566,42 +2566,42 @@ input:not([type="file"]).m-full {
 }
 
 .comment-content h1 {
-	font-size: 28px;
+	font-size: 2.8rem;
 	line-height: 1.2;
 	margin-bottom: 1em;
 	margin-top: 3em;
 }
 
 .comment-content h2 {
-	font-size: 24px;
+	font-size: 2.4rem;
 	line-height: 1.2;
 	margin-bottom: 1em;
 	margin-top: 3em;
 }
 
 .comment-content h3 {
-	font-size: 20px;
+	font-size: 2rem;
 	line-height: 1.4;
 	margin-bottom: 1em;
 	margin-top: 3em;
 }
 
 .comment-content h4 {
-	font-size: 18px;
+	font-size: 1.8rem;
 	line-height: 1.6;
 	margin-bottom: 1em;
 	margin-top: 2em;
 }
 
 .comment-content h5 {
-	font-size: 16px;
+	font-size: 1.6rem;
 	line-height: 1.6;
 	margin-bottom: 1em;
 	margin-top: 2em;
 }
 
 .comment-content h6 {
-	font-size: 16px;
+	font-size: 1.6rem;
 	line-height: 1.6;
 	margin-bottom: 1em;
 	margin-top: 2em;
@@ -2729,7 +2729,7 @@ input:not([type="file"]).m-full {
 }
 
 .comment-reply-title {
-	font-size: 20px;
+	font-size: 2rem;
 	font-weight: 700;
 	margin-bottom: 12px;
 }
@@ -2832,7 +2832,7 @@ span.wpcf7-list-item {
 
 .p-drawer-nav li a {
 	display: block;
-	font-size: 16px;
+	font-size: 1.6rem;
 	padding: 16px;
 	text-decoration: none;
 }
@@ -2847,7 +2847,7 @@ span.wpcf7-list-item {
 }
 
 .p-drawer-nav li.menu-item-has-children .sub-menu a {
-	font-size: 14px;
+	font-size: 1.4rem;
 	padding-bottom: 12px;
 	padding-top: 12px;
 }
@@ -2924,7 +2924,7 @@ span.wpcf7-list-item {
 
 .p-entry-item .e-meta > .e-published {
 	color: #666;
-	font-size: 12px;
+	font-size: 1.2rem;
 	margin-left: auto;
 	white-space: nowrap;
 }
@@ -2946,7 +2946,7 @@ span.wpcf7-list-item {
 	border-radius: 2px;
 	color: #fff;
 	display: block;
-	font-size: 12px;
+	font-size: 1.2rem;
 	padding: 4px 8px;
 	transition: all 0.3s ease 0s;
 }
@@ -2960,7 +2960,7 @@ span.wpcf7-list-item {
 }
 
 .p-entry-item .e-title {
-	font-size: 20px;
+	font-size: 2rem;
 	font-weight: 700;
 	line-height: 1.2;
 	margin-bottom: 8px;
@@ -2977,7 +2977,7 @@ span.wpcf7-list-item {
 
 .p-entry-item .e-excerpt {
 	color: #666;
-	font-size: 14px;
+	font-size: 1.4rem;
 }
 
 .p-entry-item .e-auther {
@@ -2988,7 +2988,7 @@ span.wpcf7-list-item {
 .p-entry-item .e-auther a,
 .p-entry-item .e-auther span {
 	color: #666;
-	font-size: 14px;
+	font-size: 1.4rem;
 	vertical-align: middle;
 }
 
@@ -3046,7 +3046,7 @@ span.wpcf7-list-item {
 }
 
 .p-entry-header > .e-title {
-	font-size: 28px;
+	font-size: 2.8rem;
 	font-weight: 700;
 	line-height: 1.4;
 	margin-bottom: 16px;
@@ -3061,7 +3061,7 @@ span.wpcf7-list-item {
 
 .p-entry-header > .e-meta > .e-published {
 	color: #666;
-	font-size: 12px;
+	font-size: 1.2rem;
 	margin-left: auto;
 	white-space: nowrap;
 }
@@ -3075,7 +3075,7 @@ span.wpcf7-list-item {
 
 .p-entry-header > .e-meta > .e-update {
 	color: #666;
-	font-size: 12px;
+	font-size: 1.2rem;
 	margin-left: 16px;
 	white-space: nowrap;
 }
@@ -3097,7 +3097,7 @@ span.wpcf7-list-item {
 	border-radius: 2px;
 	color: #fff;
 	display: block;
-	font-size: 12px;
+	font-size: 1.2rem;
 	padding: 4px 8px;
 	transition: all 0.3s ease 0s;
 }
@@ -3116,41 +3116,41 @@ span.wpcf7-list-item {
 
 .p-entry-header > .e-img > .e-caption {
 	color: #666;
-	font-size: 12px;
+	font-size: 1.2rem;
 	margin-top: 8px;
 	text-align: center;
 }
 
 .p-entry-content h2 {
-	font-size: 24px;
+	font-size: 2.4rem;
 	line-height: 1.2;
 	margin-bottom: 1em;
 	margin-top: 3em;
 }
 
 .p-entry-content h3 {
-	font-size: 20px;
+	font-size: 2rem;
 	line-height: 1.4;
 	margin-bottom: 1em;
 	margin-top: 3em;
 }
 
 .p-entry-content h4 {
-	font-size: 18px;
+	font-size: 1.8rem;
 	line-height: 1.6;
 	margin-bottom: 1em;
 	margin-top: 2em;
 }
 
 .p-entry-content h5 {
-	font-size: 16px;
+	font-size: 1.6rem;
 	line-height: 1.6;
 	margin-bottom: 1em;
 	margin-top: 2em;
 }
 
 .p-entry-content h6 {
-	font-size: 16px;
+	font-size: 1.6rem;
 	line-height: 1.6;
 	margin-bottom: 1em;
 	margin-top: 2em;
@@ -3352,7 +3352,7 @@ span.wpcf7-list-item {
 }
 
 .p-entry-pager-item > .e-body > .e-title {
-	font-size: 14px;
+	font-size: 1.4rem;
 }
 
 .p-entry-tags {
@@ -3365,7 +3365,7 @@ span.wpcf7-list-item {
 }
 
 .p-entry-tags > .e-link {
-	font-size: 12px;
+	font-size: 1.2rem;
 	margin: 0 6px 6px 0;
 }
 
@@ -3425,7 +3425,7 @@ span.wpcf7-list-item {
 
 .p-copy {
 	color: #fff;
-	font-size: 13px;
+	font-size: 1.3rem;
 	padding: 8px;
 }
 
@@ -3473,7 +3473,7 @@ span.wpcf7-list-item {
 
 .p-header-logo a {
 	display: block;
-	font-size: 28px;
+	font-size: 2.8rem;
 	font-weight: 700;
 	text-decoration: none;
 	transition: all 0.3s ease 0s;
@@ -3516,7 +3516,7 @@ span.wpcf7-list-item {
 
 .p-header-nav li > a {
 	display: block;
-	font-size: 14px;
+	font-size: 1.4rem;
 	padding: 6px 8px;
 	text-decoration: none;
 	transition: all 0.3s ease 0s;
@@ -3535,7 +3535,7 @@ span.wpcf7-list-item {
 
 .p-header-nav .sub-menu {
 	display: block;
-	font-size: 16px;
+	font-size: 1.6rem;
 	left: 0;
 	min-width: 200px;
 	opacity: 0;
@@ -3560,7 +3560,7 @@ span.wpcf7-list-item {
 	background: #efa336; /* header background-sub */
 	color: #fff;
 	display: block;
-	font-size: 14px;
+	font-size: 1.4rem;
 	font-weight: 400;
 	height: auto;
 	letter-spacing: 0.05em;
@@ -3699,12 +3699,12 @@ span.wpcf7-list-item {
 }
 
 .mv-page > .e-content > .e-title {
-	font-size: 24px;
+	font-size: 2.4rem;
 	font-weight: 700;
 }
 
 .mv-page > .e-content > .e-lead {
-	font-size: 14px;
+	font-size: 1.4rem;
 	margin-top: 8px;
 }
 
@@ -3758,13 +3758,13 @@ span.wpcf7-list-item {
 }
 
 .p-relation > .e-head span {
-	font-size: 18px;
+	font-size: 1.8rem;
 }
 
 .p-relation > .e-head span::before {
 	content: "\f02b";
 	font-family: "Font Awesome 5 Free", sans-serif;
-	font-size: 14px;
+	font-size: 1.4rem;
 	font-weight: 900;
 	margin-right: 4px;
 }
@@ -3807,7 +3807,7 @@ span.wpcf7-list-item {
 }
 
 .p-relation-items > .e-item > .e-body > .e-title a {
-	font-size: 14px;
+	font-size: 1.4rem;
 	text-decoration: none;
 	transition: all 0.3s ease 0s;
 }
@@ -3828,7 +3828,7 @@ span.wpcf7-list-item {
 }
 
 .p-sns-buttons li {
-	font-size: 13px;
+	font-size: 1.3rem;
 	margin: 3px 12px 3px 0;
 	width: calc((100% / 6) - 12px * 5 / 6);
 }
@@ -3908,7 +3908,7 @@ span.wpcf7-list-item {
 	border-radius: 3px;
 	color: #fff;
 	display: inline-block;
-	font-size: 11px;
+	font-size: 1.1rem;
 	font-weight: 700;
 	height: 20px;
 	line-height: 20px;
@@ -3929,7 +3929,7 @@ span.wpcf7-list-item {
 }
 
 .gallery-caption {
-	font-size: 14px;
+	font-size: 1.4rem;
 	padding: 4px;
 	text-align: left;
 }
@@ -4061,7 +4061,7 @@ span.wpcf7-list-item {
 }
 
 .wp-caption-text {
-	font-size: 13px;
+	font-size: 1.3rem;
 	padding: 4px;
 	text-align: left;
 }
@@ -4113,7 +4113,7 @@ span.wpcf7-list-item {
 	background: #e65100;
 	color: #fff;
 	content: "PICK UP"; /* sticky background */
-	font-size: 12px;
+	font-size: 1.2rem;
 	left: 0;
 	padding: 4px 8px;
 	position: absolute;
@@ -4137,6 +4137,7 @@ span.wpcf7-list-item {
 
 .p-widget {
 	background: #fff;
+	font-size: 1.4rem;
 	margin-bottom: 32px;
 }
 
@@ -4144,29 +4145,37 @@ span.wpcf7-list-item {
 	margin-bottom: 0;
 }
 
+.p-widget > .e-title {
+	background: #efa336;
+	color: #fff; /* widget background */
+	font-size: 1.6rem;
+	font-weight: 700;
+	padding: 8px 10px; /* widget color */
+}
+
 .p-widget ul {
-	padding: 0 16px;
+	padding: 0 10px;
 }
 
 .p-widget ul.children li {
-	margin-top: 16px;
+	margin-top: 12px;
 }
 
 .p-widget ul.sub-menu li {
-	margin-top: 16px;
+	margin-top: 12px;
 }
 
 .p-widget > ul {
-	padding: 16px;
+	padding: 16px 10px;
 }
 
 .p-widget .menu {
-	padding: 16px;
+	padding: 16px 10px;
 }
 
 .p-widget li {
 	font-size: inherit;
-	margin-bottom: 16px;
+	margin-bottom: 12px;
 }
 
 .p-widget li:last-child {
@@ -4187,14 +4196,6 @@ span.wpcf7-list-item {
 	opacity: 0.6; /* opacity */
 }
 
-.p-widget-title {
-	background: #efa336;
-	color: #fff; /* widget background */
-	font-size: 16px;
-	font-weight: 700;
-	padding: 8px 16px; /* widget color */
-}
-
 .p-widget.widget_calendar {
 	padding-bottom: 0;
 }
@@ -4205,9 +4206,13 @@ span.wpcf7-list-item {
 
 #wp-calendar th,
 #wp-calendar td {
-	font-size: 12px;
+	font-size: 1.2rem;
 	padding: 8px;
 	text-align: center;
+}
+
+#wp-calendar th {
+	color: #424242;
 }
 
 #wp-calendar #prev {
@@ -4238,13 +4243,11 @@ span.wpcf7-list-item {
 }
 
 #recentcomments .recentcomments {
-	color: #666;
-	font-size: 14px;
+	color: #757575;
 }
 
 #recentcomments .recentcomments a {
-	color: #333;
-	font-size: 16px;
+	color: #424242;
 	text-decoration: underline;
 }
 
@@ -4253,19 +4256,18 @@ span.wpcf7-list-item {
 }
 
 #recentcomments .e-author-link {
-	color: #333;
-	font-size: 16px;
+	color: #424242;
 }
 
 .post-date {
-	color: #666;
+	color: #757575;
 	display: block;
-	font-size: 14px;
+	font-size: 1.4rem;
 }
 
 .p-widget.widget_rss cite {
 	color: #666;
-	font-size: 14px;
+	font-size: 1.4rem;
 }
 
 .rss-widget-icon {
@@ -4285,12 +4287,12 @@ span.wpcf7-list-item {
 
 .rss-date {
 	color: #666;
-	font-size: 14px;
+	font-size: 1.4rem;
 }
 
 .rssSummary {
 	color: #666;
-	font-size: 14px;
+	font-size: 1.4rem;
 }
 
 .p-widget.widget_search {
@@ -4315,7 +4317,7 @@ span.wpcf7-list-item {
 
 .search-submit {
 	-webkit-transform: translateY(-50%);
-	font-size: 14px;
+	font-size: 1.4rem;
 	font-weight: 700;
 	height: 40px;
 	line-height: 40px;
@@ -4331,7 +4333,7 @@ span.wpcf7-list-item {
 	align-items: center;
 	display: flex;
 	flex-wrap: wrap;
-	padding: 16px;
+	padding: 16px 10px;
 }
 
 .tag-cloud-link {
@@ -4339,7 +4341,7 @@ span.wpcf7-list-item {
 	border-radius: 2px; /* tagcloud background */
 	color: #333;
 	display: block;
-	font-size: 12px !important;
+	font-size: 1.2rem !important;
 	margin: 0 6px 6px 0;
 	padding: 2px 6px; /* tagcloud color */
 	text-decoration: none;
@@ -4347,7 +4349,7 @@ span.wpcf7-list-item {
 }
 
 .textwidget {
-	padding: 16px;
+	padding: 16px 10px;
 }
 
 .u-hover-scale {
@@ -4783,7 +4785,7 @@ span.wpcf7-list-item {
 
 .p-entry-pager > .e-prev > .e-head,
 .p-entry-pager > .e-next > .e-head {
-	font-size: 14px;
+	font-size: 1.4rem;
 }
 
 .p-entry-pager > .e-prev {
@@ -4827,7 +4829,7 @@ span.wpcf7-list-item {
 }
 
 .p-likebox > .e-body > .e-lead {
-	font-size: 12px;
+	font-size: 1.2rem;
 	margin-bottom: 8px;
 }
 

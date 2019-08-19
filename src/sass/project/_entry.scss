@@ -21,7 +21,7 @@
 .p-entry-header {
 
 	> .e-title {
-		font-size: 28px;
+		font-size: 2.8rem;
 		font-weight: 700;
 		margin-bottom: 16px;
 		line-height: 1.4;
@@ -34,7 +34,7 @@
 		margin-bottom: 8px;
 
 		> .e-published {
-			font-size: 12px;
+			font-size: 1.2rem;
 			color: #666;
 			white-space: nowrap;
 			margin-left: auto;
@@ -48,7 +48,7 @@
 		}
 
 		> .e-update {
-			font-size: 12px;
+			font-size: 1.2rem;
 			color: #666;
 			white-space: nowrap;
 			margin-left: 16px;
@@ -70,7 +70,7 @@
 				display: block;
 				padding: 4px 8px;
 				background: #333;
-				font-size: 12px;
+				font-size: 1.2rem;
 				transition: all 0.3s ease 0s;
 				border-radius: 2px;
 			}
@@ -94,7 +94,7 @@
 		> .e-caption {
 			text-align: center;
 			color: #666;
-			font-size: 12px;
+			font-size: 1.2rem;
 			margin-top: 8px;
 		}
 	}
@@ -103,35 +103,35 @@
 .p-entry-content {
 
 	h2 {
-		font-size: 24px;
+		font-size: 2.4rem;
 		margin-top: 3em;
 		margin-bottom: 1em;
 		line-height: 1.2;
 	}
 
 	h3 {
-		font-size: 20px;
+		font-size: 2rem;
 		margin-top: 3em;
 		margin-bottom: 1em;
 		line-height: 1.4;
 	}
 
 	h4 {
-		font-size: 18px;
+		font-size: 1.8rem;
 		margin-top: 2em;
 		margin-bottom: 1em;
 		line-height: 1.6;
 	}
 
 	h5 {
-		font-size: 16px;
+		font-size: 1.6rem;
 		margin-top: 2em;
 		margin-bottom: 1em;
 		line-height: 1.6;
 	}
 
 	h6 {
-		font-size: 16px;
+		font-size: 1.6rem;
 		margin-top: 2em;
 		margin-bottom: 1em;
 		line-height: 1.6;
@@ -283,7 +283,7 @@
 			display: block;
 
 			@include mq("sp") {
-				font-size: 14px;
+				font-size: 1.4rem;
 			}
 
 			&:hover {
@@ -362,7 +362,7 @@
 		padding: 12px;
 
 		> .e-title {
-			font-size: 14px;
+			font-size: 1.4rem;
 		}
 	}
 }
@@ -376,7 +376,7 @@
 	margin-top: 32px;
 
 	> .e-link {
-		font-size: 12px;
+		font-size: 1.2rem;
 		margin: 0 6px 6px 0;
 
 		a {

@@ -2,7 +2,7 @@
 }
 
 .tagcloud {
-	padding: 16px;
+	padding: $pd-y-widget $pd-x-widget;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -11,7 +11,7 @@
 .tag-cloud-link {
 	transition: all 0.3s ease 0s;
 	display: block;
-	font-size: 12px !important;
+	font-size: 1.2rem !important;
 	border-radius: 2px;
 	background: map-get($tagcloud, "background"); /* tagcloud background */
 	color: map-get($tagcloud, "color"); /* tagcloud color */

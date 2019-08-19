@@ -4,13 +4,11 @@
 #recentcomments {
 
 	.recentcomments {
-		color: #666;
-		font-size: 14px;
+		color: $color-text--thin;
 
 		a {
 			text-decoration: underline;
-			color: #333;
-			font-size: 16px;
+			color: $color-text;
 
 			&:hover {
 				opacity: $opacity; /* opacity */
@@ -19,8 +17,7 @@
 	}
 
 	.e-author-link {
-		font-size: 16px;
-		color: #333;
+		color: $color-text;
 
 		.url {
 		}

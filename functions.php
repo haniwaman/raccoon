@@ -154,8 +154,8 @@ function my_widget_init() {
 			'id'            => 'sidebar',
 			'before_widget' => '<div id="%1$s" class="p-widget %2$s">',
 			'after_widget'  => '</div><!-- /p-widget -->',
-			'before_title'  => '<div class="p-widget-title">',
-			'after_title'   => '</div><!-- /p-widget-title -->',
+			'before_title'  => '<div class="e-title">',
+			'after_title'   => '</div><!-- /e-title -->',
 		)
 	);
 	register_sidebar(
@@ -164,8 +164,8 @@ function my_widget_init() {
 			'id'            => 'p-sidebar-fixed',
 			'before_widget' => '<div id="%1$s" class="p-widget %2$s">',
 			'after_widget'  => '</div><!-- /p-widget -->',
-			'before_title'  => '<div class="p-widget-title">',
-			'after_title'   => '</div><!-- /p-widget-title -->',
+			'before_title'  => '<div class="e-title">',
+			'after_title'   => '</div><!-- /e-title -->',
 		)
 	);
 	register_sidebar(
@@ -174,8 +174,8 @@ function my_widget_init() {
 			'id'            => 'spmenu',
 			'before_widget' => '<div id="%1$s" class="p-widget %2$s">',
 			'after_widget'  => '</div><!-- /p-widget -->',
-			'before_title'  => '<div class="p-widget-title">',
-			'after_title'   => '</div><!-- /p-widget-title -->',
+			'before_title'  => '<div class="e-title">',
+			'after_title'   => '</div><!-- /e-title -->',
 		)
 	);
 }

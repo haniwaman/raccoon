@@ -22,14 +22,14 @@
 		}
 
 		span {
-			font-size: 18px;
+			font-size: 1.8rem;
 
 			&::before {
 				content: "\f02b";
 				font-family: $font-family-awesome;
 				font-weight: 900;
 				margin-right: 4px;
-				font-size: 14px;
+				font-size: 1.4rem;
 			}
 		}
 	}
@@ -84,7 +84,7 @@
 
 				a {
 					text-decoration: none;
-					font-size: 14px;
+					font-size: 1.4rem;
 					transition: all 0.3s ease 0s;
 
 					&:hover {

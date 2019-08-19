@@ -30,17 +30,18 @@
 	border: 1px solid map-get($pagenation, "border"); /* pagenation border */
 	background: map-get($pagenation, "background"); /* pagenation background */
 	text-align: center;
-	min-width: 42px;
-	height: 42px;
-	line-height: 42px;
 	color: map-get($pagenation, "color"); /* pagenation color */
 	text-decoration: none;
 	margin-right: 8px;
 
-	@include mq("sp") {
-		min-width: 38px;
-		height: 38px;
-		line-height: 38px;
+	min-width: 38px;
+	height: 38px;
+	line-height: 38px;
+
+	@include mq-up("tab") {
+		min-width: 42px;
+		height: 42px;
+		line-height: 42px;
 	}
 
 	&:last-child {

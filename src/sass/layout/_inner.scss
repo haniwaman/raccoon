@@ -5,12 +5,12 @@
 	width: $layout-width-container;
 	height: inherit;
 
-	@include mq("tab") {
+	@include mq-up("tab") {
 		padding-right: $pd-x-tab;
 		padding-left: $pd-x-tab;
 	}
 
-	@include mq("pc") {
+	@include mq-up("pc") {
 		padding-right: 0;
 		padding-left: 0;
 	}

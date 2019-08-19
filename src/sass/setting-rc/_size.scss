@@ -5,7 +5,7 @@ $layout-width-main: 840px;
 $layout-width-side: $layout-width-container - $layout-width-main - 38px; // 38pxは余白の幅
 
 // ヘッダー高さ
-$header-height: auto;
+$header-height-pc: auto;
 $header-height-sp: 60px;
 
 // ベースの余白

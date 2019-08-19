@@ -1,11 +1,11 @@
 .l-header {
 	width: 100%;
-	height: $header-height;
+	height: $header-height-sp;
 	z-index: map-get($layer, "header");
 	background: $header-background;
 
-	@include mq("sp") {
-		height: $header-height-sp;
+	@include mq-up("tab") {
+		height: $header-height-pc;
 	}
 
 	&.m-fixed {

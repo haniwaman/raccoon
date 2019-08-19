@@ -33,7 +33,7 @@ $table-border-color: #bdbdbd;
 $table-background: #fff;
 $table-background-active: #e0e0e0;
 $table-th-background: #ffecb3;
-$table-th-color: #fff;
+$table-th-color: $color-text;
 
 // ボタン
 $button-background: #757575;
@@ -97,4 +97,27 @@ $floating: (
 // リンク
 $link: (
 	"color": #efa336
+);
+
+// blockquote
+$blockquote: (
+	"background": #eee,
+	"color": #333
+);
+
+// code
+$code: (
+	"background": #fee,
+	"color": #444
+);
+
+// pre
+$pre: (
+	"background": rgba(#efefef, 0.3)
+);
+
+// source code
+$source: (
+	"background": #2d2d2d,
+	"color": #fff
 );

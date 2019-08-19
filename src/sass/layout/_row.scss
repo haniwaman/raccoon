@@ -76,7 +76,7 @@
 	width: (12 / 12 * 100%);
 }
 
-@include mq("tab") {
+@include mq-up("tab") {
 
 	.l-row__col01-tab {
 		width: (1 / 12 * 100%);
@@ -127,53 +127,53 @@
 	}
 }
 
-@include mq("sp") {
+@include mq-up("pc") {
 
-	.l-row__col01-sp {
+	.l-row__col01-pc {
 		width: (1 / 12 * 100%);
 	}
 
-	.l-row__col02-sp {
+	.l-row__col02-pc {
 		width: (2 / 12 * 100%);
 	}
 
-	.l-row__col03-sp {
+	.l-row__col03-pc {
 		width: (3 / 12 * 100%);
 	}
 
-	.l-row__col04-sp {
+	.l-row__col04-pc {
 		width: (4 / 12 * 100%);
 	}
 
-	.l-row__col05-sp {
+	.l-row__col05-pc {
 		width: (5 / 12 * 100%);
 	}
 
-	.l-row__col06-sp {
+	.l-row__col06-pc {
 		width: (6 / 12 * 100%);
 	}
 
-	.l-row__col07-sp {
+	.l-row__col07-pc {
 		width: (7 / 12 * 100%);
 	}
 
-	.l-row__col08-sp {
+	.l-row__col08-pc {
 		width: (8 / 12 * 100%);
 	}
 
-	.l-row__col09-sp {
+	.l-row__col09-pc {
 		width: (9 / 12 * 100%);
 	}
 
-	.l-row__col10-sp {
+	.l-row__col10-pc {
 		width: (10 / 12 * 100%);
 	}
 
-	.l-row__col11-sp {
+	.l-row__col11-pc {
 		width: (11 / 12 * 100%);
 	}
 
-	.l-row__col12-sp {
+	.l-row__col12-pc {
 		width: (12 / 12 * 100%);
 	}
 }

@@ -1,45 +1,42 @@
-.contact-items {
+.p-contact-items {
 }
 
-.contact-item {
-	display: flex;
+.p-contact-item {
 
-	@include mq("sp") {
-		display: block;
+	@include mq-up("tab") {
+		display: flex;
 	}
 
 	dt,
 	dd {
-		padding: 16px 12px;
+		padding: 0;
 
-		@include mq("sp") {
-			padding: 0;
+		@include mq-up("tab") {
+			padding: 16px 12px;
 		}
 	}
 
 	dt {
-		width: 150px;
+		width: 100%;
+		margin-bottom: 6px;
 
-		@include mq("sp") {
-			width: 100%;
-			margin-bottom: 6px;
+		@include mq-up("tab") {
+			width: 150px;
+			margin-bottom: 0;
 		}
 	}
 
 	dd {
-		width: calc(100% - 150px);
+		width: 100%;
+		margin-bottom: 20px;
 
-		@include mq("sp") {
-			width: 100%;
-			margin-bottom: 20px;
+		@include mq-up("tab") {
+			width: calc(100% - 150px);
+			margin-bottom: 0;
 		}
 	}
 }
 
-.contact-submit {
+.p-contact-submit {
 	text-align: center;
-}
-
-span.wpcf7-list-item {
-	margin: 0;
 }

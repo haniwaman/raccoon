@@ -2,11 +2,13 @@
 	display: flex;
 	box-shadow: 0 0 3px 0 rgba(#000, 0.16);
 	margin-top: 32px;
+	margin-right: -$pd-entry-sp;
+	margin-left: -$pd-entry-sp;
 	background: #2d2d2d;
 
-	@include mq("sp") {
-		margin-right: -$pd-entry-sp;
-		margin-left: -$pd-entry-sp;
+	@include mq-up("tab") {
+		margin-right: 0;
+		margin-left: 0;
 	}
 
 	> .e-img {
@@ -16,22 +18,23 @@
 
 	> .e-body {
 		width: 60%;
-		padding: 24px 10px;
+		padding: 10px 4px;
 		color: #fff;
 		text-align: center;
 
-		@include mq("sp") {
-			padding: 10px 4px;
+		@include mq-up("tab") {
+			padding: 24px 10px;
 		}
 
 		> .e-lead {
 			font-weight: 700;
-			margin-bottom: 16px;
 			line-height: 1.6;
+			font-size: 1.2rem;
+			margin-bottom: 8px;
 
-			@include mq("sp") {
-				font-size: 1.2rem;
-				margin-bottom: 8px;
+			@include mq-up("tab") {
+				margin-bottom: 16px;
+				font-size: 1.6rem;
 			}
 		}
 

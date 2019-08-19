@@ -1,8 +1,10 @@
 .p-sns-buttons {
+	margin-top: 6px;
+	margin-bottom: 6px;
 
-	@include mq("sp") {
-		margin-top: 6px;
-		margin-bottom: 6px;
+	@include mq-up("tab") {
+		margin-top: 0;
+		margin-bottom: 0;
 	}
 
 	ul {
@@ -11,22 +13,25 @@
 	}
 
 	li {
-		width: calc((100% / 6) - 12px * 5 / 6);
-		margin: 3px 12px 3px 0;
+		width: calc(50% - 12px * 1 / 2);
+		margin: 6px 12px 6px 0;
 		font-size: 1.3rem;
 
-		@include mq("sp") {
-			width: calc(50% - 12px * 1 / 2);
-			margin-top: 6px;
-			margin-bottom: 6px;
-
-			&:nth-child(2n) {
-				margin-right: 0;
-			}
+		&:nth-child(2n) {
+			margin-right: 0;
 		}
 
-		&:last-child {
-			margin-right: 0;
+		@include mq-up("tab") {
+			width: calc((100% / 6) - 12px * 5 / 6);
+			margin: 3px 12px 3px 0;
+
+			&:nth-child(2n) {
+				margin-right: 12px;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
 		}
 
 		i {

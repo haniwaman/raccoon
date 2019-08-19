@@ -1,12 +1,12 @@
 .p-entry {
 	background: #fff;
-	padding: 24px $pd-entry-pc 42px;
 	border: 1px solid #eee;
+	margin-bottom: 32px;
+	padding: 24px $pd-entry-sp 42px;
 
-	@include mq("sp") {
-		margin-bottom: 32px;
-		padding-left: $pd-entry-sp;
-		padding-right: $pd-entry-sp;
+	@include mq-up("tab") {
+		padding-right: $pd-entry-pc;
+		padding-left: $pd-entry-pc;
 	}
 
 	> .e-header {
@@ -35,7 +35,7 @@
 
 		> .e-published {
 			font-size: 1.2rem;
-			color: #666;
+			color: $color-text--thin;
 			white-space: nowrap;
 			margin-left: auto;
 
@@ -49,7 +49,7 @@
 
 		> .e-update {
 			font-size: 1.2rem;
-			color: #666;
+			color: $color-text--thin;
 			white-space: nowrap;
 			margin-left: 16px;
 
@@ -69,7 +69,7 @@
 				color: #fff;
 				display: block;
 				padding: 4px 8px;
-				background: #333;
+				background: $color-text;
 				font-size: 1.2rem;
 				transition: all 0.3s ease 0s;
 				border-radius: 2px;
@@ -93,7 +93,7 @@
 
 		> .e-caption {
 			text-align: center;
-			color: #666;
+			color: $color-text--thin;
 			font-size: 1.2rem;
 			margin-top: 8px;
 		}
@@ -167,7 +167,7 @@
 	}
 
 	blockquote {
-		background: #eee;
+		background: map-get($blockquote, "background");
 		padding: 1em;
 		margin-top: 1em;
 		margin-bottom: 1em;
@@ -186,7 +186,7 @@
 	}
 
 	q {
-		background: #eee;
+		background: map-get($blockquote, "background");
 		display: inline-block;
 		vertical-align: middle;
 		padding-left: 0.2em;
@@ -232,8 +232,8 @@
 	var,
 	code,
 	kbd {
-		background: #fee;
-		color: #444;
+		background: map-get($code, "background");
+		color: map-get($code, "color");
 		display: inline-block;
 		padding: 0 0.4em;
 		margin: 0 0.2em;
@@ -248,11 +248,12 @@
 		overflow: auto;
 		margin-top: 1.2em;
 		padding: 1em;
-		background: rgba(#efefef, 0.3);
+		background: map-get($pre, "background");
+		tab-size: 2;
 
 		code {
-			background: #2d2d2d;
-			color: #fff;
+			background: map-get($source, "background");
+			color: map-get($source, "color");
 			padding: 12px;
 			position: relative;
 			margin: -1em;
@@ -264,26 +265,26 @@
 }
 
 .p-entry-pager {
-	display: flex;
-	flex-direction: row-reverse;
 	margin-top: 32px;
 
-	@include mq("sp") {
-		display: block;
+	@include mq-up("tab") {
+		display: flex;
+		flex-direction: row-reverse;
 	}
 
 	> .e-prev,
 	> .e-next {
 
 		> .e-head {
+			font-size: 1.4rem;
 			color: #666;
 			margin-bottom: 4px;
 			text-decoration: none;
 			transition: all 0.3s ease 0s;
 			display: block;
 
-			@include mq("sp") {
-				font-size: 1.4rem;
+			@include mq-up("tab") {
+				font-size: 1.6rem;
 			}
 
 			&:hover {
@@ -299,22 +300,25 @@
 		}
 	}
 
-	> .e-prev {
-		width: 42%;
-		margin-right: auto;
+	> .e-prev,
+	> .e-next {
+		width: 100%;
 
-		@include mq("sp") {
-			width: 100%;
+		@include mq-up("tab") {
+			width: 42%;
 		}
 	}
 
-	> .e-next {
-		width: 42%;
-		margin-left: auto;
+	> .e-prev {
+		margin-right: auto;
+	}
 
-		@include mq("sp") {
-			width: 100%;
-			margin-bottom: 12px;
+	> .e-next {
+		margin-left: auto;
+		margin-bottom: 12px;
+
+		@include mq-up("tab") {
+			margin-bottom: 0;
 		}
 
 		> .e-head {
@@ -388,11 +392,8 @@
 			text-decoration: none;
 			transition: all 0.3s ease 0s;
 
-			@include mq("pc") {
-
-				&:hover {
-					opacity: $opacity;
-				}
+			&:hover {
+				opacity: $opacity;
 			}
 		}
 	}

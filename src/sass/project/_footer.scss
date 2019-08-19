@@ -24,20 +24,20 @@
 
 	a {
 		display: block;
-		width: 42px;
-		height: 42px;
-		line-height: 42px;
 		color: map-get($floating, "color"); /* floating color */
 		background: map-get($floating, "background"); /* floating background */
 		text-decoration: none;
 		transition: all 0.3s ease 0s;
 		text-align: center;
 		box-shadow: 0 0 3px 0 rgba(#000, 0.16);
+		width: 38px;
+		height: 38px;
+		line-height: 38px;
 
-		@include mq("sp") {
-			width: 38px;
-			height: 38px;
-			line-height: 38px;
+		@include mq-up("tab") {
+			width: 42px;
+			height: 42px;
+			line-height: 42px;
 		}
 
 		&:hover {

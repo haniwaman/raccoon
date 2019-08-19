@@ -71,6 +71,9 @@ jQuery(function() {
 	/* Polyfill */
 	Stickyfill.add(document.querySelectorAll("#p-sidebar-fixed"));
 
+	/* Object Fit（IE） */
+	objectFitImages();
+
 	// ドロワー
 	jQuery(".js-drawer").on("click", function(e) {
 		e.preventDefault();

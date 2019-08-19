@@ -67,6 +67,7 @@ function my_script() {
 
 	/* JavaScript */
 	wp_enqueue_script( 'stickyfill', get_template_directory_uri() . '/src/lib/stickyfill/stickyfill.min.js', array(), '2.1.0', true );
+	wp_enqueue_script( 'object-fit-images', get_template_directory_uri() . '/src/lib/object-fit-images/ofi.min.js', array(), '3.2.4', true );
 	wp_enqueue_script( 'intersection-observer', get_template_directory_uri() . '/src/lib/intersection-observer/intersection-observer.js', array(), '2.1.0', true );
 	wp_enqueue_script( 'my', get_template_directory_uri() . '/src/js/script.js', array( 'jquery' ), '1.0.1', true );
 

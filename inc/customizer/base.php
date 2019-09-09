@@ -8,6 +8,7 @@
 require_once get_template_directory() . '/inc/customizer/color.php';
 require_once get_template_directory() . '/inc/customizer/parts.php';
 require_once get_template_directory() . '/inc/customizer/layout.php';
+require_once get_template_directory() . '/inc/customizer/performance.php';
 
 if ( ! function_exists( 'my_sanitize_checkbox' ) ) {
 	/**

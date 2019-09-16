@@ -337,3 +337,9 @@ require_once get_template_directory() . '/inc/customizer/base.php';
  * 入力エリア追加
  */
 require_once get_template_directory() . '/inc/fields/base.php';
+
+
+/**
+ * 一覧カラム追加
+ */
+require_once get_template_directory() . '/inc/columns/base.php';

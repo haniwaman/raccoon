@@ -1,3 +1,8 @@
+img {
+	max-width: 100%;
+	height: auto;
+}
+
 .my-btn {
 	display: inline-block;
 	text-decoration: none;

@@ -11,7 +11,7 @@ if ( get_theme_mod( 'my_parts_likebox_url' ) ) : ?>
 	$post_thumbnail_id = get_post_thumbnail_id();
 	$facebook_url      = 'https://developers.facebook.com/docs/plugins/';
 	$facebook_url      = get_theme_mod( 'my_parts_likebox_url' );
-	$facebook_txt      = 'このページが役に立ったら<br>いいね！お願いします';
+	$facebook_txt      = __( 'Give it a thumbs up', 'raccoon' );
 	if ( get_theme_mod( 'my_parts_likebox_txt' ) ) {
 		$facebook_txt = nl2br( get_theme_mod( 'my_parts_likebox_txt' ) );
 	}

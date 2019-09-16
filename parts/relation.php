@@ -10,7 +10,7 @@
 <?php if ( 'post' === get_post_type() ) : ?>
 <!-- p-relation -->
 <div class="p-relation">
-	<div class="e-head"><span>関連</span>の記事</div><!-- /e-head -->
+	<div class="e-head"><?php esc_html_e( 'Relation Posts', 'raccoon' ); ?></div><!-- /e-head -->
 
 	<?php
 	$relation_query = new WP_Query(
@@ -61,7 +61,7 @@
 	<?php wp_reset_postdata(); ?>
 
 <div class="e-btn">
-	<a class="c-button" href="<?php echo esc_url( get_category_link( get_the_category()[0]->cat_ID ) ); ?>">同じカテゴリーの一覧を見る</a>
+	<a class="c-button" href="<?php echo esc_url( get_category_link( get_the_category()[0]->cat_ID ) ); ?>"><?php esc_html_e( 'More Relation Posts', 'raccoon' ); ?></a>
 </div><!-- /e-btn -->
 
 </div><!-- /p-relation -->

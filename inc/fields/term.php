@@ -9,9 +9,9 @@
 if ( ! function_exists( 'my_term_fields_edit' ) ) {
 
 	/**
-	 * ターム編集画面に入力項目の追加
+	 * Add Original Fields to WP Admin Term Edit
 	 *
-	 * @param object $term タームのオブジェクト.
+	 * @param object $term Term Object.
 	 * @return void
 	 */
 	function my_term_fields_edit( $term ) {
@@ -20,19 +20,19 @@ if ( ! function_exists( 'my_term_fields_edit' ) ) {
 		$term_name = '';
 		switch ( $term->taxonomy ) {
 			case 'category':
-				$term_name = 'カテゴリー';
+				$term_name = __( 'Category', 'raccoon' );
 				break;
 			case 'post_tag':
-				$term_name = 'タグ';
+				$term_name = __( 'Tag', 'raccoon' );
 				break;
 			default:
-				$term_name = 'ターム';
+				$term_name = __( 'Term', 'raccoon' );
 				break;
 		}
 		?>
 
 <tr class="form-field">
-	<th><label><?php esc_html_e( '色', 'raccoon' ); ?></label></th>
+	<th><label><?php esc_html_e( 'Color', 'raccoon' ); ?></label></th>
 	<td>
 		<input name="my_term_color" class="my-color-picker" type="text" value="
 		<?php
@@ -40,15 +40,15 @@ if ( ! function_exists( 'my_term_fields_edit' ) ) {
 			echo esc_html( $term_meta['my_term_color'][0] );}
 		?>
 		" size="40">
-		<p class="description"><?php echo esc_html( $term_name ) . esc_html__( 'に紐づく色です。', 'raccoon' ); ?></p>
+		<p class="description"><?php echo esc_html( $term_name ) . esc_html__( ' Color', 'raccoon' ); ?></p>
 	</td>
 </tr>
 <tr class="form-field">
-	<th><label><?php esc_html_e( '画像', 'raccoon' ); ?></label></th>
+	<th><label><?php esc_html_e( 'Image', 'raccoon' ); ?></label></th>
 	<td>
 		<div class="my-img-btns">
-			<div class="my-btn my-img-select"><span class="my-img-icon"></span><?php esc_html_e( '画像を選択', 'raccoon' ); ?></div>
-			<div class="my-btn my-img-clear"><?php esc_html_e( '画像をクリア', 'raccoon' ); ?></div>
+			<div class="my-btn my-img-select"><span class="my-img-icon"></span><?php esc_html_e( 'Select Image', 'raccoon' ); ?></div>
+			<div class="my-btn my-img-clear"><?php esc_html_e( 'Clear Image', 'raccoon' ); ?></div>
 		</div><!-- /my-img-btns -->
 		<input name="my_term_img" class="my-img-url" type="hidden" value="
 		<?php
@@ -61,7 +61,7 @@ if ( ! function_exists( 'my_term_fields_edit' ) ) {
 				<img src="<?php echo esc_html( $term_meta['my_term_img'][0] ); ?>">
 			<?php endif; ?>
 		</div><!-- /my-img-show -->
-	<p class="description"><?php echo esc_html( $term_name ) . esc_html__( 'に紐づく画像です。', 'raccoon' ); ?></p>
+	<p class="description"><?php echo esc_html( $term_name ) . esc_html__( ' Image', 'raccoon' ); ?></p>
 	</td>
 </tr>
 		<?php
@@ -73,39 +73,39 @@ add_action( 'edit_tag_form_fields', 'my_term_fields_edit' );
 if ( ! function_exists( 'my_term_fields_set' ) ) {
 
 	/**
-	 * ターム追加画面に入力項目の追加
+	 * Add Original Fields to WP Admin Term Add
 	 *
-	 * @param object $term ターム（スラッグ）名.
+	 * @param object $term Term Slug.
 	 * @return void
 	 */
 	function my_term_fields_set( $term ) {
 
-		$default_color = '#666';
+		$default_color = '#757575';
 		$term_name     = '';
 		switch ( $term ) {
 			case 'category':
-				$term_name = 'カテゴリー';
+				$term_name = __( 'Category', 'raccoon' );
 				break;
 			case 'post_tag':
-				$term_name = 'タグ';
+				$term_name = __( 'Tag', 'raccoon' );
 				break;
 			default:
-				$term_name = 'ターム';
+				$term_name = __( 'Term', 'raccoon' );
 				break;
 		}
 		?>
 
 <div class="form-field">
-	<label for="color"><?php esc_html_e( '色', 'raccoon' ); ?></label>
+	<label for="color"><?php esc_html_e( 'Color', 'raccoon' ); ?></label>
 	<input name="my_term_color" class="my-color-picker" type="text" value="<?php echo esc_html( $default_color ); ?>" size="40">
-	<p class="description"><?php echo esc_html( $term_name ) . esc_html__( 'に紐づく色です。', 'raccoon' ); ?></p>
+	<p class="description"><?php echo esc_html( $term_name ) . esc_html__( ' Color', 'raccoon' ); ?></p>
 </div><!-- /form-field -->
 
 <div class="form-field">
-	<label><?php esc_html_e( '画像', 'raccoon' ); ?></label>
+	<label><?php esc_html_e( 'Image', 'raccoon' ); ?></label>
 	<div class="my-img-btns">
-		<div class="my-btn my-img-select"><span class="my-img-icon"></span><?php esc_html_e( '画像を選択', 'raccoon' ); ?></div>
-		<div class="my-btn my-img-clear"><?php esc_html_e( '画像をクリア', 'raccoon' ); ?></div>
+		<div class="my-btn my-img-select"><span class="my-img-icon"></span><?php esc_html_e( 'Select Image', 'raccoon' ); ?></div>
+		<div class="my-btn my-img-clear"><?php esc_html_e( 'Clear Image', 'raccoon' ); ?></div>
 	</div><!-- /my-img-btns -->
 	<input name="my_term_img" class="my-img-url" type="hidden" value="" size="40">
 	<div class="my-img-show">
@@ -113,7 +113,7 @@ if ( ! function_exists( 'my_term_fields_set' ) ) {
 			<img src="<?php echo esc_html( $term_meta['my_term_img'][0] ); ?>">
 		<?php endif; ?>
 	</div><!-- /my-img-show -->
-	<p class="description"><?php echo esc_html( $term_name ) . esc_html__( 'に紐づく画像です。', 'raccoon' ); ?></p>
+	<p class="description"><?php echo esc_html( $term_name ) . esc_html__( ' Image', 'raccoon' ); ?></p>
 </div><!-- /form-field -->
 		<?php
 	}
@@ -122,9 +122,9 @@ add_action( 'category_add_form_fields', 'my_term_fields_set' );
 add_action( 'post_tag_add_form_fields', 'my_term_fields_set' );
 
 /**
- * タームの入力項目の保存
+ * Save Term Fileds
  *
- * @param int $term_id タームID.
+ * @param int $term_id Term ID.
  * @return void
  */
 function my_term_fileds_save( $term_id ) {

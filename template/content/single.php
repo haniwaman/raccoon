@@ -37,7 +37,7 @@
 	<?php $rc_heading = get_theme_mod( 'my_parts_heading_select' ) ? 'rc-' . get_theme_mod( 'my_parts_heading_select' ) : ''; ?>
 	<div class="e-body">
 		<div class="p-entry-content <?php echo esc_attr( $rc_heading ); ?>">
-		<?php the_content( '続きを読む', true ); ?>
+		<?php the_content(); ?>
 		<?php
 		wp_link_pages(
 			array(
@@ -76,7 +76,7 @@
 <nav class="p-entry-pager">
 		<?php if ( $next_post ) : ?>
 	<div class="e-next">
-			<a href="<?php the_permalink( $next_post->ID ); ?>" class="e-head">次の記事</a>
+			<a href="<?php the_permalink( $next_post->ID ); ?>" class="e-head"><?php esc_html_e( 'Next Post', 'raccoon' ); ?></a>
 			<a href="<?php the_permalink( $next_post->ID ); ?>" class="p-entry-pager-item">
 				<div class="e-img">
 				<?php
@@ -88,14 +88,14 @@
 				?>
 				</div><!-- /e-img -->
 				<div class="e-body">
-					<div class="e-title"><?php echo esc_html( mb_strimwidth( get_the_title( $next_post->ID ), 0, 64, '…', 'UTF-8' ) ); ?></div>
+					<div class="e-title"><?php echo esc_html( mb_strimwidth( get_the_title( $next_post->ID ), 0, 64, __( '...', 'raccoon' ), 'UTF-8' ) ); ?></div>
 				</div><!-- /e-body -->
 			</a><!-- /p-entry-pager-item -->
 	</div><!-- /e-next -->
 			<?php endif; ?>
 		<?php if ( $prev_post ) : ?>
 	<div class="e-prev">
-		<a href="<?php the_permalink( $prev_post->ID ); ?>" class="e-head">前の記事</a>
+		<a href="<?php the_permalink( $prev_post->ID ); ?>" class="e-head"><?php esc_html_e( 'Prev Post', 'raccoon' ); ?></a>
 		<a href="<?php the_permalink( $prev_post->ID ); ?>" class="p-entry-pager-item">
 			<div class="e-img">
 			<?php
@@ -107,7 +107,7 @@
 			?>
 			</div><!-- /e-img -->
 			<div class="e-body">
-				<div class="e-title"><?php echo esc_html( mb_strimwidth( get_the_title( $prev_post->ID ), 0, 64, '…', 'UTF-8' ) ); ?></div>
+				<div class="e-title"><?php echo esc_html( mb_strimwidth( get_the_title( $prev_post->ID ), 0, 64, __( '...', 'raccoon' ), 'UTF-8' ) ); ?></div>
 			</div><!-- /e-body -->
 		</a><!-- /p-entry-pager-item -->
 	</div><!-- /e-prev -->

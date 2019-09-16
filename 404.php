@@ -25,16 +25,16 @@ get_header(); ?>
 <div class="p-archive-header">
 	<?php my_breadcrumb(); ?>
 	<h1 class="e-title">404</h1><!-- /e-title -->
-	<div class="e-description"><p><?php esc_html_e( 'コンテンツが存在しません。', 'raccoon' ); ?></p></div><!-- /e-description -->
+	<div class="e-description"><p><?php esc_html_e( 'Contents is not found.', 'raccoon' ); ?></p></div><!-- /e-description -->
 	<div class="e-form"><?php get_search_form(); ?></div><!-- /e-form -->
 </div><!-- /p-archive-header -->
 
 <article <?php post_class( 'p-notfound' ); ?>>
 
 	<div class="e-body">
-		<p><?php esc_html_e( '申し訳ございません。コンテンツが存在しません。', 'raccoon' ); ?></p>
+		<p><?php esc_html_e( 'Sorry. Contents is not found.', 'raccoon' ); ?></p>
 	</div><!-- /e-body -->
-	<div class="e-link"><a class="c-button" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'トップへ戻る', 'raccoon' ); ?></a></div>
+	<div class="e-link"><a class="c-button" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Back to Home', 'raccoon' ); ?></a></div>
 
 </article><!-- /p-entry -->
 

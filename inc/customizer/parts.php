@@ -8,27 +8,27 @@
 if ( ! function_exists( 'my_customize_parts' ) ) {
 
 	/**
-	 * カスタマイザーの管理
+	 * Add Customizer Layout
 	 *
-	 * @param object $wp_customize カスタマイザーを管理するオブジェクト.
+	 * @param object $wp_customize Customizer Object.
 	 * @return void
 	 */
 	function my_customize_parts( $wp_customize ) {
 
-		// 投稿.
+		// Single.
 		$wp_customize->add_panel(
 			'my_parts',
 			array(
 				'priority' => 55,
-				'title'    => __( '投稿', 'raccoon' ),
+				'title'    => __( 'Single', 'raccoon' ),
 			)
 		);
 
-		// コンテンツ.
+		// Contents.
 		$wp_customize->add_section(
 			'my_parts_content',
 			array(
-				'title'    => __( 'コンテンツ', 'raccoon' ),
+				'title'    => __( 'Contents', 'raccoon' ),
 				'panel'    => 'my_parts',
 				'priority' => 10,
 			)
@@ -45,30 +45,30 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 				$wp_customize,
 				'my_parts_heading_select',
 				array(
-					'label'    => __( '見出しパターン', 'raccoon' ),
+					'label'    => __( 'Heading Pattern', 'raccoon' ),
 					'section'  => 'my_parts_content',
 					'settings' => 'my_parts_heading_select',
 					'priority' => 1,
 					'type'     => 'select',
 					'choices'  => array(
-						'heading00' => '標準',
-						'heading01' => 'パターン01',
+						'heading00' => __( 'Default', 'raccoon' ),
+						'heading01' => __( 'Pattern01', 'raccoon' ),
 					),
 				)
 			)
 		);
 
-		// いいねボックス.
+		// LikeBox.
 		$wp_customize->add_section(
 			'my_parts_likebox',
 			array(
-				'title'    => __( 'いいねボックス', 'raccoon' ),
+				'title'    => __( 'LikeBox', 'raccoon' ),
 				'panel'    => 'my_parts',
 				'priority' => 10,
 			)
 		);
 
-		// チェックボックス.
+		// Checkbox.
 		$wp_customize->add_setting(
 			'my_parts_likebox_check',
 			array(
@@ -81,7 +81,7 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 				$wp_customize,
 				'my_parts_likebox_check',
 				array(
-					'label'    => __( '表示する', 'raccoon' ),
+					'label'    => __( 'Enable to Display', 'raccoon' ),
 					'section'  => 'my_parts_likebox',
 					'settings' => 'my_parts_likebox_check',
 					'type'     => 'checkbox',
@@ -89,14 +89,14 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 			)
 		);
 
-		// テキストエリア.
+		// Textarea.
 		$wp_customize->add_setting( 'my_parts_likebox_txt', array( 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
 				'my_parts_likebox_txt',
 				array(
-					'label'    => __( 'テキスト', 'raccoon' ),
+					'label'    => __( 'Text', 'raccoon' ),
 					'section'  => 'my_parts_likebox',
 					'settings' => 'my_parts_likebox_txt',
 					'type'     => 'textarea',
@@ -105,14 +105,14 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 			)
 		);
 
-		// FacebookページURL.
+		// Facebook Page URL.
 		$wp_customize->add_setting( 'my_parts_likebox_url', array( 'sanitize_callback' => 'esc_url_raw' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
 				'my_parts_likebox_url',
 				array(
-					'label'    => __( 'FacebookページURL', 'raccoon' ),
+					'label'    => __( 'Facebook Page URL', 'raccoon' ),
 					'section'  => 'my_parts_likebox',
 					'settings' => 'my_parts_likebox_url',
 					'type'     => 'url',
@@ -121,17 +121,17 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 			)
 		);
 
-		// SNSシェアボタン.
+		// SNS Share Button.
 		$wp_customize->add_section(
 			'my_parts_sns',
 			array(
-				'title'    => __( 'SNSシェアボタン', 'raccoon' ),
+				'title'    => __( 'SNS Share Button', 'raccoon' ),
 				'panel'    => 'my_parts',
 				'priority' => 20,
 			)
 		);
 
-		// チェックボックス（Twitter）.
+		// Checkbox(Twitter).
 		$wp_customize->add_setting(
 			'my_parts_sns_check_twitter',
 			array(
@@ -152,7 +152,7 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 			)
 		);
 
-		// チェックボックス（Facebook）.
+		// Checkbox(Facebook).
 		$wp_customize->add_setting(
 			'my_parts_sns_check_facebook',
 			array(
@@ -173,7 +173,7 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 			)
 		);
 
-		// チェックボックス（はてなブックマーク）.
+		// Checkbox(Hatena Bookmark).
 		$wp_customize->add_setting(
 			'my_parts_sns_check_hatena',
 			array(
@@ -186,7 +186,7 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 				$wp_customize,
 				'my_parts_sns_check_hatena',
 				array(
-					'label'    => __( 'はてなブックマーク', 'raccoon' ),
+					'label'    => __( 'Hatena Bookmark', 'raccoon' ),
 					'section'  => 'my_parts_sns',
 					'settings' => 'my_parts_sns_check_hatena',
 					'type'     => 'checkbox',
@@ -194,7 +194,7 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 			)
 		);
 
-		// チェックボックス（LINE）.
+		// Checkbox(LINE).
 		$wp_customize->add_setting(
 			'my_parts_sns_check_line',
 			array(
@@ -215,7 +215,7 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 			)
 		);
 
-		// チェックボックス（Pocket）.
+		// Checkbox(Pocket).
 		$wp_customize->add_setting(
 			'my_parts_sns_check_pocket',
 			array(
@@ -236,7 +236,7 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 			)
 		);
 
-		// チェックボックス（RSS）.
+		// Checkbox(RSS).
 		$wp_customize->add_setting(
 			'my_parts_sns_check_rss',
 			array(
@@ -269,13 +269,12 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 				$wp_customize,
 				'my_parts_sns_select_type',
 				array(
-					'label'    => __( 'ボタンの種類', 'raccoon' ),
+					'label'    => __( 'Button Type', 'raccoon' ),
 					'section'  => 'my_parts_sns',
 					'settings' => 'my_parts_sns_select_type',
 					'type'     => 'select',
 					'choices'  => array(
-						'select01' => 'オリジナル',
-						'select02' => '公式',
+						'select01' => 'Original'
 					),
 				)
 			)
@@ -293,31 +292,31 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 				$wp_customize,
 				'my_parts_sns_select_place',
 				array(
-					'label'    => __( '表示する場所', 'raccoon' ),
+					'label'    => __( 'Place', 'raccoon' ),
 					'section'  => 'my_parts_sns',
 					'settings' => 'my_parts_sns_select_place',
 					'type'     => 'select',
 					'choices'  => array(
-						'select01' => 'コンテンツ上',
-						'select02' => 'コンテンツ下',
-						'select03' => 'コンテンツ上下',
-						'select04' => '表示しない',
+						'select01' => 'Above Contents',
+						'select02' => 'Below Contents',
+						'select03' => 'Between Contents',
+						'select04' => 'Not Display',
 					),
 				)
 			)
 		);
 
-		// 関連記事.
+		// Related Posts.
 		$wp_customize->add_section(
 			'my_parts_relation',
 			array(
-				'title'    => __( '関連記事', 'raccoon' ),
+				'title'    => __( 'Related Posts', 'raccoon' ),
 				'panel'    => 'my_parts',
 				'priority' => 30,
 			)
 		);
 
-		// チェックボックス.
+		// Checkbox.
 		$wp_customize->add_setting(
 			'my_parts_relation_check',
 			array(
@@ -330,7 +329,7 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 				$wp_customize,
 				'my_parts_relation_check',
 				array(
-					'label'    => __( '表示する', 'raccoon' ),
+					'label'    => __( 'Enable to Display', 'raccoon' ),
 					'section'  => 'my_parts_relation',
 					'settings' => 'my_parts_relation_check',
 					'type'     => 'checkbox',

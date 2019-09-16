@@ -13,7 +13,7 @@ if ( post_password_required() || ! comments_open() ) {
 <!-- p-comments -->
 <div class="p-comments">
 	<?php if ( have_comments() ) : ?>
-	<div class="e-title">コメント（<?php echo esc_html( get_comments_number() ); ?>）</div><!-- /e-title -->
+	<div class="e-title"><?php esc_html_e( 'Comments', 'raccoon' ); ?> (<?php echo esc_html( get_comments_number() ); ?>)</div><!-- /e-title -->
 	<div class="e-list">
 		<ul class="p-comments-list">
 			<?php
@@ -32,8 +32,8 @@ if ( post_password_required() || ! comments_open() ) {
 	<div class="e-nav">
 		<nav class="p-comments-nav">
 			<ul>
-				<li class="e-prev"><?php previous_comments_link( '前のコメント' ); ?></li><!-- /e-prev -->
-				<li class="e-next"><?php next_comments_link( '次のコメント' ); ?></li><!-- /e-next -->
+				<li class="e-prev"><?php previous_comments_link( __( 'Prev Comments', 'raccoon' ) ); ?></li><!-- /e-prev -->
+				<li class="e-next"><?php next_comments_link( __( 'Next Comments', 'raccoon' ) ); ?></li><!-- /e-next -->
 			</ul>
 		</nav><!-- /p-comments-nav -->
 	</div><!-- /e-nav -->

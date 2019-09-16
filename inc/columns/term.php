@@ -7,10 +7,10 @@
 
 if ( ! function_exists( 'my_add_terms_columns' ) ) {
 	/**
-	 * 管理画面のターム一覧ページにオリジナルな列を追加
+	 * Add Original Columns to WP Admin Terms
 	 *
-	 * @param array $columns 変更前の列の配列.
-	 * @return array $columns 変更後の列の配列.
+	 * @param array $columns Before Columns Array.
+	 * @return array $columns After Columns Array.
 	 */
 	function my_add_terms_columns( $columns ) {
 		$index                = 1;
@@ -19,8 +19,8 @@ if ( ! function_exists( 'my_add_terms_columns' ) ) {
 			[ 'id' => 'ID' ],
 			array_slice( $columns, $index )
 		);
-		$columns['color']     = __( '色', 'raccoon' );
-		$columns['thumbnail'] = __( '画像', 'raccoon' );
+		$columns['color']     = __( 'Color', 'raccoon' );
+		$columns['thumbnail'] = __( 'Image', 'raccoon' );
 		return $columns;
 	}
 }
@@ -29,12 +29,12 @@ add_filter( 'manage_edit-post_tag_columns', 'my_add_terms_columns' );
 
 if ( ! function_exists( 'my_show_terms_columns' ) ) {
 	/**
-	 * 管理画面のターム一覧ページにオリジナルな列に表示
+	 * Show Original Columns to WP Admin Terms
 	 *
-	 * @param string $content 表示されるコンテンツ.
-	 * @param string $column_name 列名.
-	 * @param int    $term_id タームID.
-	 * @return string $content 表示されるコンテンツ.
+	 * @param string $content Contents.
+	 * @param string $column_name Column Name.
+	 * @param int    $term_id Term ID.
+	 * @return string $content Contents.
 	 */
 	function my_show_terms_columns( $content, $column_name, $term_id ) {
 		if ( 'id' === $column_name ) {
@@ -44,14 +44,14 @@ if ( ! function_exists( 'my_show_terms_columns' ) ) {
 			if ( isset( $term_meta['my_term_color'][0] ) ) {
 				$content = '<span style="color:' . esc_attr( $term_meta['my_term_color'][0] ) . '">' . esc_html( $term_meta['my_term_color'][0] ) . '</span>';
 			} else {
-				$content = __( '色が設定されていません', 'raccoon' );
+				$content = __( 'Color is not set', 'raccoon' );
 			}
 		} elseif ( 'thumbnail' === $column_name ) {
 			$term_meta = get_term_meta( $term_id );
 			if ( isset( $term_meta['my_term_img'][0] ) ) {
 				$content = '<img src="' . esc_html( $term_meta['my_term_img'][0] ) . '">';
 			} else {
-				$content = __( '画像が設定されていません', 'raccoon' );
+				$content = __( 'Image is not set', 'raccoon' );
 			}
 		}
 		return $content;
@@ -63,10 +63,10 @@ add_action( 'manage_post_tag_custom_column', 'my_show_terms_columns', 10, 3 );
 
 if ( ! function_exists( 'my_sort_terms_columns' ) ) {
 	/**
-	 * 管理画面のターム一覧ページにオリジナルなソート対象列を追加
+	 * Add Original Sortable Columns to WP Admin Terms
 	 *
-	 * @param array $columns 変更前のソート対象列の配列.
-	 * @return array $columns 変更後のソート対象列の配列.
+	 * @param array $columns Before Columns Array.
+	 * @return array $columns After Columns Array.
 	 */
 	function my_sort_terms_columns( $columns ) {
 		$columns['id'] = 'ID';

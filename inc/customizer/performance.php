@@ -8,32 +8,32 @@
 if ( ! function_exists( 'my_customize_performance' ) ) {
 
 	/**
-	 * カスタマイザーの管理
+	 * Add Customizer Performance
 	 *
-	 * @param object $wp_customize カスタマイザーを管理するオブジェクト.
+	 * @param object $wp_customize Customizer Object.
 	 * @return void
 	 */
 	function my_customize_performance( $wp_customize ) {
 
-		// パフォーマンス.
+		// Performance.
 		$wp_customize->add_panel(
 			'my_performance',
 			array(
 				'priority' => 55,
-				'title'    => __( 'パフォーマンス', 'raccoon' ),
+				'title'    => __( 'Performance', 'raccoon' ),
 			)
 		);
 
-		// CSSインライン化.
+		// CSS Inline.
 		$wp_customize->add_section(
 			'my_performance_inline',
 			array(
-				'title'    => __( 'CSSインライン化', 'raccoon' ),
+				'title'    => __( 'CSS Inline', 'raccoon' ),
 				'panel'    => 'my_performance',
 				'priority' => 10,
 			)
 		);
-		// チェックボックス.
+		// Checkbox.
 		$wp_customize->add_setting(
 			'my_performance_inline_check',
 			array(
@@ -46,7 +46,7 @@ if ( ! function_exists( 'my_customize_performance' ) ) {
 				$wp_customize,
 				'my_performance_inline_check',
 				array(
-					'label'    => __( 'インライン化する', 'raccoon' ),
+					'label'    => __( 'Enable to CSS Inline', 'raccoon' ),
 					'section'  => 'my_performance_inline',
 					'settings' => 'my_performance_inline_check',
 					'type'     => 'checkbox',

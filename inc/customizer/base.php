@@ -1,6 +1,6 @@
 <?php
 /**
- * My Customizer Function
+ * My Customizer Sanitize
  *
  * @package WordPress
  */
@@ -12,10 +12,10 @@ require_once get_template_directory() . '/inc/customizer/performance.php';
 
 if ( ! function_exists( 'my_sanitize_checkbox' ) ) {
 	/**
-	 * チェックボックスのサニタイズ
+	 * Sanitize Checkbox
 	 *
-	 * @param [type] $checked チェックボックスの値.
-	 * @return boolean trueかfalseで返す.
+	 * @param [type] $checked Checkbox Value.
+	 * @return boolean true or false.
 	 */
 	function my_sanitize_checkbox( $checked ) {
 		return ( ( isset( $checked ) && true === $checked ) ? true : false );
@@ -25,7 +25,7 @@ if ( ! function_exists( 'my_sanitize_checkbox' ) ) {
 
 if ( ! function_exists( 'my_sanitize_select' ) ) {
 	/**
-	 * ラジオボタンとセレクトボックスのサニタイズ
+	 * Sanitize Radiobutton and Selectbox
 	 *
 	 * @param [type] $input .
 	 * @param [type] $setting .
@@ -41,7 +41,7 @@ if ( ! function_exists( 'my_sanitize_select' ) ) {
 
 if ( ! function_exists( 'my_sanitize_image' ) ) {
 	/**
-	 * アップロード画像のサニタイズ
+	 * Sanitize Image
 	 *
 	 * @param [type] $image .
 	 * @param [type] $setting .
@@ -64,7 +64,7 @@ if ( ! function_exists( 'my_sanitize_image' ) ) {
 if ( ! function_exists( 'my_sanitize_number_range' ) ) {
 
 	/**
-	 * 数字のサニタイズ
+	 * Sanitize Number
 	 *
 	 * @param [type] $number .
 	 * @param [type] $setting .

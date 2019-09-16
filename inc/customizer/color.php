@@ -7,42 +7,42 @@
 
 if ( ! function_exists( 'my_customize_color' ) ) {
 	/**
-	 * カスタマイザーの管理
+	 * Add Customizer Color
 	 *
-	 * @param object $wp_customize カスタマイザーを管理するオブジェクト.
+	 * @param object $wp_customize Customizer Object.
 	 * @return void
 	 */
 	function my_customize_color( $wp_customize ) {
 
 		$wp_customize->remove_section( 'colors' );
 
-		// 色.
+		// Color.
 		$wp_customize->add_panel(
 			'my_colors',
 			array(
 				'priority' => 35,
-				'title'    => __( '色', 'raccoon' ),
+				'title'    => __( 'Color', 'raccoon' ),
 			)
 		);
 
-		// サイト全体.
+		// Site.
 		$wp_customize->add_section(
 			'my_colors_site',
 			array(
-				'title'    => __( 'サイト全体', 'raccoon' ),
+				'title'    => __( 'Site', 'raccoon' ),
 				'panel'    => 'my_colors',
 				'priority' => 1,
 			)
 		);
 
-		// サイトの背景色.
+		// Background Color.
 		$wp_customize->add_setting( 'my_colors_site_background', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
 				'my_colors_site_background',
 				array(
-					'label'    => __( '背景色', 'raccoon' ),
+					'label'    => __( 'Background Color', 'raccoon' ),
 					'section'  => 'my_colors_site',
 					'settings' => 'my_colors_site_background',
 					'priority' => 3,
@@ -50,14 +50,14 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 			)
 		);
 
-		// サイトの文字色.
+		// Text Color.
 		$wp_customize->add_setting( 'my_colors_site_text', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
 				'my_colors_site_text',
 				array(
-					'label'    => __( 'テキスト色', 'raccoon' ),
+					'label'    => __( 'Text Color', 'raccoon' ),
 					'section'  => 'my_colors_site',
 					'settings' => 'my_colors_site_text',
 					'priority' => 4,
@@ -65,24 +65,24 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 			)
 		);
 
-		// ヘッダー.
+		// Header.
 		$wp_customize->add_section(
 			'my_colors_header',
 			array(
-				'title'    => __( 'ヘッダー', 'raccoon' ),
+				'title'    => __( 'Header', 'raccoon' ),
 				'panel'    => 'my_colors',
 				'priority' => 2,
 			)
 		);
 
-		// ヘッダー背景色.
+		// Background Color.
 		$wp_customize->add_setting( 'my_colors_header_background', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
 				'my_colors_header_background',
 				array(
-					'label'    => __( '背景色', 'raccoon' ),
+					'label'    => __( 'Background Color', 'raccoon' ),
 					'section'  => 'my_colors_header',
 					'settings' => 'my_colors_header_background',
 					'priority' => 1,
@@ -90,14 +90,14 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 			)
 		);
 
-		// ヘッダーテキスト色.
+		// Text Color.
 		$wp_customize->add_setting( 'my_colors_header_text', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
 				'my_colors_header_text',
 				array(
-					'label'    => __( 'テキスト色', 'raccoon' ),
+					'label'    => __( 'Text Color', 'raccoon' ),
 					'section'  => 'my_colors_header',
 					'settings' => 'my_colors_header_text',
 					'priority' => 2,
@@ -105,14 +105,14 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 			)
 		);
 
-		// ヘッダーロゴ色.
+		// Logo Color.
 		$wp_customize->add_setting( 'my_colors_header_logo', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
 				'my_colors_header_logo',
 				array(
-					'label'    => __( 'ロゴ色', 'raccoon' ),
+					'label'    => __( 'Logo Color', 'raccoon' ),
 					'section'  => 'my_colors_header',
 					'settings' => 'my_colors_header_logo',
 					'priority' => 3,
@@ -120,24 +120,24 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 			)
 		);
 
-		// フッター.
+		// Footer.
 		$wp_customize->add_section(
 			'my_colors_footer',
 			array(
-				'title'    => __( 'フッター', 'raccoon' ),
+				'title'    => __( 'Footer', 'raccoon' ),
 				'panel'    => 'my_colors',
 				'priority' => 2,
 			)
 		);
 
-		// フッター背景色.
+		// Background Color.
 		$wp_customize->add_setting( 'my_colors_footer_background', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
 				'my_colors_footer_background',
 				array(
-					'label'    => __( '背景色', 'raccoon' ),
+					'label'    => __( 'Background Color', 'raccoon' ),
 					'section'  => 'my_colors_footer',
 					'settings' => 'my_colors_footer_background',
 					'priority' => 1,
@@ -145,14 +145,14 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 			)
 		);
 
-		// フッターテキスト色.
+		// Text Color.
 		$wp_customize->add_setting( 'my_colors_footer_text', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
 				'my_colors_footer_text',
 				array(
-					'label'    => __( 'テキスト色', 'raccoon' ),
+					'label'    => __( 'Text Color', 'raccoon' ),
 					'section'  => 'my_colors_footer',
 					'settings' => 'my_colors_footer_text',
 					'priority' => 2,
@@ -170,7 +170,7 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 			)
 		);
 
-		// Twitter色.
+		// Twitter Color.
 		$wp_customize->add_setting(
 			'my_colors_sns_twitter',
 			array(
@@ -191,7 +191,7 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 			)
 		);
 
-		// Facebook色.
+		// Facebook Color.
 		$wp_customize->add_setting(
 			'my_colors_sns_facebook',
 			array(
@@ -212,7 +212,7 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 			)
 		);
 
-		// はてなブックマーク色.
+		// Hatena Bookmark Color.
 		$wp_customize->add_setting(
 			'my_colors_sns_hatena',
 			array(
@@ -225,7 +225,7 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 				$wp_customize,
 				'my_colors_sns_hatena',
 				array(
-					'label'    => __( 'はてなブックマーク', 'raccoon' ),
+					'label'    => __( 'Hatena Bookmark', 'raccoon' ),
 					'section'  => 'my_colors_sns',
 					'settings' => 'my_colors_sns_hatena',
 					'priority' => 1,
@@ -233,7 +233,7 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 			)
 		);
 
-		// LINE色.
+		// LINE Color.
 		$wp_customize->add_setting(
 			'my_colors_sns_line',
 			array(
@@ -254,7 +254,7 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 			)
 		);
 
-		// Pocket色.
+		// Pocket Color.
 		$wp_customize->add_setting(
 			'my_colors_sns_pocket',
 			array(
@@ -275,7 +275,7 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 			)
 		);
 
-		// RSS色.
+		// RSS Color.
 		$wp_customize->add_setting(
 			'my_colors_sns_rss',
 			array(
@@ -296,24 +296,24 @@ if ( ! function_exists( 'my_customize_color' ) ) {
 			)
 		);
 
-		// コンテンツ.
+		// Contents.
 		$wp_customize->add_section(
 			'my_colors_content',
 			array(
-				'title'    => __( 'コンテンツ', 'raccoon' ),
+				'title'    => __( 'Contents', 'raccoon' ),
 				'panel'    => 'my_colors',
 				'priority' => 2,
 			)
 		);
 
-		// リンク色.
+		// Link Color.
 		$wp_customize->add_setting( 'my_colors_content_link', array( 'sanitize_callback' => 'sanitize_hex_color' ) );
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
 				'my_colors_content_link',
 				array(
-					'label'    => __( 'リンク', 'raccoon' ),
+					'label'    => __( 'Link', 'raccoon' ),
 					'section'  => 'my_colors_content',
 					'settings' => 'my_colors_content_link',
 					'priority' => 1,

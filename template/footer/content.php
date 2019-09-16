@@ -16,4 +16,4 @@
 </div><!-- /l-inner -->
 </footer><!-- /l-footer -->
 
-<div class="p-floating"><a href="#" title="トップへ戻る"><i class="fas fa-chevron-up"></i></a></div><!-- /p-floating -->
+<div class="p-floating"><a href="#"><i class="fas fa-chevron-up"></i></a></div><!-- /p-floating -->

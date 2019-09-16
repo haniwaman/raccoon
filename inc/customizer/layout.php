@@ -6,11 +6,10 @@
  */
 
 if ( ! function_exists( 'my_customize_layout' ) ) {
-
 	/**
-	 * カスタマイザーの管理
+	 * Add Customizer Layout
 	 *
-	 * @param object $wp_customize カスタマイザーを管理するオブジェクト.
+	 * @param object $wp_customize Customizer Object.
 	 * @return void
 	 */
 	function my_customize_layout( $wp_customize ) {
@@ -18,16 +17,16 @@ if ( ! function_exists( 'my_customize_layout' ) ) {
 		$wp_customize->add_panel(
 			'my_layout',
 			array(
-				'title'    => __( 'レイアウト', 'raccoon' ),
+				'title'    => __( 'Layout', 'raccoon' ),
 				'priority' => 35,
 			)
 		);
 
-		/* 全体 */
+		/* Site */
 		$wp_customize->add_section(
 			'my_layout_all',
 			array(
-				'title'    => __( '全体', 'raccoon' ),
+				'title'    => __( 'Site', 'raccoon' ),
 				'panel'    => 'my_layout',
 				'priority' => 1,
 			)
@@ -45,25 +44,25 @@ if ( ! function_exists( 'my_customize_layout' ) ) {
 				$wp_customize,
 				'my_layout_all_radio',
 				array(
-					'label'    => __( 'カラム選択', 'raccoon' ),
+					'label'    => __( 'Select Column', 'raccoon' ),
 					'section'  => 'my_layout_all',
 					'settings' => 'my_layout_all_radio',
 					'priority' => 1,
 					'type'     => 'radio',
 					'choices'  => array(
-						'one'       => '1カラム',
-						'two-right' => '2カラム（サイドメニュー右）',
-						'two-left'  => '2カラム（サイドメニュー左）',
+						'one'       => __( 'One Column', 'raccoon' ),
+						'two-right' => __( 'Two Column(Side Right)', 'raccoon' ),
+						'two-left'  => __( 'Two Column(Side Left)', 'raccoon' ),
 					),
 				)
 			)
 		);
 
-		/* 一覧 */
+		/* Archive */
 		$wp_customize->add_section(
 			'my_layout_archive',
 			array(
-				'title'    => __( '一覧', 'raccoon' ),
+				'title'    => __( 'Archive', 'raccoon' ),
 				'panel'    => 'my_layout',
 				'priority' => 3,
 			)
@@ -81,24 +80,24 @@ if ( ! function_exists( 'my_customize_layout' ) ) {
 				$wp_customize,
 				'my_layout_archive_check',
 				array(
-					'label'    => __( '一覧レイアウト', 'raccoon' ),
+					'label'    => __( 'Archive Layout', 'raccoon' ),
 					'section'  => 'my_layout_archive',
 					'settings' => 'my_layout_archive_check',
 					'priority' => 1,
 					'type'     => 'radio',
 					'choices'  => array(
-						'horizon'  => '横並び',
-						'vertical' => '縦並び',
+						'horizon'  => __( 'Horizon', 'raccoon' ),
+						'vertical' => __( 'Vertical', 'raccoon' ),
 					),
 				)
 			)
 		);
 
-		/* 記事 */
+		/* Article */
 		$wp_customize->add_section(
 			'my_layout_page',
 			array(
-				'title'    => __( '記事', 'raccoon' ),
+				'title'    => __( 'Article', 'raccoon' ),
 				'panel'    => 'my_layout',
 				'priority' => 3,
 			)

@@ -27,17 +27,30 @@ $logo_tag = is_front_page() ? 'h1' : 'div';
 </div><!-- /e-logo -->
 
 <div class="e-global">
-<?php
-wp_nav_menu(
-	array(
-		'container'       => false,
-		'depth'           => 2,
-		'theme_location'  => 'header',
-		'container'       => 'nav',
-		'container_class' => 'p-header-nav',
-	)
-);
-?>
+<?php if ( has_nav_menu( 'header' ) ) : ?>
+	<?php
+	wp_nav_menu(
+		array(
+			'container'       => false,
+			'depth'           => 2,
+			'theme_location'  => 'header',
+			'container'       => 'nav',
+			'container_class' => 'p-header-nav',
+		)
+	);
+	?>
+<?php else : ?>
+	<?php
+	wp_nav_menu(
+		array(
+			'container'       => false,
+			'depth'           => 2,
+			'container'       => 'nav',
+			'container_class' => 'p-header-nav',
+		)
+	);
+	?>
+<?php endif; ?>
 </div><!-- /e-global -->
 
 <div class="e-drawer">

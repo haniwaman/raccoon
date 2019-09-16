@@ -23,17 +23,30 @@
 			<?php dynamic_sidebar( 'spmenu' ); ?>
 		</div><!-- /p-drawer-widget -->
 	<?php else : ?>
-		<?php
-		wp_nav_menu(
-			array(
-				'container'       => false,
-				'depth'           => 2,
-				'theme_location'  => 'header',
-				'container'       => 'nav',
-				'container_class' => 'p-drawer-nav',
-			)
-		);
-		?>
+		<?php if ( has_nav_menu( 'header' ) ) : ?>
+			<?php
+			wp_nav_menu(
+				array(
+					'container'       => false,
+					'depth'           => 2,
+					'theme_location'  => 'header',
+					'container'       => 'nav',
+					'container_class' => 'p-drawer-nav',
+				)
+			);
+			?>
+		<?php else : ?>
+			<?php
+			wp_nav_menu(
+				array(
+					'container'       => false,
+					'depth'           => 2,
+					'container'       => 'nav',
+					'container_class' => 'p-drawer-nav',
+				)
+			);
+			?>
+<?php endif; ?>
 	<?php endif; ?>
 	</div><!-- /c-drawer__content -->
 </div><!-- /c-drawer -->

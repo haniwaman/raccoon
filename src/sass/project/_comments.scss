@@ -292,8 +292,8 @@
 	var,
 	code,
 	kbd {
-		color: $code-color; /* code-txt */
-		background: $code-background; /* code-bg */
+		color: map-get($code, "color"); /* code-txt */
+		background: map-get($code, "background"); /* code-bg */
 		display: inline-block;
 		padding-left: 0.2em;
 		padding-right: 0.2em;

@@ -13,12 +13,14 @@ if ( ! function_exists( 'my_add_terms_columns' ) ) {
 	 * @return array $columns 変更後の列の配列.
 	 */
 	function my_add_terms_columns( $columns ) {
-		$index   = 1;
-		$columns = array_merge(
+		$index                = 1;
+		$columns              = array_merge(
 			array_slice( $columns, 0, $index ),
 			[ 'id' => 'ID' ],
 			array_slice( $columns, $index )
 		);
+		$columns['color']     = __( '色', 'raccoon' );
+		$columns['thumbnail'] = __( '画像', 'raccoon' );
 		return $columns;
 	}
 }
@@ -37,6 +39,20 @@ if ( ! function_exists( 'my_show_terms_columns' ) ) {
 	function my_show_terms_columns( $content, $column_name, $term_id ) {
 		if ( 'id' === $column_name ) {
 			$content = esc_html( $term_id );
+		} elseif ( 'color' === $column_name ) {
+			$term_meta = get_term_meta( $term_id );
+			if ( isset( $term_meta['my_term_color'][0] ) ) {
+				$content = '<span style="color:' . esc_attr( $term_meta['my_term_color'][0] ) . '">' . esc_html( $term_meta['my_term_color'][0] ) . '</span>';
+			} else {
+				$content = __( '色が設定されていません', 'raccoon' );
+			}
+		} elseif ( 'thumbnail' === $column_name ) {
+			$term_meta = get_term_meta( $term_id );
+			if ( isset( $term_meta['my_term_img'][0] ) ) {
+				$content = '<img src="' . esc_html( $term_meta['my_term_img'][0] ) . '">';
+			} else {
+				$content = __( '画像が設定されていません', 'raccoon' );
+			}
 		}
 		return $content;
 	}

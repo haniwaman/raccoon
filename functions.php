@@ -122,7 +122,7 @@ function my_admin_script() {
 	wp_enqueue_media();
 	wp_enqueue_style( 'wp-color-picker' );
 	wp_enqueue_script( 'wp-color-picker' );
-	wp_enqueue_script( 'admin', get_template_directory_uri() . '/js/admin/script.js', array( 'wp-color-picker' ), '1.0.0', true );
+	wp_enqueue_script( 'admin', get_template_directory_uri() . '/src/js/admin/script.js', array( 'wp-color-picker' ), '1.0.0', true );
 }
 add_action( 'admin_enqueue_scripts', 'my_admin_script' );
 

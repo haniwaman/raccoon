@@ -313,6 +313,7 @@
 			padding: 12px;
 			position: relative;
 			margin: -1em;
+			overflow: auto;
 		}
 	}
 }
@@ -361,6 +362,11 @@
 
 	.form-submit {
 		margin-top: 24px;
+		transition: all 0.3s ease 0s;
+
+		&:hover {
+			opacity: $opacity;
+		}
 	}
 }
 

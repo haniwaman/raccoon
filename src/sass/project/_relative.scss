@@ -40,6 +40,14 @@
 	> .e-btn {
 		text-align: center;
 		margin-top: 24px;
+
+		> .c-button {
+			transition: all 0.3s ease 0s;
+
+			&:hover {
+				opacity: $opacity;
+			}
+		}
 	}
 }
 

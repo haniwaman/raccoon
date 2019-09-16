@@ -37,7 +37,7 @@
 	<?php $rc_heading = get_theme_mod( 'my_parts_heading_select' ) ? 'rc-' . get_theme_mod( 'my_parts_heading_select' ) : ''; ?>
 	<div class="e-body">
 		<div class="p-entry-content <?php echo esc_attr( $rc_heading ); ?>">
-		<?php the_content(); ?>
+		<?php the_content( '続きを読む', true ); ?>
 		<?php
 		wp_link_pages(
 			array(

@@ -35,8 +35,20 @@
 			margin-bottom: 0;
 		}
 	}
+
+	select {
+		background-image: url(../img/arrow-select.svg);
+	}
 }
 
 .p-contact-submit {
 	text-align: center;
+
+	[type="submit"] {
+		transition: all 0.3s ease 0s;
+
+		&:hover {
+			opacity: $opacity;
+		}
+	}
 }

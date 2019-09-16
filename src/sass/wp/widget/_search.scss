@@ -32,4 +32,9 @@
 	font-size: 1.4rem;
 	font-weight: 700;
 	min-width: 40px;
+	transition: all 0.3s ease 0s;
+
+	&:hover {
+		opacity: $opacity;
+	}
 }

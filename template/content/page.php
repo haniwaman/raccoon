@@ -15,10 +15,6 @@
 		<div class="p-entry-header">
 		<div class="e-breadcrumb"><?php my_breadcrumb(); ?></div><!-- /e-breadcrumb -->
 			<h1 class="e-title"><?php the_title(); ?></h1><!-- /e-title -->
-			<div class="e-meta">
-				<div class="e-label"><?php my_the_post_category(); ?></div><!-- /e-label -->
-				<time class="e-published" datetime="<?php the_time( 'c' ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time><!-- /e-published -->
-			</div><!-- /e-meta -->
 			<?php if ( 'select01' === get_theme_mod( 'my_parts_sns_select_place' ) || 'select03' === get_theme_mod( 'my_parts_sns_select_place' ) ) : ?>
 				<div class="e-sns"><?php get_template_part( 'parts/sns' ); ?></div><!-- /e-sns -->
 			<?php endif; ?>
@@ -51,5 +47,7 @@
 		?>
 		</div><!-- /p-entry-content -->
 	</div><!-- /e-body -->
+
+	<?php comments_template(); ?>
 
 </article><!-- /p-entry -->

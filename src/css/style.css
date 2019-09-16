@@ -1,6 +1,7 @@
 [type="submit"],
 [type="button"],
-.c-button {
+.c-button,
+.post_password .post_password-submit {
 	-webkit-appearance: none;
 	background-color: #757575;
 	background-image: none;
@@ -18,22 +19,26 @@
 
 :not(:disabled)[type="submit"],
 :not(:disabled)[type="button"],
-.c-button:not(:disabled) {
+.c-button:not(:disabled),
+.post_password .post_password-submit:not(:disabled) {
 	cursor: pointer;
 }
 
 :hover[type="submit"],
 :hover[type="button"],
 .c-button:hover,
+.post_password .post_password-submit:hover,
 :focus[type="submit"],
 :focus[type="button"],
-.c-button:focus {
+.c-button:focus,
+.post_password .post_password-submit:focus {
 	outline: none;
 }
 
 [type="submit"]::-moz-foucus-inner,
 [type="button"]::-moz-foucus-inner,
-.c-button::-moz-foucus-inner {
+.c-button::-moz-foucus-inner,
+.post_password .post_password-submit::-moz-foucus-inner {
 	border: none;
 	padding: 0;
 }
@@ -209,7 +214,7 @@ select,
 	-webkit-appearance: none;
 	appearance: none;
 	background-color: #fff;
-	background-image: url(../img/arrow-bottom.png);
+	background-image: url(../img/arrow-select.svg);
 	background-position: center right 0.2em;
 	background-repeat: no-repeat;
 	background-size: 16px auto;
@@ -580,7 +585,7 @@ input:not([type="file"]).m-full {
 
 .c-accordion__title--arrow::after {
 	-webkit-transform: translateY(-50%);
-	background: transparent url(../img/arrow-bottom.png) no-repeat top center/cover;
+	background: transparent url(../img/arrow-select.svg) no-repeat top center/cover;
 	content: "";
 	height: 0.8em;
 	position: absolute;
@@ -2714,6 +2719,7 @@ input:not([type="file"]).m-full {
 	background: #2d2d2d; /* pre-code-bg */
 	color: #fff;
 	margin: -1em;
+	overflow: auto;
 	padding: 12px;
 	position: relative;
 }
@@ -2754,6 +2760,11 @@ input:not([type="file"]).m-full {
 
 .comment-form .form-submit {
 	margin-top: 24px;
+	transition: all 0.3s ease 0s;
+}
+
+.comment-form .form-submit:hover {
+	opacity: 0.6;
 }
 
 #wp-comment-cookies-consent + label {
@@ -2816,8 +2827,20 @@ input:not([type="file"]).m-full {
 	width: 100%;
 }
 
+.p-contact-item select {
+	background-image: url(../img/arrow-select.svg);
+}
+
 .p-contact-submit {
 	text-align: center;
+}
+
+.p-contact-submit [type="submit"] {
+	transition: all 0.3s ease 0s;
+}
+
+.p-contact-submit [type="submit"]:hover {
+	opacity: 0.6;
 }
 
 .p-content {
@@ -3128,6 +3151,7 @@ input:not([type="file"]).m-full {
 }
 
 .p-entry-header > .e-img {
+	margin-top: 12px;
 	text-align: center;
 }
 
@@ -3136,6 +3160,10 @@ input:not([type="file"]).m-full {
 	font-size: 1.2rem;
 	margin-top: 8px;
 	text-align: center;
+}
+
+.p-entry-content {
+	overflow: hidden;
 }
 
 .p-entry-content h2 {
@@ -3215,10 +3243,9 @@ input:not([type="file"]).m-full {
 
 .p-entry-content q {
 	background: #eee;
-	box-shadow: 0 0 0 3px #fee;
+	box-shadow: 0 0 0 1px #eee;
 	color: #333;
-	padding-left: 0.2em;
-	padding-right: 0.2em;
+	padding: 0 0.2em;
 	vertical-align: middle;
 }
 
@@ -3259,13 +3286,13 @@ input:not([type="file"]).m-full {
 .p-entry-content code,
 .p-entry-content kbd {
 	background: #fee;
-	box-shadow: 0 0 0 3px #fee;
+	box-shadow: 0 0 0 1px #fee;
 	color: #444;
 	font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 	font-style: normal;
 	font-weight: 700;
-	margin: 0 0.2em;
-	padding: 0 0.4em;
+	margin: 0 0.1em;
+	padding: 0 0.2em;
 	vertical-align: baseline;
 }
 
@@ -3287,6 +3314,7 @@ input:not([type="file"]).m-full {
 	font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 	font-weight: 400;
 	margin: -1em;
+	overflow: auto;
 	padding: 12px;
 	position: relative;
 }
@@ -3830,6 +3858,14 @@ input:not([type="file"]).m-full {
 	text-align: center;
 }
 
+.p-relation > .e-btn > .c-button {
+	transition: all 0.3s ease 0s;
+}
+
+.p-relation > .e-btn > .c-button:hover {
+	opacity: 0.6;
+}
+
 .p-relation-items {
 	display: flex;
 	flex-wrap: wrap;
@@ -4167,6 +4203,11 @@ input:not([type="file"]).m-full {
 	right: 1px;
 	top: 50%;
 	transform: translateY(-50%);
+	transition: all 0.3s ease 0s;
+}
+
+.post_password .post_password-submit:hover {
+	opacity: 0.6;
 }
 
 .alignleft {
@@ -4415,6 +4456,11 @@ span.wpcf7-list-item {
 	right: 1px;
 	top: 50%;
 	transform: translateY(-50%);
+	transition: all 0.3s ease 0s;
+}
+
+.search-submit:hover {
+	opacity: 0.6;
 }
 
 .tagcloud {

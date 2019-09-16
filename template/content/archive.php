@@ -12,15 +12,17 @@
 
 	<!-- e-img -->
 	<div class="e-img">
-		<a href="<?php the_permalink(); ?>">
-			<?php
-			if ( has_post_thumbnail() ) {
-				the_post_thumbnail( 'my_thumbnail' );
-			} else {
-				echo '<img src="' . esc_url( get_template_directory_uri() ) . '/src/img/noimg.png" alt="">';
-			}
-			?>
-		</a>
+		<div class="e-cover">
+			<a href="<?php the_permalink(); ?>">
+				<?php
+				if ( has_post_thumbnail() ) {
+					the_post_thumbnail( 'my_thumbnail' );
+				} else {
+					echo '<img src="' . esc_url( get_template_directory_uri() ) . '/src/img/noimg.png" alt="">';
+				}
+				?>
+			</a>
+		</div><!-- /e-cover -->
 	</div><!-- /e-img -->
 
 	<!-- e-body -->

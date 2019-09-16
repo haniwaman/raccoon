@@ -89,8 +89,7 @@ add_action( 'wp_enqueue_scripts', 'my_script' );
  * @codex https://developer.wordpress.org/reference/functions/wp_body_open/
  */
 function my_body_open() {
-	/*
-	 Facebookプラグイン */
+	/* Facebookプラグイン */
 	echo '<div id="fb-root"></div>';
 	echo '<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.3"></script>';
 }

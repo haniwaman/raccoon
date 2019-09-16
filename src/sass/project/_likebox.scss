@@ -13,7 +13,28 @@
 
 	> .e-img {
 		width: 40%;
-		background: transparent no-repeat center center / cover;
+
+		> .e-cover {
+			position: relative;
+			overflow: hidden;
+			height: 100%;
+
+			span {
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					font-family: "object-fit: cover;";
+				}
+			}
+		}
 	}
 
 	> .e-body {

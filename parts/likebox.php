@@ -22,7 +22,13 @@ if ( get_theme_mod( 'my_parts_likebox_url' ) ) : ?>
 
 <!-- p-likebox -->
 <div class="p-likebox">
-	<div class="e-img" style="background-image:url(<?php echo esc_url( wp_get_attachment_image_src( $post_thumbnail_id, 'my_thumbnail' )[0] ); ?>);"></div><!-- /likebox-img -->
+	<div class="e-img">
+		<div class="e-cover">
+			<span>
+				<img src="<?php echo esc_url( wp_get_attachment_image_src( $post_thumbnail_id, 'my_thumbnail' )[0] ); ?>" alt="">
+			</span>
+		</div><!-- /e-cover -->
+	</div><!-- /likebox-img -->
 	<div class="e-body">
 		<p class="e-lead"><?php echo wp_kses_post( $facebook_txt ); ?></p>
 		<div class="e-btn">

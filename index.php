@@ -7,9 +7,7 @@
 
 get_header(); ?>
 
-
-
-<?php get_template_part( 'template/mainvisual/page' ); // get_template_part( 'template/mainvisual/index' ); ?>
+<?php get_template_part( 'template/mainvisual/page' ); ?>
 
 <!-- l-content -->
 <div class="l-content p-content">

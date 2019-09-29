@@ -19,7 +19,10 @@
 				<time class="e-update" datetime="<?php the_modified_time( 'c' ); ?>"><?php the_modified_time( get_option( 'date_format' ) ); ?></time>
 				<?php endif; ?>
 			</div><!-- /e-meta -->
-			<?php apply_filters( 'raccoon_single_meta_bottom' ); ?>
+			<?php
+			$raccoon_meta_bottom_content = '';
+			apply_filters( 'raccoon_single_meta_bottom', $raccoon_meta_bottom_content );
+			?>
 			<figure class="e-img">
 			<?php
 			if ( has_post_thumbnail() ) {
@@ -51,7 +54,10 @@
 
 		<?php raccoon_the_post_tags(); ?>
 
-		<?php apply_filters( 'raccoon_single_tags_bottom' ); ?>
+		<?php
+		$raccoon_tags_bottom_content = '';
+		apply_filters( 'raccoon_single_tags_bottom', $raccoon_tags_bottom_content );
+		?>
 
 		<?php if ( get_theme_mod( 'raccoon_parts_relation_check' ) ) : ?>
 			<?php get_template_part( 'parts/relation' ); ?>

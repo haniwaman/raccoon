@@ -43,7 +43,18 @@
 	padding: 0;
 }
 
-input:not([type="file"]),
+[type="text"],
+[type="search"],
+[type="tel"],
+[type="url"],
+[type="email"],
+[type="password"],
+[type="number"],
+[type="date"],
+[type="month"],
+[type="week"],
+[type="time"],
+[type="datetime-local"],
 .c-text {
 	-moz-appearance: none;
 	-webkit-appearance: none;
@@ -59,7 +70,18 @@ input:not([type="file"]),
 	width: auto;
 }
 
-input:focus:not([type="file"]),
+:focus[type="text"],
+:focus[type="search"],
+:focus[type="tel"],
+:focus[type="url"],
+:focus[type="email"],
+:focus[type="password"],
+:focus[type="number"],
+:focus[type="date"],
+:focus[type="month"],
+:focus[type="week"],
+:focus[type="time"],
+:focus[type="datetime-local"],
 .c-text:focus {
 	border: 1px solid #9e9e9e;
 	box-shadow: none;
@@ -286,7 +308,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	background: #fff;
 	color: #424242;
-	font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "Meiryo UI", "Meiryo", roboto, sans-serif;
+	font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", meiryo, "MS Pゴシック", "MS PGothic", sans-serif;
 	font-size: 1.6rem;
 	font-weight: 400;
 	line-height: 1.6;
@@ -393,7 +415,7 @@ code,
 kbd,
 pre,
 samp {
-	font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-family: monospace, sans-serif;
 	font-size: inherit;
 }
 
@@ -445,7 +467,18 @@ select {
 	max-width: 100%;
 }
 
-input:not([type="file"]).m-full {
+[type="text"].m-full,
+[type="search"].m-full,
+[type="tel"].m-full,
+[type="url"].m-full,
+[type="email"].m-full,
+[type="password"].m-full,
+[type="number"].m-full,
+[type="date"].m-full,
+[type="month"].m-full,
+[type="week"].m-full,
+[type="time"].m-full,
+[type="datetime-local"].m-full {
 	width: 100%;
 }
 
@@ -2474,13 +2507,6 @@ input:not([type="file"]).m-full {
 	opacity: 0.6; /* opacity */
 }
 
-.p-comments-list .comment-body .reply::before {
-	content: "\f3e5";
-	font-family: "Font Awesome 5 Free", sans-serif;
-	font-weight: 900;
-	margin-right: 6px;
-}
-
 .p-comments-list .comment-meta {
 	align-items: center;
 	display: flex;
@@ -2554,20 +2580,6 @@ input:not([type="file"]).m-full {
 .p-comments-nav .e-prev a:hover,
 .p-comments-nav .e-next a:hover {
 	opacity: 0.6; /* opacity */
-}
-
-.p-comments-nav .e-prev a::before {
-	content: "\f053";
-	font-family: "Font Awesome 5 Free", sans-serif;
-	font-weight: 900;
-	margin-right: 6px;
-}
-
-.p-comments-nav .e-next a::after {
-	content: "\f054";
-	font-family: "Font Awesome 5 Free", sans-serif;
-	font-weight: 900;
-	margin-left: 6px;
 }
 
 .comment-content h1 {
@@ -2873,26 +2885,16 @@ input:not([type="file"]).m-full {
 	padding-right: 46px;
 }
 
-.p-drawer-nav li.menu-item-has-children span::after {
-	content: "\f078";
-	font-family: "Font Awesome 5 Free", sans-serif;
-	font-size: 1.8rem;
-	font-weight: 900;
-	position: absolute;
-	right: 16px;
-	top: 12px;
-}
-
 .p-drawer-nav li.menu-item-has-children.m-open .sub-menu {
 	display: block;
 }
 
-.p-drawer-nav li.menu-item-has-children.m-open span::after {
-	content: "\f106";
-}
-
 .p-drawer-widget {
 	padding: 0 12px;
+}
+
+.p-drawer-widget .sub-menu {
+	display: none;
 }
 
 .p-entry-items {
@@ -2968,13 +2970,6 @@ input:not([type="file"]).m-full {
 	font-size: 1.2rem;
 	margin-left: auto;
 	white-space: nowrap;
-}
-
-.p-entry-item .e-meta > .e-published::before {
-	content: "\f073";
-	font-family: "Font Awesome 5 Free", sans-serif;
-	font-weight: 400;
-	margin-right: 6px;
 }
 
 .p-entry-item .e-meta > .e-label {
@@ -3106,25 +3101,11 @@ input:not([type="file"]).m-full {
 	white-space: nowrap;
 }
 
-.p-entry-header > .e-meta > .e-published::before {
-	content: "\f073";
-	font-family: "Font Awesome 5 Free", sans-serif;
-	font-weight: 400;
-	margin-right: 6px;
-}
-
 .p-entry-header > .e-meta > .e-update {
 	color: #9e9e9e;
 	font-size: 1.2rem;
 	margin-left: 16px;
 	white-space: nowrap;
-}
-
-.p-entry-header > .e-meta > .e-update::before {
-	content: "\f2f1";
-	font-family: "Font Awesome 5 Free", sans-serif;
-	font-weight: 900;
-	margin-right: 6px;
 }
 
 .p-entry-header > .e-meta > .e-label {
@@ -3288,7 +3269,7 @@ input:not([type="file"]).m-full {
 	background: #fee;
 	box-shadow: 0 0 0 1px #fee;
 	color: #444;
-	font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-family: monospace, sans-serif;
 	font-style: normal;
 	font-weight: 700;
 	margin: 0 0.1em;
@@ -3311,7 +3292,7 @@ input:not([type="file"]).m-full {
 	background: #2d2d2d;
 	color: #fff;
 	display: block;
-	font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-family: monospace, sans-serif;
 	font-weight: 400;
 	margin: -1em;
 	overflow: auto;
@@ -3338,14 +3319,6 @@ input:not([type="file"]).m-full {
 	opacity: 0.6; /* opacity */
 }
 
-.p-entry-pager > .e-prev > .e-head::before,
-.p-entry-pager > .e-next > .e-head::before {
-	content: "\f053";
-	font-family: "Font Awesome 5 Free", sans-serif;
-	font-weight: 900;
-	margin-right: 6px;
-}
-
 .p-entry-pager > .e-prev,
 .p-entry-pager > .e-next {
 	width: 100%;
@@ -3366,13 +3339,6 @@ input:not([type="file"]).m-full {
 
 .p-entry-pager > .e-next > .e-head::before {
 	display: none;
-}
-
-.p-entry-pager > .e-next > .e-head::after {
-	content: "\f054";
-	font-family: "Font Awesome 5 Free", sans-serif;
-	font-weight: 900;
-	margin-left: 6px;
 }
 
 .p-entry-pager-item {
@@ -3800,14 +3766,6 @@ input:not([type="file"]).m-full {
 
 .p-relation > .e-head span {
 	font-size: 1.8rem;
-}
-
-.p-relation > .e-head span::before {
-	content: "\f02b";
-	font-family: "Font Awesome 5 Free", sans-serif;
-	font-size: 1.4rem;
-	font-weight: 900;
-	margin-right: 4px;
 }
 
 .p-relation > .e-btn {

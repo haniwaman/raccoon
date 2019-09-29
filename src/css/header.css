@@ -33,7 +33,18 @@
   border: none;
 }
 
-input:not([type="file"]) {
+[type="text"],
+[type="search"],
+[type="tel"],
+[type="url"],
+[type="email"],
+[type="password"],
+[type="number"],
+[type="date"],
+[type="month"],
+[type="week"],
+[type="time"],
+[type="datetime-local"] {
   width: auto;
   padding: 0.4em 0.8em;
   border-radius: 0;
@@ -48,7 +59,18 @@ input:not([type="file"]) {
   appearance: none;
 }
 
-input:focus:not([type="file"]) {
+:focus[type="text"],
+:focus[type="search"],
+:focus[type="tel"],
+:focus[type="url"],
+:focus[type="email"],
+:focus[type="password"],
+:focus[type="number"],
+:focus[type="date"],
+:focus[type="month"],
+:focus[type="week"],
+:focus[type="time"],
+:focus[type="datetime-local"] {
   outline: none;
   box-shadow: none;
   border: 1px solid #9e9e9e;
@@ -256,7 +278,7 @@ body {
 }
 
 body {
-  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "Meiryo UI", "Meiryo", roboto, sans-serif;
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", meiryo, "MS Pゴシック", "MS PGothic", sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
   color: #424242;
@@ -367,7 +389,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font-family: monospace, sans-serif;
   font-size: inherit;
 }
 
@@ -419,7 +441,18 @@ select {
   max-width: 100%;
 }
 
-input:not([type="file"]).m-full {
+[type="text"].m-full,
+[type="search"].m-full,
+[type="tel"].m-full,
+[type="url"].m-full,
+[type="email"].m-full,
+[type="password"].m-full,
+[type="number"].m-full,
+[type="date"].m-full,
+[type="month"].m-full,
+[type="week"].m-full,
+[type="time"].m-full,
+[type="datetime-local"].m-full {
   width: 100%;
 }
 

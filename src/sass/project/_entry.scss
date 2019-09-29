@@ -39,12 +39,12 @@
 			white-space: nowrap;
 			margin-left: auto;
 
-			&::before {
-				content: "\f073";
-				font-family: $font-family-awesome;
-				font-weight: 400;
-				margin-right: 6px;
-			}
+			// &::before {
+			// 	content: "\f073";
+			// 	font-family: $font-family-awesome;
+			// 	font-weight: 400;
+			// 	margin-right: 6px;
+			// }
 		}
 
 		> .e-update {
@@ -53,12 +53,12 @@
 			white-space: nowrap;
 			margin-left: 16px;
 
-			&::before {
-				content: "\f2f1";
-				font-family: $font-family-awesome;
-				font-weight: 900;
-				margin-right: 6px;
-			}
+			// &::before {
+			// 	content: "\f2f1";
+			// 	font-family: $font-family-awesome;
+			// 	font-weight: 900;
+			// 	margin-right: 6px;
+			// }
 		}
 
 		> .e-label {
@@ -295,12 +295,12 @@
 				opacity: $opacity; /* opacity */
 			}
 
-			&::before {
-				content: "\f053";
-				font-family: $font-family-awesome;
-				font-weight: 900;
-				margin-right: 6px;
-			}
+			// &::before {
+			// 	content: "\f053";
+			// 	font-family: $font-family-awesome;
+			// 	font-weight: 900;
+			// 	margin-right: 6px;
+			// }
 		}
 	}
 
@@ -332,12 +332,12 @@
 				display: none;
 			}
 
-			&::after {
-				content: "\f054";
-				font-family: $font-family-awesome;
-				font-weight: 900;
-				margin-left: 6px;
-			}
+			// &::after {
+			// 	content: "\f054";
+			// 	font-family: $font-family-awesome;
+			// 	font-weight: 900;
+			// 	margin-left: 6px;
+			// }
 		}
 	}
 }

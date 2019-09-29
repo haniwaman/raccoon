@@ -84,12 +84,12 @@
 			white-space: nowrap;
 			margin-left: auto;
 
-			&::before {
-				content: "\f073";
-				font-family: $font-family-awesome;
-				font-weight: 400;
-				margin-right: 6px;
-			}
+			// &::before {
+			// 	content: "\f073";
+			// 	font-family: $font-family-awesome;
+			// 	font-weight: 400;
+			// 	margin-right: 6px;
+			// }
 		}
 
 		> .e-label {

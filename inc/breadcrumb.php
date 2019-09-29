@@ -13,8 +13,8 @@ if ( ! function_exists( 'raccoon_breadcrumb' ) ) {
 	 */
 	function raccoon_breadcrumb( $object_type = '' ) {
 		$breadcrumb_html       = '';
-		$breadcrumb_beore      = '<nav class="p-breadcrumb"><div class="l-inner"><ul>';
-		$breadcrumb_after      = '</ul></div></nav>';
+		$breadcrumb_beore      = '<nav class="p-breadcrumb"><ul>';
+		$breadcrumb_after      = '</ul></nav>';
 		$breadcrumb_home       = apply_filters( 'raccoon_breadcrumb_home', __( 'Home', 'raccoon' ) );
 		$breadcrumb_home_tag   = '<li><a href="' . esc_url( home_url( '/' ) ) . '">' . $breadcrumb_home . '</a></li>';
 		$breadcrumb_bridge     = '&gt;';

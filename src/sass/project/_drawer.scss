@@ -27,18 +27,17 @@
 				padding-right: 46px;
 			}
 
-			span {
-
-				&::after {
-					content: "\f078";
-					font-family: $font-family-awesome;
-					font-size: 1.8rem;
-					font-weight: 900;
-					position: absolute;
-					right: 16px;
-					top: 12px;
-				}
-			}
+			// span {
+			// 	&::after {
+			// 		content: "\f078";
+			// 		font-family: $font-family-awesome;
+			// 		font-size: 1.8rem;
+			// 		font-weight: 900;
+			// 		position: absolute;
+			// 		right: 16px;
+			// 		top: 12px;
+			// 	}
+			// }
 
 			&.m-open {
 
@@ -46,12 +45,11 @@
 					display: block;
 				}
 
-				span {
-
-					&::after {
-						content: "\f106";
-					}
-				}
+				// span {
+				// 	&::after {
+				// 		content: "\f106";
+				// 	}
+				// }
 			}
 		}
 	}
@@ -59,4 +57,8 @@
 
 .p-drawer-widget {
 	padding: 0 12px;
+
+	.sub-menu {
+		display: none;
+	}
 }

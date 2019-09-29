@@ -13,7 +13,7 @@
 <div class="l-row l-row--middle">
 
 <?php
-$logo_tag = is_front_page() ? 'h1' : 'div';
+$raccoon_logo_tag = is_front_page() ? 'h1' : 'div';
 ?>
 
 <div class="e-logo">

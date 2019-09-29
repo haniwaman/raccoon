@@ -11,7 +11,7 @@
 	<div class="e-head"><?php esc_html_e( 'Relation Posts', 'raccoon' ); ?></div><!-- /e-head -->
 
 	<?php
-	$relation_query = new WP_Query(
+	$raccoon_relation_query = new WP_Query(
 		array(
 			'post_type'      => 'post',
 			'posts_per_page' => 8,

@@ -230,6 +230,8 @@ function raccoon_archive_title( $title ) {
 		if ( get_query_var( 'day' ) ) {
 			$title .= get_query_var( 'day' ) . __( 'Day', 'raccoon' );
 		}
+	} elseif ( is_home() ) {
+		$title = __( 'Blog', 'raccoon' );
 	}
 	return $title;
 };

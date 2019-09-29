@@ -19,5 +19,6 @@
 	@include mq-up("tab") {
 		width: ($layout-width-side / $layout-width-container) * 100%;
 		margin-left: auto;
+		margin-top: 0;
 	}
 }

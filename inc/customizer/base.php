@@ -1,8 +1,6 @@
 <?php
 /**
- * My Customizer Sanitize
- *
- * @package WordPress
+ * Raccoon Customizer Sanitize
  */
 
 require_once get_template_directory() . '/inc/customizer/color.php';
@@ -10,20 +8,20 @@ require_once get_template_directory() . '/inc/customizer/parts.php';
 require_once get_template_directory() . '/inc/customizer/layout.php';
 require_once get_template_directory() . '/inc/customizer/performance.php';
 
-if ( ! function_exists( 'my_sanitize_checkbox' ) ) {
+if ( ! function_exists( 'raccoon_sanitize_checkbox' ) ) {
 	/**
 	 * Sanitize Checkbox
 	 *
 	 * @param [type] $checked Checkbox Value.
 	 * @return boolean true or false.
 	 */
-	function my_sanitize_checkbox( $checked ) {
+	function raccoon_sanitize_checkbox( $checked ) {
 		return ( ( isset( $checked ) && true === $checked ) ? true : false );
 	}
 }
 
 
-if ( ! function_exists( 'my_sanitize_select' ) ) {
+if ( ! function_exists( 'raccoon_sanitize_select' ) ) {
 	/**
 	 * Sanitize Radiobutton and Selectbox
 	 *
@@ -31,7 +29,7 @@ if ( ! function_exists( 'my_sanitize_select' ) ) {
 	 * @param [type] $setting .
 	 * @return [type] .
 	 */
-	function my_sanitize_select( $input, $setting ) {
+	function raccoon_sanitize_select( $input, $setting ) {
 		$input   = sanitize_key( $input );
 		$choices = $setting->manager->get_control( $setting->id )->choices;
 		return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
@@ -39,7 +37,7 @@ if ( ! function_exists( 'my_sanitize_select' ) ) {
 }
 
 
-if ( ! function_exists( 'my_sanitize_image' ) ) {
+if ( ! function_exists( 'raccoon_sanitize_image' ) ) {
 	/**
 	 * Sanitize Image
 	 *
@@ -47,7 +45,7 @@ if ( ! function_exists( 'my_sanitize_image' ) ) {
 	 * @param [type] $setting .
 	 * @return [type] .
 	 */
-	function my_sanitize_image( $image, $setting ) {
+	function raccoon_sanitize_image( $image, $setting ) {
 		$mimes = array(
 			'jpg|jpeg|jpe' => 'image/jpeg',
 			'gif'          => 'image/gif',
@@ -61,7 +59,7 @@ if ( ! function_exists( 'my_sanitize_image' ) ) {
 	}
 }
 
-if ( ! function_exists( 'my_sanitize_number_range' ) ) {
+if ( ! function_exists( 'raccoon_sanitize_number_range' ) ) {
 
 	/**
 	 * Sanitize Number
@@ -70,7 +68,7 @@ if ( ! function_exists( 'my_sanitize_number_range' ) ) {
 	 * @param [type] $setting .
 	 * @return [type] .
 	 */
-	function my_sanitize_number_range( $number, $setting ) {
+	function raccoon_sanitize_number_range( $number, $setting ) {
 		$number = absint( $number );
 		$atts   = $setting->manager->get_control( $setting->id )->input_attrs;
 		$min    = ( isset( $atts['min'] ) ? $atts['min'] : $number );

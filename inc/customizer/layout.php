@@ -1,21 +1,19 @@
 <?php
 /**
- * My Customizer Layout
- *
- * @package WordPress
+ * Raccoon Customizer Layout
  */
 
-if ( ! function_exists( 'my_customize_layout' ) ) {
+if ( ! function_exists( 'raccoon_customize_layout' ) ) {
 	/**
 	 * Add Customizer Layout
 	 *
 	 * @param object $wp_customize Customizer Object.
 	 * @return void
 	 */
-	function my_customize_layout( $wp_customize ) {
+	function raccoon_customize_layout( $wp_customize ) {
 
 		$wp_customize->add_panel(
-			'my_layout',
+			'raccoon_layout',
 			array(
 				'title'    => __( 'Layout', 'raccoon' ),
 				'priority' => 35,
@@ -24,29 +22,29 @@ if ( ! function_exists( 'my_customize_layout' ) ) {
 
 		/* Site */
 		$wp_customize->add_section(
-			'my_layout_all',
+			'raccoon_layout_all',
 			array(
 				'title'    => __( 'Site', 'raccoon' ),
-				'panel'    => 'my_layout',
+				'panel'    => 'raccoon_layout',
 				'priority' => 1,
 			)
 		);
 
 		$wp_customize->add_setting(
-			'my_layout_all_radio',
+			'raccoon_layout_all_radio',
 			array(
 				'default'           => 'two-right',
-				'sanitize_callback' => 'my_sanitize_select',
+				'sanitize_callback' => 'raccoon_sanitize_select',
 			)
 		);
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
-				'my_layout_all_radio',
+				'raccoon_layout_all_radio',
 				array(
 					'label'    => __( 'Select Column', 'raccoon' ),
-					'section'  => 'my_layout_all',
-					'settings' => 'my_layout_all_radio',
+					'section'  => 'raccoon_layout_all',
+					'settings' => 'raccoon_layout_all_radio',
 					'priority' => 1,
 					'type'     => 'radio',
 					'choices'  => array(
@@ -60,29 +58,29 @@ if ( ! function_exists( 'my_customize_layout' ) ) {
 
 		/* Archive */
 		$wp_customize->add_section(
-			'my_layout_archive',
+			'raccoon_layout_archive',
 			array(
 				'title'    => __( 'Archive', 'raccoon' ),
-				'panel'    => 'my_layout',
+				'panel'    => 'raccoon_layout',
 				'priority' => 3,
 			)
 		);
 
 		$wp_customize->add_setting(
-			'my_layout_archive_check',
+			'raccoon_layout_archive_check',
 			array(
 				'default' => 'horizon',
-				array( 'sanitize_callback' => 'my_sanitize_checkbox' ),
+				array( 'sanitize_callback' => 'raccoon_sanitize_checkbox' ),
 			)
 		);
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
-				'my_layout_archive_check',
+				'raccoon_layout_archive_check',
 				array(
 					'label'    => __( 'Archive Layout', 'raccoon' ),
-					'section'  => 'my_layout_archive',
-					'settings' => 'my_layout_archive_check',
+					'section'  => 'raccoon_layout_archive',
+					'settings' => 'raccoon_layout_archive_check',
 					'priority' => 1,
 					'type'     => 'radio',
 					'choices'  => array(
@@ -95,13 +93,13 @@ if ( ! function_exists( 'my_customize_layout' ) ) {
 
 		/* Article */
 		$wp_customize->add_section(
-			'my_layout_page',
+			'raccoon_layout_page',
 			array(
 				'title'    => __( 'Article', 'raccoon' ),
-				'panel'    => 'my_layout',
+				'panel'    => 'raccoon_layout',
 				'priority' => 3,
 			)
 		);
 	}
 }
-add_action( 'customize_register', 'my_customize_layout' );
+add_action( 'customize_register', 'raccoon_customize_layout' );

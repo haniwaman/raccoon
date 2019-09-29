@@ -1,8 +1,6 @@
 <?php
 /**
  * Archive Content
- *
- * @package WordPress
  */
 
 ?>
@@ -16,7 +14,7 @@
 			<a href="<?php the_permalink(); ?>">
 				<?php
 				if ( has_post_thumbnail() ) {
-					the_post_thumbnail( 'my_thumbnail' );
+					the_post_thumbnail( 'raccoon_thumbnail' );
 				} else {
 					echo '<img src="' . esc_url( get_template_directory_uri() ) . '/src/img/noimg.png" alt="">';
 				}
@@ -28,7 +26,7 @@
 	<!-- e-body -->
 	<div class="e-body">
 		<div class="e-meta">
-			<div class="e-label"><?php my_the_post_category(); ?></div><!-- /e-label -->
+			<div class="e-label"><?php raccoon_the_post_category(); ?></div><!-- /e-label -->
 			<time class="e-published" datetime="<?php the_time( 'c' ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time><!-- /e-published -->
 		</div><!-- /e-meta -->
 		<h2 class="e-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2><!-- /e-title -->

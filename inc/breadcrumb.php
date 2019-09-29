@@ -1,11 +1,9 @@
 <?php
 /**
- * My Breadcrumb Functions
- *
- * @package WordPress
+ * Raccoon Breadcrumb Functions
  */
 
-if ( ! function_exists( 'my_breadcrumb' ) ) {
+if ( ! function_exists( 'raccoon_breadcrumb' ) ) {
 
 	/**
 	 * Display Breadcrumbs List
@@ -13,7 +11,7 @@ if ( ! function_exists( 'my_breadcrumb' ) ) {
 	 * @param string $object_type Taxonomy Name.
 	 * @return void
 	 */
-	function my_breadcrumb( $object_type = '' ) {
+	function raccoon_breadcrumb( $object_type = '' ) {
 		$breadcrumb_html       = '';
 		$breadcrumb_beore      = '<nav class="p-breadcrumb"><div class="l-inner"><ul>';
 		$breadcrumb_after      = '</ul></div></nav>';
@@ -42,7 +40,7 @@ if ( ! function_exists( 'my_breadcrumb' ) ) {
 			if ( 'post' !== get_post_type() ) {
 				$breadcrumb_html .= '<li><a href="' . esc_url( get_post_type_archive_link( get_post_type() ) ) . '">' . esc_html( get_post_type_object( get_post_type() )->labels->name ) . '</a></li>' . $breadcrumb_bridge_tag;
 			} else {
-				$this_categories = my_get_post_categories( get_the_ID() );
+				$this_categories = raccoon_get_post_categories( get_the_ID() );
 				$thie_parents    = get_ancestors( $this_categories[0]['id'], 'category' );
 				if ( $thie_parents ) {
 					$thie_parents       = array_reverse( $thie_parents );

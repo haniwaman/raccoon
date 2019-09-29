@@ -1,8 +1,6 @@
 <?php
 /**
  * Footer Content
- *
- * @package WordPress
  */
 
 ?>

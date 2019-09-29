@@ -1,5 +1,5 @@
 jQuery(function() {
-	// ローディング判定
+	/* is Loading */
 	jQuery('body')
 		.delay(3000)
 		.queue(function() {
@@ -11,7 +11,7 @@ jQuery(function() {
 		jQuery('body').attr('data-loading', 'true');
 	});
 
-	// スクロール判定
+	/* is Scroll */
 	jQuery(window).on('scroll', function() {
 		if (100 < jQuery(this).scrollTop()) {
 			jQuery('body').attr('data-scroll', 'true');
@@ -20,7 +20,7 @@ jQuery(function() {
 		}
 	});
 
-	/* スムーススクロール */
+	/* Smooth Scroll */
 	jQuery('a[href^="#"]').click(function() {
 		var header = 0;
 		var speed = 300;
@@ -68,13 +68,7 @@ jQuery(function() {
 			.toggleClass('m-open');
 	});
 
-	/* Polyfill */
-	Stickyfill.add(document.querySelectorAll('#p-sidebar-fixed'));
-
-	/* Object Fit（IE） */
-	objectFitImages();
-
-	// ドロワー
+	// Drawer
 	jQuery('.js-drawer').on('click', function(e) {
 		e.preventDefault();
 		let targetClass = jQuery(this).attr('data-target');
@@ -91,7 +85,7 @@ jQuery(function() {
 		return false;
 	});
 
-	// モーダル
+	// Modal
 	jQuery('.js-modal').on('click', function(e) {
 		e.preventDefault();
 		let target = jQuery(this).attr('data-target');
@@ -99,7 +93,7 @@ jQuery(function() {
 		return false;
 	});
 
-	// 電話番号
+	// Tel Link
 	let userAgent = navigator.userAgent;
 	if (userAgent.indexOf('iPhone') < 0 && userAgent.indexOf('Android') < 0) {
 		jQuery('a[href^="tel:"]')
@@ -108,50 +102,4 @@ jQuery(function() {
 				e.preventDefault();
 			});
 	}
-
-	// パララックス
-	const parallaxOptions = { root: null, rootMargin: '0px', threshold: [0.25] };
-	var parallaxItems = [].slice.call(document.querySelectorAll('.js-anim'));
-	let parallaxItemObserver = new IntersectionObserver(function(entries, observer) {
-		entries.forEach(function(entry) {
-			if (entry.isIntersecting) {
-				let parallaxItem = entry.target;
-				parallaxItem.classList.add('is-anim');
-				parallaxItemObserver.unobserve(parallaxItem);
-			}
-		});
-	}, parallaxOptions);
-
-	parallaxItems.forEach(function(parallaxItem) {
-		parallaxItemObserver.observe(parallaxItem);
-	});
-
-	// LazyLoad
-	// https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/
-	const lazyOptions = { root: null, rootMargin: '0px', threshold: [0] };
-	var lazyItems = [].slice.call(document.querySelectorAll('.js-lazy'));
-	lazyItems.forEach(function(lazyItem) {
-		lazyItem.setAttribute('data-src', lazyItem.src);
-		lazyItem.src = '';
-	});
-	let lazyItemObserver = new IntersectionObserver(function(entries, observer) {
-		entries.forEach(function(entry) {
-			if (entry.isIntersecting) {
-				let lazyItem = entry.target;
-				console.log(lazyItem);
-				if (lazyItem.dataset.hasOwnProperty('src')) {
-					lazyItem.src = lazyItem.dataset.src;
-				}
-				if (lazyItem.dataset.hasOwnProperty('srcset')) {
-					lazyItem.srcset = lazyItem.dataset.srcset;
-				}
-				lazyItem.classList.remove('js-lazy');
-				lazyItemObserver.unobserve(lazyItem);
-			}
-		});
-	}, lazyOptions);
-
-	lazyItems.forEach(function(lazyItem) {
-		lazyItemObserver.observe(lazyItem);
-	});
 });

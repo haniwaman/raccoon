@@ -1,9 +1,8 @@
 <?php
 /**
  * Sidebar
- *
- * @package WordPress
  */
+
 ?>
 
 <!-- l-secondary -->

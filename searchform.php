@@ -1,8 +1,6 @@
 <?php
 /**
  * SearchForm
- *
- * @package WordPress
  */
 
 ?>

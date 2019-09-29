@@ -1,8 +1,6 @@
 <?php
 /**
  * Attachment
- *
- * @package WordPress
  */
 
 get_header(); ?>
@@ -19,7 +17,7 @@ get_header(); ?>
 <div class="l-row">
 
 <!-- l-primary -->
-<main class="l-primary">
+<main id="a-main" class="l-primary">
 
 <?php if ( have_posts() ) : ?>
 	<?php while ( have_posts() ) : ?>
@@ -31,7 +29,7 @@ get_header(); ?>
 	<!-- e-header -->
 	<div class="e-header">
 		<div class="p-entry-header">
-			<div class="e-breadcrumb"><?php my_breadcrumb(); ?></div><!-- /e-breadcrumb -->
+			<div class="e-breadcrumb"><?php raccoon_breadcrumb(); ?></div><!-- /e-breadcrumb -->
 			<h1 class="e-title"><?php the_title(); ?></h1><!-- /e-title -->
 			<div class="e-meta">
 			<div class="e-label"><span><?php echo esc_html( get_post_mime_type( get_the_ID() ) ); ?></span></div><!-- /e-label -->
@@ -40,7 +38,7 @@ get_header(); ?>
 
 			<figure class="e-img">
 			<?php if ( wp_attachment_is_image( get_the_ID() ) ) : ?>
-				<?php echo wp_get_attachment_image( get_the_ID(), 'my_thumbnail' ); ?>
+				<?php echo wp_get_attachment_image( get_the_ID(), 'raccoon_thumbnail' ); ?>
 			<?php elseif ( false !== strpos( get_post_mime_type( get_the_ID() ), 'video' ) ) : ?>
 				<video src="<?php echo esc_url( wp_get_attachment_url( get_the_ID() ) ); ?>" controls></video>
 			<?php elseif ( false !== strpos( get_post_mime_type( get_the_ID() ), 'audio' ) ) : ?>
@@ -55,7 +53,7 @@ get_header(); ?>
 		</div><!-- /p-entry-header -->
 	</div><!-- /e-header -->
 
-		<?php $rc_heading = get_theme_mod( 'my_parts_heading_select' ) ? 'rc-' . get_theme_mod( 'my_parts_heading_select' ) : ''; ?>
+		<?php $rc_heading = get_theme_mod( 'raccoon_parts_heading_select' ) ? 'rc-' . get_theme_mod( 'raccoon_parts_heading_select' ) : ''; ?>
 	<div class="e-body">
 		<div class="p-entry-content <?php echo esc_attr( $rc_heading ); ?>">
 		<?php the_content(); ?>

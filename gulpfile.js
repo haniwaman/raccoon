@@ -1,22 +1,23 @@
-var gulp = require("gulp");
-var sass = require("gulp-sass");
-var plumber = require("gulp-plumber");
-var notify = require("gulp-notify");
-var sassGlob = require("gulp-sass-glob");
-var mmq = require("gulp-merge-media-queries");
-var browserSync = require("browser-sync");
-var imagemin = require("gulp-imagemin");
-var imageminPngquant = require("imagemin-pngquant");
-var imageminMozjpeg = require("imagemin-mozjpeg");
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+var plumber = require('gulp-plumber');
+var notify = require('gulp-notify');
+const rename = require('gulp-rename');
+var sassGlob = require('gulp-sass-glob');
+var mmq = require('gulp-merge-media-queries');
+var browserSync = require('browser-sync');
+var imagemin = require('gulp-imagemin');
+var imageminPngquant = require('imagemin-pngquant');
+var imageminMozjpeg = require('imagemin-mozjpeg');
 
-var postcss = require("gulp-postcss");
-var autoprefixer = require("autoprefixer");
-var cssdeclsort = require("css-declaration-sorter");
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
+var cssdeclsort = require('css-declaration-sorter');
 
-var merge = require("merge-stream");
+var merge = require('merge-stream');
 
 var imageminOption = [
-	imageminPngquant({ quality: "65-80" }),
+	imageminPngquant({ quality: '65-80' }),
 	imageminMozjpeg({ quality: 85 }),
 	imagemin.gifsicle({
 		interlaced: false,
@@ -28,47 +29,62 @@ var imageminOption = [
 	imagemin.svgo()
 ];
 
-gulp.task("sass", function() {
+gulp.task('sass', function() {
 	var style = gulp
-		.src("./src/sass/style.scss")
-		.pipe(plumber({ errorHandler: notify.onError("Error: <%= error.message %>") }))
+		.src('./src/sass/style.scss')
+		.pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
 		.pipe(sassGlob())
-		.pipe(sass({ outputStyle: "expanded" }))
+		.pipe(sass({ outputStyle: 'expanded' }))
 		.pipe(postcss([autoprefixer()]))
-		.pipe(postcss([cssdeclsort({ order: "alphabetically" })]))
+		.pipe(postcss([cssdeclsort({ order: 'alphabetically' })]))
 		.pipe(mmq())
-		.pipe(gulp.dest("./src/css"));
+		.pipe(gulp.dest('./src/css'));
 
 	var header = gulp
-		.src("./src/sass/header.scss")
-		.pipe(plumber({ errorHandler: notify.onError("Error: <%= error.message %>") }))
+		.src('./src/sass/header.scss')
+		.pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
 		.pipe(sassGlob())
 		.pipe(postcss([autoprefixer()]))
-		.pipe(postcss([cssdeclsort({ order: "alphabetically" })]))
+		.pipe(postcss([cssdeclsort({ order: 'alphabetically' })]))
 		.pipe(mmq())
-		.pipe(sass({ outputStyle: "compressed" }))
-		.pipe(gulp.dest("./src/css"));
+		.pipe(sass({ outputStyle: 'expanded' }))
+		.pipe(gulp.dest('./src/css'));
 
-	return merge(style, header);
+	var header_min = gulp
+		.src('./src/sass/header.scss')
+		.pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
+		.pipe(sassGlob())
+		.pipe(postcss([autoprefixer()]))
+		.pipe(postcss([cssdeclsort({ order: 'alphabetically' })]))
+		.pipe(mmq())
+		.pipe(sass({ outputStyle: 'compressed' }))
+		.pipe(
+			rename({
+				suffix: '.min'
+			})
+		)
+		.pipe(gulp.dest('./src/css'));
+
+	return merge(style, header_min, header);
 });
 
-gulp.task("watch", function() {
-	gulp.watch("./src/sass/**/*.scss", ["sass"]);
+gulp.task('watch', function() {
+	gulp.watch('./src/sass/**/*.scss', ['sass']);
 });
 
-gulp.task("bs-reload", function() {
+gulp.task('bs-reload', function() {
 	browserSync.reload();
 });
 
-gulp.task("default", ["watch"], function() {
-	gulp.watch("./*.php");
-	gulp.watch("./src/css/*.css");
-	gulp.watch("./src/js/*.js");
+gulp.task('default', ['watch'], function() {
+	gulp.watch('./*.php');
+	gulp.watch('./src/css/*.css');
+	gulp.watch('./src/js/*.js');
 });
 
-gulp.task("imagemin", function() {
+gulp.task('imagemin', function() {
 	return gulp
-		.src("./src/img/base/*.{png,jpg,gif,svg}")
+		.src('./src/img/base/*.{png,jpg,gif,svg}')
 		.pipe(imagemin(imageminOption))
-		.pipe(gulp.dest("./src/img"));
+		.pipe(gulp.dest('./src/img'));
 });

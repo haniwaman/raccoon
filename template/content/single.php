@@ -1,9 +1,7 @@
 <?php
 /**
  * Single Content
- *
- * @package WordPress
-*/
+ */
 
 ?>
 
@@ -12,29 +10,29 @@
 
 	<div class="e-header">
 		<div class="p-entry-header">
-			<div class="e-breadcrumb"><?php my_breadcrumb(); ?></div><!-- /e-breadcrumb -->
+			<div class="e-breadcrumb"><?php raccoon_breadcrumb(); ?></div><!-- /e-breadcrumb -->
 			<h1 class="e-title"><?php the_title(); ?></h1><!-- /e-title -->
 			<div class="e-meta">
-				<div class="e-label"><?php my_the_post_category(); ?></div><!-- /e-label -->
+				<div class="e-label"><?php raccoon_the_post_category(); ?></div><!-- /e-label -->
 				<time class="e-published" datetime="<?php the_time( 'c' ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time>
 				<?php if ( get_the_modified_time( 'Y.m.d' ) !== get_the_time( 'Y.m.d' ) ) : ?>
 				<time class="e-update" datetime="<?php the_modified_time( 'c' ); ?>"><?php the_modified_time( get_option( 'date_format' ) ); ?></time>
 				<?php endif; ?>
 			</div><!-- /e-meta -->
-			<?php if ( 'select01' === get_theme_mod( 'my_parts_sns_select_place' ) || 'select03' === get_theme_mod( 'my_parts_sns_select_place' ) ) : ?>
+			<?php if ( 'select01' === get_theme_mod( 'raccoon_parts_sns_select_place' ) || 'select03' === get_theme_mod( 'raccoon_parts_sns_select_place' ) ) : ?>
 				<div class="e-sns"><?php get_template_part( 'parts/sns' ); ?></div><!-- /e-sns -->
 			<?php endif; ?>
 			<figure class="e-img">
 			<?php
 			if ( has_post_thumbnail() ) {
-				the_post_thumbnail( 'my_thumbnail' );
+				the_post_thumbnail( 'raccoon_thumbnail' );
 			}
 			?>
 			</figure><!-- /e-img -->
 		</div><!-- /p-entry-header -->
 	</div><!-- /e-header -->
 
-	<?php $rc_heading = get_theme_mod( 'my_parts_heading_select' ) ? 'rc-' . get_theme_mod( 'my_parts_heading_select' ) : ''; ?>
+	<?php $rc_heading = get_theme_mod( 'raccoon_parts_heading_select' ) ? 'rc-' . get_theme_mod( 'raccoon_parts_heading_select' ) : ''; ?>
 	<div class="e-body">
 		<div class="p-entry-content <?php echo esc_attr( $rc_heading ); ?>">
 		<?php the_content(); ?>
@@ -53,15 +51,13 @@
 		</div><!-- /p-entry-content -->
 	</div><!-- /e-body -->
 
-		<?php my_the_post_tags(); ?>
+		<?php raccoon_the_post_tags(); ?>
 
-		<?php get_template_part( 'parts/likebox' ); ?>
-
-		<?php if ( 'select02' === get_theme_mod( 'my_parts_sns_select_place' ) || 'select03' === get_theme_mod( 'my_parts_sns_select_place' ) ) : ?>
+		<?php if ( 'select02' === get_theme_mod( 'raccoon_parts_sns_select_place' ) || 'select03' === get_theme_mod( 'raccoon_parts_sns_select_place' ) ) : ?>
 			<?php get_template_part( 'parts/sns' ); ?>
 		<?php endif; ?>
 
-		<?php if ( get_theme_mod( 'my_parts_relation_check' ) ) : ?>
+		<?php if ( get_theme_mod( 'raccoon_parts_relation_check' ) ) : ?>
 			<?php get_template_part( 'parts/relation' ); ?>
 		<?php endif; ?>
 

@@ -1,20 +1,18 @@
 <?php
 /**
- * My template tags Functions
- *
- * @package WordPress
+ * Raccoon template tags Functions
  */
 
-if ( ! function_exists( 'my_get_post_categories' ) ) {
+if ( ! function_exists( 'raccoon_get_post_categories' ) ) {
 	/**
-	 * カテゴリー取得
+	 * Get Category
 	 *
-	 * @param integer $id 投稿id.
-	 * @return array $this_categories id name link の配列.
+	 * @param integer $id Post ID.
+	 * @return array $this_categories array of ID and name, link.
 	 * @codex https://wpdocs.osdn.jp/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%82%BF%E3%82%B0/get_the_category
 	 * @codex https://wpdocs.osdn.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/get_category_link
 	 */
-	function my_get_post_categories( $id ) {
+	function raccoon_get_post_categories( $id ) {
 		global $post;
 		$this_categories = array();
 		if ( 0 === $id ) {
@@ -35,23 +33,20 @@ if ( ! function_exists( 'my_get_post_categories' ) ) {
 	}
 }
 
-if ( ! function_exists( 'my_the_post_category' ) ) {
+if ( ! function_exists( 'raccoon_the_post_category' ) ) {
 	/**
-	 * カテゴリーを1つだけ表示
+	 * Dispaly One Category
 	 *
-	 * @param boolean $anchor aタグで出力するかどうか.
-	 * @param integer $id 投稿id.
-	 * @param string  $color デフォルトの色.
+	 * @param boolean $anchor is Anchor Link.
+	 * @param integer $id Post ID.
+	 * @param string  $color Default Color.
 	 * @return void
 	 */
-	function my_the_post_category( $anchor = true, $id = 0, $color = '#666' ) {
-		$this_categories = my_get_post_categories( $id );
-
-		if ( get_term_meta( $this_categories[0]['id'], 'my_category_color' ) ) {
-			$color = get_term_meta( $this_categories[0]['id'], 'my_category_color' )[0];
-		}
+	function raccoon_the_post_category( $anchor = true, $id = 0, $color = '#666' ) {
+		$this_categories = raccoon_get_post_categories( $id );
 
 		if ( isset( $this_categories[0] ) ) {
+			$color = apply_filters( 'raccoon_term_color', $color, $this_categories[0] );
 			if ( $anchor ) {
 				echo '<a style="' . esc_attr( 'background:' . $color ) . ';" href="' . esc_url( $this_categories[0]['link'] ) . '">' . esc_html( $this_categories[0]['name'] ) . '</a>';
 			} else {
@@ -62,16 +57,16 @@ if ( ! function_exists( 'my_the_post_category' ) ) {
 }
 
 
-if ( ! function_exists( 'my_get_post_tags' ) ) {
+if ( ! function_exists( 'raccoon_get_post_tags' ) ) {
 	/**
-	 * タグ取得
+	 * Get Tag
 	 *
-	 * @param integer $id 投稿id.
-	 * @return array $this_tags id name link の配列.
+	 * @param integer $id Post ID.
+	 * @return array $this_tags array of ID and name, link.
 	 * @codex https://wpdocs.osdn.jp/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%82%BF%E3%82%B0/get_the_tags
 	 * @codex https://wpdocs.osdn.jp/%E9%96%A2%E6%95%B0%E3%83%AA%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9/get_category_link
 	 */
-	function my_get_post_tags( $id = 0 ) {
+	function raccoon_get_post_tags( $id = 0 ) {
 		global $post;
 		$this_tags = array();
 		if ( 0 === $id ) {
@@ -93,15 +88,15 @@ if ( ! function_exists( 'my_get_post_tags' ) ) {
 }
 
 
-if ( ! function_exists( 'my_the_post_tags' ) ) {
+if ( ! function_exists( 'raccoon_the_post_tags' ) ) {
 	/**
-	 * タグ一覧を表示
+	 * Display Tag Lists
 	 *
-	 * @param integer $id 投稿id.
+	 * @param integer $id Post ID.
 	 * @return void
 	 */
-	function my_the_post_tags( $id = 0 ) {
-		$this_tags = my_get_post_tags( $id );
+	function raccoon_the_post_tags( $id = 0 ) {
+		$this_tags = raccoon_get_post_tags( $id );
 		if ( $this_tags ) {
 			$i             = 0;
 			$this_tags_num = count( $this_tags );
@@ -115,14 +110,14 @@ if ( ! function_exists( 'my_the_post_tags' ) ) {
 }
 
 
-if ( ! function_exists( 'my_get_post_terms' ) ) {
+if ( ! function_exists( 'raccoon_get_post_terms' ) ) {
 	/**
-	 * ターム取得
+	 * Get Term
 	 *
-	 * @param string $taxonomy タクソノミーのスラッグ名.
-	 * @return array ターム情報.
+	 * @param string $taxonomy Taxonomy Slug.
+	 * @return array Term.
 	 */
-	function my_get_post_terms( $taxonomy ) {
+	function raccoon_get_post_terms( $taxonomy ) {
 		$this_terms = array();
 		$terms      = get_the_terms( get_the_ID(), $taxonomy );
 		if ( ! $terms ) {
@@ -140,15 +135,15 @@ if ( ! function_exists( 'my_get_post_terms' ) ) {
 }
 
 
-if ( ! function_exists( 'my_the_post_term' ) ) {
+if ( ! function_exists( 'raccoon_the_post_term' ) ) {
 	/**
-	 * タームを1つだけ表示
+	 * Display One Term
 	 *
-	 * @param string $taxonomy タクソノミーのスラッグ名.
-	 * @param string $anchor aタグで出力するかどうか.
+	 * @param string $taxonomy Taxonomy Slug.
+	 * @param string $anchor is Anchor Link.
 	 */
-	function my_the_post_term( $taxonomy, $anchor = false ) {
-		$this_terms = my_get_post_terms( $taxonomy );
+	function raccoon_the_post_term( $taxonomy, $anchor = false ) {
+		$this_terms = raccoon_get_post_terms( $taxonomy );
 		if ( isset( $this_terms[0] ) ) {
 			if ( $anchor ) {
 				echo '<a href="' . esc_attr( $this_terms[0]['link'] ) . '" class="m-' . esc_attr( $taxonomy ) . ' m-' . esc_attr( $this_terms[0]['slug'] ) . '">' . esc_html( $this_terms[0]['name'] ) . '</a>';

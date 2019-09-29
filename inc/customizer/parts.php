@@ -1,11 +1,9 @@
 <?php
 /**
- * My Customizer Parts
- *
- * @package WordPress
+ * Raccoon Customizer Parts
  */
 
-if ( ! function_exists( 'my_customize_parts' ) ) {
+if ( ! function_exists( 'raccoon_customize_parts' ) ) {
 
 	/**
 	 * Add Customizer Layout
@@ -13,11 +11,11 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 	 * @param object $wp_customize Customizer Object.
 	 * @return void
 	 */
-	function my_customize_parts( $wp_customize ) {
+	function raccoon_customize_parts( $wp_customize ) {
 
 		// Single.
 		$wp_customize->add_panel(
-			'my_parts',
+			'raccoon_parts',
 			array(
 				'priority' => 55,
 				'title'    => __( 'Single', 'raccoon' ),
@@ -26,28 +24,28 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 
 		// Contents.
 		$wp_customize->add_section(
-			'my_parts_content',
+			'raccoon_parts_content',
 			array(
 				'title'    => __( 'Contents', 'raccoon' ),
-				'panel'    => 'my_parts',
+				'panel'    => 'raccoon_parts',
 				'priority' => 10,
 			)
 		);
 		$wp_customize->add_setting(
-			'my_parts_heading_select',
+			'raccoon_parts_heading_select',
 			array(
 				'default' => 'heading00',
-				array( 'sanitize_callback' => 'my_sanitize_select' ),
+				array( 'sanitize_callback' => 'raccoon_sanitize_select' ),
 			)
 		);
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
-				'my_parts_heading_select',
+				'raccoon_parts_heading_select',
 				array(
 					'label'    => __( 'Heading Pattern', 'raccoon' ),
-					'section'  => 'my_parts_content',
-					'settings' => 'my_parts_heading_select',
+					'section'  => 'raccoon_parts_content',
+					'settings' => 'raccoon_parts_heading_select',
 					'priority' => 1,
 					'type'     => 'select',
 					'choices'  => array(
@@ -58,95 +56,32 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 			)
 		);
 
-		// LikeBox.
-		$wp_customize->add_section(
-			'my_parts_likebox',
-			array(
-				'title'    => __( 'LikeBox', 'raccoon' ),
-				'panel'    => 'my_parts',
-				'priority' => 10,
-			)
-		);
-
-		// Checkbox.
-		$wp_customize->add_setting(
-			'my_parts_likebox_check',
-			array(
-				'default' => false,
-				array( 'sanitize_callback' => 'my_sanitize_checkbox' ),
-			)
-		);
-		$wp_customize->add_control(
-			new WP_Customize_Control(
-				$wp_customize,
-				'my_parts_likebox_check',
-				array(
-					'label'    => __( 'Enable to Display', 'raccoon' ),
-					'section'  => 'my_parts_likebox',
-					'settings' => 'my_parts_likebox_check',
-					'type'     => 'checkbox',
-				)
-			)
-		);
-
-		// Textarea.
-		$wp_customize->add_setting( 'my_parts_likebox_txt', array( 'sanitize_callback' => 'sanitize_text_field' ) );
-		$wp_customize->add_control(
-			new WP_Customize_Control(
-				$wp_customize,
-				'my_parts_likebox_txt',
-				array(
-					'label'    => __( 'Text', 'raccoon' ),
-					'section'  => 'my_parts_likebox',
-					'settings' => 'my_parts_likebox_txt',
-					'type'     => 'textarea',
-					'priority' => 1,
-				)
-			)
-		);
-
-		// Facebook Page URL.
-		$wp_customize->add_setting( 'my_parts_likebox_url', array( 'sanitize_callback' => 'esc_url_raw' ) );
-		$wp_customize->add_control(
-			new WP_Customize_Control(
-				$wp_customize,
-				'my_parts_likebox_url',
-				array(
-					'label'    => __( 'Facebook Page URL', 'raccoon' ),
-					'section'  => 'my_parts_likebox',
-					'settings' => 'my_parts_likebox_url',
-					'type'     => 'url',
-					'priority' => 1,
-				)
-			)
-		);
-
 		// SNS Share Button.
 		$wp_customize->add_section(
-			'my_parts_sns',
+			'raccoon_parts_sns',
 			array(
 				'title'    => __( 'SNS Share Button', 'raccoon' ),
-				'panel'    => 'my_parts',
+				'panel'    => 'raccoon_parts',
 				'priority' => 20,
 			)
 		);
 
 		// Checkbox(Twitter).
 		$wp_customize->add_setting(
-			'my_parts_sns_check_twitter',
+			'raccoon_parts_sns_check_twitter',
 			array(
 				'default' => true,
-				array( 'sanitize_callback' => 'my_sanitize_checkbox' ),
+				array( 'sanitize_callback' => 'raccoon_sanitize_checkbox' ),
 			)
 		);
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
-				'my_parts_sns_check_twitter',
+				'raccoon_parts_sns_check_twitter',
 				array(
 					'label'    => __( 'Twitter', 'raccoon' ),
-					'section'  => 'my_parts_sns',
-					'settings' => 'my_parts_sns_check_twitter',
+					'section'  => 'raccoon_parts_sns',
+					'settings' => 'raccoon_parts_sns_check_twitter',
 					'type'     => 'checkbox',
 				)
 			)
@@ -154,20 +89,20 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 
 		// Checkbox(Facebook).
 		$wp_customize->add_setting(
-			'my_parts_sns_check_facebook',
+			'raccoon_parts_sns_check_facebook',
 			array(
 				'default' => true,
-				array( 'sanitize_callback' => 'my_sanitize_checkbox' ),
+				array( 'sanitize_callback' => 'raccoon_sanitize_checkbox' ),
 			)
 		);
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
-				'my_parts_sns_check_facebook',
+				'raccoon_parts_sns_check_facebook',
 				array(
 					'label'    => __( 'Facebook', 'raccoon' ),
-					'section'  => 'my_parts_sns',
-					'settings' => 'my_parts_sns_check_facebook',
+					'section'  => 'raccoon_parts_sns',
+					'settings' => 'raccoon_parts_sns_check_facebook',
 					'type'     => 'checkbox',
 				)
 			)
@@ -175,20 +110,20 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 
 		// Checkbox(Hatena Bookmark).
 		$wp_customize->add_setting(
-			'my_parts_sns_check_hatena',
+			'raccoon_parts_sns_check_hatena',
 			array(
 				'default' => true,
-				array( 'sanitize_callback' => 'my_sanitize_checkbox' ),
+				array( 'sanitize_callback' => 'raccoon_sanitize_checkbox' ),
 			)
 		);
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
-				'my_parts_sns_check_hatena',
+				'raccoon_parts_sns_check_hatena',
 				array(
 					'label'    => __( 'Hatena Bookmark', 'raccoon' ),
-					'section'  => 'my_parts_sns',
-					'settings' => 'my_parts_sns_check_hatena',
+					'section'  => 'raccoon_parts_sns',
+					'settings' => 'raccoon_parts_sns_check_hatena',
 					'type'     => 'checkbox',
 				)
 			)
@@ -196,20 +131,20 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 
 		// Checkbox(LINE).
 		$wp_customize->add_setting(
-			'my_parts_sns_check_line',
+			'raccoon_parts_sns_check_line',
 			array(
 				'default' => true,
-				array( 'sanitize_callback' => 'my_sanitize_checkbox' ),
+				array( 'sanitize_callback' => 'raccoon_sanitize_checkbox' ),
 			)
 		);
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
-				'my_parts_sns_check_line',
+				'raccoon_parts_sns_check_line',
 				array(
 					'label'    => __( 'LINE', 'raccoon' ),
-					'section'  => 'my_parts_sns',
-					'settings' => 'my_parts_sns_check_line',
+					'section'  => 'raccoon_parts_sns',
+					'settings' => 'raccoon_parts_sns_check_line',
 					'type'     => 'checkbox',
 				)
 			)
@@ -217,20 +152,20 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 
 		// Checkbox(Pocket).
 		$wp_customize->add_setting(
-			'my_parts_sns_check_pocket',
+			'raccoon_parts_sns_check_pocket',
 			array(
 				'default' => true,
-				array( 'sanitize_callback' => 'my_sanitize_checkbox' ),
+				array( 'sanitize_callback' => 'raccoon_sanitize_checkbox' ),
 			)
 		);
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
-				'my_parts_sns_check_pocket',
+				'raccoon_parts_sns_check_pocket',
 				array(
 					'label'    => __( 'Pocket', 'raccoon' ),
-					'section'  => 'my_parts_sns',
-					'settings' => 'my_parts_sns_check_pocket',
+					'section'  => 'raccoon_parts_sns',
+					'settings' => 'raccoon_parts_sns_check_pocket',
 					'type'     => 'checkbox',
 				)
 			)
@@ -238,63 +173,63 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 
 		// Checkbox(RSS).
 		$wp_customize->add_setting(
-			'my_parts_sns_check_rss',
+			'raccoon_parts_sns_check_rss',
 			array(
 				'default' => true,
-				array( 'sanitize_callback' => 'my_sanitize_checkbox' ),
+				array( 'sanitize_callback' => 'raccoon_sanitize_checkbox' ),
 			)
 		);
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
-				'my_parts_sns_check_rss',
+				'raccoon_parts_sns_check_rss',
 				array(
 					'label'    => __( 'RSS', 'raccoon' ),
-					'section'  => 'my_parts_sns',
-					'settings' => 'my_parts_sns_check_rss',
+					'section'  => 'raccoon_parts_sns',
+					'settings' => 'raccoon_parts_sns_check_rss',
 					'type'     => 'checkbox',
 				)
 			)
 		);
 
 		$wp_customize->add_setting(
-			'my_parts_sns_select_type',
+			'raccoon_parts_sns_select_type',
 			array(
 				'default' => 'select01',
-				array( 'sanitize_callback' => 'my_sanitize_select' ),
+				array( 'sanitize_callback' => 'raccoon_sanitize_select' ),
 			)
 		);
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
-				'my_parts_sns_select_type',
+				'raccoon_parts_sns_select_type',
 				array(
 					'label'    => __( 'Button Type', 'raccoon' ),
-					'section'  => 'my_parts_sns',
-					'settings' => 'my_parts_sns_select_type',
+					'section'  => 'raccoon_parts_sns',
+					'settings' => 'raccoon_parts_sns_select_type',
 					'type'     => 'select',
 					'choices'  => array(
-						'select01' => 'Original'
+						'select01' => 'Original',
 					),
 				)
 			)
 		);
 
 		$wp_customize->add_setting(
-			'my_parts_sns_select_place',
+			'raccoon_parts_sns_select_place',
 			array(
 				'default' => 'select04',
-				array( 'sanitize_callback' => 'my_sanitize_select' ),
+				array( 'sanitize_callback' => 'raccoon_sanitize_select' ),
 			)
 		);
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
-				'my_parts_sns_select_place',
+				'raccoon_parts_sns_select_place',
 				array(
 					'label'    => __( 'Place', 'raccoon' ),
-					'section'  => 'my_parts_sns',
-					'settings' => 'my_parts_sns_select_place',
+					'section'  => 'raccoon_parts_sns',
+					'settings' => 'raccoon_parts_sns_select_place',
 					'type'     => 'select',
 					'choices'  => array(
 						'select01' => 'Above Contents',
@@ -308,34 +243,34 @@ if ( ! function_exists( 'my_customize_parts' ) ) {
 
 		// Related Posts.
 		$wp_customize->add_section(
-			'my_parts_relation',
+			'raccoon_parts_relation',
 			array(
 				'title'    => __( 'Related Posts', 'raccoon' ),
-				'panel'    => 'my_parts',
+				'panel'    => 'raccoon_parts',
 				'priority' => 30,
 			)
 		);
 
 		// Checkbox.
 		$wp_customize->add_setting(
-			'my_parts_relation_check',
+			'raccoon_parts_relation_check',
 			array(
 				'default' => false,
-				array( 'sanitize_callback' => 'my_sanitize_checkbox' ),
+				array( 'sanitize_callback' => 'raccoon_sanitize_checkbox' ),
 			)
 		);
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
-				'my_parts_relation_check',
+				'raccoon_parts_relation_check',
 				array(
 					'label'    => __( 'Enable to Display', 'raccoon' ),
-					'section'  => 'my_parts_relation',
-					'settings' => 'my_parts_relation_check',
+					'section'  => 'raccoon_parts_relation',
+					'settings' => 'raccoon_parts_relation_check',
 					'type'     => 'checkbox',
 				)
 			)
 		);
 	}
 }
-add_action( 'customize_register', 'my_customize_parts' );
+add_action( 'customize_register', 'raccoon_customize_parts' );

@@ -1,8 +1,6 @@
 <?php
 /**
  * Main Visual
- *
- * @package WordPress
  */
 
 ?>

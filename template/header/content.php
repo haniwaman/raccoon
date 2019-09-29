@@ -1,11 +1,11 @@
 <?php
 /**
  * Header Content
- *
- * @package WordPress
  */
 
 ?>
+
+<a class="skip-link screen-reader-text" href="#a-main"><?php esc_html_e( 'Skip to content', 'raccoon' ); ?></a>
 
 <!-- header -->
 <header class="l-header p-header">

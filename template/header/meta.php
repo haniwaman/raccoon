@@ -1,8 +1,6 @@
 <?php
 /**
  * Header Meta
- *
- * @package WordPress
  */
 
 ?>

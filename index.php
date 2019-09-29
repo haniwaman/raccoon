@@ -1,8 +1,6 @@
 <?php
 /**
  * Index
- *
- * @package WordPress
  */
 
 get_header(); ?>
@@ -15,23 +13,23 @@ get_header(); ?>
 <div class="l-row">
 
 <!-- l-primary -->
-<main class="l-primary">
+<main id="a-main" class="l-primary">
 
 	<?php
 	if ( have_posts() ) :
 		?>
 	<!-- p-archive-header -->
 	<div class="p-archive-header">
-		<?php my_breadcrumb(); ?>
+		<?php raccoon_breadcrumb(); ?>
 		<h1 class="e-title"><?php the_archive_title(); ?></h1><!-- /e-title -->
 		<div class="e-description"><?php the_archive_description(); ?></div><!-- /e-description -->
 		<div class="e-form"><?php get_search_form(); ?></div><!-- /e-form -->
 	</div><!-- /p-archive-header -->
 
 	<!-- p-entry-items -->
-		<?php if ( 'horizon' === get_theme_mod( 'my_layout_archive_check' ) ) : ?>
+		<?php if ( 'horizon' === get_theme_mod( 'raccoon_layout_archive_check' ) ) : ?>
 	<div class="p-entry-items m-square">
-	<?php elseif ( 'vertical' === get_theme_mod( 'my_layout_archive_check' ) ) : ?>
+	<?php elseif ( 'vertical' === get_theme_mod( 'raccoon_layout_archive_check' ) ) : ?>
 	<div class="p-entry-items">
 	<?php else : ?>
 	<div class="p-entry-items m-square">

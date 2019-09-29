@@ -1,8 +1,6 @@
 <?php
 /**
  * Page
- *
- * @package WordPress
  */
 
 get_header(); ?>
@@ -19,7 +17,7 @@ get_header(); ?>
 <div class="l-row">
 
 <!-- l-primary -->
-<main class="l-primary">
+<main id="a-main" class="l-primary">
 
 <?php
 if ( have_posts() ) :

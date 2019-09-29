@@ -1,8 +1,6 @@
 <?php
 /**
  * 404
- *
- * @package WordPress
  */
 
 get_header(); ?>
@@ -19,11 +17,11 @@ get_header(); ?>
 <div class="l-row">
 
 <!-- l-primary -->
-<main class="l-primary">
+<main id="a-main" class="l-primary">
 
 <!-- p-archive-header -->
 <div class="p-archive-header">
-	<?php my_breadcrumb(); ?>
+	<?php raccoon_breadcrumb(); ?>
 	<h1 class="e-title">404</h1><!-- /e-title -->
 	<div class="e-description"><p><?php esc_html_e( 'Contents is not found.', 'raccoon' ); ?></p></div><!-- /e-description -->
 	<div class="e-form"><?php get_search_form(); ?></div><!-- /e-form -->

@@ -1,8 +1,6 @@
 <?php
 /**
  * Drawer
- *
- * @package WordPress
  */
 
 ?>

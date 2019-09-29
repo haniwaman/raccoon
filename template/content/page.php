@@ -1,8 +1,6 @@
 <?php
 /**
  * Page Content
- *
- * @package WordPress
  */
 
 ?>
@@ -13,22 +11,22 @@
 	<!-- e-header -->
 	<div class="e-header">
 		<div class="p-entry-header">
-		<div class="e-breadcrumb"><?php my_breadcrumb(); ?></div><!-- /e-breadcrumb -->
+		<div class="e-breadcrumb"><?php raccoon_breadcrumb(); ?></div><!-- /e-breadcrumb -->
 			<h1 class="e-title"><?php the_title(); ?></h1><!-- /e-title -->
-			<?php if ( 'select01' === get_theme_mod( 'my_parts_sns_select_place' ) || 'select03' === get_theme_mod( 'my_parts_sns_select_place' ) ) : ?>
+			<?php if ( 'select01' === get_theme_mod( 'raccoon_parts_sns_select_place' ) || 'select03' === get_theme_mod( 'raccoon_parts_sns_select_place' ) ) : ?>
 				<div class="e-sns"><?php get_template_part( 'parts/sns' ); ?></div><!-- /e-sns -->
 			<?php endif; ?>
 			<figure class="e-img">
 			<?php
 			if ( has_post_thumbnail() ) {
-				the_post_thumbnail( 'my_thumbnail' );
+				the_post_thumbnail( 'raccoon_thumbnail' );
 			}
 			?>
 			</figure><!-- /e-img -->
 		</div><!-- /p-entry-header -->
 	</div><!-- /e-header -->
 
-	<?php $rc_heading = get_theme_mod( 'my_parts_heading_select' ) ? 'rc-' . get_theme_mod( 'my_parts_heading_select' ) : ''; ?>
+	<?php $rc_heading = get_theme_mod( 'raccoon_parts_heading_select' ) ? 'rc-' . get_theme_mod( 'raccoon_parts_heading_select' ) : ''; ?>
 	<!-- e-body -->
 	<div class="e-body">
 		<div class="p-entry-content <?php echo esc_attr( $rc_heading ); ?>">

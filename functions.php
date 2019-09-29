@@ -303,3 +303,7 @@ add_filter( 'excerpt_more', 'raccoon_excerpt_more' );
  * Add WP Admin Customizer
  */
 require_once get_template_directory() . '/inc/customizer/base.php';
+require_once get_template_directory() . '/inc/customizer/color.php';
+require_once get_template_directory() . '/inc/customizer/parts.php';
+require_once get_template_directory() . '/inc/customizer/layout.php';
+require_once get_template_directory() . '/inc/customizer/performance.php';

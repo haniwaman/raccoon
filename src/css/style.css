@@ -3519,6 +3519,13 @@ input:not([type="file"]).m-full {
 	opacity: 0.6; /* opacity */
 }
 
+.p-floating .c-icon-arrow-top span {
+	border-color: #fff;
+	font-size: 26px;
+	height: 18px;
+	width: 18px;
+}
+
 .p-header .e-logo {
 	margin-right: auto;
 	padding-right: 0;
@@ -4217,10 +4224,6 @@ input:not([type="file"]).m-full {
 	position: absolute !important;
 	width: 1px;
 	word-wrap: normal !important;
-}
-
-a:focus {
-	border: 1px dotted #333;
 }
 
 span.wpcf7-list-item {

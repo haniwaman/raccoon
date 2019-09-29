@@ -11,26 +11,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 == Description ==
 Raccoon is Base Theme for Web Designer
 
-== Resources ==
-
-= Font Awesome =
-Icons License : CC BY 4.0
-Font License  : SIL OFL 1.1
-Code License  : MIT License
-Source        : https://fontawesome.com/license/free
-
-= stickyfill =
-License : MIT License
-Source  : https://github.com/wilddeer/stickyfill
-
-= object-fit-images =
-License : MIT License
-Source  : https://github.com/fregante/object-fit-images
-
-= IntersectionObserver =
-License : W3C SOFTWARE AND DOCUMENT NOTICE AND LICENSE
-Source  : https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
-
 == Changelog ==
 
 = 0.1.0 =

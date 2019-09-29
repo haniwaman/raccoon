@@ -19,9 +19,7 @@
 				<time class="e-update" datetime="<?php the_modified_time( 'c' ); ?>"><?php the_modified_time( get_option( 'date_format' ) ); ?></time>
 				<?php endif; ?>
 			</div><!-- /e-meta -->
-			<?php if ( 'select01' === get_theme_mod( 'raccoon_parts_sns_select_place' ) || 'select03' === get_theme_mod( 'raccoon_parts_sns_select_place' ) ) : ?>
-				<div class="e-sns"><?php get_template_part( 'parts/sns' ); ?></div><!-- /e-sns -->
-			<?php endif; ?>
+			<?php apply_filters( 'raccoon_single_meta_bottom' ); ?>
 			<figure class="e-img">
 			<?php
 			if ( has_post_thumbnail() ) {
@@ -53,9 +51,7 @@
 
 		<?php raccoon_the_post_tags(); ?>
 
-		<?php if ( 'select02' === get_theme_mod( 'raccoon_parts_sns_select_place' ) || 'select03' === get_theme_mod( 'raccoon_parts_sns_select_place' ) ) : ?>
-			<?php get_template_part( 'parts/sns' ); ?>
-		<?php endif; ?>
+		<?php apply_filters( 'raccoon_single_tags_bottom' ); ?>
 
 		<?php if ( get_theme_mod( 'raccoon_parts_relation_check' ) ) : ?>
 			<?php get_template_part( 'parts/relation' ); ?>

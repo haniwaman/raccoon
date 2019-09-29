@@ -17,7 +17,7 @@ if ( ! function_exists( 'raccoon_breadcrumb' ) ) {
 		$breadcrumb_after      = '</ul></div></nav>';
 		$breadcrumb_home       = apply_filters( 'raccoon_breadcrumb_home', __( 'Home', 'raccoon' ) );
 		$breadcrumb_home_tag   = '<li><a href="' . esc_url( home_url( '/' ) ) . '">' . $breadcrumb_home . '</a></li>';
-		$breadcrumb_bridge     = '<i class="fas fa-caret-right"></i>';
+		$breadcrumb_bridge     = '&gt;';
 		$breadcrumb_bridge_tag = '<li><span class="e-bridge">' . $breadcrumb_bridge . '</span></li>';
 
 		if ( is_front_page() ) { /* Front Page */

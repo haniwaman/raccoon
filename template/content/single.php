@@ -15,9 +15,6 @@
 			<div class="e-meta">
 				<div class="e-label"><?php raccoon_the_post_category(); ?></div><!-- /e-label -->
 				<time class="e-published" datetime="<?php the_time( 'c' ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time>
-				<?php if ( get_the_modified_time( 'Y.m.d' ) !== get_the_time( 'Y.m.d' ) ) : ?>
-				<time class="e-update" datetime="<?php the_modified_time( 'c' ); ?>"><?php the_modified_time( get_option( 'date_format' ) ); ?></time>
-				<?php endif; ?>
 			</div><!-- /e-meta -->
 			<?php
 			$raccoon_meta_bottom_content = '';

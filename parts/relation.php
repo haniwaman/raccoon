@@ -21,12 +21,12 @@
 	);
 	?>
 
-	<?php if ( $relation_query->have_posts() ) : ?>
+	<?php if ( $raccoon_relation_query->have_posts() ) : ?>
 <div class="e-items">
 <!-- p-relation-items -->
 <div class="p-relation-items">
-		<?php while ( $relation_query->have_posts() ) : ?>
-			<?php $relation_query->the_post(); ?>
+		<?php while ( $raccoon_relation_query->have_posts() ) : ?>
+			<?php $raccoon_relation_query->the_post(); ?>
 
 <div <?php post_class( array( 'e-item' ) ); ?>>
 

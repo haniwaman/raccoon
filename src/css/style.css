@@ -3742,7 +3742,7 @@ select {
 }
 
 .p-relation > .e-head {
-	color: #efa336;
+	color: #424242;
 	font-weight: 700;
 	margin-bottom: 16px; /* $color-key */
 	text-align: center;

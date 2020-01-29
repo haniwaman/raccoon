@@ -13,10 +13,13 @@
 	-webkit-appearance: none;
 	appearance: none;
 
-	&:focus {
-		outline: none;
-		box-shadow: none;
-		border: 1px solid $form-border-color-foucs;
+	@if $is-foucs == false {
+
+		&:focus {
+			outline: none;
+			box-shadow: none;
+			border: 1px solid $form-border-color-foucs;
+		}
 	}
 
 	&.m-full {
@@ -41,10 +44,13 @@
 	appearance: none;
 	resize: none;
 
-	&:focus {
-		outline: none;
-		box-shadow: none;
-		border: 1px solid $form-border-color-foucs;
+	@if $is-foucs == false {
+
+		&:focus {
+			outline: none;
+			box-shadow: none;
+			border: 1px solid $form-border-color-foucs;
+		}
 	}
 
 	&.m-resize {
@@ -79,10 +85,13 @@
 		display: none;
 	}
 
-	&:focus {
-		outline: none;
-		border: 1px solid $form-border-color-foucs;
-		box-shadow: none;
+	@if $is-foucs == false {
+
+		&:focus {
+			outline: none;
+			border: 1px solid $form-border-color-foucs;
+			box-shadow: none;
+		}
 	}
 
 	&[multiple] {

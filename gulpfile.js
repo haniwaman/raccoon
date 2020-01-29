@@ -5,7 +5,6 @@ var notify = require('gulp-notify');
 const rename = require('gulp-rename');
 var sassGlob = require('gulp-sass-glob');
 var mmq = require('gulp-merge-media-queries');
-var browserSync = require('browser-sync');
 var imagemin = require('gulp-imagemin');
 var imageminPngquant = require('imagemin-pngquant');
 var imageminMozjpeg = require('imagemin-mozjpeg');
@@ -29,33 +28,34 @@ var imageminOption = [
 	imagemin.svgo()
 ];
 
-gulp.task('sass', function() {
-	var style = gulp
-		.src('./src/sass/style.scss')
-		.pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
-		.pipe(sassGlob())
-		.pipe(sass({ outputStyle: 'expanded' }))
-		.pipe(postcss([autoprefixer()]))
-		.pipe(postcss([cssdeclsort({ order: 'alphabetically' })]))
-		.pipe(mmq())
-		.pipe(gulp.dest('./src/css'));
+gulp.task("sass", function() {
 
-	var header = gulp
+	let style = gulp
+		.src("./src/sass/style.scss")
+		.pipe(plumber({ errorHandler: notify.onError("Error: <%= error.message %>") }))
+		.pipe(sassGlob())
+		.pipe(sass({ outputStyle: "expanded" }))
+		.pipe(postcss([autoprefixer()]))
+		.pipe(postcss([cssdeclsort({ order: "alphabetical" })]))
+		.pipe(mmq())
+		.pipe(gulp.dest("./src/css"));
+
+	let header = gulp
 		.src('./src/sass/header.scss')
 		.pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
 		.pipe(sassGlob())
 		.pipe(postcss([autoprefixer()]))
-		.pipe(postcss([cssdeclsort({ order: 'alphabetically' })]))
+		.pipe(postcss([cssdeclsort({ order: 'alphabetical' })]))
 		.pipe(mmq())
 		.pipe(sass({ outputStyle: 'expanded' }))
 		.pipe(gulp.dest('./src/css'));
 
-	var header_min = gulp
+	let header_min = gulp
 		.src('./src/sass/header.scss')
 		.pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
 		.pipe(sassGlob())
 		.pipe(postcss([autoprefixer()]))
-		.pipe(postcss([cssdeclsort({ order: 'alphabetically' })]))
+		.pipe(postcss([cssdeclsort({ order: 'alphabetical' })]))
 		.pipe(mmq())
 		.pipe(sass({ outputStyle: 'compressed' }))
 		.pipe(
@@ -68,19 +68,57 @@ gulp.task('sass', function() {
 	return merge(style, header_min, header);
 });
 
+// gulp.task('sass', function() {
+// 	var style = gulp
+// 		.src('./src/sass/style.scss')
+// 		.pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
+// 		.pipe(sassGlob())
+// 		.pipe(sass({ outputStyle: 'expanded' }))
+// 		.pipe(postcss([autoprefixer()]))
+// 		.pipe(postcss([cssdeclsort({ order: 'alphabetically' })]))
+// 		.pipe(mmq())
+// 		.pipe(gulp.dest('./src/css'));
+
+// 	var header = gulp
+// 		.src('./src/sass/header.scss')
+// 		.pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
+// 		.pipe(sassGlob())
+// 		.pipe(postcss([autoprefixer()]))
+// 		.pipe(postcss([cssdeclsort({ order: 'alphabetically' })]))
+// 		.pipe(mmq())
+// 		.pipe(sass({ outputStyle: 'expanded' }))
+// 		.pipe(gulp.dest('./src/css'));
+
+// 	var header_min = gulp
+// 		.src('./src/sass/header.scss')
+// 		.pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
+// 		.pipe(sassGlob())
+// 		.pipe(postcss([autoprefixer()]))
+// 		.pipe(postcss([cssdeclsort({ order: 'alphabetically' })]))
+// 		.pipe(mmq())
+// 		.pipe(sass({ outputStyle: 'compressed' }))
+// 		.pipe(
+// 			rename({
+// 				suffix: '.min'
+// 			})
+// 		)
+// 		.pipe(gulp.dest('./src/css'));
+
+// 	return merge(style, header_min, header);
+// });
+
 gulp.task('watch', function() {
 	gulp.watch('./src/sass/**/*.scss', ['sass']);
 });
 
-gulp.task('bs-reload', function() {
-	browserSync.reload();
+gulp.task("watch", function(done) {
+	gulp.watch("./src/sass/**/*.scss", gulp.task("sass"));
+	gulp.watch("./*.php");
+	gulp.watch("./src/css/*.css");
+	gulp.watch("./src/js/*.js");
 });
 
-gulp.task('default', ['watch'], function() {
-	gulp.watch('./*.php');
-	gulp.watch('./src/css/*.css');
-	gulp.watch('./src/js/*.js');
-});
+gulp.task("default", gulp.series(gulp.parallel("watch")));
 
 gulp.task('imagemin', function() {
 	return gulp

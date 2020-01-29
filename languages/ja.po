@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-09-29 20:34+0900\n"
+"POT-Creation-Date: 2020-01-29 18:47+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.3\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_attr_e\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -73,8 +73,8 @@ msgstr "スマホメニュー"
 msgid "Blog"
 msgstr "ブログ"
 
-#: functions.php:194 functions.php:298 template/content/single.php:83
-#: template/content/single.php:102
+#: functions.php:194 functions.php:298 template/content/single.php:86
+#: template/content/single.php:105
 msgid "..."
 msgstr "…"
 
@@ -235,11 +235,11 @@ msgstr "サイト内検索"
 msgid "Search"
 msgstr "検索"
 
-#: template/content/single.php:71
+#: template/content/single.php:74
 msgid "Next Post"
 msgstr "次の記事"
 
-#: template/content/single.php:90
+#: template/content/single.php:93
 msgid "Prev Post"
 msgstr "前の記事"
 

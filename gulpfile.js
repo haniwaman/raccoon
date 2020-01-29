@@ -68,45 +68,6 @@ gulp.task("sass", function() {
 	return merge(style, header_min, header);
 });
 
-// gulp.task('sass', function() {
-// 	var style = gulp
-// 		.src('./src/sass/style.scss')
-// 		.pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
-// 		.pipe(sassGlob())
-// 		.pipe(sass({ outputStyle: 'expanded' }))
-// 		.pipe(postcss([autoprefixer()]))
-// 		.pipe(postcss([cssdeclsort({ order: 'alphabetically' })]))
-// 		.pipe(mmq())
-// 		.pipe(gulp.dest('./src/css'));
-
-// 	var header = gulp
-// 		.src('./src/sass/header.scss')
-// 		.pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
-// 		.pipe(sassGlob())
-// 		.pipe(postcss([autoprefixer()]))
-// 		.pipe(postcss([cssdeclsort({ order: 'alphabetically' })]))
-// 		.pipe(mmq())
-// 		.pipe(sass({ outputStyle: 'expanded' }))
-// 		.pipe(gulp.dest('./src/css'));
-
-// 	var header_min = gulp
-// 		.src('./src/sass/header.scss')
-// 		.pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
-// 		.pipe(sassGlob())
-// 		.pipe(postcss([autoprefixer()]))
-// 		.pipe(postcss([cssdeclsort({ order: 'alphabetically' })]))
-// 		.pipe(mmq())
-// 		.pipe(sass({ outputStyle: 'compressed' }))
-// 		.pipe(
-// 			rename({
-// 				suffix: '.min'
-// 			})
-// 		)
-// 		.pipe(gulp.dest('./src/css'));
-
-// 	return merge(style, header_min, header);
-// });
-
 gulp.task('watch', function() {
 	gulp.watch('./src/sass/**/*.scss', ['sass']);
 });

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-29 18:47+0900\n"
+"POT-Creation-Date: 2020-01-29 22:39+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -242,6 +242,14 @@ msgstr "次の記事"
 #: template/content/single.php:93
 msgid "Prev Post"
 msgstr "前の記事"
+
+#: template/footer/content.php:46
+msgid "Copyright"
+msgstr "Copyright"
+
+#: template/footer/content.php:46
+msgid "All Rights Reserved."
+msgstr "All Rights Reserved."
 
 #: template/header/content.php:8
 msgid "Skip to content"

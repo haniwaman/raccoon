@@ -240,6 +240,14 @@ msgstr ""
 msgid "Prev Post"
 msgstr ""
 
+#: template/footer/content.php:46
+msgid "Copyright"
+msgstr ""
+
+#: template/footer/content.php:46
+msgid "All Rights Reserved."
+msgstr ""
+
 #: template/header/content.php:8
 msgid "Skip to content"
 msgstr ""

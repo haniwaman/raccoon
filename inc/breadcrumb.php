@@ -25,13 +25,13 @@ if ( ! function_exists( 'raccoon_breadcrumb' ) ) {
 
 		} elseif ( is_home() ) { /* Blog Archive */
 			$breadcrumb_html .= $breadcrumb_beore . $breadcrumb_home_tag . $breadcrumb_bridge_tag;
-			$breadcrumb_html .= '<li><span class="e-current">' . apply_filters( 'raccoon_breadcrumb_title', get_the_title() ) . '</span></li>';
+			$breadcrumb_html .= '<li><span class="e-current">' . apply_filters( 'raccoon_breadcrumb_title', esc_html( get_the_title() ) ) . '</span></li>';
 			$breadcrumb_html .= $breadcrumb_after;
 			echo wp_kses_post( $breadcrumb_html );
 
 		} elseif ( is_attachment() ) { /* Media */
 			$breadcrumb_html .= $breadcrumb_beore . $breadcrumb_home_tag . $breadcrumb_bridge_tag;
-			$breadcrumb_html .= '<li><span class="e-current">' . apply_filters( 'raccoon_breadcrumb_title', get_the_title() ) . '</span></li>';
+			$breadcrumb_html .= '<li><span class="e-current">' . apply_filters( 'raccoon_breadcrumb_title', esc_html( get_the_title() ) ) . '</span></li>';
 			$breadcrumb_html .= $breadcrumb_after;
 			echo wp_kses_post( $breadcrumb_html );
 
@@ -52,7 +52,7 @@ if ( ! function_exists( 'raccoon_breadcrumb' ) ) {
 				}
 				$breadcrumb_html .= '<li><a href="' . $this_categories[0]['link'] . '">' . $this_categories[0]['name'] . '</a></li>' . $breadcrumb_bridge_tag;
 			}
-			$breadcrumb_html .= '<li><span class="e-current">' . apply_filters( 'raccoon_breadcrumb_title', get_the_title() ) . '</span></li>';
+			$breadcrumb_html .= '<li><span class="e-current">' . apply_filters( 'raccoon_breadcrumb_title', esc_html( get_the_title() ) ) . '</span></li>';
 			$breadcrumb_html .= $breadcrumb_after;
 			echo wp_kses_post( $breadcrumb_html );
 
@@ -63,10 +63,10 @@ if ( ! function_exists( 'raccoon_breadcrumb' ) ) {
 				$thie_parents       = array_reverse( $thie_parents );
 				$this_parents_count = count( $thie_parents );
 				for ( $i = 0; $i < $this_parents_count; $i++ ) {
-					$breadcrumb_html .= '<li><a href="' . get_permalink( $thie_parents[ $i ] ) . '">' . get_the_title( $thie_parents[ $i ] ) . '</a></li>' . $breadcrumb_bridge_tag;
+					$breadcrumb_html .= '<li><a href="' . get_permalink( $thie_parents[ $i ] ) . '">' . esc_html( get_the_title( $thie_parents[ $i ] ) ) . '</a></li>' . $breadcrumb_bridge_tag;
 				}
 			}
-			$breadcrumb_html .= '<li><span class="e-current">' . apply_filters( 'raccoon_breadcrumb_title', get_the_title() ) . '</span></li>';
+			$breadcrumb_html .= '<li><span class="e-current">' . apply_filters( 'raccoon_breadcrumb_title', esc_html( get_the_title() ) ) . '</span></li>';
 			$breadcrumb_html .= $breadcrumb_after;
 			echo wp_kses_post( $breadcrumb_html );
 
@@ -133,13 +133,13 @@ if ( ! function_exists( 'raccoon_breadcrumb' ) ) {
 			$this_month       = get_query_var( 'monthnum' );
 			$this_day         = get_query_var( 'day' );
 			if ( $this_year ) {
-				$breadcrumb_html .= '<li><a href="' . get_year_link( $this_year ) . '">' . $this_year . __( 'Year', 'raccoon' ) . '</a></li>' . $breadcrumb_bridge_tag;
+				$breadcrumb_html .= '<li><a href="' . esc_url( get_year_link( $this_year ) ) . '">' . esc_html( $this_year . __( 'Year', 'raccoon' ) ) . '</a></li>' . $breadcrumb_bridge_tag;
 			}
 			if ( $this_month ) {
-				$breadcrumb_html .= '<li><a href="' . get_month_link( $this_year, $this_month ) . '">' . $this_month . __( 'Month', 'raccoon' ) . '</a></li>' . $breadcrumb_bridge_tag;
+				$breadcrumb_html .= '<li><a href="' . esc_url( get_month_link( $this_year, $this_month ) ) . '">' . esc_html( $this_month . __( 'Month', 'raccoon' ) ) . '</a></li>' . $breadcrumb_bridge_tag;
 			}
 			if ( $this_day ) {
-				$breadcrumb_html .= '<li><a href="' . get_day_link( $this_year, $this_month, $this_day ) . '">' . $this_day . __( 'Day', 'raccoon' ) . '</a></li>' . $breadcrumb_bridge_tag;
+				$breadcrumb_html .= '<li><a href="' . esc_url( get_day_link( $this_year, $this_month, $this_day ) ) . '">' . esc_html( $this_day . __( 'Day', 'raccoon' ) ) . '</a></li>' . $breadcrumb_bridge_tag;
 			}
 			$breadcrumb_html .= $breadcrumb_after;
 			echo wp_kses_post( $breadcrumb_html );

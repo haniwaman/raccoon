@@ -11,10 +11,10 @@
 	<?php dynamic_sidebar( 'sidebar' ); ?>
 <?php endif; ?>
 
-<?php if ( is_active_sidebar( 'p-sidebar-fixed' ) ) : ?>
+<?php if ( is_active_sidebar( 'sidebar-fixed' ) ) : ?>
 <!-- .p-sidebar-fixed -->
 <div class="p-sidebar-fixed">
-	<?php dynamic_sidebar( 'p-sidebar-fixed' ); ?>
+	<?php dynamic_sidebar( 'sidebar-fixed' ); ?>
 </div><!-- /p-sidebar-fixed -->
 <?php endif; ?>
 </aside><!-- l-secondary -->

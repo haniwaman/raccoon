@@ -73,6 +73,9 @@ jQuery(function() {
 		e.preventDefault();
 		let targetClass = jQuery(this).attr('data-target');
 		jQuery('.' + targetClass).toggleClass('is-checked');
+		if ( jQuery('.' + targetClass).hasClass('is-checked') ) {
+			jQuery('.' + targetClass + ' a:first').focus();
+		}
 		return false;
 	});
 
@@ -84,6 +87,46 @@ jQuery(function() {
 			.toggleClass('is-checked');
 		return false;
 	});
+
+	// jQuery(".for-drawer01 a").focus(function(e) {
+	// 	// console.log(  );
+	// 	if ( jQuery(".for-drawer01").hasClass('is-checked') ) {
+	// 		if ( jQuery(this).closest('.for-drawer01') ) {
+	// 			console.log( 'aaa' );
+	// 		} else {
+	// 			console.log( 'bbb' );
+	// 			jQuery(".for-drawer01").removeClass('is-checked');
+	// 			jQuery("button.js-drawer").focus();
+	// 		}
+	// 	}
+	// });
+
+	// jQuery(".for-drawer01 a").blur(function(e) {
+	// 	// console.log( e );
+	// 	if ( jQuery(".for-drawer01").hasClass('is-checked') ) {
+	// 	}
+	// });
+
+	jQuery(document).on('focus', '*', function(e) {
+		console.log( jQuery(e.target).parents() );
+		if ( jQuery(".for-drawer01").hasClass('is-checked') ) {
+			if ( jQuery(e.target).parents().hasClass('for-drawer01') ) {
+				console.log( 'aaa' );
+			} else {
+				jQuery(".for-drawer01").removeClass('is-checked');
+				jQuery("button.js-drawer").focus();
+			}
+		}
+	});
+
+	jQuery(document).keydown(function(e) {
+		if (e.keyCode === 27) {
+			if ( jQuery(".for-drawer01").hasClass('is-checked') ) {
+				jQuery(".for-drawer01").removeClass('is-checked');
+				jQuery("button.js-drawer").focus();
+			}
+		}
+});
 
 	// Modal
 	jQuery('.js-modal').on('click', function(e) {

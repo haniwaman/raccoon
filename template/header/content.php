@@ -32,7 +32,7 @@ $raccoon_logo_tag = is_front_page() ? 'h1' : 'div';
 	wp_nav_menu(
 		array(
 			'container'       => false,
-			'depth'           => 2,
+			'depth'           => 1,
 			'theme_location'  => 'header',
 			'container'       => 'nav',
 			'container_class' => 'p-header-nav',
@@ -44,7 +44,7 @@ $raccoon_logo_tag = is_front_page() ? 'h1' : 'div';
 	wp_nav_menu(
 		array(
 			'container'       => false,
-			'depth'           => 2,
+			'depth'           => 1,
 			'container'       => 'nav',
 			'container_class' => 'p-header-nav',
 		)

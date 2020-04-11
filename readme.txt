@@ -11,6 +11,20 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 == Description ==
 Raccoon is Base Theme for Web Designer
 
+
+== License ==
+Image for theme screenshot, Copyright Kaique Rocha
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://stocksnap.io/photo/nature-landscape-UYH1G9I56K
+
+Image for theme screenshot, Copyright Free Nature Stock
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://stocksnap.io/photo/autumn-foliage-PYNTHNXPLD
+
+Image for theme screenshot, Copyright Holly's Coastal View
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://stocksnap.io/photo/fishing-village-UQSCIYTHV0
+
 == Changelog ==
 
 = 1.0 =

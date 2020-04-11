@@ -43,7 +43,7 @@
 <div class="p-footer-copy">
 <div class="l-inner">
 
-<div class="p-copy"><?php esc_html_e( 'Copyright', 'raccoon' ); ?><span class="e-symbol">&copy;</span><?php echo esc_html( date( 'Y' ) ); ?><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a><?php esc_html_e( 'All Rights Reserved.', 'raccoon' ); ?></div><!-- /p-copy -->
+<div class="p-copy"><?php esc_html_e( 'Copyright', 'raccoon' ); ?><span class="e-symbol">&copy;</span><?php echo date_i18n( __( 'Y', 'raccoon' ) ); ?><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a><?php esc_html_e( 'All Rights Reserved.', 'raccoon' ); ?></div><!-- /p-copy -->
 
 </div><!-- /l-inner -->
 </div><!-- /p-footer-copy -->

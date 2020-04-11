@@ -60,13 +60,13 @@ function raccoon_script() {
 
 	/* CSS */
 	if ( ! get_theme_mod( 'raccoon_performance_inline_check' ) ) {
-		wp_enqueue_style( 'header', get_template_directory_uri() . '/src/css/header.css', array(), '1.0.1', 'all' );
+		wp_enqueue_style( 'raccoon_header', get_template_directory_uri() . '/src/css/header.css', array(), '1.0.1', 'all' );
 	}
-	wp_enqueue_style( 'raccoon', get_template_directory_uri() . '/src/css/style.css', array(), '1.0.1', 'all' );
-	wp_enqueue_style( 'default', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ), 'all' );
+	wp_enqueue_style( 'raccoon_main', get_template_directory_uri() . '/src/css/style.css', array(), '1.0.1', 'all' );
+	wp_enqueue_style( 'raccoon_default', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ), 'all' );
 
 	/* JavaScript */
-	wp_enqueue_script( 'raccoon', get_template_directory_uri() . '/src/js/script.js', array( 'jquery' ), '1.0.1', true );
+	wp_enqueue_script( 'raccoon_main', get_template_directory_uri() . '/src/js/script.js', array( 'jquery' ), '1.0.1', true );
 
 	/* Post or Single */
 	if ( is_singular() ) {
@@ -90,6 +90,18 @@ add_action( 'wp_head', 'raccoon_wp_head' );
 
 
 
+if ( ! function_exists( 'wp_body_open' ) ) {
+
+	/**
+	 * Action wp_body_open
+	 *
+	 * @codex https://developer.wordpress.org/reference/functions/wp_body_open/
+	 */
+	function wp_body_open() {
+		do_action( 'wp_body_open' );
+	}
+}
+
 /**
  * Load CSS and JavaScript for WP Admin
  *
@@ -111,7 +123,6 @@ function raccoon_menu_init() {
 	register_nav_menus(
 		array(
 			'header' => __( 'Header', 'raccoon' ),
-			'footer' => __( 'Footer', 'raccoon' ),
 		)
 	);
 }
@@ -138,7 +149,7 @@ function raccoon_widget_init() {
 	register_sidebar(
 		array(
 			'name'          => __( 'Sticky', 'raccoon' ),
-			'id'            => 'p-sidebar-fixed',
+			'id'            => 'sidebar-fixed',
 			'before_widget' => '<div id="%1$s" class="p-widget %2$s">',
 			'after_widget'  => '</div><!-- /p-widget -->',
 			'before_title'  => '<div class="e-title">',
@@ -248,9 +259,8 @@ function raccoon_password_form() {
 	$raccoon_password_form  = '<p>' . __( 'This content is password protected. Enter your password below to view it.', 'raccoon' ) . '</p>';
 	$raccoon_password_form .= '<form class="post_password" action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" class="post-password-form" method="post">';
 	$raccoon_password_form .= '<input name="post_password" type="password" placeholder="' . __( 'Enter Password', 'raccoon' ) . '" class="post_password-field">';
-	$raccoon_password_form .= '<input type="submit" name="Submit" value="Confirm" class="post_password-submit">';
+	$raccoon_password_form .= '<input type="submit" name="Submit" value="' . __( 'Confirm', 'raccoon' ) . '" class="post_password-submit">';
 	$raccoon_password_form .= '</form>';
-
 	return $raccoon_password_form;
 }
 add_filter( 'the_password_form', 'raccoon_password_form' );
@@ -281,6 +291,9 @@ add_filter( 'get_archives_link', 'raccoon_list_anchor' );
  */
 function raccoon_excerpt_length( $length ) {
 	$length = 100;
+	if ( is_admin() ) {
+		return $length;
+	}
 	return $length;
 }
 add_filter( 'excerpt_length', 'raccoon_excerpt_length', 999 );
@@ -295,7 +308,10 @@ add_filter( 'excerpt_length', 'raccoon_excerpt_length', 999 );
  * @codex https://wpdocs.osdn.jp/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%82%BF%E3%82%B0/the_excerpt
  */
 function raccoon_excerpt_more( $more ) {
-	$more = __( '...', 'raccoon' );
+	$more = '&hellip;';
+	if ( is_admin() ) {
+		return $more;
+	}
 	return $more;
 }
 add_filter( 'excerpt_more', 'raccoon_excerpt_more' );
@@ -305,7 +321,6 @@ add_filter( 'excerpt_more', 'raccoon_excerpt_more' );
  * Add WP Admin Customizer
  */
 require_once get_template_directory() . '/inc/customizer/base.php';
-require_once get_template_directory() . '/inc/customizer/color.php';
 require_once get_template_directory() . '/inc/customizer/parts.php';
 require_once get_template_directory() . '/inc/customizer/layout.php';
 require_once get_template_directory() . '/inc/customizer/performance.php';

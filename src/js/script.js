@@ -88,25 +88,6 @@ jQuery(function() {
 		return false;
 	});
 
-	// jQuery(".for-drawer01 a").focus(function(e) {
-	// 	// console.log(  );
-	// 	if ( jQuery(".for-drawer01").hasClass('is-checked') ) {
-	// 		if ( jQuery(this).closest('.for-drawer01') ) {
-	// 			console.log( 'aaa' );
-	// 		} else {
-	// 			console.log( 'bbb' );
-	// 			jQuery(".for-drawer01").removeClass('is-checked');
-	// 			jQuery("button.js-drawer").focus();
-	// 		}
-	// 	}
-	// });
-
-	// jQuery(".for-drawer01 a").blur(function(e) {
-	// 	// console.log( e );
-	// 	if ( jQuery(".for-drawer01").hasClass('is-checked') ) {
-	// 	}
-	// });
-
 	jQuery(document).on('focus', '*', function(e) {
 		console.log( jQuery(e.target).parents() );
 		if ( jQuery(".for-drawer01").hasClass('is-checked') ) {

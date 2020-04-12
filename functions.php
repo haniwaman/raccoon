@@ -202,7 +202,7 @@ function raccoon_breadcrumb_title( $title ) {
 	if ( is_home() ) {
 		$title = esc_html__( 'Blog', 'raccoon' );
 	} else {
-		$title = mb_strimwidth( $title, 0, 64, "&hellip;", 'UTF-8' );
+		$title = mb_strimwidth( $title, 0, 64, '&hellip;', 'UTF-8' );
 	}
 	return $title;
 }
@@ -308,7 +308,7 @@ add_filter( 'excerpt_length', 'raccoon_excerpt_length', 999 );
  * @codex https://wpdocs.osdn.jp/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%82%BF%E3%82%B0/the_excerpt
  */
 function raccoon_excerpt_more( $more ) {
-	$more = "&hellip;";
+	$more = '&hellip;';
 	if ( is_admin() ) {
 		return $more;
 	}

@@ -83,7 +83,7 @@
 				?>
 				</div><!-- /e-img -->
 				<div class="e-body">
-					<div class="e-title"><?php echo esc_html( mb_strimwidth( get_the_title( $next_post->ID ), 0, 64, "&hellip;", 'UTF-8' ) ); ?></div>
+					<div class="e-title"><?php echo esc_html( mb_strimwidth( get_the_title( $next_post->ID ), 0, 64, '&hellip;', 'UTF-8' ) ); ?></div>
 				</div><!-- /e-body -->
 			</a><!-- /p-entry-pager-item -->
 	</div><!-- /e-next -->
@@ -102,7 +102,7 @@
 			?>
 			</div><!-- /e-img -->
 			<div class="e-body">
-				<div class="e-title"><?php echo esc_html( mb_strimwidth( get_the_title( $prev_post->ID ), 0, 64, "&hellip;", 'UTF-8' ) ); ?></div>
+				<div class="e-title"><?php echo esc_html( mb_strimwidth( get_the_title( $prev_post->ID ), 0, 64, '&hellip;', 'UTF-8' ) ); ?></div>
 			</div><!-- /e-body -->
 		</a><!-- /p-entry-pager-item -->
 	</div><!-- /e-prev -->

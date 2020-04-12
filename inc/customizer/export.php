@@ -10,11 +10,6 @@ if ( get_theme_mod( 'raccoon_performance_inline_check' ) ) {
 	load_template( get_template_directory() . '/src/css/header.min.css' );
 }
 
-/* Site Background Color */
-if ( get_theme_mod( 'hogehoge' ) ) {
-	echo 'body{background-color:' . esc_attr( get_theme_mod( 'hogehoge' ) ) . ';}';
-}
-
 /* Header Text Color */
 if ( get_header_textcolor() ) {
 	echo '.p-header-nav li > a{color:' . esc_attr( '#' . get_header_textcolor() ) . ';}';

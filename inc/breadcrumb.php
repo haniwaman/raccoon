@@ -15,7 +15,7 @@ if ( ! function_exists( 'raccoon_breadcrumb' ) ) {
 		$breadcrumb_html       = '';
 		$breadcrumb_beore      = '<nav class="p-breadcrumb"><ul>';
 		$breadcrumb_after      = '</ul></nav>';
-		$breadcrumb_home       = apply_filters( 'raccoon_breadcrumb_home', __( 'Home', 'raccoon' ) );
+		$breadcrumb_home       = apply_filters( 'raccoon_breadcrumb_home', esc_html__( 'Home', 'raccoon' ) );
 		$breadcrumb_home_tag   = '<li><a href="' . esc_url( home_url( '/' ) ) . '">' . $breadcrumb_home . '</a></li>';
 		$breadcrumb_bridge     = '&gt;';
 		$breadcrumb_bridge_tag = '<li><span class="e-bridge">' . $breadcrumb_bridge . '</span></li>';
@@ -87,7 +87,7 @@ if ( ! function_exists( 'raccoon_breadcrumb' ) ) {
 
 		} elseif ( is_search() ) { /* Search Archive */
 			$breadcrumb_html .= $breadcrumb_beore . $breadcrumb_home_tag . $breadcrumb_bridge_tag;
-			$breadcrumb_html .= '<li><span class="e-current">' . apply_filters( 'raccoon_breadcrumb_title', '"' . get_query_var( 's' ) . '"' . __( ' Search Results', 'raccoon' ) ) . '</span></li>';
+			$breadcrumb_html .= '<li><span class="e-current">' . apply_filters( 'raccoon_breadcrumb_title', '"' . get_query_var( 's' ) . '"' . esc_html__( ' Search Results', 'raccoon' ) ) . '</span></li>';
 			$breadcrumb_html .= $breadcrumb_after;
 			echo wp_kses_post( $breadcrumb_html );
 

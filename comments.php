@@ -30,8 +30,8 @@ if ( post_password_required() || ! comments_open() ) {
 	<div class="e-nav">
 		<nav class="p-comments-nav">
 			<ul>
-				<li class="e-prev"><?php previous_comments_link( __( 'Prev Comments', 'raccoon' ) ); ?></li><!-- /e-prev -->
-				<li class="e-next"><?php next_comments_link( __( 'Next Comments', 'raccoon' ) ); ?></li><!-- /e-next -->
+				<li class="e-prev"><?php previous_comments_link( esc_html__( 'Prev Comments', 'raccoon' ) ); ?></li><!-- /e-prev -->
+				<li class="e-next"><?php next_comments_link( esc_html__( 'Next Comments', 'raccoon' ) ); ?></li><!-- /e-next -->
 			</ul>
 		</nav><!-- /p-comments-nav -->
 	</div><!-- /e-nav -->

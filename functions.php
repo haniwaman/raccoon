@@ -200,9 +200,9 @@ require_once get_template_directory() . '/inc/breadcrumb.php';
  */
 function raccoon_breadcrumb_title( $title ) {
 	if ( is_home() ) {
-		$title = __( 'Blog', 'raccoon' );
+		$title = esc_html__( 'Blog', 'raccoon' );
 	} else {
-		$title = mb_strimwidth( $title, 0, 64, __( '...', 'raccoon' ), 'UTF-8' );
+		$title = mb_strimwidth( $title, 0, 64, "&hellip;", 'UTF-8' );
 	}
 	return $title;
 }
@@ -223,7 +223,7 @@ function raccoon_archive_title( $title ) {
 	} elseif ( is_tag() ) { /* Tag */
 		$title = '' . single_tag_title( '', false ) . '';
 	} elseif ( is_search() ) { /* Search */
-		$title = '"' . esc_html( get_query_var( 's' ) ) . '"' . __( ' Search Results', 'raccoon' );
+		$title = '"' . esc_html( get_query_var( 's' ) ) . '"' . esc_html__( ' Search Results', 'raccoon' );
 	} elseif ( is_post_type_archive() ) { /* PostType */
 		$title = '' . post_type_archive_title( '', false ) . '';
 	} elseif ( is_tax() ) { /* Term */
@@ -233,16 +233,16 @@ function raccoon_archive_title( $title ) {
 	} elseif ( is_date() ) { /* Date */
 		$title = '';
 		if ( get_query_var( 'year' ) ) {
-			$title .= get_query_var( 'year' ) . __( 'Year', 'raccoon' );
+			$title .= get_query_var( 'year' ) . esc_html__( 'Year', 'raccoon' );
 		}
 		if ( get_query_var( 'monthnum' ) ) {
-			$title .= get_query_var( 'monthnum' ) . __( 'Month', 'raccoon' );
+			$title .= get_query_var( 'monthnum' ) . esc_html__( 'Month', 'raccoon' );
 		}
 		if ( get_query_var( 'day' ) ) {
-			$title .= get_query_var( 'day' ) . __( 'Day', 'raccoon' );
+			$title .= get_query_var( 'day' ) . esc_html__( 'Day', 'raccoon' );
 		}
 	} elseif ( is_home() ) {
-		$title = __( 'Blog', 'raccoon' );
+		$title = esc_html__( 'Blog', 'raccoon' );
 	}
 	return $title;
 };
@@ -256,10 +256,10 @@ add_filter( 'get_the_archive_title', 'raccoon_archive_title' );
  * @return $raccoon_password_form HTML Form.
  */
 function raccoon_password_form() {
-	$raccoon_password_form  = '<p>' . __( 'This content is password protected. Enter your password below to view it.', 'raccoon' ) . '</p>';
+	$raccoon_password_form  = '<p>' . esc_html__( 'This content is password protected. Enter your password below to view it.', 'raccoon' ) . '</p>';
 	$raccoon_password_form .= '<form class="post_password" action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" class="post-password-form" method="post">';
-	$raccoon_password_form .= '<input name="post_password" type="password" placeholder="' . __( 'Enter Password', 'raccoon' ) . '" class="post_password-field">';
-	$raccoon_password_form .= '<input type="submit" name="Submit" value="' . __( 'Confirm', 'raccoon' ) . '" class="post_password-submit">';
+	$raccoon_password_form .= '<input name="post_password" type="password" placeholder="' . esc_html__( 'Enter Password', 'raccoon' ) . '" class="post_password-field">';
+	$raccoon_password_form .= '<input type="submit" name="Submit" value="' . esc_html__( 'Confirm', 'raccoon' ) . '" class="post_password-submit">';
 	$raccoon_password_form .= '</form>';
 	return $raccoon_password_form;
 }
@@ -308,7 +308,7 @@ add_filter( 'excerpt_length', 'raccoon_excerpt_length', 999 );
  * @codex https://wpdocs.osdn.jp/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%82%BF%E3%82%B0/the_excerpt
  */
 function raccoon_excerpt_more( $more ) {
-	$more = '&hellip;';
+	$more = "&hellip;";
 	if ( is_admin() ) {
 		return $more;
 	}

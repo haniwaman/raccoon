@@ -102,6 +102,7 @@
 	right: 0;
 	bottom: auto;
 	left: auto;
+	display: none;
 	transform: translateX(105%);
 	z-index: map-get($layer, "drawer");
 	width: 200px;
@@ -114,6 +115,7 @@
 	color: $color-text;
 
 	&.is-checked {
+		display: block;
 		transform: translateX(0);
 		box-shadow: 6px 0 25px rgba(#000, 0.16);
 	}

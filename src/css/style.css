@@ -989,6 +989,7 @@ select {
 	background: #fff;
 	bottom: auto;
 	color: #424242;
+	display: none;
 	height: 100%;
 	left: auto;
 	max-width: 90%;
@@ -1006,6 +1007,7 @@ select {
 
 .c-drawer__content.is-checked {
 	box-shadow: 6px 0 25px rgba(0, 0, 0, 0.16);
+	display: block;
 	transform: translateX(0);
 }
 

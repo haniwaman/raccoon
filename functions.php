@@ -258,8 +258,8 @@ add_filter( 'get_the_archive_title', 'raccoon_archive_title' );
 function raccoon_password_form() {
 	$raccoon_password_form  = '<p>' . esc_html__( 'This content is password protected. Enter your password below to view it.', 'raccoon' ) . '</p>';
 	$raccoon_password_form .= '<form class="post_password" action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" class="post-password-form" method="post">';
-	$raccoon_password_form .= '<input name="post_password" type="password" placeholder="' . esc_html__( 'Enter Password', 'raccoon' ) . '" class="post_password-field">';
-	$raccoon_password_form .= '<input type="submit" name="Submit" value="' . esc_html__( 'Confirm', 'raccoon' ) . '" class="post_password-submit">';
+	$raccoon_password_form .= '<input name="post_password" type="password" placeholder="' . esc_attr__( 'Enter Password', 'raccoon' ) . '" class="post_password-field">';
+	$raccoon_password_form .= '<input type="submit" name="Submit" value="' . esc_attr__( 'Confirm', 'raccoon' ) . '" class="post_password-submit">';
 	$raccoon_password_form .= '</form>';
 	return $raccoon_password_form;
 }
@@ -290,10 +290,10 @@ add_filter( 'get_archives_link', 'raccoon_list_anchor' );
  * @codex https://wpdocs.osdn.jp/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%82%BF%E3%82%B0/the_excerpt
  */
 function raccoon_excerpt_length( $length ) {
-	$length = 100;
 	if ( is_admin() ) {
 		return $length;
 	}
+	$length = 100;
 	return $length;
 }
 add_filter( 'excerpt_length', 'raccoon_excerpt_length', 999 );
@@ -308,10 +308,10 @@ add_filter( 'excerpt_length', 'raccoon_excerpt_length', 999 );
  * @codex https://wpdocs.osdn.jp/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%82%BF%E3%82%B0/the_excerpt
  */
 function raccoon_excerpt_more( $more ) {
-	$more = '&hellip;';
 	if ( is_admin() ) {
 		return $more;
 	}
+	$more = '&hellip;';
 	return $more;
 }
 add_filter( 'excerpt_more', 'raccoon_excerpt_more' );

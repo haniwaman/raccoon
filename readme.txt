@@ -4,7 +4,7 @@ Tags: blog, one-column, two-columns, left-sidebar, right-sidebar, custom-colors,
 Requires at least: 5.0.0
 Tested up to: WordPress 5.3.2
 Requires PHP: 7.0.3
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

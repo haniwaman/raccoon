@@ -14,7 +14,7 @@
 				<span class="c-drawer__bar"></span>
 		</div><!-- /c-drawer__bars -->
 	</button><!-- /c-drawer__icon -->
-	<div class="c-drawer__close js-drawer for-drawer01" data-target="for-drawer01"></div>
+	<div class="c-drawer__close for-drawer01" data-target="for-drawer01"></div>
 	<div class="c-drawer__content for-drawer01 c-drawer__content--left">
 	<?php if ( is_active_sidebar( 'spmenu' ) ) : ?>
 		<div class="p-drawer-widget">

@@ -20,9 +20,9 @@ get_header(); ?>
 	<!-- p-archive-header -->
 	<div class="p-archive-header">
 		<?php raccoon_breadcrumb(); ?>
-		<h1 class="e-title"><?php the_archive_title(); ?></h1><!-- /e-title -->
-		<div class="e-description"><?php the_archive_description(); ?></div><!-- /e-description -->
-		<div class="e-form"><?php get_search_form(); ?></div><!-- /e-form -->
+		<h1 class="p-archive-header__title"><?php the_archive_title(); ?></h1><!-- /p-archive-header__title -->
+		<div class="p-archive-header__description"><?php the_archive_description(); ?></div><!-- /p-archive-header__description -->
+		<div class="p-archive-header__form"><?php get_search_form(); ?></div><!-- /p-archive-header__form -->
 	</div><!-- /p-archive-header -->
 
 	<!-- p-entry-items -->

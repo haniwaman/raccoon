@@ -9,7 +9,7 @@
 
 <!-- header -->
 <header class="l-header p-header">
-<div class="l-inner l-header__row">
+<div class="l-inner l-header__inner">
 
 <?php
 $raccoon_logo_tag = is_front_page() ? 'h1' : 'div';

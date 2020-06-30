@@ -8,7 +8,7 @@
 <?php if ( 'post' === get_post_type() ) : ?>
 <!-- p-relation -->
 <div class="p-relation">
-	<div class="p-relation__head"><?php esc_html_e( 'Relation Posts', 'raccoon' ); ?></div><!-- /e-head -->
+	<div class="p-relation__head"><?php esc_html_e( 'Relation Posts', 'raccoon' ); ?></div><!-- /p-relation__head -->
 
 	<?php
 	$raccoon_relation_query = new WP_Query(
@@ -54,7 +54,7 @@
 
 	<?php endwhile; ?>
 </div><!-- /p-relation-items -->
-</div><!-- /e-items -->
+</div><!-- /p-relation__items -->
 	<?php endif; ?>
 	<?php wp_reset_postdata(); ?>
 

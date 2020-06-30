@@ -6,10 +6,6 @@
 	padding: 8px;
 	color: #fff;
 
-	.e-symbol {
-		margin: 0 0.1em 0 0.4em;
-	}
-
 	a {
 		text-decoration: none;
 		transition: all 0.3s ease 0s;
@@ -19,6 +15,10 @@
 			opacity: $opacity; /* opacity */
 		}
 	}
+}
+
+.p-copy__symbol {
+	margin: 0 0.1em 0 0.4em;
 }
 
 .p-floating {
@@ -51,7 +51,6 @@
 	}
 
 	.c-icon-arrow-top {
-
 		span {
 			font-size: 26px;
 			height: 18px;

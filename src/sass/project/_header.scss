@@ -1,33 +1,7 @@
 .p-header {
-
-	.e-logo {
-		padding-right: 0;
-		margin-right: auto;
-
-		@include mq-up("tab") {
-			padding-right: 12px;
-		}
-	}
-
-	.e-global {
-		display: none;
-
-		@include mq-up("tab") {
-			display: block;
-		}
-	}
-
-	.e-drawer {
-		display: block;
-
-		@include mq-up("tab") {
-			display: none;
-		}
-	}
 }
 
 .p-header-logo {
-
 	a {
 		transition: all 0.3s ease 0s;
 		display: block;
@@ -52,7 +26,6 @@
 }
 
 .p-header-nav {
-
 	ul {
 		display: flex;
 	}
@@ -82,15 +55,14 @@
 			&:hover {
 				opacity: $opacity; /* opacity */
 
-			+ .sub-menu {
-				visibility: visible;
-				opacity: 1;
+				+ .sub-menu {
+					visibility: visible;
+					opacity: 1;
+				}
 			}
-		}
 		}
 
 		&.m-pickup {
-
 			a {
 				background: $pickup-background; /* header pickup */
 				color: #fff;

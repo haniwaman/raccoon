@@ -9,14 +9,13 @@
 
 <!-- header -->
 <header class="l-header p-header">
-<div class="l-inner">
-<div class="l-row l-row--middle">
+<div class="l-inner l-header__row">
 
 <?php
 $raccoon_logo_tag = is_front_page() ? 'h1' : 'div';
 ?>
 
-<div class="e-logo">
+<div class="l-header__logo">
 <<?php echo esc_attr( $raccoon_logo_tag ); ?> class="p-header-logo">
 <?php if ( has_custom_logo() ) : ?>
 	<?php the_custom_logo(); ?>
@@ -26,7 +25,7 @@ $raccoon_logo_tag = is_front_page() ? 'h1' : 'div';
 </<?php echo esc_attr( $raccoon_logo_tag ); ?>><!-- /p-header-logo -->
 </div><!-- /e-logo -->
 
-<div class="e-global">
+<div class="l-header__global">
 <?php if ( has_nav_menu( 'header' ) ) : ?>
 	<?php
 	wp_nav_menu(
@@ -53,10 +52,9 @@ $raccoon_logo_tag = is_front_page() ? 'h1' : 'div';
 <?php endif; ?>
 </div><!-- /e-global -->
 
-<div class="e-drawer">
+<div class="l-header__drawer">
 <?php get_template_part( 'parts/drawer' ); ?>
-</div><!-- /e-drawer -->
+</div><!-- /l-header__drawer -->
 
-</div><!-- /l-row -->
 </div><!-- /l-inner -->
 </header><!-- /header -->

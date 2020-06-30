@@ -26,6 +26,9 @@
 	z-index: map-get($layer, "drawer") + 1;
 	text-align: center;
 	cursor: pointer;
+	background-image: none;
+	background-color: transparent;
+	border: none;
 
 	&::after {
 		content: "MENU";
@@ -39,7 +42,6 @@
 	}
 
 	&.is-checked {
-
 		&::after {
 			content: "CLOSE";
 		}
@@ -78,7 +80,6 @@
 	}
 
 	.is-checked & {
-
 		&:nth-of-type(1) {
 			top: 10px;
 			transform: rotate(-45deg);

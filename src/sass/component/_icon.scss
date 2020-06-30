@@ -1,6 +1,6 @@
 .c-icon {
 	display: inline-block;
-	width: $icon-widht;
+	width: $icon-width;
 	height: $icon-height;
 	font-size: $icon-font;
 	position: relative;
@@ -9,7 +9,6 @@
 
 // マル
 .c-icon-circle {
-
 	@extend .c-icon;
 
 	> span {
@@ -27,11 +26,9 @@
 
 // バツ
 .c-icon-cross {
-
 	@extend .c-icon;
 
 	> span {
-
 		&::before,
 		&::after {
 			display: block;
@@ -56,7 +53,6 @@
 }
 
 .c-icon-hamburger {
-
 	@extend .c-icon;
 
 	> span {
@@ -94,7 +90,6 @@
 
 // チェック
 .c-icon-check {
-
 	@extend .c-icon;
 
 	> span {
@@ -113,7 +108,6 @@
 
 // アロー右
 .c-icon-arrow-right {
-
 	@extend .c-icon;
 
 	> span {
@@ -132,7 +126,6 @@
 
 // アロー下
 .c-icon-arrow-bottom {
-
 	@extend .c-icon;
 
 	> span {
@@ -151,7 +144,6 @@
 
 // アロー左
 .c-icon-arrow-left {
-
 	@extend .c-icon;
 
 	> span {
@@ -170,7 +162,6 @@
 
 // アロー上
 .c-icon-arrow-top {
-
 	@extend .c-icon;
 
 	> span {
@@ -189,7 +180,6 @@
 
 // 三角
 .c-icon-triangle {
-
 	@extend .c-icon;
 
 	> span {
@@ -208,7 +198,6 @@
 
 // ひし形
 .c-icon-rhombus {
-
 	@extend .c-icon;
 
 	> span {
@@ -226,7 +215,6 @@
 
 // 虫眼鏡
 .c-icon-glass {
-
 	@extend .c-icon;
 
 	> span {
@@ -257,7 +245,6 @@
 
 // 四角
 .c-icon-square {
-
 	@extend .c-icon;
 
 	> span {

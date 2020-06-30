@@ -9,8 +9,7 @@ get_header(); ?>
 
 <!-- l-content -->
 <div class="l-content p-content">
-<div class="l-inner">
-<div class="l-row">
+<div class="l-inner l-content__inner">
 
 <!-- l-primary -->
 <main id="a-main" class="l-primary">
@@ -28,11 +27,11 @@ get_header(); ?>
 
 	<!-- p-entry-items -->
 		<?php if ( 'horizon' === get_theme_mod( 'raccoon_layout_archive_check' ) ) : ?>
-	<div class="p-entry-items m-square">
+	<div class="p-entry-items p-entry-items--square">
 	<?php elseif ( 'vertical' === get_theme_mod( 'raccoon_layout_archive_check' ) ) : ?>
 	<div class="p-entry-items">
 	<?php else : ?>
-	<div class="p-entry-items m-square">
+	<div class="p-entry-items p-entry-items--square">
 	<?php endif; ?>
 		<?php
 		while ( have_posts() ) :
@@ -47,7 +46,7 @@ get_header(); ?>
 		</div><!-- /p-entry-items -->
 
 		<?php if ( paginate_links() ) : ?>
-		<div class="p-pagenation">
+		<div class="p-pagination">
 			<?php
 			echo wp_kses_post(
 				paginate_links(
@@ -61,17 +60,15 @@ get_header(); ?>
 				)
 			);
 			?>
-		</div><!-- /p-pagenation -->
+		</div><!-- /p-pagination -->
 		<?php endif; ?>
 		<?php endif; ?>
 </main><!-- /l-primary -->
 
 <?php get_sidebar(); ?>
 
-</div><!-- /l-row -->
 </div><!-- /l-inner -->
 </div><!-- /l-content -->
-
 
 
 <?php get_footer(); ?>

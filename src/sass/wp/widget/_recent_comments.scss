@@ -2,7 +2,6 @@
 }
 
 #recentcomments {
-
 	.recentcomments {
 		color: $color-text--thin;
 
@@ -13,13 +12,6 @@
 			&:hover {
 				opacity: $opacity; /* opacity */
 			}
-		}
-	}
-
-	.e-author-link {
-		color: $color-text;
-
-		.url {
 		}
 	}
 }

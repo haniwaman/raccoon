@@ -1,26 +1,25 @@
 .p-comments {
+}
 
-	> .e-title {
-		font-size: 2rem;
-		font-weight: 700;
-		margin: 42px 0 24px;
-	}
+.p-comments__title {
+	font-size: 2rem;
+	font-weight: 700;
+	margin: 42px 0 24px;
+}
 
-	> .e-list {
-		margin-bottom: 32px;
-	}
+.p-comments__list {
+	margin-bottom: 32px;
+}
 
-	> .e-nav {
-		margin-top: 32px;
-	}
+.p-comments__nav {
+	margin-top: 32px;
+}
 
-	> .e-form {
-		margin-top: 60px;
-	}
+.p-comments__form {
+	margin-top: 60px;
 }
 
 .p-comments-list {
-
 	li {
 		margin-bottom: 24px;
 	}
@@ -31,7 +30,6 @@
 	}
 
 	.comment-body {
-
 		.reply {
 			font-size: 1.4rem;
 			text-align: right;
@@ -40,13 +38,6 @@
 			&:hover {
 				opacity: $opacity; /* opacity */
 			}
-
-			// &::before {
-			// 	content: "\f3e5";
-			// 	font-family: $font-family-awesome;
-			// 	font-weight: 900;
-			// 	margin-right: 6px;
-			// }
 		}
 	}
 
@@ -101,57 +92,31 @@
 }
 
 .p-comments-nav {
-
 	ul {
 		display: flex;
 	}
+}
 
-	.e-prev,
-	.e-next {
-		margin-right: auto;
+.p-comments-nav__prev,
+.p-comments-nav__next {
+	margin-right: auto;
 
-		&:last-child {
-			margin-right: 0;
-		}
-
-		a {
-			transition: all 0.3s ease 0s;
-			text-decoration: none;
-			color: #666;
-
-			&:hover {
-				opacity: $opacity; /* opacity */
-			}
-		}
+	&:last-child {
+		margin-right: 0;
 	}
 
-	.e-prev {
+	a {
+		transition: all 0.3s ease 0s;
+		text-decoration: none;
+		color: #666;
 
-		a {
-			// &::before {
-			// 	content: "\f053";
-			// 	font-family: $font-family-awesome;
-			// 	font-weight: 900;
-			// 	margin-right: 6px;
-			// }
-		}
-	}
-
-	.e-next {
-
-		a {
-			// &::after {
-			// 	content: "\f054";
-			// 	font-family: $font-family-awesome;
-			// 	font-weight: 900;
-			// 	margin-left: 6px;
-			// }
+		&:hover {
+			opacity: $opacity; /* opacity */
 		}
 	}
 }
 
 .comment-content {
-
 	h1 {
 		font-size: 2.8rem;
 		margin-top: 3em;
@@ -199,7 +164,6 @@
 	h4,
 	h5,
 	h6 {
-
 		+ p {
 			margin-top: 0;
 		}
@@ -317,7 +281,6 @@
 }
 
 .comment-respond {
-
 	.required {
 		color: $form-color-required; /* cr-required */
 		vertical-align: middle;
@@ -336,7 +299,6 @@
 }
 
 .logged-in-as {
-
 	a {
 		color: #666;
 		transition: all 0.3s ease 0s;
@@ -352,7 +314,6 @@
 }
 
 .comment-form {
-
 	label {
 		display: block;
 		margin: 10px 0 4px;
@@ -369,7 +330,6 @@
 }
 
 #wp-comment-cookies-consent {
-
 	+ label {
 		display: inline-block;
 		position: relative;
@@ -399,7 +359,6 @@
 	}
 
 	&:checked + label {
-
 		&::after {
 			position: absolute;
 			content: "";

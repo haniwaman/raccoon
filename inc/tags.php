@@ -102,7 +102,7 @@ if ( ! function_exists( 'raccoon_the_post_tags' ) ) {
 			$this_tags_num = count( $this_tags );
 			echo '<div class="p-entry-tags">';
 			for ( $i; $i < $this_tags_num; $i++ ) {
-				echo '<div class="e-link"><a href="' . esc_url( $this_tags[ $i ]['link'] ) . '">' . esc_html( $this_tags[ $i ]['name'] ) . '</a></div><!-- /e-link -->';
+				echo '<div class="p-entry-tags__link"><a href="' . esc_url( $this_tags[ $i ]['link'] ) . '">' . esc_html( $this_tags[ $i ]['name'] ) . '</a></div><!-- /p-entry-tags__link -->';
 			}
 			echo '</div><!-- /p-entry-tags -->';
 		}

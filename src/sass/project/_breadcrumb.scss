@@ -1,5 +1,4 @@
 .p-breadcrumb {
-
 	ul {
 		display: flex;
 		align-items: center;
@@ -20,16 +19,20 @@
 			}
 		}
 
-		a,
-		.e-current {
+		a {
 			color: #666;
 			font-size: 1.3rem;
 		}
 	}
+}
 
-	.e-bridge {
-		color: #666;
-		font-size: 1.3rem;
-		padding: 0 16px;
-	}
+.p-breadcrumb__current {
+	color: #666;
+	font-size: 1.3rem;
+}
+
+.p-breadcrumb__bridge {
+	color: #666;
+	font-size: 1.3rem;
+	padding: 0 16px;
 }

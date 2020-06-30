@@ -13,8 +13,7 @@ get_header(); ?>
 
 <!-- l-content -->
 <div class="l-content p-content">
-<div class="l-inner">
-<div class="l-row">
+<div class="l-inner l-content__inner">
 
 <!-- l-primary -->
 <main id="a-main" class="l-primary">
@@ -38,7 +37,6 @@ endif;
 <?php get_sidebar(); ?>
 
 
-</div><!-- /l-row -->
 </div><!-- /l-inner -->
 </div><!-- /l-content -->
 

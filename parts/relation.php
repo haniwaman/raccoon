@@ -8,7 +8,7 @@
 <?php if ( 'post' === get_post_type() ) : ?>
 <!-- p-relation -->
 <div class="p-relation">
-	<div class="e-head"><?php esc_html_e( 'Relation Posts', 'raccoon' ); ?></div><!-- /e-head -->
+	<div class="p-relation__head"><?php esc_html_e( 'Relation Posts', 'raccoon' ); ?></div><!-- /e-head -->
 
 	<?php
 	$raccoon_relation_query = new WP_Query(
@@ -22,17 +22,17 @@
 	?>
 
 	<?php if ( $raccoon_relation_query->have_posts() ) : ?>
-<div class="e-items">
+<div class="p-relation__items">
 <!-- p-relation-items -->
 <div class="p-relation-items">
 		<?php while ( $raccoon_relation_query->have_posts() ) : ?>
 			<?php $raccoon_relation_query->the_post(); ?>
 
-<div <?php post_class( array( 'e-item' ) ); ?>>
+<div <?php post_class( array( 'p-relation-item' ) ); ?>>
 
-<!-- e-img -->
-<div class="e-img">
-	<div class="e-cover">
+<!-- p-relation-item__img -->
+<div class="p-relation-item__img">
+	<div class="p-relation-item__img-cover">
 		<a href="<?php the_permalink(); ?>">
 				<?php
 				if ( has_post_thumbnail() ) {
@@ -42,15 +42,15 @@
 				}
 				?>
 		</a>
-	</div><!-- /e-cover -->
-</div><!-- /e-img -->
+	</div><!-- /p-relation-item__img-cover -->
+</div><!-- /p-relation-item__img -->
 
-<!-- e-body -->
-<div class="e-body">
-	<div class="e-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div><!-- /e-title -->
-</div><!-- /e-body -->
+<!-- p-relation-item__body -->
+<div class="p-relation-item__body">
+	<div class="p-relation-item__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div><!-- /p-relation-item__title -->
+</div><!-- /p-relation-item__body -->
 
-</div><!-- /e-item -->
+</div><!-- /p-relation-item__item -->
 
 	<?php endwhile; ?>
 </div><!-- /p-relation-items -->
@@ -58,9 +58,9 @@
 	<?php endif; ?>
 	<?php wp_reset_postdata(); ?>
 
-<div class="e-btn">
+<div class="p-relation__btn">
 	<a class="c-button" href="<?php echo esc_url( get_category_link( get_the_category()[0]->cat_ID ) ); ?>"><?php esc_html_e( 'More Relation Posts', 'raccoon' ); ?></a>
-</div><!-- /e-btn -->
+</div><!-- /p-relation__btn -->
 
 </div><!-- /p-relation -->
 <?php endif; ?>

@@ -11,8 +11,8 @@ if ( post_password_required() || ! comments_open() ) {
 <!-- p-comments -->
 <div class="p-comments">
 	<?php if ( have_comments() ) : ?>
-	<div class="e-title"><?php esc_html_e( 'Comments', 'raccoon' ); ?> (<?php echo esc_html( get_comments_number() ); ?>)</div><!-- /e-title -->
-	<div class="e-list">
+	<div class="p-comments__title"><?php esc_html_e( 'Comments', 'raccoon' ); ?> (<?php echo esc_html( get_comments_number() ); ?>)</div><!-- /p-comments__title -->
+	<div class="p-comments__list">
 		<ul class="p-comments-list">
 			<?php
 			wp_list_comments(
@@ -23,19 +23,19 @@ if ( post_password_required() || ! comments_open() ) {
 			);
 			?>
 		</ul><!-- /p-comments-list -->
-	</div><!-- /e-list -->
+	</div><!-- /p-comments__list -->
 	<?php endif; ?>
 
 	<?php if ( get_comment_pages_count() > 1 ) : ?>
-	<div class="e-nav">
+	<div class="p-comments__nav">
 		<nav class="p-comments-nav">
 			<ul>
-				<li class="e-prev"><?php previous_comments_link( esc_html__( 'Prev Comments', 'raccoon' ) ); ?></li><!-- /e-prev -->
-				<li class="e-next"><?php next_comments_link( esc_html__( 'Next Comments', 'raccoon' ) ); ?></li><!-- /e-next -->
+				<li class="p-comments-nav__prev"><?php previous_comments_link( esc_html__( 'Prev Comments', 'raccoon' ) ); ?></li><!-- /p-comments-nav__prev -->
+				<li class="p-comments-nav__next"><?php next_comments_link( esc_html__( 'Next Comments', 'raccoon' ) ); ?></li><!-- /p-comments-nav__next -->
 			</ul>
 		</nav><!-- /p-comments-nav -->
-	</div><!-- /e-nav -->
+	</div><!-- /p-comments__nav -->
 	<?php endif; ?>
 
-	<div class="e-form"><?php comment_form(); ?></div><!-- /e-form -->
+	<div class="p-comments__form"><?php comment_form(); ?></div><!-- /p-comments__form -->
 </div><!-- /p-comments -->

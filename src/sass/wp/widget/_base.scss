@@ -11,26 +11,16 @@
 		margin-bottom: 32px;
 	}
 
-	> .e-title {
-		background: map-get($widget, "background"); /* widget background */
-		font-size: 1.6rem;
-		font-weight: 700;
-		padding: $pd-y-widget-title $pd-x-widget-title;
-		color: map-get($widget, "color"); /* widget color */
-	}
-
 	ul {
 		padding: 0 $pd-x-widget;
 
 		&.children {
-
 			li {
 				margin-top: $pd-widget-li;
 			}
 		}
 
 		&.sub-menu {
-
 			li {
 				margin-top: $pd-widget-li;
 			}
@@ -67,4 +57,12 @@
 			opacity: $opacity; /* opacity */
 		}
 	}
+}
+
+.p-widget__title {
+	background: map-get($widget, "background"); /* widget background */
+	font-size: 1.6rem;
+	font-weight: 700;
+	padding: $pd-y-widget-title $pd-x-widget-title;
+	color: map-get($widget, "color"); /* widget color */
 }

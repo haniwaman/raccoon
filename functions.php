@@ -142,8 +142,8 @@ function raccoon_widget_init() {
 			'id'            => 'sidebar',
 			'before_widget' => '<div id="%1$s" class="p-widget %2$s">',
 			'after_widget'  => '</div><!-- /p-widget -->',
-			'before_title'  => '<div class="e-title">',
-			'after_title'   => '</div><!-- /e-title -->',
+			'before_title'  => '<div class="p-widget__title">',
+			'after_title'   => '</div><!-- /p-widget__title -->',
 		)
 	);
 	register_sidebar(
@@ -152,8 +152,8 @@ function raccoon_widget_init() {
 			'id'            => 'sidebar-fixed',
 			'before_widget' => '<div id="%1$s" class="p-widget %2$s">',
 			'after_widget'  => '</div><!-- /p-widget -->',
-			'before_title'  => '<div class="e-title">',
-			'after_title'   => '</div><!-- /e-title -->',
+			'before_title'  => '<div class="p-widget__title">',
+			'after_title'   => '</div><!-- /p-widget__title -->',
 		)
 	);
 	register_sidebar(
@@ -162,8 +162,8 @@ function raccoon_widget_init() {
 			'id'            => 'spmenu',
 			'before_widget' => '<div id="%1$s" class="p-widget %2$s">',
 			'after_widget'  => '</div><!-- /p-widget -->',
-			'before_title'  => '<div class="e-title">',
-			'after_title'   => '</div><!-- /e-title -->',
+			'before_title'  => '<div class="p-widget__title">',
+			'after_title'   => '</div><!-- /p-widget__title -->',
 		)
 	);
 }

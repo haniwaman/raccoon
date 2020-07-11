@@ -15,4 +15,4 @@
 
 </footer><!-- /l-footer -->
 
-<div class="p-floating"><a href="#"><span></span></a></div><!-- /p-floating -->
+<div class="p-floating"><a href="#a-top"><span></span></a></div><!-- /p-floating -->

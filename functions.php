@@ -64,7 +64,7 @@ function raccoon_script() {
 
 	/* CSS */
 	if ( ! get_theme_mod( 'raccoon_performance_inline_check' ) ) {
-		wp_enqueue_style( 'raccoon_header', get_template_directory_uri() . '/src/css/header.css', array(), '1.0.1', 'all' );
+		wp_enqueue_style( 'raccoon_header', get_template_directory_uri() . '/src/css/header.min.css', array(), '1.0.1', 'all' );
 	}
 	wp_enqueue_style( 'raccoon_main', get_template_directory_uri() . '/src/css/style.css', array(), '1.0.1', 'all' );
 	wp_enqueue_style( 'raccoon_default', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ), 'all' );

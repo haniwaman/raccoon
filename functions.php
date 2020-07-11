@@ -58,6 +58,10 @@ add_action( 'after_setup_theme', 'raccoon_setup' );
  */
 function raccoon_script() {
 
+	/* Library */
+	wp_enqueue_style( 'raccoon_font-awesome', get_template_directory_uri() . '/lib/font-awesome/css/all.min.css', array(), '5.13.1', 'all' );
+	wp_enqueue_script( 'raccoon_object-fit', get_template_directory_uri() . '/lib/object-fit-images/ofi.min.js', array(), '3.2.4', true );
+
 	/* CSS */
 	if ( ! get_theme_mod( 'raccoon_performance_inline_check' ) ) {
 		wp_enqueue_style( 'raccoon_header', get_template_directory_uri() . '/src/css/header.css', array(), '1.0.1', 'all' );

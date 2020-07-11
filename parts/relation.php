@@ -22,45 +22,40 @@
 	?>
 
 	<?php if ( $raccoon_relation_query->have_posts() ) : ?>
-<div class="p-relation__items">
-<!-- p-relation-items -->
-<div class="p-relation-items">
+<div class="p-relation__entries">
 		<?php while ( $raccoon_relation_query->have_posts() ) : ?>
 			<?php $raccoon_relation_query->the_post(); ?>
 
-<div <?php post_class( array( 'p-relation-item' ) ); ?>>
+<div <?php post_class( array( 'p-relation__entry', 'p-relation-entry' ) ); ?>>
 
-<!-- p-relation-item__img -->
-<div class="p-relation-item__img">
-	<div class="p-relation-item__img-cover">
+<div class="p-relation-entry__img">
+	<div class="p-relation-entry__img-cover">
 		<a href="<?php the_permalink(); ?>">
 				<?php
 				if ( has_post_thumbnail() ) {
 					the_post_thumbnail( 'raccoon_thumbnail' );
 				} else {
-					echo '<img src="' . esc_url( get_template_directory_uri() ) . '/src/img/noimg.png" alt="">';
+					echo '<img src="' . esc_url( get_template_directory_uri() ) . '/src/img/no-img.png" alt="">';
 				}
 				?>
 		</a>
-	</div><!-- /p-relation-item__img-cover -->
-</div><!-- /p-relation-item__img -->
+	</div><!-- /p-relation-entry__img-cover -->
+</div><!-- /p-relation-entry__img -->
 
-<!-- p-relation-item__body -->
-<div class="p-relation-item__body">
-	<div class="p-relation-item__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div><!-- /p-relation-item__title -->
-</div><!-- /p-relation-item__body -->
+<div class="p-relation-entry__body">
+	<div class="p-relation-entry__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div><!-- /p-relation-entry__title -->
+</div><!-- /p-relation-entry__body -->
 
-</div><!-- /p-relation-item__item -->
-
+</div><!-- /p-relation-entry__item -->
 	<?php endwhile; ?>
-</div><!-- /p-relation-items -->
-</div><!-- /p-relation__items -->
+<div class="p-relation__btn">
+<a class="c-button" href="<?php echo esc_url( get_category_link( get_the_category()[0]->cat_ID ) ); ?>"><?php esc_html_e( 'More Relation Posts', 'raccoon' ); ?></a>
+</div><!-- /p-relation__btn -->
+</div><!-- /p-relation__entries -->
+	<?php else: ?>
+			<p class="p-relation__no-entry">関連記事はありません。</p>
 	<?php endif; ?>
 	<?php wp_reset_postdata(); ?>
-
-<div class="p-relation__btn">
-	<a class="c-button" href="<?php echo esc_url( get_category_link( get_the_category()[0]->cat_ID ) ); ?>"><?php esc_html_e( 'More Relation Posts', 'raccoon' ); ?></a>
-</div><!-- /p-relation__btn -->
 
 </div><!-- /p-relation -->
 <?php endif; ?>

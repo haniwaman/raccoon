@@ -1,8 +1,10 @@
-.p-contact-items {
+.p-contact {
 }
 
-.p-contact-item {
+.p-contact__items {
+}
 
+.p-contact__item {
 	@include mq-up("tab") {
 		display: flex;
 	}
@@ -41,7 +43,7 @@
 	}
 }
 
-.p-contact-submit {
+.p-contact__submit {
 	text-align: center;
 
 	[type="submit"] {

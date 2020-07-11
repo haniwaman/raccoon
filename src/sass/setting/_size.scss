@@ -1,7 +1,9 @@
 // レイアウト幅
 $layout-width-canvas: 1440px;
-$layout-width-container: 1080px;
+$layout-width-container: 1180px;
 $layout-width-smartphone: 768px;
+$layout-width-main: 840px;
+$layout-width-side: $layout-width-container - $layout-width-main - 38px; // 38pxは余白の幅
 
 // ブレークポイント（スマホベース）
 $breakpoints: (
@@ -12,6 +14,7 @@ $breakpoints: (
 	"ie": "(-ms-high-contrast: active), (-ms-high-contrast: none)"
 );
 
+// ブレークポイント（スマホベース）
 $breakpoints-up: (
 	"sp": "(max-width: 767px)",
 	"tab-only": "(min-width: 768px) and (max-width: #{$layout-width-container - 1px})",
@@ -30,8 +33,8 @@ $breakpoints-down: (
 );
 
 // ヘッダー高さ
-$header-height: 60px;
-$header-height-pc: 60px;
+$header-height-pc: auto;
+$header-height-sp: 60px;
 
 // z-index の指定
 $layer: (
@@ -47,16 +50,26 @@ $layer: (
 // 余白
 $pd-x-pc: 0;
 $pd-x-tab: 32px;
-$pd-x-sp: 24px;
+$pd-x-sp: 16px;
 
-// アイコン
-$icon-width: 50px;
-$icon-height: 50px;
-$icon-font: 50px;
+// ベースの余白
+$pd-entry-pc: 24px;
+$pd-entry-sp: 16px;
+
+// ウィジェットの余白
+$pd-x-widget: 10px;
+$pd-y-widget: 16px;
+$pd-x-widget-title: 10px;
+$pd-y-widget-title: 6px;
+$pd-widget-li: 12px;
 
 // マーカー
 $marker-pd-x: 0.4em;
 $marker-pd-y: 1em;
+
+// サムネイル画像
+$thumbnail-width: 840px;
+$thumbnail-height: 600px;
 
 // ドロワー
 $drawer-bar-space: 5px;

@@ -183,7 +183,7 @@ select {
   background-color: #fff;
   background-image: url(../img/arrow-select.svg);
   background-repeat: no-repeat;
-  background-size: 16px auto;
+  background-size: 12px auto;
   background-position: center right 0.2em;
   border: 1px solid #bdbdbd;
   font-family: inherit;
@@ -226,7 +226,7 @@ select[multiple] option {
   transition: all 0.5s ease 0s;
 }
 
-.fadein.m-anim {
+.fadein.fadein--anim {
   opacity: 1;
   transform: translate(0, 0);
 }
@@ -248,8 +248,8 @@ body {
 }
 
 body {
-  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", meiryo, "MS Pゴシック", "MS PGothic", sans-serif;
-  font-size: 1.6rem;
+  font-family: "游ゴシック体", "Yu Gothic", yugothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", meiryo, "MS Pゴシック", "MS PGothic", sans-serif;
+  font-size: 16px;
   font-weight: 400;
   color: #424242;
   line-height: 1.6;

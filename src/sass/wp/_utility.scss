@@ -14,7 +14,7 @@
 
 .wp-caption-text {
 	padding: 4px;
-	font-size: 1.3rem;
+	font-size: 13px;
 	text-align: left;
 }
 
@@ -29,7 +29,6 @@
 	}
 
 	.post_password-submit {
-
 		@extend %button;
 		position: absolute;
 		right: 1px;
@@ -74,7 +73,7 @@
 		left: 0;
 		color: $pickup-color; /* sticky color */
 		background: $pickup-background; /* sticky background */
-		font-size: 1.2rem;
+		font-size: 12px;
 		padding: 4px 8px;
 		z-index: 2;
 	}
@@ -104,8 +103,7 @@
 	width: 1px;
 	word-wrap: normal !important;
 
-	@if $is-foucs == true {
-
+	@if $is-focus == true {
 		&:focus {
 			background-color: #f1f1f1;
 			border-radius: 3px;
@@ -116,7 +114,7 @@
 			color: #21759b;
 			display: block;
 			font-size: 14px;
-			font-size: 0.875rem;
+			font-size: 8.75px;
 			font-weight: 700;
 			height: auto;
 			right: 5px;
@@ -131,13 +129,12 @@
 }
 
 .skip-link {
-	left: -9999rem;
-	top: 2.5rem;
+	left: -9999px;
+	top: 25px;
 	z-index: 999999999;
 	text-decoration: underline;
 
-	@if $is-foucs == true {
-
+	@if $is-focus == true {
 		&:focus {
 			display: block;
 			left: 6px;
@@ -151,4 +148,8 @@
 			right: auto;
 		}
 	}
+}
+
+.wp-block-button__link {
+	text-decoration: none !important;
 }

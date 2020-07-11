@@ -22,8 +22,7 @@
 		outline: none;
 	}
 
-	@if $is-foucs == false {
-
+	@if $is-focus == false {
 		&:focus {
 			outline: none;
 		}
@@ -50,12 +49,11 @@
 	-webkit-appearance: none;
 	appearance: none;
 
-	@if $is-foucs == false {
-
+	@if $is-focus == false {
 		&:focus {
 			outline: none;
 			box-shadow: none;
-			border: 1px solid $form-border-color--foucs;
+			border: 1px solid $form-border-color--focus;
 		}
 	}
 }
@@ -77,12 +75,11 @@
 	appearance: none;
 	resize: none;
 
-	@if $is-foucs == false {
-
+	@if $is-focus == false {
 		&:focus {
 			outline: none;
 			box-shadow: none;
-			border: 1px solid $form-border-color--foucs;
+			border: 1px solid $form-border-color--focus;
 		}
 	}
 }
@@ -122,7 +119,7 @@
 			border-radius: 50%;
 			width: 1em;
 			height: 1em;
-			border: 1px solid $form-border-color--foucs;
+			border: 1px solid $form-border-color--focus;
 			box-shadow: 0 0 0 0.1em #fff inset;
 			display: block;
 			opacity: 0;
@@ -131,11 +128,9 @@
 	}
 
 	&:checked {
-
 		+ span {
-
 			&::before {
-				border: 1px solid $form-border-color--foucs;
+				border: 1px solid $form-border-color--focus;
 			}
 
 			&::after {
@@ -188,11 +183,9 @@
 	}
 
 	&:checked {
-
 		+ span {
-
 			&::before {
-				border: 1px solid $form-border-color--foucs;
+				border: 1px solid $form-border-color--focus;
 			}
 
 			&::after {
@@ -210,7 +203,7 @@
 	background-color: #fff;
 	background-image: url(../img/arrow-select.svg);
 	background-repeat: no-repeat;
-	background-size: 16px auto;
+	background-size: 12px auto;
 	background-position: center right 0.2em;
 	border: 1px solid $form-border-color;
 	font-family: inherit;
@@ -225,11 +218,10 @@
 		display: none;
 	}
 
-	@if $is-foucs == false {
-
+	@if $is-focus == false {
 		&:focus {
 			outline: none;
-			border: 1px solid $form-border-color--foucs;
+			border: 1px solid $form-border-color--focus;
 			box-shadow: none;
 		}
 	}

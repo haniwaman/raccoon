@@ -5,34 +5,39 @@
 
 get_header(); ?>
 
-<?php get_template_part( 'template/mainvisual/page' ); ?>
+<?php get_template_part( 'template/main-visual/page' ); ?>
+<div class="l-breadcrumb">
+	<div class="l-inner l-breadcrumb__inner">
+		<?php raccoon_breadcrumb(); ?>
+	</div><!-- /l-inner -->
+</div><!-- /l-breadcrumb -->
 
-<!-- l-content -->
-<div class="l-content p-content">
+
+<div class="l-content">
 <div class="l-inner l-content__inner">
 
-<!-- l-primary -->
 <main id="a-main" class="l-primary">
 
 	<?php
 	if ( have_posts() ) :
 		?>
-	<!-- p-archive-header -->
 	<div class="p-archive-header">
-		<?php raccoon_breadcrumb(); ?>
-		<h1 class="p-archive-header__title"><?php the_archive_title(); ?></h1><!-- /p-archive-header__title -->
-		<div class="p-archive-header__description"><?php the_archive_description(); ?></div><!-- /p-archive-header__description -->
-		<div class="p-archive-header__form"><?php get_search_form(); ?></div><!-- /p-archive-header__form -->
+		<h1 class="p-archive-header__title"><?php the_archive_title(); ?></h1>
+		<div class="p-archive-header__description"><?php the_archive_description(); ?></div>
+		<div class="p-archive-header__form"><?php get_search_form(); ?></div>
 	</div><!-- /p-archive-header -->
 
-	<!-- p-entry-items -->
-		<?php if ( 'horizon' === get_theme_mod( 'raccoon_layout_archive_check' ) ) : ?>
-	<div class="p-entry-items p-entry-items--square">
-	<?php elseif ( 'vertical' === get_theme_mod( 'raccoon_layout_archive_check' ) ) : ?>
-	<div class="p-entry-items">
-	<?php else : ?>
-	<div class="p-entry-items p-entry-items--square">
-	<?php endif; ?>
+	<!-- p-entries -->
+		<?php
+		$entry_type_class = 'p-entries--square';
+		if ( 'horizon' === get_theme_mod( 'raccoon_layout_archive_check' ) ) {
+			$entry_type_class = 'p-entries--square';
+		} elseif ( 'vertical' === get_theme_mod( 'raccoon_layout_archive_check' ) ) {
+			$entry_type_class = 'p-entries--vertical';
+		}
+
+		?>
+	<div class="p-entries <?php echo esc_attr( $entry_type_class ); ?>">
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -43,7 +48,7 @@ get_header(); ?>
 			<?php
 		endwhile;
 		?>
-		</div><!-- /p-entry-items -->
+		</div><!-- /p-entries -->
 
 		<?php if ( paginate_links() ) : ?>
 		<div class="p-pagination">
@@ -54,8 +59,8 @@ get_header(); ?>
 						'end_size'  => 0,
 						'mid_size'  => 1,
 						'prev_next' => true,
-						'prev_text' => '&lt;',
-						'next_text' => '&gt;',
+						'prev_text' => '<i class="fas fa-chevron-left"></i>',
+						'next_text' => '<i class="fas fa-chevron-right"></i>',
 					)
 				)
 			);

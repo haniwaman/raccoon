@@ -2,7 +2,7 @@
 }
 
 .p-comments__title {
-	font-size: 2rem;
+	font-size: 20px;
 	font-weight: 700;
 	margin: 42px 0 24px;
 }
@@ -19,141 +19,44 @@
 	margin-top: 60px;
 }
 
-.p-comments-list {
-	li {
-		margin-bottom: 24px;
-	}
-
-	.children {
-		margin-top: 24px;
-		padding-left: 12px;
-	}
-
-	.comment-body {
-		.reply {
-			font-size: 1.4rem;
-			text-align: right;
-			transition: all 0.3s ease 0s;
-
-			&:hover {
-				opacity: $opacity; /* opacity */
-			}
-		}
-	}
-
-	.comment-meta {
-		display: flex;
-		align-items: center;
-		margin-bottom: 8px;
-
-		.bypostauthor & {
-			flex-direction: row-reverse;
-		}
-	}
-
-	.comment-author {
-		margin-right: auto;
-
-		.bypostauthor & {
-			margin-right: 0;
-			margin-left: auto;
-		}
-
-		img {
-			margin-right: 4px;
-			vertical-align: middle;
-			border-radius: 50%;
-		}
-
-		.fn {
-			vertical-align: middle;
-			font-size: 1.4rem;
-
-			a {
-				transition: all 0.3s ease 0s;
-
-				&:hover {
-					opacity: $opacity; /* opacity */
-				}
-			}
-		}
-
-		.says {
-			font-size: 1.2rem;
-			color: #666;
-			vertical-align: middle;
-		}
-	}
-
-	.comment-metadata {
-		font-size: 1.2rem;
-		color: #666;
-	}
-}
-
-.p-comments-nav {
-	ul {
-		display: flex;
-	}
-}
-
-.p-comments-nav__prev,
-.p-comments-nav__next {
-	margin-right: auto;
-
-	&:last-child {
-		margin-right: 0;
-	}
-
-	a {
-		transition: all 0.3s ease 0s;
-		text-decoration: none;
-		color: #666;
-
-		&:hover {
-			opacity: $opacity; /* opacity */
-		}
-	}
-}
-
 .comment-content {
 	h1 {
-		font-size: 2.8rem;
+		font-size: 28px;
 		margin-top: 3em;
 		margin-bottom: 1em;
 		line-height: 1.2;
 	}
 
 	h2 {
-		font-size: 2.4rem;
+		font-size: 24px;
 		margin-top: 3em;
 		margin-bottom: 1em;
 		line-height: 1.2;
 	}
 
 	h3 {
-		font-size: 2rem;
+		font-size: 20px;
 		margin-top: 3em;
 		margin-bottom: 1em;
 		line-height: 1.4;
 	}
 
 	h4 {
-		font-size: 1.8rem;
+		font-size: 18px;
 		margin-top: 2em;
 		margin-bottom: 1em;
 		line-height: 1.6;
 	}
 
 	h5 {
-		font-size: 1.6rem;
+		font-size: 16px;
 		margin-top: 2em;
 		margin-bottom: 1em;
 		line-height: 1.6;
 	}
 
 	h6 {
-		font-size: 1.6rem;
+		font-size: 16px;
 		margin-top: 2em;
 		margin-bottom: 1em;
 		line-height: 1.6;
@@ -286,14 +189,24 @@
 		vertical-align: middle;
 	}
 
-	input,
+	[type="text"],
+	[type="email"],
+	[type="tel"],
+	[type="url"],
+	[type="email"],
 	textarea {
 		vertical-align: top;
+		width: 100%;
+	}
+
+	textarea {
+		width: 100%;
+		height: 180px;
 	}
 }
 
 .comment-reply-title {
-	font-size: 2rem;
+	font-size: 20px;
 	font-weight: 700;
 	margin-bottom: 12px;
 }

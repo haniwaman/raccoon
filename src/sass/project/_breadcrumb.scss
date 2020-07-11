@@ -2,7 +2,7 @@
 	ul {
 		display: flex;
 		align-items: center;
-		overflow: hidden;
+		overflow: auto;
 
 		li {
 			white-space: nowrap;
@@ -13,26 +13,23 @@
 			text-decoration: none;
 			display: block;
 			transition: all 0.3s ease 0s;
+			color: #666;
+			font-size: 13px;
 
 			&:hover {
 				opacity: $opacity; /* opacity */
 			}
-		}
-
-		a {
-			color: #666;
-			font-size: 1.3rem;
 		}
 	}
 }
 
 .p-breadcrumb__current {
 	color: #666;
-	font-size: 1.3rem;
+	font-size: 13px;
 }
 
 .p-breadcrumb__bridge {
 	color: #666;
-	font-size: 1.3rem;
+	font-size: 13px;
 	padding: 0 16px;
 }

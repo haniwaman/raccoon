@@ -35,7 +35,7 @@ if ( ! function_exists( 'raccoon_get_post_categories' ) ) {
 
 if ( ! function_exists( 'raccoon_the_post_category' ) ) {
 	/**
-	 * Dispaly One Category
+	 * Display One Category
 	 *
 	 * @param boolean $anchor is Anchor Link.
 	 * @param integer $id Post ID.
@@ -100,11 +100,11 @@ if ( ! function_exists( 'raccoon_the_post_tags' ) ) {
 		if ( $this_tags ) {
 			$i             = 0;
 			$this_tags_num = count( $this_tags );
-			echo '<div class="p-entry-tags">';
+			echo '<div class="p-page-tags">';
 			for ( $i; $i < $this_tags_num; $i++ ) {
-				echo '<div class="p-entry-tags__link"><a href="' . esc_url( $this_tags[ $i ]['link'] ) . '">' . esc_html( $this_tags[ $i ]['name'] ) . '</a></div><!-- /p-entry-tags__link -->';
+				echo '<div class="p-page-tags__link"><a href="' . esc_url( $this_tags[ $i ]['link'] ) . '">' . esc_html( $this_tags[ $i ]['name'] ) . '</a></div><!-- /p-page-tags__link -->';
 			}
-			echo '</div><!-- /p-entry-tags -->';
+			echo '</div><!-- /p-page-tags -->';
 		}
 	}
 }

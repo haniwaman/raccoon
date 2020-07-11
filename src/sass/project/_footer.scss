@@ -1,8 +1,8 @@
 .p-footer {
 }
 
-.p-copy {
-	font-size: 1.3rem;
+.p-footer__copy {
+	font-size: 13px;
 	padding: 8px;
 	color: #fff;
 
@@ -15,47 +15,8 @@
 			opacity: $opacity; /* opacity */
 		}
 	}
-}
 
-.p-copy__symbol {
-	margin: 0 0.1em 0 0.4em;
-}
-
-.p-floating {
-	position: fixed;
-	right: 8px;
-	bottom: 8px;
-	display: none;
-
-	a {
-		display: block;
-		color: map-get($floating, "color"); /* floating color */
-		background: map-get($floating, "background"); /* floating background */
-		text-decoration: none;
-		transition: all 0.3s ease 0s;
-		text-align: center;
-		box-shadow: 0 0 3px 0 rgba(#000, 0.16);
-		width: 38px;
-		height: 38px;
-		line-height: 38px;
-
-		@include mq-up("tab") {
-			width: 42px;
-			height: 42px;
-			line-height: 42px;
-		}
-
-		&:hover {
-			opacity: $opacity; /* opacity */
-		}
-	}
-
-	.c-icon-arrow-top {
-		span {
-			font-size: 26px;
-			height: 18px;
-			width: 18px;
-			border-color: #fff;
-		}
+	span {
+		margin: 0 0.1em 0 0.4em;
 	}
 }

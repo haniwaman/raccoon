@@ -4,7 +4,7 @@ Tags: blog, one-column, two-columns, left-sidebar, right-sidebar, custom-colors,
 Requires at least: 5.0.0
 Tested up to: WordPress 5.4.2
 Requires PHP: 7.3.5
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,15 +15,24 @@ Raccoon is Base Theme for Web Designer
 == License ==
 Image for theme screenshot, Copyright Kaique Rocha
 License: CC0 1.0 Universal (CC0 1.0)
-Source: https://stocksnap.io/photo/nature-landscape-UYH1G9I56K
+Source : https://stocksnap.io/photo/nature-landscape-UYH1G9I56K
 
 Image for theme screenshot, Copyright Free Nature Stock
 License: CC0 1.0 Universal (CC0 1.0)
-Source: https://stocksnap.io/photo/autumn-foliage-PYNTHNXPLD
+Source : https://stocksnap.io/photo/autumn-foliage-PYNTHNXPLD
 
 Image for theme screenshot, Copyright Holly's Coastal View
 License: CC0 1.0 Universal (CC0 1.0)
-Source: https://stocksnap.io/photo/fishing-village-UQSCIYTHV0
+Source : https://stocksnap.io/photo/fishing-village-UQSCIYTHV0
+
+Font Awesome Free
+Font License: SIL OFL 1.1
+Code License: MIT License
+Source      : https://fontawesome.com/
+
+object-fit-images
+License: MIT License
+Source      : https://github.com/fregante/object-fit-images
 
 == Changelog ==
 
@@ -32,6 +41,11 @@ Source: https://stocksnap.io/photo/fishing-village-UQSCIYTHV0
 
 = 1.1 =
 CSS Design Changes
+
+= 1.2 =
+Add Font Awesome
+Add object-fit Polyfill
+rem to px
 
 == Copyright ==
 

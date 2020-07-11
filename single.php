@@ -5,17 +5,17 @@
 
 get_header(); ?>
 
+<?php get_template_part( 'template/main-visual/page' ); ?>
+<div class="l-breadcrumb">
+	<div class="l-inner l-breadcrumb__inner">
+		<?php raccoon_breadcrumb(); ?>
+	</div><!-- /l-inner -->
+</div><!-- /l-breadcrumb -->
 
 
-<?php get_template_part( 'template/mainvisual/page' ); ?>
-
-
-
-<!-- l-content -->
-<div class="l-content p-content">
+<div class="l-content">
 <div class="l-inner l-content__inner">
 
-<!-- l-primary -->
 <main id="a-main" class="l-primary">
 
 <?php

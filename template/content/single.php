@@ -5,39 +5,37 @@
 
 ?>
 
-<!-- p-entry -->
-<article <?php post_class( array( 'l-entry', 'p-entry' ) ); ?>>
+<article <?php post_class( array( 'l-page', 'p-page' ) ); ?>>
 
-	<div class="l-entry__header">
-		<div class="p-entry-header">
-			<div class="l-breadcrumb"><?php raccoon_breadcrumb(); ?></div><!-- /l-breadcrumb -->
-			<h1 class="p-entry-header__title"><?php the_title(); ?></h1><!-- /p-entry-header__title -->
-			<div class="p-entry-header__meta">
-				<div class="p-entry-header__label"><?php raccoon_the_post_category(); ?></div><!-- /p-entry-header__label -->
-				<time class="p-entry-header__published" datetime="<?php the_time( 'c' ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time>
-			</div><!-- /p-entry-header__meta -->
+	<div class="l-page__header">
+		<div class="p-page-header">
+			<h1 class="p-page-header__title"><?php the_title(); ?></h1><!-- /p-page-header__title -->
+			<div class="p-page-header__meta">
+				<div class="p-page-header__label"><?php raccoon_the_post_category(); ?></div><!-- /p-page-header__label -->
+				<time class="p-page-header__published" datetime="<?php the_time( 'c' ); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time>
+			</div><!-- /p-page-header__meta -->
 			<?php
 			$raccoon_meta_bottom_content = '';
 			apply_filters( 'raccoon_single_meta_bottom', $raccoon_meta_bottom_content );
 			?>
-			<figure class="p-entry-header__img">
+			<figure class="p-page-header__img">
 			<?php
 			if ( has_post_thumbnail() ) {
 				the_post_thumbnail( 'raccoon_thumbnail' );
 			}
 			?>
-			</figure><!-- /p-entry-header__img -->
-		</div><!-- /p-entry-header -->
-	</div><!-- /l-entry__header -->
+			</figure><!-- /p-page-header__img -->
+		</div><!-- /p-page-header -->
+	</div><!-- /l-page__header -->
 
 	<?php $rc_heading = get_theme_mod( 'raccoon_parts_heading_select' ) ? 'rc-' . get_theme_mod( 'raccoon_parts_heading_select' ) : ''; ?>
-	<div class="l-entry__body">
-		<div class="p-entry-content <?php echo esc_attr( $rc_heading ); ?>">
+	<div class="l-page__body">
+		<div class="p-page-content <?php echo esc_attr( $rc_heading ); ?>">
 		<?php the_content(); ?>
 		<?php
 		wp_link_pages(
 			array(
-				'before'         => '<nav class="p-entry-links">',
+				'before'         => '<nav class="p-page-links">',
 				'after'          => '</nav>',
 				'link_before'    => '',
 				'link_after'     => '',
@@ -46,8 +44,8 @@
 			)
 		);
 		?>
-		</div><!-- /p-entry-content -->
-	</div><!-- /l-entry__body -->
+		</div><!-- /p-page-content -->
+	</div><!-- /l-page__body -->
 
 		<?php raccoon_the_post_tags(); ?>
 
@@ -62,18 +60,18 @@
 
 		<?php comments_template(); ?>
 
-</article><!-- /p-entry -->
+</article><!-- /p-page -->
 
 		<?php
 		$prev_post = get_previous_post();
 		$next_post = get_next_post();
 		?>
-<nav class="p-entry-pager">
+<nav class="p-page-pager">
 		<?php if ( $next_post ) : ?>
-	<div class="p-entry-pager__next">
-			<a href="<?php the_permalink( $next_post->ID ); ?>" class="p-entry-pager__head"><?php esc_html_e( 'Next Post', 'raccoon' ); ?></a>
-			<a href="<?php the_permalink( $next_post->ID ); ?>" class="p-entry-pager-item p-entry-pager-item--left">
-				<div class="p-entry-pager-item__img">
+	<div class="p-page-pager__next">
+			<a href="<?php the_permalink( $next_post->ID ); ?>" class="p-page-pager__head"><?php esc_html_e( 'Next Post', 'raccoon' ); ?></a>
+			<a href="<?php the_permalink( $next_post->ID ); ?>" class="p-pager-card p-pager-card--left">
+				<div class="p-pager-card__img">
 				<?php
 				if ( has_post_thumbnail( $next_post->ID ) ) {
 					echo get_the_post_thumbnail( $next_post->ID, 'thumbnail' );
@@ -81,18 +79,18 @@
 					echo '<img src="' . esc_url( get_template_directory_uri() ) . '/src/img/no-thumbnail.png">';
 				}
 				?>
-				</div><!-- /p-entry-pager-item__img -->
-				<div class="p-entry-pager-item__body">
-					<div class="p-entry-pager-item__title"><?php echo esc_html( mb_strimwidth( get_the_title( $next_post->ID ), 0, 64, '&hellip;', 'UTF-8' ) ); ?></div>
-				</div><!-- /p-entry-pager-item__body -->
-			</a><!-- /p-entry-pager-item -->
-	</div><!-- /p-entry-pager__next -->
+				</div><!-- /p-pager-card__img -->
+				<div class="p-pager-card__body">
+					<div class="p-pager-card__title"><?php echo esc_html( mb_strimwidth( get_the_title( $next_post->ID ), 0, 64, '&hellip;', 'UTF-8' ) ); ?></div>
+				</div><!-- /p-pager-card__body -->
+			</a><!-- /p-pager-card -->
+	</div><!-- /p-page-pager__next -->
 			<?php endif; ?>
 		<?php if ( $prev_post ) : ?>
-	<div class="p-entry-pager__prev">
-		<a href="<?php the_permalink( $prev_post->ID ); ?>" class="p-entry-pager__head"><?php esc_html_e( 'Prev Post', 'raccoon' ); ?></a>
-		<a href="<?php the_permalink( $prev_post->ID ); ?>" class="p-entry-pager-item p-entry-pager-item--right">
-			<div class="p-entry-pager-item__img">
+	<div class="p-page-pager__prev">
+		<a href="<?php the_permalink( $prev_post->ID ); ?>" class="p-page-pager__head"><?php esc_html_e( 'Prev Post', 'raccoon' ); ?></a>
+		<a href="<?php the_permalink( $prev_post->ID ); ?>" class="p-pager-card p-pager-card--right">
+			<div class="p-pager-card__img">
 			<?php
 			if ( has_post_thumbnail( $prev_post->ID ) ) {
 				echo get_the_post_thumbnail( $prev_post->ID, 'thumbnail' );
@@ -100,11 +98,11 @@
 				echo '<img src="' . esc_url( get_template_directory_uri() ) . '/src/img/no-thumbnail.png">';
 			}
 			?>
-			</div><!-- /p-entry-pager-item__img -->
-			<div class="p-entry-pager-item__body">
-				<div class="p-entry-pager-item__title"><?php echo esc_html( mb_strimwidth( get_the_title( $prev_post->ID ), 0, 64, '&hellip;', 'UTF-8' ) ); ?></div>
-			</div><!-- /p-entry-pager-item__body -->
-		</a><!-- /p-entry-pager-item -->
-	</div><!-- /p-entry-pager__prev -->
+			</div><!-- /p-pager-card__img -->
+			<div class="p-pager-card__body">
+				<div class="p-pager-card__title"><?php echo esc_html( mb_strimwidth( get_the_title( $prev_post->ID ), 0, 64, '&hellip;', 'UTF-8' ) ); ?></div>
+			</div><!-- /p-pager-card__body -->
+		</a><!-- /p-pager-card -->
+	</div><!-- /p-page-pager__prev -->
 			<?php endif; ?>
-</nav><!-- /p-entry-pager -->
+</nav><!-- /p-page-pager -->
